@@ -1,0 +1,9676 @@
+[
+  {
+    "id": "ysl-libre-edp",
+    "name": "Libre EDP",
+    "brand": "YSL",
+    "price_vnd": 3380000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "aromatic",
+    "top_notes": [
+      "bergamot",
+      "blackcurrant"
+    ],
+    "heart_notes": [
+      "lavender",
+      "orange blossom"
+    ],
+    "base_notes": [
+      "ambergris",
+      "vanilla",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "floral",
+      "woody",
+      "musky"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion",
+      "office"
+    ],
+    "style_tags": [
+      "bold",
+      "free-spirited",
+      "confident"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "ysl-libre-intense-edp",
+    "name": "Libre Intense EDP",
+    "brand": "YSL",
+    "price_vnd": 3380000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "mandarin",
+      "lavender"
+    ],
+    "heart_notes": [
+      "orange blossom",
+      "lavender absolute"
+    ],
+    "base_notes": [
+      "vanilla",
+      "cedarwood",
+      "amber"
+    ],
+    "descriptors": [
+      "floral",
+      "woody",
+      "sweet"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "bold",
+      "confident",
+      "sensual"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.89,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "ysl-myslf-edp",
+    "name": "MYSLF EDP",
+    "brand": "YSL",
+    "price_vnd": 2860000,
+    "tier": 2,
+    "family_primary": "aromatic",
+    "family_secondary": "woody",
+    "top_notes": [
+      "bergamot",
+      "orange"
+    ],
+    "heart_notes": [
+      "cardamom",
+      "lavender"
+    ],
+    "base_notes": [
+      "amberwood",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "woody",
+      "citrus",
+      "spicy"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "modern",
+      "easy-going",
+      "effortless"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "ysl-black-opium-edp",
+    "name": "Black Opium EDP",
+    "brand": "YSL",
+    "price_vnd": 3380000,
+    "tier": 2,
+    "family_primary": "gourmand",
+    "family_secondary": "floral",
+    "top_notes": [
+      "pink pepper",
+      "orange blossom",
+      "pear"
+    ],
+    "heart_notes": [
+      "coffee",
+      "jasmine"
+    ],
+    "base_notes": [
+      "vanilla",
+      "patchouli",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "gourmand",
+      "sweet",
+      "floral"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "edgy",
+      "bold",
+      "sensual"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.94,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "ysl-la-nuit-de-lhomme-edt",
+    "name": "La Nuit de l'Homme EDT",
+    "brand": "YSL",
+    "price_vnd": 2860000,
+    "tier": 2,
+    "family_primary": "aromatic",
+    "family_secondary": "woody",
+    "top_notes": [
+      "cardamom",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "lavender",
+      "cedarwood",
+      "vetiver"
+    ],
+    "base_notes": [
+      "tonka bean",
+      "carrot seed"
+    ],
+    "descriptors": [
+      "woody",
+      "spicy",
+      "musky"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "mysterious",
+      "elegant",
+      "sensual"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.92,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "dior-miss-dior-edt",
+    "name": "Miss Dior EDT",
+    "brand": "Dior",
+    "price_vnd": 3120000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "citrus",
+    "top_notes": [
+      "bergamot",
+      "pink pepper"
+    ],
+    "heart_notes": [
+      "damascus rose",
+      "lily of the valley"
+    ],
+    "base_notes": [
+      "musk",
+      "patchouli",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "floral",
+      "fresh",
+      "citrus"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "effortless",
+      "romantic",
+      "modern"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "dior-sauvage-edt",
+    "name": "Sauvage EDT",
+    "brand": "Dior",
+    "price_vnd": 3380000,
+    "tier": 2,
+    "family_primary": "aromatic",
+    "family_secondary": "woody",
+    "top_notes": [
+      "bergamot",
+      "pepper"
+    ],
+    "heart_notes": [
+      "sichuan pepper",
+      "lavender",
+      "pink pepper"
+    ],
+    "base_notes": [
+      "ambroxan",
+      "cedarwood",
+      "labdanum"
+    ],
+    "descriptors": [
+      "woody",
+      "fresh",
+      "spicy"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "bold",
+      "effortless",
+      "confident"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.96,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "dior-homme-intense-edp",
+    "name": "Dior Homme Intense EDP",
+    "brand": "Dior",
+    "price_vnd": 3380000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "bergamot",
+      "lavender"
+    ],
+    "heart_notes": [
+      "iris",
+      "ambrette"
+    ],
+    "base_notes": [
+      "cedarwood",
+      "vetiver",
+      "patchouli"
+    ],
+    "descriptors": [
+      "floral",
+      "woody",
+      "powdery"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "elegant",
+      "mysterious",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "dior-poison-girl-edp",
+    "name": "Poison Girl EDP",
+    "brand": "Dior",
+    "price_vnd": 3120000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "bitter orange",
+      "pink pepper"
+    ],
+    "heart_notes": [
+      "rose",
+      "damascus rose"
+    ],
+    "base_notes": [
+      "vanilla",
+      "benzyl benzoate",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "floral",
+      "sweet",
+      "spicy"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "bold",
+      "playful",
+      "sensual"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "dior-fahrenheit-edt",
+    "name": "Fahrenheit EDT",
+    "brand": "Dior",
+    "price_vnd": 3120000,
+    "tier": 2,
+    "family_primary": "woody",
+    "family_secondary": "leather",
+    "top_notes": [
+      "violet leaf",
+      "lavender",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "honey",
+      "lily",
+      "caraway"
+    ],
+    "base_notes": [
+      "leather",
+      "vetiver",
+      "amber"
+    ],
+    "descriptors": [
+      "woody",
+      "leather",
+      "smoky"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "mysterious",
+      "vintage",
+      "bold"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "gucci-flora-gorgeous-gardenia-edp",
+    "name": "Flora Gorgeous Gardenia EDP",
+    "brand": "Gucci",
+    "price_vnd": 3380000,
+    "tier": 2,
+    "family_primary": "floral",
+    "top_notes": [
+      "red berries",
+      "pear"
+    ],
+    "heart_notes": [
+      "gardenia",
+      "frangipani"
+    ],
+    "base_notes": [
+      "patchouli",
+      "brown sugar"
+    ],
+    "descriptors": [
+      "floral",
+      "sweet",
+      "musky"
+    ],
+    "use_cases": [
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "playful",
+      "warm",
+      "romantic"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "gucci-flora-gorgeous-jasmine-edp",
+    "name": "Flora Gorgeous Jasmine EDP",
+    "brand": "Gucci",
+    "price_vnd": 3380000,
+    "tier": 2,
+    "family_primary": "floral",
+    "top_notes": [
+      "pear",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "frangipani",
+      "tuberose"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "musk",
+      "white amber"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "sweet"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "romantic",
+      "glamorous",
+      "warm"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "gucci-bloom-edp",
+    "name": "Bloom EDP",
+    "brand": "Gucci",
+    "price_vnd": 3380000,
+    "tier": 2,
+    "family_primary": "floral",
+    "top_notes": [
+      "white florals"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "tuberose",
+      "rangoon creeper"
+    ],
+    "base_notes": [
+      "mushroom",
+      "sandalwood",
+      "white musk"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "soft"
+    ],
+    "use_cases": [
+      "daily casual",
+      "special occasion",
+      "office"
+    ],
+    "style_tags": [
+      "romantic",
+      "soft",
+      "elegant"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "gucci-guilty-pour-femme-edp",
+    "name": "Guilty Pour Femme EDP",
+    "brand": "Gucci",
+    "price_vnd": 3250000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "mandarin",
+      "pink pepper"
+    ],
+    "heart_notes": [
+      "geranium",
+      "lilac"
+    ],
+    "base_notes": [
+      "amber",
+      "patchouli"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "spicy"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "bold",
+      "sensual",
+      "modern"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "gucci-guilty-absolute-pour-homme",
+    "name": "Guilty Absolute EDP",
+    "brand": "Gucci",
+    "price_vnd": 2990000,
+    "tier": 2,
+    "family_primary": "woody",
+    "family_secondary": "leather",
+    "top_notes": [
+      "black pepper",
+      "olibanum"
+    ],
+    "heart_notes": [
+      "cypress",
+      "cedarwood"
+    ],
+    "base_notes": [
+      "leather",
+      "patchouli"
+    ],
+    "descriptors": [
+      "leather",
+      "woody",
+      "smoky"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "edgy",
+      "bold",
+      "confident"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.82,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "chanel-allure-homme-sport-edt",
+    "name": "Allure Homme Sport EDT",
+    "brand": "Chanel",
+    "price_vnd": 3380000,
+    "tier": 2,
+    "family_primary": "aromatic",
+    "family_secondary": "citrus",
+    "top_notes": [
+      "bergamot",
+      "orange",
+      "aldehydes"
+    ],
+    "heart_notes": [
+      "vetiver",
+      "cedarwood",
+      "white pepper"
+    ],
+    "base_notes": [
+      "tonka bean",
+      "musk",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "fresh",
+      "citrus",
+      "woody"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual",
+      "outdoor / sporty"
+    ],
+    "style_tags": [
+      "cool",
+      "effortless",
+      "confident"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.89,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "valentino-donna-born-in-roma-edp",
+    "name": "Donna Born in Roma EDP",
+    "brand": "Valentino",
+    "price_vnd": 3380000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "blackcurrant",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "rose"
+    ],
+    "base_notes": [
+      "vanilla",
+      "sandalwood",
+      "vetiver"
+    ],
+    "descriptors": [
+      "floral",
+      "sweet",
+      "woody"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "romantic",
+      "glamorous",
+      "modern"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "valentino-uomo-born-in-roma-edp",
+    "name": "Uomo Born in Roma EDP",
+    "brand": "Valentino",
+    "price_vnd": 3120000,
+    "tier": 2,
+    "family_primary": "aromatic",
+    "family_secondary": "woody",
+    "top_notes": [
+      "bergamot",
+      "ginger"
+    ],
+    "heart_notes": [
+      "lavender",
+      "vanilla"
+    ],
+    "base_notes": [
+      "vetiver",
+      "guaiac wood"
+    ],
+    "descriptors": [
+      "woody",
+      "spicy",
+      "musky"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual"
+    ],
+    "style_tags": [
+      "confident",
+      "warm",
+      "modern"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.83,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "mugler-alien-goddess-edp",
+    "name": "Alien Goddess EDP",
+    "brand": "Mugler",
+    "price_vnd": 3120000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "bergamot",
+      "lemon"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "cashmeran"
+    ],
+    "base_notes": [
+      "tonka bean",
+      "sandalwood",
+      "vanilla"
+    ],
+    "descriptors": [
+      "floral",
+      "sweet",
+      "woody"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "bold",
+      "mysterious",
+      "modern"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "mugler-angel-edp",
+    "name": "Angel EDP",
+    "brand": "Mugler",
+    "price_vnd": 2860000,
+    "tier": 2,
+    "family_primary": "gourmand",
+    "top_notes": [
+      "helional",
+      "melon"
+    ],
+    "heart_notes": [
+      "red berries",
+      "rose",
+      "jasmine"
+    ],
+    "base_notes": [
+      "patchouli",
+      "caramel",
+      "vanilla",
+      "coumarin"
+    ],
+    "descriptors": [
+      "gourmand",
+      "sweet",
+      "musky"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "bold",
+      "playful",
+      "sensual"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.89,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "mugler-alien-edp",
+    "name": "Alien EDP",
+    "brand": "Mugler",
+    "price_vnd": 3120000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "solar accord"
+    ],
+    "heart_notes": [
+      "jasmine sambac",
+      "cashmeran"
+    ],
+    "base_notes": [
+      "white amber",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "floral",
+      "woody",
+      "musky"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "mysterious",
+      "bold",
+      "enigmatic"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "ch-good-girl-edp",
+    "name": "Good Girl EDP",
+    "brand": "Carolina Herrera",
+    "price_vnd": 2990000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "coffee",
+      "almond"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "tuberose"
+    ],
+    "base_notes": [
+      "tonka bean",
+      "cacao",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "floral",
+      "sweet",
+      "gourmand"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "sensual",
+      "bold",
+      "glamorous"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "ch-bad-boy-edp",
+    "name": "Bad Boy EDP",
+    "brand": "Carolina Herrera",
+    "price_vnd": 2860000,
+    "tier": 2,
+    "family_primary": "woody",
+    "family_secondary": "aromatic",
+    "top_notes": [
+      "bergamot",
+      "green sage"
+    ],
+    "heart_notes": [
+      "cedarwood",
+      "violet leaf"
+    ],
+    "base_notes": [
+      "cacao",
+      "labdanum",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "woody",
+      "smoky",
+      "fresh"
+    ],
+    "use_cases": [
+      "evening",
+      "daily casual"
+    ],
+    "style_tags": [
+      "edgy",
+      "bold",
+      "cool"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "ch-good-girl-blush-edt",
+    "name": "Good Girl Blush EDT",
+    "brand": "Carolina Herrera",
+    "price_vnd": 2600000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "lemon",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "rose"
+    ],
+    "base_notes": [
+      "musk",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "floral",
+      "fresh",
+      "musky"
+    ],
+    "use_cases": [
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "romantic",
+      "soft",
+      "modern"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "armani-acqua-di-gio-edt",
+    "name": "Acqua di Giò EDT",
+    "brand": "Giorgio Armani",
+    "price_vnd": 2340000,
+    "tier": 2,
+    "family_primary": "aquatic",
+    "family_secondary": "aromatic",
+    "top_notes": [
+      "bergamot",
+      "neroli",
+      "green tangerine"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "rosemary",
+      "persimmon"
+    ],
+    "base_notes": [
+      "cedarwood",
+      "patchouli",
+      "labdanum"
+    ],
+    "descriptors": [
+      "aquatic",
+      "fresh",
+      "woody"
+    ],
+    "use_cases": [
+      "daily casual",
+      "outdoor / sporty",
+      "office"
+    ],
+    "style_tags": [
+      "effortless",
+      "cool",
+      "easy-going"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.94,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "armani-acqua-di-gio-parfum",
+    "name": "Acqua di Giò Parfum",
+    "brand": "Giorgio Armani",
+    "price_vnd": 3250000,
+    "tier": 2,
+    "family_primary": "aromatic",
+    "family_secondary": "aquatic",
+    "top_notes": [
+      "bergamot",
+      "marine notes"
+    ],
+    "heart_notes": [
+      "rosemary",
+      "cypress",
+      "labdanum"
+    ],
+    "base_notes": [
+      "patchouli",
+      "incense",
+      "vetiver"
+    ],
+    "descriptors": [
+      "aquatic",
+      "woody",
+      "spicy"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "effortless",
+      "sophisticated",
+      "cool"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.93,
+    "concentration": "Parfum",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "armani-si-edp",
+    "name": "Sì EDP",
+    "brand": "Giorgio Armani",
+    "price_vnd": 2990000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "blackcurrant",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "rose",
+      "freesia"
+    ],
+    "base_notes": [
+      "musk",
+      "ambroxan",
+      "vanilla"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "sweet"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "elegant",
+      "confident",
+      "modern"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.9,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "vr-flowerbomb-edp",
+    "name": "Flowerbomb EDP",
+    "brand": "Viktor & Rolf",
+    "price_vnd": 3120000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "tea",
+      "bergamot",
+      "osmanthus"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "rose",
+      "freesia",
+      "orchid"
+    ],
+    "base_notes": [
+      "patchouli",
+      "musk",
+      "vanilla"
+    ],
+    "descriptors": [
+      "floral",
+      "sweet",
+      "musky"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "romantic",
+      "glamorous",
+      "warm"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.93,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "vr-spicebomb-extreme-edp",
+    "name": "Spicebomb Extreme EDP",
+    "brand": "Viktor & Rolf",
+    "price_vnd": 2860000,
+    "tier": 2,
+    "family_primary": "woody",
+    "family_secondary": "spicy",
+    "top_notes": [
+      "black pepper",
+      "cinnamon"
+    ],
+    "heart_notes": [
+      "tobacco",
+      "oud"
+    ],
+    "base_notes": [
+      "vanilla",
+      "leather",
+      "labdanum"
+    ],
+    "descriptors": [
+      "spicy",
+      "woody",
+      "tobacco"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "bold",
+      "enigmatic",
+      "sensual"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "jpg-scandal-edp",
+    "name": "Scandal EDP",
+    "brand": "Jean Paul Gaultier",
+    "price_vnd": 2860000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "blood orange",
+      "gardenia"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "honey"
+    ],
+    "base_notes": [
+      "patchouli",
+      "caramel",
+      "amber"
+    ],
+    "descriptors": [
+      "floral",
+      "sweet",
+      "musky"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "bold",
+      "sensual",
+      "glamorous"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "jpg-so-scandal-edp",
+    "name": "So Scandal EDP",
+    "brand": "Jean Paul Gaultier",
+    "price_vnd": 3120000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "mandarin",
+      "blackcurrant"
+    ],
+    "heart_notes": [
+      "tuberose",
+      "rose"
+    ],
+    "base_notes": [
+      "honey",
+      "patchouli",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "sweet"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "bold",
+      "sensual",
+      "glamorous"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "dg-the-one-edp-man",
+    "name": "The One EDP (Men)",
+    "brand": "Dolce & Gabbana",
+    "price_vnd": 2990000,
+    "tier": 2,
+    "family_primary": "woody",
+    "family_secondary": "aromatic",
+    "top_notes": [
+      "grapefruit",
+      "coriander",
+      "basil"
+    ],
+    "heart_notes": [
+      "cardamom",
+      "orange blossom",
+      "ginger"
+    ],
+    "base_notes": [
+      "amber",
+      "patchouli",
+      "musk"
+    ],
+    "descriptors": [
+      "woody",
+      "spicy",
+      "musky"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "mysterious",
+      "warm",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "dg-devotion-edp",
+    "name": "Devotion EDP",
+    "brand": "Dolce & Gabbana",
+    "price_vnd": 2990000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "orange",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "jasmine sambac",
+      "neroli"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "musk",
+      "orange blossom"
+    ],
+    "descriptors": [
+      "floral",
+      "sweet",
+      "citrus"
+    ],
+    "use_cases": [
+      "special occasion",
+      "daily casual"
+    ],
+    "style_tags": [
+      "warm",
+      "romantic",
+      "elegant"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "givenchy-linterdit-edp",
+    "name": "L'Interdit EDP",
+    "brand": "Givenchy",
+    "price_vnd": 3120000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "bergamot",
+      "pear",
+      "orange"
+    ],
+    "heart_notes": [
+      "tuberose",
+      "jasmine"
+    ],
+    "base_notes": [
+      "vetiver",
+      "patchouli",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "floral",
+      "woody",
+      "smoky"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "bold",
+      "mysterious",
+      "elegant"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "givenchy-gentleman-society-edp",
+    "name": "Gentleman Society EDP",
+    "brand": "Givenchy",
+    "price_vnd": 2860000,
+    "tier": 2,
+    "family_primary": "aromatic",
+    "family_secondary": "woody",
+    "top_notes": [
+      "bergamot",
+      "black pepper"
+    ],
+    "heart_notes": [
+      "iris",
+      "lavender",
+      "vetiver"
+    ],
+    "base_notes": [
+      "tonka bean",
+      "amber"
+    ],
+    "descriptors": [
+      "woody",
+      "spicy",
+      "iris"
+    ],
+    "use_cases": [
+      "office",
+      "evening"
+    ],
+    "style_tags": [
+      "elegant",
+      "sophisticated",
+      "confident"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.82,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "bvlgari-man-in-black-edp",
+    "name": "Man In Black EDP",
+    "brand": "Bvlgari",
+    "price_vnd": 2730000,
+    "tier": 2,
+    "family_primary": "woody",
+    "family_secondary": "spicy",
+    "top_notes": [
+      "tobacco",
+      "rum",
+      "black pepper"
+    ],
+    "heart_notes": [
+      "tuberose",
+      "iris"
+    ],
+    "base_notes": [
+      "amber",
+      "sandalwood",
+      "leather"
+    ],
+    "descriptors": [
+      "woody",
+      "spicy",
+      "tobacco"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "bold",
+      "enigmatic",
+      "sensual"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "dg-light-blue-edt-woman",
+    "name": "Light Blue EDT (Women)",
+    "brand": "Dolce & Gabbana",
+    "price_vnd": 2340000,
+    "tier": 2,
+    "family_primary": "citrus",
+    "family_secondary": "floral",
+    "top_notes": [
+      "lemon",
+      "apple",
+      "cedarwood"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "rose",
+      "bamboo"
+    ],
+    "base_notes": [
+      "cedarwood",
+      "amber",
+      "musk"
+    ],
+    "descriptors": [
+      "citrus",
+      "fresh",
+      "floral"
+    ],
+    "use_cases": [
+      "daily casual",
+      "outdoor / sporty",
+      "travel"
+    ],
+    "style_tags": [
+      "effortless",
+      "easy-going",
+      "modern"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.93,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "dg-light-blue-edt-man",
+    "name": "Light Blue Pour Homme EDT",
+    "brand": "Dolce & Gabbana",
+    "price_vnd": 2340000,
+    "tier": 2,
+    "family_primary": "citrus",
+    "family_secondary": "aromatic",
+    "top_notes": [
+      "mandarin",
+      "juniper",
+      "grapefruit"
+    ],
+    "heart_notes": [
+      "rosemary",
+      "pepper",
+      "rosewood"
+    ],
+    "base_notes": [
+      "cedarwood",
+      "musk",
+      "incense"
+    ],
+    "descriptors": [
+      "citrus",
+      "fresh",
+      "woody"
+    ],
+    "use_cases": [
+      "daily casual",
+      "outdoor / sporty"
+    ],
+    "style_tags": [
+      "effortless",
+      "cool",
+      "easy-going"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.9,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "nr-for-her-edp",
+    "name": "For Her EDP",
+    "brand": "Narciso Rodriguez",
+    "price_vnd": 2860000,
+    "tier": 2,
+    "family_primary": "musky",
+    "family_secondary": "floral",
+    "top_notes": [
+      "rose",
+      "magnolia"
+    ],
+    "heart_notes": [
+      "rose",
+      "muguet"
+    ],
+    "base_notes": [
+      "musk",
+      "sandalwood",
+      "amber"
+    ],
+    "descriptors": [
+      "musky",
+      "floral",
+      "soft"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office",
+      "special occasion"
+    ],
+    "style_tags": [
+      "soft",
+      "minimal",
+      "sensual"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "lancome-la-vie-est-belle-edp",
+    "name": "La Vie Est Belle EDP",
+    "brand": "Lancôme",
+    "price_vnd": 2860000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "blackcurrant",
+      "pear"
+    ],
+    "heart_notes": [
+      "iris",
+      "jasmine",
+      "orange blossom"
+    ],
+    "base_notes": [
+      "praline",
+      "vanilla",
+      "patchouli",
+      "tonka bean"
+    ],
+    "descriptors": [
+      "floral",
+      "sweet",
+      "powdery"
+    ],
+    "use_cases": [
+      "special occasion",
+      "daily casual"
+    ],
+    "style_tags": [
+      "romantic",
+      "warm",
+      "glamorous"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.93,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "pr-1million-edp",
+    "name": "1 Million EDP",
+    "brand": "Paco Rabanne",
+    "price_vnd": 2860000,
+    "tier": 2,
+    "family_primary": "woody",
+    "family_secondary": "spicy",
+    "top_notes": [
+      "grapefruit",
+      "blood orange",
+      "mint"
+    ],
+    "heart_notes": [
+      "cinnamon",
+      "rose",
+      "spices"
+    ],
+    "base_notes": [
+      "leather",
+      "amber",
+      "patchouli"
+    ],
+    "descriptors": [
+      "spicy",
+      "woody",
+      "sweet"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "bold",
+      "sensual",
+      "confident"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.92,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "pr-olympea-edp",
+    "name": "Olympéa EDP",
+    "brand": "Paco Rabanne",
+    "price_vnd": 2600000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "mandarin",
+      "ginger"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "sandalwood"
+    ],
+    "base_notes": [
+      "white musk",
+      "vanilla",
+      "amber"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "sweet"
+    ],
+    "use_cases": [
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "bold",
+      "modern",
+      "sensual"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "chanel-chance-eau-tendre-edp",
+    "name": "Chance Eau Tendre EDP",
+    "brand": "Chanel",
+    "price_vnd": 3510000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "citrus",
+    "top_notes": [
+      "grapefruit",
+      "quince"
+    ],
+    "heart_notes": [
+      "hyacinth",
+      "jasmine"
+    ],
+    "base_notes": [
+      "white musk",
+      "iris",
+      "amber"
+    ],
+    "descriptors": [
+      "floral",
+      "fresh",
+      "musky"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office",
+      "special occasion"
+    ],
+    "style_tags": [
+      "effortless",
+      "soft",
+      "romantic"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.92,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "chanel-chance-eau-fraiche-edt",
+    "name": "Chance Eau Fraîche EDT",
+    "brand": "Chanel",
+    "price_vnd": 3510000,
+    "tier": 3,
+    "family_primary": "citrus",
+    "family_secondary": "floral",
+    "top_notes": [
+      "citrus",
+      "water hyacinth"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "teak wood"
+    ],
+    "base_notes": [
+      "white musk",
+      "iris",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "fresh",
+      "citrus",
+      "floral"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "effortless",
+      "easy-going",
+      "modern"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "chanel-no5-edp",
+    "name": "No.5 EDP",
+    "brand": "Chanel",
+    "price_vnd": 3900000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "powdery",
+    "top_notes": [
+      "aldehydes",
+      "bergamot",
+      "lemon"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "rose",
+      "iris"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "vetiver",
+      "vanilla"
+    ],
+    "descriptors": [
+      "floral",
+      "powdery",
+      "musky"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "elegant",
+      "sophisticated",
+      "glamorous"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.97,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "chanel-coco-mademoiselle-edp",
+    "name": "Coco Mademoiselle EDP",
+    "brand": "Chanel",
+    "price_vnd": 3900000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "orange",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "rose",
+      "ylang-ylang"
+    ],
+    "base_notes": [
+      "patchouli",
+      "vetiver",
+      "vanilla"
+    ],
+    "descriptors": [
+      "floral",
+      "woody",
+      "musky"
+    ],
+    "use_cases": [
+      "office",
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "confident",
+      "elegant",
+      "modern"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.95,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "chanel-bleu-de-chanel-edp",
+    "name": "Bleu de Chanel EDP",
+    "brand": "Chanel",
+    "price_vnd": 3900000,
+    "tier": 3,
+    "family_primary": "woody",
+    "family_secondary": "aromatic",
+    "top_notes": [
+      "citrus",
+      "mint",
+      "pink pepper"
+    ],
+    "heart_notes": [
+      "ginger",
+      "labdanum"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "patchouli",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "woody",
+      "fresh",
+      "spicy"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual",
+      "evening"
+    ],
+    "style_tags": [
+      "confident",
+      "sophisticated",
+      "cool"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.96,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "chanel-bleu-de-chanel-edt",
+    "name": "Bleu de Chanel EDT",
+    "brand": "Chanel",
+    "price_vnd": 3640000,
+    "tier": 3,
+    "family_primary": "aromatic",
+    "family_secondary": "citrus",
+    "top_notes": [
+      "citrus",
+      "mint"
+    ],
+    "heart_notes": [
+      "ginger",
+      "labdanum",
+      "jasmine"
+    ],
+    "base_notes": [
+      "white musk",
+      "sandalwood",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "fresh",
+      "citrus",
+      "woody"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual"
+    ],
+    "style_tags": [
+      "effortless",
+      "confident",
+      "cool"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.93,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "chanel-coco-mademoiselle-edt",
+    "name": "Coco Mademoiselle EDT",
+    "brand": "Chanel",
+    "price_vnd": 3640000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "citrus",
+    "top_notes": [
+      "orange",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "rose",
+      "jasmine"
+    ],
+    "base_notes": [
+      "patchouli",
+      "vetiver",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "fresh",
+      "citrus"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "effortless",
+      "modern",
+      "elegant"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "chanel-gabrielle-edp",
+    "name": "Gabrielle EDP",
+    "brand": "Chanel",
+    "price_vnd": 3900000,
+    "tier": 3,
+    "family_primary": "floral",
+    "top_notes": [
+      "grapefruit",
+      "blackcurrant",
+      "mandarin"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "ylang-ylang",
+      "orange blossom",
+      "tuberose"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "fresh",
+      "musky"
+    ],
+    "use_cases": [
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "effortless",
+      "modern",
+      "elegant"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.89,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "dior-miss-dior-edp",
+    "name": "Miss Dior EDP",
+    "brand": "Dior",
+    "price_vnd": 3640000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "blood orange",
+      "rose"
+    ],
+    "heart_notes": [
+      "damascus rose",
+      "peony"
+    ],
+    "base_notes": [
+      "white musk",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "fresh"
+    ],
+    "use_cases": [
+      "daily casual",
+      "special occasion",
+      "office"
+    ],
+    "style_tags": [
+      "romantic",
+      "soft",
+      "elegant"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.93,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "dior-sauvage-edp",
+    "name": "Sauvage EDP",
+    "brand": "Dior",
+    "price_vnd": 3770000,
+    "tier": 3,
+    "family_primary": "aromatic",
+    "family_secondary": "woody",
+    "top_notes": [
+      "bergamot",
+      "sichuan pepper"
+    ],
+    "heart_notes": [
+      "lavender",
+      "geranium"
+    ],
+    "base_notes": [
+      "ambroxan",
+      "sandalwood",
+      "vanilla"
+    ],
+    "descriptors": [
+      "woody",
+      "spicy",
+      "fresh"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual",
+      "evening"
+    ],
+    "style_tags": [
+      "bold",
+      "confident",
+      "effortless"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.98,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "dior-jadore-edp",
+    "name": "J'adore EDP",
+    "brand": "Dior",
+    "price_vnd": 3640000,
+    "tier": 3,
+    "family_primary": "floral",
+    "top_notes": [
+      "pear",
+      "melon"
+    ],
+    "heart_notes": [
+      "damascus rose",
+      "jasmine",
+      "ylang-ylang"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "blackberry"
+    ],
+    "descriptors": [
+      "floral",
+      "powdery",
+      "sweet"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "glamorous",
+      "elegant",
+      "feminine"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "dior-miss-dior-blooming-edt",
+    "name": "Miss Dior Blooming Bouquet EDT",
+    "brand": "Dior",
+    "price_vnd": 3380000,
+    "tier": 2,
+    "family_primary": "floral",
+    "top_notes": [
+      "pink pepper",
+      "mandarin"
+    ],
+    "heart_notes": [
+      "damascus rose",
+      "peony",
+      "freesia"
+    ],
+    "base_notes": [
+      "white musk"
+    ],
+    "descriptors": [
+      "floral",
+      "fresh",
+      "soft"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "effortless",
+      "soft",
+      "playful"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "dior-homme-parfum",
+    "name": "Dior Homme Parfum",
+    "brand": "Dior",
+    "price_vnd": 3900000,
+    "tier": 3,
+    "family_primary": "woody",
+    "family_secondary": "aromatic",
+    "top_notes": [
+      "bergamot",
+      "lavender"
+    ],
+    "heart_notes": [
+      "iris",
+      "vetiver"
+    ],
+    "base_notes": [
+      "leather",
+      "sandalwood",
+      "amber"
+    ],
+    "descriptors": [
+      "woody",
+      "leather",
+      "iris"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "elegant",
+      "sophisticated",
+      "enigmatic"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "Parfum",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "prada-paradoxe-edp",
+    "name": "Paradoxe EDP",
+    "brand": "Prada",
+    "price_vnd": 3900000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "bergamot",
+      "neroli"
+    ],
+    "heart_notes": [
+      "jasmine sambac",
+      "orange blossom"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "musk",
+      "amber"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "fresh"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office",
+      "special occasion"
+    ],
+    "style_tags": [
+      "modern",
+      "confident",
+      "effortless"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.89,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "prada-paradoxe-intense-edp",
+    "name": "Paradoxe Intense EDP",
+    "brand": "Prada",
+    "price_vnd": 4160000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "bergamot",
+      "neroli"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "orange blossom"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "amber",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "sweet"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "bold",
+      "confident",
+      "sensual"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "prada-luna-rossa-ocean-edp",
+    "name": "Luna Rossa Ocean EDP",
+    "brand": "Prada",
+    "price_vnd": 3770000,
+    "tier": 3,
+    "family_primary": "aromatic",
+    "family_secondary": "aquatic",
+    "top_notes": [
+      "bergamot",
+      "iris"
+    ],
+    "heart_notes": [
+      "sage",
+      "labdanum"
+    ],
+    "base_notes": [
+      "ambroxan",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "aquatic",
+      "fresh",
+      "woody"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office",
+      "outdoor / sporty"
+    ],
+    "style_tags": [
+      "cool",
+      "effortless",
+      "minimal"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "hermes-twilly-edp",
+    "name": "Twilly d'Hermès EDP",
+    "brand": "Hermès",
+    "price_vnd": 3900000,
+    "tier": 3,
+    "family_primary": "floral",
+    "top_notes": [
+      "ginger"
+    ],
+    "heart_notes": [
+      "tuberose",
+      "rose"
+    ],
+    "base_notes": [
+      "sandalwood"
+    ],
+    "descriptors": [
+      "floral",
+      "spicy",
+      "woody"
+    ],
+    "use_cases": [
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "playful",
+      "elegant",
+      "warm"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "hermes-terre-dhermes-edp",
+    "name": "Terre d'Hermès EDP",
+    "brand": "Hermès",
+    "price_vnd": 4160000,
+    "tier": 3,
+    "family_primary": "woody",
+    "family_secondary": "citrus",
+    "top_notes": [
+      "grapefruit",
+      "orange"
+    ],
+    "heart_notes": [
+      "pepper",
+      "pelargonium"
+    ],
+    "base_notes": [
+      "vetiver",
+      "benzoin",
+      "flint"
+    ],
+    "descriptors": [
+      "woody",
+      "citrus",
+      "fresh"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual"
+    ],
+    "style_tags": [
+      "grounded",
+      "minimal",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "hermes-terre-dhermes-edt",
+    "name": "Terre d'Hermès EDT",
+    "brand": "Hermès",
+    "price_vnd": 3900000,
+    "tier": 3,
+    "family_primary": "citrus",
+    "family_secondary": "woody",
+    "top_notes": [
+      "grapefruit",
+      "orange",
+      "flint"
+    ],
+    "heart_notes": [
+      "pepper",
+      "geranium",
+      "heather"
+    ],
+    "base_notes": [
+      "vetiver",
+      "benzoin",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "citrus",
+      "woody",
+      "fresh"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "grounded",
+      "effortless",
+      "cool"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.89,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "hermes-h24-edp",
+    "name": "H24 EDP",
+    "brand": "Hermès",
+    "price_vnd": 3900000,
+    "tier": 3,
+    "family_primary": "aromatic",
+    "family_secondary": "green",
+    "top_notes": [
+      "sage",
+      "narcissus"
+    ],
+    "heart_notes": [
+      "clary sage",
+      "rosewood"
+    ],
+    "base_notes": [
+      "cedarwood",
+      "vetiver"
+    ],
+    "descriptors": [
+      "green",
+      "woody",
+      "fresh"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual"
+    ],
+    "style_tags": [
+      "minimal",
+      "cool",
+      "effortless"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.83,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "hermes-jour-dhermes-edt",
+    "name": "Jour d'Hermès EDT",
+    "brand": "Hermès",
+    "price_vnd": 3770000,
+    "tier": 3,
+    "family_primary": "floral",
+    "top_notes": [
+      "citrus",
+      "green notes"
+    ],
+    "heart_notes": [
+      "white florals",
+      "gardenia",
+      "peony"
+    ],
+    "base_notes": [
+      "white musk",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "floral",
+      "fresh",
+      "musky"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "effortless",
+      "soft",
+      "elegant"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "jm-wood-sage-sea-salt",
+    "name": "Wood Sage & Sea Salt",
+    "brand": "Jo Malone",
+    "price_vnd": 4160000,
+    "tier": 3,
+    "family_primary": "aromatic",
+    "family_secondary": "aquatic",
+    "top_notes": [
+      "sea salt",
+      "ambrette"
+    ],
+    "heart_notes": [
+      "sage"
+    ],
+    "base_notes": [
+      "driftwood"
+    ],
+    "descriptors": [
+      "aquatic",
+      "woody",
+      "green"
+    ],
+    "use_cases": [
+      "daily casual",
+      "outdoor / sporty",
+      "travel"
+    ],
+    "style_tags": [
+      "effortless",
+      "free-spirited",
+      "cool"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "Cologne",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "jm-peony-blush-suede",
+    "name": "Peony & Blush Suede",
+    "brand": "Jo Malone",
+    "price_vnd": 4160000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "red apple"
+    ],
+    "heart_notes": [
+      "peony",
+      "jasmine",
+      "rose"
+    ],
+    "base_notes": [
+      "suede"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "soft"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office",
+      "special occasion"
+    ],
+    "style_tags": [
+      "romantic",
+      "soft",
+      "elegant"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.93,
+    "concentration": "Cologne",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "jm-lime-basil-mandarin",
+    "name": "Lime Basil & Mandarin",
+    "brand": "Jo Malone",
+    "price_vnd": 4160000,
+    "tier": 3,
+    "family_primary": "citrus",
+    "family_secondary": "aromatic",
+    "top_notes": [
+      "lime",
+      "mandarin"
+    ],
+    "heart_notes": [
+      "basil",
+      "white thyme"
+    ],
+    "base_notes": [
+      "vetiver",
+      "patchouli"
+    ],
+    "descriptors": [
+      "citrus",
+      "green",
+      "fresh"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office",
+      "outdoor / sporty"
+    ],
+    "style_tags": [
+      "effortless",
+      "easy-going",
+      "minimal"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.89,
+    "concentration": "Cologne",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "jm-english-pear-freesia",
+    "name": "English Pear & Freesia",
+    "brand": "Jo Malone",
+    "price_vnd": 4160000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "fruity",
+    "top_notes": [
+      "william pear",
+      "galbanum"
+    ],
+    "heart_notes": [
+      "freesia",
+      "rose water"
+    ],
+    "base_notes": [
+      "amber",
+      "patchouli",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "fresh",
+      "sweet"
+    ],
+    "use_cases": [
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "effortless",
+      "soft",
+      "romantic"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "Cologne",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "jm-blackberry-bay",
+    "name": "Blackberry & Bay",
+    "brand": "Jo Malone",
+    "price_vnd": 4160000,
+    "tier": 3,
+    "family_primary": "fruity",
+    "family_secondary": "woody",
+    "top_notes": [
+      "blackberry",
+      "blackcurrant"
+    ],
+    "heart_notes": [
+      "bay",
+      "bramble"
+    ],
+    "base_notes": [
+      "vetiver",
+      "patchouli",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "fruity",
+      "woody",
+      "green"
+    ],
+    "use_cases": [
+      "daily casual",
+      "outdoor / sporty"
+    ],
+    "style_tags": [
+      "free-spirited",
+      "easy-going",
+      "warm"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "Cologne",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "jm-nectarine-blossom-honey",
+    "name": "Nectarine Blossom & Honey",
+    "brand": "Jo Malone",
+    "price_vnd": 4160000,
+    "tier": 3,
+    "family_primary": "fruity",
+    "family_secondary": "floral",
+    "top_notes": [
+      "nectarine",
+      "blackcurrant"
+    ],
+    "heart_notes": [
+      "peach blossom",
+      "acacia honey"
+    ],
+    "base_notes": [
+      "guaiac wood",
+      "vetiver"
+    ],
+    "descriptors": [
+      "fruity",
+      "floral",
+      "sweet"
+    ],
+    "use_cases": [
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "playful",
+      "warm",
+      "easy-going"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "Cologne",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "jm-rose-white-musk",
+    "name": "Rose & White Musk",
+    "brand": "Jo Malone",
+    "price_vnd": 4160000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "bergamot"
+    ],
+    "heart_notes": [
+      "rose",
+      "peony"
+    ],
+    "base_notes": [
+      "white musk",
+      "oakmoss"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "clean"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "soft",
+      "romantic",
+      "minimal"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "Cologne",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "jm-velvet-rose-oud",
+    "name": "Velvet Rose & Oud",
+    "brand": "Jo Malone",
+    "price_vnd": 4680000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "rose"
+    ],
+    "heart_notes": [
+      "oud",
+      "velvet"
+    ],
+    "base_notes": [
+      "woods",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "oud",
+      "musky"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "mysterious",
+      "bold",
+      "sensual"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "Cologne Intense",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "jm-dark-amber-ginger-lily",
+    "name": "Dark Amber & Ginger Lily",
+    "brand": "Jo Malone",
+    "price_vnd": 4160000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "cardamom",
+      "pepper"
+    ],
+    "heart_notes": [
+      "ginger lily",
+      "jasmine"
+    ],
+    "base_notes": [
+      "amber",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "floral",
+      "spicy",
+      "woody"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "warm",
+      "mysterious",
+      "sensual"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "Cologne Intense",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "jm-bronze-wood-leather",
+    "name": "Bronze Wood & Leather",
+    "brand": "Jo Malone",
+    "price_vnd": 4680000,
+    "tier": 3,
+    "family_primary": "woody",
+    "family_secondary": "leather",
+    "top_notes": [
+      "pimento"
+    ],
+    "heart_notes": [
+      "vetiver",
+      "leather"
+    ],
+    "base_notes": [
+      "amber",
+      "musk"
+    ],
+    "descriptors": [
+      "woody",
+      "leather",
+      "musky"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "mysterious",
+      "cool",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "Cologne Intense",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "mmr-beach-walk",
+    "name": "Replica Beach Walk",
+    "brand": "Maison Margiela",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "citrus",
+    "family_secondary": "musky",
+    "top_notes": [
+      "bergamot",
+      "lemon",
+      "pink pepper"
+    ],
+    "heart_notes": [
+      "coconut",
+      "iris"
+    ],
+    "base_notes": [
+      "white musk",
+      "sandalwood",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "citrus",
+      "fresh",
+      "musky"
+    ],
+    "use_cases": [
+      "daily casual",
+      "outdoor / sporty",
+      "travel"
+    ],
+    "style_tags": [
+      "effortless",
+      "easy-going",
+      "free-spirited"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.9,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "mmr-jazz-club",
+    "name": "Replica Jazz Club",
+    "brand": "Maison Margiela",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "woody",
+    "family_secondary": "aromatic",
+    "top_notes": [
+      "rum",
+      "pink pepper",
+      "lemon"
+    ],
+    "heart_notes": [
+      "tobacco leaf",
+      "clary sage"
+    ],
+    "base_notes": [
+      "vanilla",
+      "vetiver",
+      "musk"
+    ],
+    "descriptors": [
+      "tobacco",
+      "woody",
+      "sweet"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "sophisticated",
+      "enigmatic",
+      "warm"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "mmr-by-the-fireplace",
+    "name": "Replica By the Fireplace",
+    "brand": "Maison Margiela",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "woody",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "clove",
+      "pink pepper",
+      "orange"
+    ],
+    "heart_notes": [
+      "chestnut",
+      "guaiac wood"
+    ],
+    "base_notes": [
+      "vanilla",
+      "musk",
+      "peru balsam"
+    ],
+    "descriptors": [
+      "smoky",
+      "woody",
+      "sweet"
+    ],
+    "use_cases": [
+      "evening",
+      "home-body"
+    ],
+    "style_tags": [
+      "cozy",
+      "warm",
+      "introspective"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.89,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "mmr-flower-market",
+    "name": "Replica Flower Market",
+    "brand": "Maison Margiela",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "floral",
+    "top_notes": [
+      "peony",
+      "green notes"
+    ],
+    "heart_notes": [
+      "rose",
+      "lily of the valley",
+      "freesia"
+    ],
+    "base_notes": [
+      "white musk",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "floral",
+      "fresh",
+      "green"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "effortless",
+      "soft",
+      "free-spirited"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "mmr-sailing-day",
+    "name": "Replica Sailing Day",
+    "brand": "Maison Margiela",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "aquatic",
+    "family_secondary": "woody",
+    "top_notes": [
+      "lemon",
+      "sea salt"
+    ],
+    "heart_notes": [
+      "cedarwood",
+      "iris"
+    ],
+    "base_notes": [
+      "ambroxan",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "aquatic",
+      "fresh",
+      "woody"
+    ],
+    "use_cases": [
+      "outdoor / sporty",
+      "travel",
+      "daily casual"
+    ],
+    "style_tags": [
+      "free-spirited",
+      "effortless",
+      "cool"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "mmr-under-lemon-tree",
+    "name": "Replica Under the Lemon Tree",
+    "brand": "Maison Margiela",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "citrus",
+    "family_secondary": "floral",
+    "top_notes": [
+      "lemon",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "basil",
+      "orange blossom"
+    ],
+    "base_notes": [
+      "white musk",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "citrus",
+      "floral",
+      "fresh"
+    ],
+    "use_cases": [
+      "daily casual",
+      "travel"
+    ],
+    "style_tags": [
+      "effortless",
+      "easy-going",
+      "playful"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "mmr-whispers-library",
+    "name": "Replica Whispers in the Library",
+    "brand": "Maison Margiela",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "woody",
+    "family_secondary": "aromatic",
+    "top_notes": [
+      "vetiver",
+      "iris"
+    ],
+    "heart_notes": [
+      "leather",
+      "cedarwood"
+    ],
+    "base_notes": [
+      "patchouli",
+      "vanilla",
+      "musk"
+    ],
+    "descriptors": [
+      "woody",
+      "leather",
+      "musky"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual"
+    ],
+    "style_tags": [
+      "intellectual",
+      "introspective",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "mmr-coffee-break",
+    "name": "Replica Coffee Break",
+    "brand": "Maison Margiela",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "gourmand",
+    "family_secondary": "woody",
+    "top_notes": [
+      "bergamot",
+      "musk"
+    ],
+    "heart_notes": [
+      "coffee",
+      "pink pepper"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "patchouli",
+      "vanilla"
+    ],
+    "descriptors": [
+      "gourmand",
+      "woody",
+      "musky"
+    ],
+    "use_cases": [
+      "daily casual",
+      "home-body"
+    ],
+    "style_tags": [
+      "cozy",
+      "warm",
+      "introspective"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "mmr-afternoon-swim",
+    "name": "Replica Afternoon Swim",
+    "brand": "Maison Margiela",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "aquatic",
+    "family_secondary": "musky",
+    "top_notes": [
+      "citrus",
+      "marine notes"
+    ],
+    "heart_notes": [
+      "chlorine",
+      "musk"
+    ],
+    "base_notes": [
+      "white musk"
+    ],
+    "descriptors": [
+      "aquatic",
+      "clean",
+      "fresh"
+    ],
+    "use_cases": [
+      "outdoor / sporty",
+      "daily casual"
+    ],
+    "style_tags": [
+      "effortless",
+      "cool",
+      "easy-going"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "mmr-on-a-date",
+    "name": "Replica On A Date",
+    "brand": "Maison Margiela",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "raspberry",
+      "peach"
+    ],
+    "heart_notes": [
+      "rose",
+      "patchouli"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "musk",
+      "vanilla"
+    ],
+    "descriptors": [
+      "floral",
+      "sweet",
+      "musky"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "romantic",
+      "playful",
+      "sensual"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "mmr-at-the-barbers",
+    "name": "Replica At the Barber's",
+    "brand": "Maison Margiela",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "aromatic",
+    "family_secondary": "woody",
+    "top_notes": [
+      "bergamot",
+      "lavender",
+      "rosewood"
+    ],
+    "heart_notes": [
+      "leather",
+      "suede"
+    ],
+    "base_notes": [
+      "vetiver",
+      "musk"
+    ],
+    "descriptors": [
+      "woody",
+      "fresh",
+      "clean"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual"
+    ],
+    "style_tags": [
+      "minimal",
+      "effortless",
+      "cool"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "mmr-spring-day",
+    "name": "Replica Spring Day",
+    "brand": "Maison Margiela",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "bergamot",
+      "green notes"
+    ],
+    "heart_notes": [
+      "white flowers",
+      "magnolia"
+    ],
+    "base_notes": [
+      "white musk",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "floral",
+      "fresh",
+      "musky"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "soft",
+      "effortless",
+      "romantic"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "byredo-gypsy-water",
+    "name": "Gypsy Water",
+    "brand": "Byredo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "woody",
+    "family_secondary": "citrus",
+    "top_notes": [
+      "bergamot",
+      "lemon",
+      "pepper"
+    ],
+    "heart_notes": [
+      "incense",
+      "pine needles",
+      "orris"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "vanilla",
+      "amber"
+    ],
+    "descriptors": [
+      "woody",
+      "fresh",
+      "musky"
+    ],
+    "use_cases": [
+      "daily casual",
+      "outdoor / sporty"
+    ],
+    "style_tags": [
+      "effortless",
+      "minimal",
+      "free-spirited"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "byredo-bal-dafrique",
+    "name": "Bal d'Afrique",
+    "brand": "Byredo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "bergamot",
+      "african marigold",
+      "violet"
+    ],
+    "heart_notes": [
+      "neroli",
+      "jasmine",
+      "cyclamen"
+    ],
+    "base_notes": [
+      "vetiver",
+      "cedarwood",
+      "musk",
+      "amber"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "fresh"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening",
+      "daily casual"
+    ],
+    "style_tags": [
+      "free-spirited",
+      "warm",
+      "glamorous"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "byredo-mojave-ghost",
+    "name": "Mojave Ghost",
+    "brand": "Byredo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "woody",
+    "family_secondary": "musky",
+    "top_notes": [
+      "magnolia",
+      "sapodilla"
+    ],
+    "heart_notes": [
+      "violet",
+      "ambrette"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "cedarwood",
+      "musk"
+    ],
+    "descriptors": [
+      "woody",
+      "musky",
+      "floral"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "minimal",
+      "cool",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.89,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "byredo-blanche",
+    "name": "Blanche",
+    "brand": "Byredo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "pink pepper",
+      "aldehydes"
+    ],
+    "heart_notes": [
+      "rose",
+      "peony"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "clean"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "minimal",
+      "soft",
+      "effortless"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "byredo-la-tulipe",
+    "name": "La Tulipe",
+    "brand": "Byredo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "floral",
+    "top_notes": [
+      "cyclamen",
+      "stem"
+    ],
+    "heart_notes": [
+      "tulip",
+      "jasmine",
+      "gardenia"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "fresh",
+      "green"
+    ],
+    "use_cases": [
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "effortless",
+      "soft",
+      "romantic"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "byredo-rose-of-no-mans-land",
+    "name": "Rose Of No Man's Land",
+    "brand": "Byredo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "floral",
+    "top_notes": [
+      "pink pepper",
+      "raspberry blossom"
+    ],
+    "heart_notes": [
+      "turkish rose",
+      "papyrus"
+    ],
+    "base_notes": [
+      "white amber",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "spicy",
+      "musky"
+    ],
+    "use_cases": [
+      "special occasion",
+      "daily casual"
+    ],
+    "style_tags": [
+      "romantic",
+      "bold",
+      "modern"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "byredo-super-cedar",
+    "name": "Super Cedar",
+    "brand": "Byredo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "woody",
+    "top_notes": [
+      "rose water"
+    ],
+    "heart_notes": [
+      "cedarwood",
+      "rose"
+    ],
+    "base_notes": [
+      "vetiver",
+      "musk"
+    ],
+    "descriptors": [
+      "woody",
+      "floral",
+      "clean"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual"
+    ],
+    "style_tags": [
+      "minimal",
+      "grounded",
+      "cool"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "byredo-black-saffron",
+    "name": "Black Saffron",
+    "brand": "Byredo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "woody",
+    "family_secondary": "floral",
+    "top_notes": [
+      "juniper berry",
+      "black violet"
+    ],
+    "heart_notes": [
+      "saffron",
+      "vetiver",
+      "raspberry"
+    ],
+    "base_notes": [
+      "leather",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "woody",
+      "spicy",
+      "leather"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "mysterious",
+      "edgy",
+      "enigmatic"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "byredo-bibliotheque",
+    "name": "Bibliothèque",
+    "brand": "Byredo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "woody",
+    "family_secondary": "floral",
+    "top_notes": [
+      "peach",
+      "plum"
+    ],
+    "heart_notes": [
+      "iris",
+      "peony",
+      "leather"
+    ],
+    "base_notes": [
+      "vanilla",
+      "sandalwood",
+      "musk"
+    ],
+    "descriptors": [
+      "woody",
+      "floral",
+      "sweet"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual"
+    ],
+    "style_tags": [
+      "intellectual",
+      "sophisticated",
+      "warm"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "byredo-mixed-emotions",
+    "name": "Mixed Emotions",
+    "brand": "Byredo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "aromatic",
+    "family_secondary": "musky",
+    "top_notes": [
+      "pink pepper",
+      "neroli",
+      "grapefruit"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "orris",
+      "cedarwood"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "musk"
+    ],
+    "descriptors": [
+      "fresh",
+      "floral",
+      "musky"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "effortless",
+      "modern",
+      "cool"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.83,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "byredo-pulp",
+    "name": "Pulp",
+    "brand": "Byredo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "fruity",
+    "family_secondary": "floral",
+    "top_notes": [
+      "blackcurrant",
+      "bergamot",
+      "cardamom"
+    ],
+    "heart_notes": [
+      "fig",
+      "red apple",
+      "tiare flower"
+    ],
+    "base_notes": [
+      "praline",
+      "peach blossom",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "fruity",
+      "sweet",
+      "floral"
+    ],
+    "use_cases": [
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "playful",
+      "free-spirited",
+      "warm"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "byredo-slow-dance",
+    "name": "Slow Dance",
+    "brand": "Byredo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "woody",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "opoponax",
+      "cognac"
+    ],
+    "heart_notes": [
+      "labdanum",
+      "violet",
+      "geranium"
+    ],
+    "base_notes": [
+      "vanilla",
+      "patchouli",
+      "incense"
+    ],
+    "descriptors": [
+      "woody",
+      "sweet",
+      "musky"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "warm",
+      "romantic",
+      "sensual"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "byredo-velvet-haze",
+    "name": "Velvet Haze",
+    "brand": "Byredo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "woody",
+    "family_secondary": "floral",
+    "top_notes": [
+      "coconut",
+      "hibiscus",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "patchouli",
+      "tuberose",
+      "osmanthus"
+    ],
+    "base_notes": [
+      "patchouli",
+      "musk",
+      "cacao pod",
+      "ambrette"
+    ],
+    "descriptors": [
+      "woody",
+      "musky",
+      "sweet"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "sensual",
+      "mysterious",
+      "warm"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.83,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "byredo-tobacco-mandarin",
+    "name": "Tobacco Mandarin",
+    "brand": "Byredo",
+    "price_vnd": 7540000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "spicy",
+    "top_notes": [
+      "cumin",
+      "mandarin",
+      "coriander"
+    ],
+    "heart_notes": [
+      "tobacco",
+      "leather",
+      "labdanum"
+    ],
+    "base_notes": [
+      "olibanum",
+      "oud",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "tobacco",
+      "woody",
+      "spicy"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "bold",
+      "mysterious",
+      "enigmatic"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "diptyque-eau-rose-edp",
+    "name": "Eau Rose EDP",
+    "brand": "Diptyque",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "floral",
+    "top_notes": [
+      "lychee",
+      "peppercorn"
+    ],
+    "heart_notes": [
+      "rose",
+      "geranium"
+    ],
+    "base_notes": [
+      "white musk",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "floral",
+      "fresh",
+      "musky"
+    ],
+    "use_cases": [
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "romantic",
+      "effortless",
+      "soft"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "diptyque-tam-dao-edp",
+    "name": "Tam Dao EDP",
+    "brand": "Diptyque",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "woody",
+    "top_notes": [
+      "rosewood",
+      "cypress",
+      "myrtle"
+    ],
+    "heart_notes": [
+      "sandalwood",
+      "cedarwood"
+    ],
+    "base_notes": [
+      "musk",
+      "white pepper"
+    ],
+    "descriptors": [
+      "woody",
+      "musky",
+      "fresh"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual"
+    ],
+    "style_tags": [
+      "minimal",
+      "grounded",
+      "introspective"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "diptyque-philosykos-edp",
+    "name": "Philosykos EDP",
+    "brand": "Diptyque",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "green",
+    "family_secondary": "woody",
+    "top_notes": [
+      "fig leaf",
+      "green fig"
+    ],
+    "heart_notes": [
+      "fig tree bark"
+    ],
+    "base_notes": [
+      "cedarwood",
+      "fig wood"
+    ],
+    "descriptors": [
+      "green",
+      "woody",
+      "fresh"
+    ],
+    "use_cases": [
+      "daily casual",
+      "outdoor / sporty"
+    ],
+    "style_tags": [
+      "free-spirited",
+      "effortless",
+      "grounded"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "diptyque-lombre-dans-leau",
+    "name": "L'Ombre dans l'Eau",
+    "brand": "Diptyque",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "green",
+    "top_notes": [
+      "blackcurrant leaves",
+      "citrus"
+    ],
+    "heart_notes": [
+      "rose",
+      "blackcurrant"
+    ],
+    "base_notes": [
+      "cedarwood",
+      "green notes"
+    ],
+    "descriptors": [
+      "floral",
+      "green",
+      "fresh"
+    ],
+    "use_cases": [
+      "daily casual",
+      "outdoor / sporty"
+    ],
+    "style_tags": [
+      "effortless",
+      "free-spirited",
+      "romantic"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "diptyque-do-son-edp",
+    "name": "Do Son EDP",
+    "brand": "Diptyque",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "floral",
+    "top_notes": [
+      "mandarin"
+    ],
+    "heart_notes": [
+      "tuberose",
+      "jasmine",
+      "rose",
+      "violet"
+    ],
+    "base_notes": [
+      "white musk",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "powdery"
+    ],
+    "use_cases": [
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "romantic",
+      "elegant",
+      "nostalgic"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "diptyque-eau-capitale",
+    "name": "Eau Capitale",
+    "brand": "Diptyque",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "floral",
+    "top_notes": [
+      "bergamot",
+      "blackcurrant"
+    ],
+    "heart_notes": [
+      "centifolia rose",
+      "damascus rose"
+    ],
+    "base_notes": [
+      "white musk",
+      "ambrette"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "fresh"
+    ],
+    "use_cases": [
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "romantic",
+      "effortless",
+      "elegant"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "diptyque-vetyverio-edt",
+    "name": "Vetyverio EDT",
+    "brand": "Diptyque",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "woody",
+    "top_notes": [
+      "vetiver",
+      "grapefruit"
+    ],
+    "heart_notes": [
+      "geranium",
+      "vetiver",
+      "ginger"
+    ],
+    "base_notes": [
+      "vetiver",
+      "patchouli"
+    ],
+    "descriptors": [
+      "woody",
+      "fresh",
+      "citrus"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual"
+    ],
+    "style_tags": [
+      "grounded",
+      "cool",
+      "minimal"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "diptyque-eau-duelle-edp",
+    "name": "Eau Duelle EDP",
+    "brand": "Diptyque",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "woody",
+    "family_secondary": "spicy",
+    "top_notes": [
+      "black pepper",
+      "pink pepper"
+    ],
+    "heart_notes": [
+      "vanilla",
+      "orris"
+    ],
+    "base_notes": [
+      "benzoin",
+      "musk"
+    ],
+    "descriptors": [
+      "woody",
+      "spicy",
+      "sweet"
+    ],
+    "use_cases": [
+      "evening",
+      "daily casual"
+    ],
+    "style_tags": [
+      "warm",
+      "mysterious",
+      "enigmatic"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.83,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "diptyque-florabellio-edt",
+    "name": "Florabellio EDT",
+    "brand": "Diptyque",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "aquatic",
+    "top_notes": [
+      "apple",
+      "dill",
+      "cyclamen"
+    ],
+    "heart_notes": [
+      "freesia",
+      "peony"
+    ],
+    "base_notes": [
+      "musk",
+      "cedarwood",
+      "amberwood"
+    ],
+    "descriptors": [
+      "floral",
+      "fresh",
+      "aquatic"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "effortless",
+      "soft",
+      "easy-going"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.82,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "diptyque-eau-des-sens-edt",
+    "name": "Eau des Sens EDT",
+    "brand": "Diptyque",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "citrus",
+    "top_notes": [
+      "orange",
+      "juniper berry"
+    ],
+    "heart_notes": [
+      "patchouli",
+      "angelica"
+    ],
+    "base_notes": [
+      "angelica",
+      "musk"
+    ],
+    "descriptors": [
+      "citrus",
+      "floral",
+      "fresh"
+    ],
+    "use_cases": [
+      "daily casual",
+      "outdoor / sporty"
+    ],
+    "style_tags": [
+      "free-spirited",
+      "effortless",
+      "warm"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.83,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "lelabo-santal-33",
+    "name": "Santal 33",
+    "brand": "Le Labo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "woody",
+    "top_notes": [
+      "violet",
+      "cardamom"
+    ],
+    "heart_notes": [
+      "iris",
+      "ambrette",
+      "sandalwood"
+    ],
+    "base_notes": [
+      "cedarwood",
+      "leather",
+      "musk"
+    ],
+    "descriptors": [
+      "woody",
+      "musky",
+      "leather"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "effortless",
+      "cool",
+      "minimal"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.96,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "lelabo-another-13",
+    "name": "Another 13",
+    "brand": "Le Labo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "musky",
+    "top_notes": [
+      "hyacinth",
+      "ambrette"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "orris"
+    ],
+    "base_notes": [
+      "ambergris",
+      "iso e super",
+      "musk"
+    ],
+    "descriptors": [
+      "musky",
+      "floral",
+      "clean"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "minimal",
+      "effortless",
+      "mysterious"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.9,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "lelabo-rose-31",
+    "name": "Rose 31",
+    "brand": "Le Labo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "cumin",
+      "cedarwood"
+    ],
+    "heart_notes": [
+      "rose",
+      "geranium"
+    ],
+    "base_notes": [
+      "musk",
+      "oud",
+      "amber"
+    ],
+    "descriptors": [
+      "floral",
+      "woody",
+      "musky"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "bold",
+      "sophisticated",
+      "mysterious"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "lelabo-the-noir-29",
+    "name": "Thé Noir 29",
+    "brand": "Le Labo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "woody",
+    "family_secondary": "aromatic",
+    "top_notes": [
+      "smoked tea",
+      "fig",
+      "laurel"
+    ],
+    "heart_notes": [
+      "cedarwood",
+      "vetiver"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "amber"
+    ],
+    "descriptors": [
+      "woody",
+      "smoky",
+      "green"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual"
+    ],
+    "style_tags": [
+      "intellectual",
+      "cool",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "lelabo-bergamote-22",
+    "name": "Bergamote 22",
+    "brand": "Le Labo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "citrus",
+    "family_secondary": "musky",
+    "top_notes": [
+      "bergamot",
+      "grapefruit"
+    ],
+    "heart_notes": [
+      "petit grain",
+      "neroli"
+    ],
+    "base_notes": [
+      "musk",
+      "amber",
+      "vetiver"
+    ],
+    "descriptors": [
+      "citrus",
+      "fresh",
+      "musky"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "effortless",
+      "minimal",
+      "cool"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "lelabo-neroli-36",
+    "name": "Neroli 36",
+    "brand": "Le Labo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "citrus",
+    "family_secondary": "floral",
+    "top_notes": [
+      "neroli",
+      "orange"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "orange blossom"
+    ],
+    "base_notes": [
+      "musk",
+      "amberwood"
+    ],
+    "descriptors": [
+      "citrus",
+      "floral",
+      "fresh"
+    ],
+    "use_cases": [
+      "daily casual",
+      "travel"
+    ],
+    "style_tags": [
+      "effortless",
+      "warm",
+      "easy-going"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "lelabo-lys-41",
+    "name": "Lys 41",
+    "brand": "Le Labo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "floral",
+    "top_notes": [
+      "grapefruit",
+      "pink pepper"
+    ],
+    "heart_notes": [
+      "lily",
+      "iris",
+      "rose"
+    ],
+    "base_notes": [
+      "musk",
+      "sandalwood",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "floral",
+      "fresh",
+      "musky"
+    ],
+    "use_cases": [
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "effortless",
+      "elegant",
+      "soft"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.83,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "lelabo-iris-39",
+    "name": "Iris 39",
+    "brand": "Le Labo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "pink pepper"
+    ],
+    "heart_notes": [
+      "iris",
+      "cedarwood",
+      "vetiver"
+    ],
+    "base_notes": [
+      "musk",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "floral",
+      "woody",
+      "iris"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual"
+    ],
+    "style_tags": [
+      "elegant",
+      "sophisticated",
+      "minimal"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "lelabo-patchouli-24",
+    "name": "Patchouli 24",
+    "brand": "Le Labo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "woody",
+    "family_secondary": "aromatic",
+    "top_notes": [
+      "laurel",
+      "petitgrain"
+    ],
+    "heart_notes": [
+      "patchouli",
+      "vetiver"
+    ],
+    "base_notes": [
+      "birch tar",
+      "vanilla",
+      "musk"
+    ],
+    "descriptors": [
+      "woody",
+      "smoky",
+      "musky"
+    ],
+    "use_cases": [
+      "evening",
+      "daily casual"
+    ],
+    "style_tags": [
+      "edgy",
+      "grounded",
+      "enigmatic"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "lelabo-vetiver-46",
+    "name": "Vétiver 46",
+    "brand": "Le Labo",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "woody",
+    "top_notes": [
+      "sage",
+      "grapefruit"
+    ],
+    "heart_notes": [
+      "vetiver",
+      "pepper"
+    ],
+    "base_notes": [
+      "oakmoss",
+      "amber",
+      "musk"
+    ],
+    "descriptors": [
+      "woody",
+      "fresh",
+      "citrus"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual"
+    ],
+    "style_tags": [
+      "grounded",
+      "cool",
+      "minimal"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.83,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "adp-colonia-edc",
+    "name": "Colonia EDC",
+    "brand": "Acqua di Parma",
+    "price_vnd": 4030000,
+    "tier": 3,
+    "family_primary": "citrus",
+    "family_secondary": "woody",
+    "top_notes": [
+      "lemon",
+      "bergamot",
+      "lavender"
+    ],
+    "heart_notes": [
+      "rose",
+      "jasmine",
+      "geranium"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "vetiver",
+      "patchouli"
+    ],
+    "descriptors": [
+      "citrus",
+      "fresh",
+      "woody"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office",
+      "travel"
+    ],
+    "style_tags": [
+      "effortless",
+      "sophisticated",
+      "minimal"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDC",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "adp-rosa-nobile-edp",
+    "name": "Rosa Nobile EDP",
+    "brand": "Acqua di Parma",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "floral",
+    "top_notes": [
+      "bergamot",
+      "lemon",
+      "grapefruit"
+    ],
+    "heart_notes": [
+      "rose",
+      "peony"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "musk",
+      "amber"
+    ],
+    "descriptors": [
+      "floral",
+      "fresh",
+      "musky"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office",
+      "special occasion"
+    ],
+    "style_tags": [
+      "elegant",
+      "effortless",
+      "soft"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "sl-feminite-du-bois",
+    "name": "Féminité du Bois",
+    "brand": "Serge Lutens",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "woody",
+    "family_secondary": "floral",
+    "top_notes": [
+      "plum",
+      "peach",
+      "cardamom"
+    ],
+    "heart_notes": [
+      "cedarwood",
+      "rose",
+      "violet"
+    ],
+    "base_notes": [
+      "honey",
+      "sandalwood",
+      "musk",
+      "benzoin"
+    ],
+    "descriptors": [
+      "woody",
+      "floral",
+      "sweet"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "elegant",
+      "mysterious",
+      "nostalgic"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "sl-la-fille-de-berlin",
+    "name": "La Fille de Berlin",
+    "brand": "Serge Lutens",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "floral",
+    "top_notes": [
+      "pink pepper",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "rose",
+      "geranium"
+    ],
+    "base_notes": [
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "spicy",
+      "musky"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "bold",
+      "edgy",
+      "mysterious"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.83,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "jhag-not-a-perfume",
+    "name": "Not A Perfume",
+    "brand": "Juliette Has A Gun",
+    "price_vnd": 3770000,
+    "tier": 3,
+    "family_primary": "musky",
+    "top_notes": [
+      "ambroxan"
+    ],
+    "heart_notes": [
+      "ambroxan"
+    ],
+    "base_notes": [
+      "ambroxan"
+    ],
+    "descriptors": [
+      "musky",
+      "clean",
+      "fresh"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "minimal",
+      "effortless",
+      "modern"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.89,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "initio-atomic-rose",
+    "name": "Atomic Rose",
+    "brand": "Initio Parfums",
+    "price_vnd": 4030000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "pink pepper",
+      "citrus"
+    ],
+    "heart_notes": [
+      "rose",
+      "turkish rose"
+    ],
+    "base_notes": [
+      "musk",
+      "ambroxan",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "spicy"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "bold",
+      "sensual",
+      "modern"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "initio-rehab",
+    "name": "Rehab",
+    "brand": "Initio Parfums",
+    "price_vnd": 4030000,
+    "tier": 3,
+    "family_primary": "musky",
+    "family_secondary": "aromatic",
+    "top_notes": [
+      "bergamot",
+      "lemon",
+      "cypress"
+    ],
+    "heart_notes": [
+      "violet",
+      "heliotrope",
+      "musk"
+    ],
+    "base_notes": [
+      "ambroxan",
+      "sandalwood",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "musky",
+      "clean",
+      "woody"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "minimal",
+      "effortless",
+      "cool"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "creed-aventus",
+    "name": "Aventus",
+    "brand": "Creed",
+    "price_vnd": 11310000,
+    "tier": 4,
+    "family_primary": "fruity",
+    "family_secondary": "woody",
+    "top_notes": [
+      "pineapple",
+      "bergamot",
+      "blackcurrant"
+    ],
+    "heart_notes": [
+      "birch",
+      "jasmine",
+      "rose"
+    ],
+    "base_notes": [
+      "musk",
+      "oakmoss",
+      "ambergris",
+      "vanilla"
+    ],
+    "descriptors": [
+      "woody",
+      "fresh",
+      "musky"
+    ],
+    "use_cases": [
+      "office",
+      "special occasion",
+      "daily casual"
+    ],
+    "style_tags": [
+      "confident",
+      "bold",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.97,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "creed-aventus-for-her",
+    "name": "Aventus For Her",
+    "brand": "Creed",
+    "price_vnd": 9490000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "fruity",
+    "top_notes": [
+      "pineapple",
+      "bergamot",
+      "green notes"
+    ],
+    "heart_notes": [
+      "peach",
+      "rose",
+      "jasmine"
+    ],
+    "base_notes": [
+      "musk",
+      "sandalwood",
+      "vanilla"
+    ],
+    "descriptors": [
+      "floral",
+      "fresh",
+      "musky"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "confident",
+      "elegant",
+      "modern"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "creed-green-irish-tweed",
+    "name": "Green Irish Tweed",
+    "brand": "Creed",
+    "price_vnd": 9490000,
+    "tier": 4,
+    "family_primary": "aromatic",
+    "family_secondary": "green",
+    "top_notes": [
+      "lemon verbena",
+      "iris"
+    ],
+    "heart_notes": [
+      "violet leaves",
+      "sandalwood"
+    ],
+    "base_notes": [
+      "ambergris",
+      "white musk"
+    ],
+    "descriptors": [
+      "fresh",
+      "green",
+      "woody"
+    ],
+    "use_cases": [
+      "daily casual",
+      "outdoor / sporty"
+    ],
+    "style_tags": [
+      "effortless",
+      "free-spirited",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "creed-silver-mountain-water",
+    "name": "Silver Mountain Water",
+    "brand": "Creed",
+    "price_vnd": 9490000,
+    "tier": 4,
+    "family_primary": "citrus",
+    "family_secondary": "aquatic",
+    "top_notes": [
+      "bergamot",
+      "mandarin",
+      "green tea"
+    ],
+    "heart_notes": [
+      "neroli",
+      "peach"
+    ],
+    "base_notes": [
+      "musk",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "fresh",
+      "aquatic",
+      "citrus"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office",
+      "outdoor / sporty"
+    ],
+    "style_tags": [
+      "cool",
+      "effortless",
+      "minimal"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.89,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "creed-love-in-white",
+    "name": "Love in White",
+    "brand": "Creed",
+    "price_vnd": 9490000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "bergamot",
+      "magnolia",
+      "rice"
+    ],
+    "heart_notes": [
+      "daffodil",
+      "freesia",
+      "iris"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "musk",
+      "amber"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "powdery"
+    ],
+    "use_cases": [
+      "special occasion",
+      "daily casual"
+    ],
+    "style_tags": [
+      "elegant",
+      "soft",
+      "romantic"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "creed-original-vetiver",
+    "name": "Original Vetiver",
+    "brand": "Creed",
+    "price_vnd": 9490000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "citrus",
+    "top_notes": [
+      "grapefruit",
+      "pink pepper",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "geranium",
+      "iris",
+      "rose"
+    ],
+    "base_notes": [
+      "vetiver",
+      "musk",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "woody",
+      "citrus",
+      "fresh"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "grounded",
+      "effortless",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "tf-tobacco-vanille",
+    "name": "Tobacco Vanille",
+    "brand": "Tom Ford",
+    "price_vnd": 6370000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "tobacco leaf",
+      "spices"
+    ],
+    "heart_notes": [
+      "tobacco blossom",
+      "jasmine",
+      "ginger"
+    ],
+    "base_notes": [
+      "vanilla",
+      "tonka bean",
+      "cacao",
+      "dried fruit"
+    ],
+    "descriptors": [
+      "tobacco",
+      "sweet",
+      "woody"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "enigmatic",
+      "warm",
+      "sensual"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.93,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "tf-oud-wood",
+    "name": "Oud Wood",
+    "brand": "Tom Ford",
+    "price_vnd": 6370000,
+    "tier": 4,
+    "family_primary": "woody",
+    "top_notes": [
+      "rosewood",
+      "cardamom",
+      "sichuan pepper"
+    ],
+    "heart_notes": [
+      "oud",
+      "sandalwood",
+      "vetiver"
+    ],
+    "base_notes": [
+      "tonka bean",
+      "amber",
+      "vanilla"
+    ],
+    "descriptors": [
+      "oud",
+      "woody",
+      "spicy"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "mysterious",
+      "sophisticated",
+      "bold"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.92,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "tf-rose-prick",
+    "name": "Rose Prick",
+    "brand": "Tom Ford",
+    "price_vnd": 6370000,
+    "tier": 4,
+    "family_primary": "floral",
+    "top_notes": [
+      "pink pepper",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "damascus rose",
+      "centifolia rose"
+    ],
+    "base_notes": [
+      "oud",
+      "patchouli",
+      "amber"
+    ],
+    "descriptors": [
+      "floral",
+      "spicy",
+      "resin"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "bold",
+      "sensual",
+      "edgy"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "tf-lost-cherry",
+    "name": "Lost Cherry",
+    "brand": "Tom Ford",
+    "price_vnd": 6370000,
+    "tier": 4,
+    "family_primary": "gourmand",
+    "family_secondary": "woody",
+    "top_notes": [
+      "cherry",
+      "bitter almond"
+    ],
+    "heart_notes": [
+      "turkish rose",
+      "jasmine sambac"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "vetiver",
+      "vanilla"
+    ],
+    "descriptors": [
+      "sweet",
+      "gourmand",
+      "floral"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "playful",
+      "sensual",
+      "enigmatic"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "tf-ombre-leather",
+    "name": "Ombré Leather",
+    "brand": "Tom Ford",
+    "price_vnd": 6370000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "leather",
+    "top_notes": [
+      "cardamom",
+      "black pepper"
+    ],
+    "heart_notes": [
+      "leather",
+      "floral notes"
+    ],
+    "base_notes": [
+      "amber",
+      "patchouli",
+      "musk"
+    ],
+    "descriptors": [
+      "leather",
+      "woody",
+      "spicy"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "bold",
+      "mysterious",
+      "edgy"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "tf-noir-edp",
+    "name": "Noir EDP",
+    "brand": "Tom Ford",
+    "price_vnd": 5460000,
+    "tier": 4,
+    "family_primary": "aromatic",
+    "family_secondary": "woody",
+    "top_notes": [
+      "pink pepper",
+      "cardamom",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "turkish rose",
+      "iris",
+      "jasmine"
+    ],
+    "base_notes": [
+      "amber",
+      "oud",
+      "vetiver"
+    ],
+    "descriptors": [
+      "woody",
+      "spicy",
+      "floral"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "mysterious",
+      "sophisticated",
+      "bold"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.89,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "tf-black-orchid-edp",
+    "name": "Black Orchid EDP",
+    "brand": "Tom Ford",
+    "price_vnd": 5460000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "black truffle",
+      "ylang-ylang"
+    ],
+    "heart_notes": [
+      "black orchid",
+      "fruity notes"
+    ],
+    "base_notes": [
+      "patchouli",
+      "sandalwood",
+      "dark chocolate",
+      "incense"
+    ],
+    "descriptors": [
+      "floral",
+      "woody",
+      "resin"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "mysterious",
+      "sensual",
+      "enigmatic"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "tf-costa-azzurra",
+    "name": "Costa Azzurra",
+    "brand": "Tom Ford",
+    "price_vnd": 6370000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "aquatic",
+    "top_notes": [
+      "marine notes",
+      "lemon",
+      "citrus"
+    ],
+    "heart_notes": [
+      "cypress",
+      "driftwood"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "musk",
+      "amber"
+    ],
+    "descriptors": [
+      "aquatic",
+      "woody",
+      "fresh"
+    ],
+    "use_cases": [
+      "daily casual",
+      "travel"
+    ],
+    "style_tags": [
+      "effortless",
+      "free-spirited",
+      "cool"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "tf-noir-de-noir",
+    "name": "Noir de Noir",
+    "brand": "Tom Ford",
+    "price_vnd": 6370000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "saffron",
+      "black truffle",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "black rose",
+      "turkish rose",
+      "black orchid"
+    ],
+    "base_notes": [
+      "patchouli",
+      "amber",
+      "oud",
+      "vanilla"
+    ],
+    "descriptors": [
+      "floral",
+      "oud",
+      "resin"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "mysterious",
+      "sensual",
+      "enigmatic"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.9,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "tf-velvet-orchid-edp",
+    "name": "Velvet Orchid EDP",
+    "brand": "Tom Ford",
+    "price_vnd": 5460000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "bergamot",
+      "rum"
+    ],
+    "heart_notes": [
+      "black orchid",
+      "jasmine",
+      "rose"
+    ],
+    "base_notes": [
+      "amber",
+      "labdanum",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "floral",
+      "sweet",
+      "musky"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "sensual",
+      "glamorous",
+      "enigmatic"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "byredo-accord-oud",
+    "name": "Accord Oud",
+    "brand": "Byredo",
+    "price_vnd": 7540000,
+    "tier": 4,
+    "family_primary": "woody",
+    "top_notes": [
+      "bergamot",
+      "pink pepper"
+    ],
+    "heart_notes": [
+      "oud",
+      "saffron"
+    ],
+    "base_notes": [
+      "amber",
+      "sandalwood",
+      "incense"
+    ],
+    "descriptors": [
+      "oud",
+      "woody",
+      "spicy"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "bold",
+      "mysterious",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "byredo-eleventh-hour",
+    "name": "Eleventh Hour",
+    "brand": "Byredo",
+    "price_vnd": 7540000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "resin",
+    "top_notes": [
+      "carrot seed",
+      "pink pepper"
+    ],
+    "heart_notes": [
+      "myrrh",
+      "cedarwood",
+      "oud"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "amber",
+      "musk"
+    ],
+    "descriptors": [
+      "woody",
+      "resin",
+      "spicy"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "mysterious",
+      "edgy",
+      "enigmatic"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.83,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "byredo-sellier",
+    "name": "Sellier",
+    "brand": "Byredo",
+    "price_vnd": 7540000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "leather",
+    "top_notes": [
+      "bergamot",
+      "iris"
+    ],
+    "heart_notes": [
+      "cedarwood",
+      "suede"
+    ],
+    "base_notes": [
+      "leather",
+      "vetiver",
+      "musk"
+    ],
+    "descriptors": [
+      "leather",
+      "woody",
+      "musky"
+    ],
+    "use_cases": [
+      "office",
+      "special occasion"
+    ],
+    "style_tags": [
+      "sophisticated",
+      "grounded",
+      "cool"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.83,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "byredo-inflorescence",
+    "name": "Inflorescence",
+    "brand": "Byredo",
+    "price_vnd": 7540000,
+    "tier": 4,
+    "family_primary": "floral",
+    "top_notes": [
+      "pear",
+      "pink pepper"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "lily",
+      "mimosa"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "fresh",
+      "sweet"
+    ],
+    "use_cases": [
+      "special occasion",
+      "daily casual"
+    ],
+    "style_tags": [
+      "effortless",
+      "romantic",
+      "soft"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "diptyque-tam-dao-parfum",
+    "name": "Tam Dao Parfum",
+    "brand": "Diptyque",
+    "price_vnd": 6500000,
+    "tier": 4,
+    "family_primary": "woody",
+    "top_notes": [
+      "rosewood",
+      "cypress"
+    ],
+    "heart_notes": [
+      "sandalwood",
+      "cedarwood"
+    ],
+    "base_notes": [
+      "musk",
+      "white pepper",
+      "amber"
+    ],
+    "descriptors": [
+      "woody",
+      "musky",
+      "spicy"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening",
+      "office"
+    ],
+    "style_tags": [
+      "minimal",
+      "grounded",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "Parfum",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "diptyque-do-son-parfum",
+    "name": "Do Son Parfum",
+    "brand": "Diptyque",
+    "price_vnd": 6500000,
+    "tier": 4,
+    "family_primary": "floral",
+    "top_notes": [
+      "tuberose"
+    ],
+    "heart_notes": [
+      "rose",
+      "jasmine",
+      "lily"
+    ],
+    "base_notes": [
+      "musk",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "powdery"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "romantic",
+      "glamorous",
+      "nostalgic"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "Parfum",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "lelabo-oud-27",
+    "name": "Oud 27",
+    "brand": "Le Labo",
+    "price_vnd": 7540000,
+    "tier": 4,
+    "family_primary": "woody",
+    "top_notes": [
+      "black pepper",
+      "thyme"
+    ],
+    "heart_notes": [
+      "oud",
+      "labdanum"
+    ],
+    "base_notes": [
+      "amber",
+      "musk"
+    ],
+    "descriptors": [
+      "oud",
+      "woody",
+      "spicy"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "mysterious",
+      "bold",
+      "enigmatic"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "lelabo-cedrat-37",
+    "name": "Cédrat 37",
+    "brand": "Le Labo",
+    "price_vnd": 7540000,
+    "tier": 4,
+    "family_primary": "citrus",
+    "top_notes": [
+      "cedrat",
+      "lemon",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "orange blossom",
+      "tea"
+    ],
+    "base_notes": [
+      "vetiver",
+      "musk"
+    ],
+    "descriptors": [
+      "citrus",
+      "fresh",
+      "clean"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office",
+      "outdoor / sporty"
+    ],
+    "style_tags": [
+      "effortless",
+      "minimal",
+      "cool"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "lelabo-rose-31-100ml",
+    "name": "Rose 31 (100ml)",
+    "brand": "Le Labo",
+    "price_vnd": 9750000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "cumin",
+      "cedarwood"
+    ],
+    "heart_notes": [
+      "rose",
+      "geranium"
+    ],
+    "base_notes": [
+      "musk",
+      "oud",
+      "amber"
+    ],
+    "descriptors": [
+      "floral",
+      "woody",
+      "musky"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "bold",
+      "sophisticated",
+      "mysterious"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "EDP",
+    "volume_ml": 100,
+    "size_variant_of": "lelabo-rose-31",
+    "gender": "unisex"
+  },
+  {
+    "id": "lelabo-the-noir-100ml",
+    "name": "Thé Noir 29 (100ml)",
+    "brand": "Le Labo",
+    "price_vnd": 9750000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "aromatic",
+    "top_notes": [
+      "smoked tea",
+      "fig",
+      "laurel"
+    ],
+    "heart_notes": [
+      "cedarwood",
+      "vetiver"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "amber"
+    ],
+    "descriptors": [
+      "woody",
+      "smoky",
+      "green"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual"
+    ],
+    "style_tags": [
+      "intellectual",
+      "cool",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDP",
+    "volume_ml": 100,
+    "size_variant_of": "lelabo-the-noir-29",
+    "gender": "unisex"
+  },
+  {
+    "id": "mmr-matcha-meditation-edt",
+    "name": "Replica Matcha Meditation EDT",
+    "brand": "Maison Margiela",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "aromatic",
+    "family_secondary": "green",
+    "top_notes": [
+      "bergamot",
+      "green tea accord"
+    ],
+    "heart_notes": [
+      "matcha accord",
+      "jasmine"
+    ],
+    "base_notes": [
+      "moss accord",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "green",
+      "fresh",
+      "woody"
+    ],
+    "use_cases": [
+      "daily casual",
+      "home-body",
+      "office"
+    ],
+    "style_tags": [
+      "introspective",
+      "minimal",
+      "cozy"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "mmr-lazy-sunday-morning",
+    "name": "Replica Lazy Sunday Morning EDT",
+    "brand": "Maison Margiela",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "aldehydes",
+      "pear",
+      "lily of the valley"
+    ],
+    "heart_notes": [
+      "iris",
+      "rose"
+    ],
+    "base_notes": [
+      "white musk",
+      "ambrette",
+      "patchouli"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "clean"
+    ],
+    "use_cases": [
+      "daily casual",
+      "home-body",
+      "office"
+    ],
+    "style_tags": [
+      "soft",
+      "effortless",
+      "cozy"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.9,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "mmr-autumn-vibes",
+    "name": "Replica Autumn Vibes EDT",
+    "brand": "Maison Margiela",
+    "price_vnd": 4550000,
+    "tier": 3,
+    "family_primary": "woody",
+    "family_secondary": "spicy",
+    "top_notes": [
+      "cardamom",
+      "pink pepper"
+    ],
+    "heart_notes": [
+      "nutmeg",
+      "carrot seeds",
+      "maple"
+    ],
+    "base_notes": [
+      "cedarwood",
+      "moss"
+    ],
+    "descriptors": [
+      "woody",
+      "spicy",
+      "musky"
+    ],
+    "use_cases": [
+      "daily casual",
+      "home-body",
+      "evening"
+    ],
+    "style_tags": [
+      "warm",
+      "introspective",
+      "grounded"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "mmr-by-the-fireplace-100ml",
+    "name": "Replica By the Fireplace (100ml)",
+    "brand": "Maison Margiela",
+    "price_vnd": 6500000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "clove",
+      "pink pepper",
+      "orange"
+    ],
+    "heart_notes": [
+      "chestnut",
+      "guaiac wood"
+    ],
+    "base_notes": [
+      "vanilla",
+      "musk",
+      "peru balsam"
+    ],
+    "descriptors": [
+      "smoky",
+      "woody",
+      "sweet"
+    ],
+    "use_cases": [
+      "evening",
+      "home-body"
+    ],
+    "style_tags": [
+      "cozy",
+      "warm",
+      "introspective"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.89,
+    "concentration": "EDT",
+    "volume_ml": 100,
+    "size_variant_of": "mmr-by-the-fireplace",
+    "gender": "unisex"
+  },
+  {
+    "id": "fm-portrait-of-a-lady",
+    "name": "Portrait of a Lady",
+    "brand": "Frédéric Malle",
+    "price_vnd": 7670000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "raspberry",
+      "rose"
+    ],
+    "heart_notes": [
+      "turkish rose",
+      "blackcurrant",
+      "patchouli"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "musk",
+      "incense"
+    ],
+    "descriptors": [
+      "floral",
+      "woody",
+      "spicy"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "glamorous",
+      "elegant",
+      "mysterious"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.93,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "fm-carnal-flower",
+    "name": "Carnal Flower",
+    "brand": "Frédéric Malle",
+    "price_vnd": 7670000,
+    "tier": 4,
+    "family_primary": "floral",
+    "top_notes": [
+      "melon",
+      "eucalyptus"
+    ],
+    "heart_notes": [
+      "tuberose",
+      "ylang-ylang",
+      "jasmine"
+    ],
+    "base_notes": [
+      "white musk",
+      "sandalwood",
+      "coconut"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "fresh"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "sensual",
+      "glamorous",
+      "bold"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.89,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "fm-musc-ravageur",
+    "name": "Musc Ravageur",
+    "brand": "Frédéric Malle",
+    "price_vnd": 7670000,
+    "tier": 4,
+    "family_primary": "musky",
+    "family_secondary": "woody",
+    "top_notes": [
+      "bergamot",
+      "lavender",
+      "tangerine"
+    ],
+    "heart_notes": [
+      "cinnamon",
+      "clove",
+      "musk"
+    ],
+    "base_notes": [
+      "vanilla",
+      "musk",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "musky",
+      "sweet",
+      "spicy"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "sensual",
+      "enigmatic",
+      "warm"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "fm-une-fleur-de-cassie",
+    "name": "Une Fleur de Cassie",
+    "brand": "Frédéric Malle",
+    "price_vnd": 7670000,
+    "tier": 4,
+    "family_primary": "floral",
+    "top_notes": [
+      "aldehydes",
+      "mimosa"
+    ],
+    "heart_notes": [
+      "cassie",
+      "ylang-ylang",
+      "orris"
+    ],
+    "base_notes": [
+      "civet",
+      "musk",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "floral",
+      "powdery",
+      "musky"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "elegant",
+      "enigmatic",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "fm-the-night",
+    "name": "The Night",
+    "brand": "Frédéric Malle",
+    "price_vnd": 7670000,
+    "tier": 4,
+    "family_primary": "aromatic",
+    "family_secondary": "woody",
+    "top_notes": [
+      "aldehydes",
+      "labdanum"
+    ],
+    "heart_notes": [
+      "oud",
+      "sandalwood"
+    ],
+    "base_notes": [
+      "leather",
+      "musk",
+      "amber"
+    ],
+    "descriptors": [
+      "woody",
+      "leather",
+      "musky"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "mysterious",
+      "enigmatic",
+      "bold"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "fm-cologne-indelebile",
+    "name": "Cologne Indélébile",
+    "brand": "Frédéric Malle",
+    "price_vnd": 7670000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "orange blossom",
+      "aldehydes"
+    ],
+    "heart_notes": [
+      "white musk",
+      "jasmine"
+    ],
+    "base_notes": [
+      "musk",
+      "ambergris"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "clean"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "effortless",
+      "elegant",
+      "minimal"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.83,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "kilian-love-dont-be-shy",
+    "name": "Love, Don't Be Shy",
+    "brand": "Kilian",
+    "price_vnd": 6890000,
+    "tier": 4,
+    "family_primary": "gourmand",
+    "family_secondary": "floral",
+    "top_notes": [
+      "bergamot",
+      "neroli"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "rose",
+      "orange blossom"
+    ],
+    "base_notes": [
+      "vanilla",
+      "musk",
+      "marshmallow"
+    ],
+    "descriptors": [
+      "sweet",
+      "floral",
+      "musky"
+    ],
+    "use_cases": [
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "playful",
+      "romantic",
+      "warm"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "kilian-good-girl-gone-bad",
+    "name": "Good Girl Gone Bad",
+    "brand": "Kilian",
+    "price_vnd": 6890000,
+    "tier": 4,
+    "family_primary": "floral",
+    "top_notes": [
+      "neroli",
+      "magnolia"
+    ],
+    "heart_notes": [
+      "rose",
+      "jasmine",
+      "tuberose",
+      "freesia"
+    ],
+    "base_notes": [
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "powdery"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "romantic",
+      "glamorous",
+      "bold"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "kilian-angels-share",
+    "name": "Angel's Share",
+    "brand": "Kilian",
+    "price_vnd": 6890000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "cognac",
+      "cinnamon",
+      "nutmeg"
+    ],
+    "heart_notes": [
+      "praline",
+      "tonka bean"
+    ],
+    "base_notes": [
+      "oak",
+      "sandalwood",
+      "vanilla"
+    ],
+    "descriptors": [
+      "woody",
+      "sweet",
+      "spicy"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "warm",
+      "sophisticated",
+      "enigmatic"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.9,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "kilian-apple-brandy",
+    "name": "Apple Brandy on the Rocks",
+    "brand": "Kilian",
+    "price_vnd": 6890000,
+    "tier": 4,
+    "family_primary": "gourmand",
+    "family_secondary": "woody",
+    "top_notes": [
+      "apple",
+      "aldehydes"
+    ],
+    "heart_notes": [
+      "cinnamon",
+      "jasmine"
+    ],
+    "base_notes": [
+      "amber",
+      "vanilla",
+      "woods"
+    ],
+    "descriptors": [
+      "gourmand",
+      "sweet",
+      "woody"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "warm",
+      "enigmatic",
+      "sensual"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "kilian-black-phantom",
+    "name": "Black Phantom",
+    "brand": "Kilian",
+    "price_vnd": 6890000,
+    "tier": 4,
+    "family_primary": "gourmand",
+    "family_secondary": "woody",
+    "top_notes": [
+      "rum",
+      "blood orange"
+    ],
+    "heart_notes": [
+      "coffee",
+      "davana"
+    ],
+    "base_notes": [
+      "dark chocolate",
+      "sandalwood",
+      "vanilla"
+    ],
+    "descriptors": [
+      "gourmand",
+      "woody",
+      "sweet"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "enigmatic",
+      "bold",
+      "mysterious"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "kilian-dark-lord",
+    "name": "Dark Lord",
+    "brand": "Kilian",
+    "price_vnd": 6890000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "tobacco",
+      "rum"
+    ],
+    "heart_notes": [
+      "dark chocolate",
+      "vanilla"
+    ],
+    "base_notes": [
+      "tonka bean",
+      "leather",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "tobacco",
+      "sweet",
+      "woody"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "enigmatic",
+      "bold",
+      "sensual"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "amouage-interlude-man",
+    "name": "Interlude Man",
+    "brand": "Amouage",
+    "price_vnd": 7280000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "resin",
+    "top_notes": [
+      "oregano",
+      "bergamot",
+      "pink pepper"
+    ],
+    "heart_notes": [
+      "labdanum",
+      "sandalwood",
+      "amber"
+    ],
+    "base_notes": [
+      "oud",
+      "vetiver",
+      "incense"
+    ],
+    "descriptors": [
+      "woody",
+      "resin",
+      "smoky"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "mysterious",
+      "enigmatic",
+      "grounded"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "amouage-reflection-woman",
+    "name": "Reflection Woman",
+    "brand": "Amouage",
+    "price_vnd": 7280000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "bergamot",
+      "ylang-ylang"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "rose",
+      "lily"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "vetiver",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "woody",
+      "musky"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "elegant",
+      "romantic",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "amouage-honour-man",
+    "name": "Honour Man",
+    "brand": "Amouage",
+    "price_vnd": 7280000,
+    "tier": 4,
+    "family_primary": "aromatic",
+    "family_secondary": "woody",
+    "top_notes": [
+      "bergamot",
+      "cardamom",
+      "cumin"
+    ],
+    "heart_notes": [
+      "incense",
+      "pepper",
+      "iris"
+    ],
+    "base_notes": [
+      "vetiver",
+      "leather",
+      "musk"
+    ],
+    "descriptors": [
+      "woody",
+      "spicy",
+      "leather"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "sophisticated",
+      "bold",
+      "enigmatic"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "amouage-beloved-woman",
+    "name": "Beloved Woman",
+    "brand": "Amouage",
+    "price_vnd": 7280000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "bergamot",
+      "lemon",
+      "pink pepper"
+    ],
+    "heart_notes": [
+      "tuberose",
+      "jasmine",
+      "rose"
+    ],
+    "base_notes": [
+      "amber",
+      "sandalwood",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "spicy"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "sensual",
+      "glamorous",
+      "elegant"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "amouage-fate-woman",
+    "name": "Fate Woman",
+    "brand": "Amouage",
+    "price_vnd": 7280000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "resin",
+    "top_notes": [
+      "bergamot",
+      "cardamom",
+      "elemi"
+    ],
+    "heart_notes": [
+      "rose",
+      "labdanum",
+      "orris"
+    ],
+    "base_notes": [
+      "oud",
+      "sandalwood",
+      "amber"
+    ],
+    "descriptors": [
+      "floral",
+      "resin",
+      "oud"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "mysterious",
+      "elegant",
+      "enigmatic"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "roja-elysium",
+    "name": "Elysium Pour Homme",
+    "brand": "Roja Parfums",
+    "price_vnd": 8970000,
+    "tier": 4,
+    "family_primary": "citrus",
+    "family_secondary": "woody",
+    "top_notes": [
+      "grapefruit",
+      "pink pepper",
+      "ginger"
+    ],
+    "heart_notes": [
+      "lavender",
+      "geranium"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "cedarwood",
+      "musk",
+      "amber"
+    ],
+    "descriptors": [
+      "citrus",
+      "woody",
+      "fresh"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "sophisticated",
+      "confident",
+      "elegant"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "roja-enigma-woman",
+    "name": "Enigma Pour Femme",
+    "brand": "Roja Parfums",
+    "price_vnd": 8970000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "resin",
+    "top_notes": [
+      "bergamot",
+      "grapefruit",
+      "aldehydes"
+    ],
+    "heart_notes": [
+      "rose",
+      "jasmine",
+      "iris"
+    ],
+    "base_notes": [
+      "oud",
+      "sandalwood",
+      "amber",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "resin",
+      "musky"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "enigmatic",
+      "glamorous",
+      "mysterious"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "roja-scandal-man",
+    "name": "Scandal Pour Homme",
+    "brand": "Roja Parfums",
+    "price_vnd": 7670000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "aromatic",
+    "top_notes": [
+      "bergamot",
+      "cardamom"
+    ],
+    "heart_notes": [
+      "geranium",
+      "rose",
+      "jasmine"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "ambergris",
+      "musk",
+      "leather"
+    ],
+    "descriptors": [
+      "woody",
+      "leather",
+      "musky"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "bold",
+      "sensual",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "roja-haute-luxe",
+    "name": "Haute Luxe",
+    "brand": "Roja Parfums",
+    "price_vnd": 15600000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "bergamot",
+      "neroli"
+    ],
+    "heart_notes": [
+      "rose",
+      "jasmine",
+      "iris"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "amber",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "woody",
+      "musky"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "glamorous",
+      "elegant",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "xerjoff-naxos",
+    "name": "Naxos",
+    "brand": "Xerjoff",
+    "price_vnd": 5720000,
+    "tier": 4,
+    "family_primary": "gourmand",
+    "family_secondary": "woody",
+    "top_notes": [
+      "lemon",
+      "bergamot",
+      "lavender"
+    ],
+    "heart_notes": [
+      "tobacco",
+      "jasmine"
+    ],
+    "base_notes": [
+      "tonka bean",
+      "vanilla",
+      "musk"
+    ],
+    "descriptors": [
+      "tobacco",
+      "sweet",
+      "woody"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "warm",
+      "sophisticated",
+      "sensual"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.9,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "xerjoff-erba-pura",
+    "name": "Erba Pura",
+    "brand": "Xerjoff",
+    "price_vnd": 5200000,
+    "tier": 4,
+    "family_primary": "citrus",
+    "family_secondary": "musky",
+    "top_notes": [
+      "orange",
+      "lemon",
+      "fruity notes"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "white flowers"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "amber",
+      "musk"
+    ],
+    "descriptors": [
+      "citrus",
+      "musky",
+      "sweet"
+    ],
+    "use_cases": [
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "warm",
+      "playful",
+      "easy-going"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "xerjoff-alexandria-ii",
+    "name": "Alexandria II",
+    "brand": "Xerjoff",
+    "price_vnd": 7800000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "bergamot",
+      "mandarin"
+    ],
+    "heart_notes": [
+      "rose",
+      "jasmine",
+      "oud"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "amber",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "oud",
+      "woody"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "glamorous",
+      "bold",
+      "mysterious"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "xerjoff-lira",
+    "name": "Lira",
+    "brand": "Xerjoff",
+    "price_vnd": 6760000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "bergamot",
+      "lemon"
+    ],
+    "heart_notes": [
+      "rose",
+      "jasmine",
+      "ylang-ylang"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "amber",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "woody",
+      "musky"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "glamorous",
+      "elegant",
+      "romantic"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "mfk-baccarat-rouge-540",
+    "name": "Baccarat Rouge 540 EDP",
+    "brand": "Maison Francis Kurkdjian",
+    "price_vnd": 9100000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "jasmine",
+      "saffron"
+    ],
+    "heart_notes": [
+      "ambergris",
+      "fir resin"
+    ],
+    "base_notes": [
+      "cedarwood",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "woody",
+      "resin"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening",
+      "daily casual"
+    ],
+    "style_tags": [
+      "glamorous",
+      "modern",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.97,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "mfk-grand-soir",
+    "name": "Grand Soir",
+    "brand": "Maison Francis Kurkdjian",
+    "price_vnd": 7540000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "resin",
+    "top_notes": [
+      "benzoin",
+      "tonka bean"
+    ],
+    "heart_notes": [
+      "amber",
+      "ambrette"
+    ],
+    "base_notes": [
+      "cedarwood",
+      "labdanum",
+      "musk"
+    ],
+    "descriptors": [
+      "woody",
+      "sweet",
+      "resin"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "enigmatic",
+      "glamorous",
+      "warm"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.89,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "mfk-aqua-universalis-forte",
+    "name": "Aqua Universalis Forte EDP",
+    "brand": "Maison Francis Kurkdjian",
+    "price_vnd": 6760000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "bergamot",
+      "aldehydes"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "rose"
+    ],
+    "base_notes": [
+      "white musk",
+      "amber"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "clean"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "minimal",
+      "effortless",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "pdm-delina-edp",
+    "name": "Delina EDP",
+    "brand": "Parfums de Marly",
+    "price_vnd": 5980000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "nutmeg",
+      "rhubarb",
+      "lychee"
+    ],
+    "heart_notes": [
+      "rose",
+      "peony",
+      "gardenia",
+      "cashmeran"
+    ],
+    "base_notes": [
+      "musk",
+      "cedarwood",
+      "incense",
+      "vanilla"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "sweet"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening",
+      "daily casual"
+    ],
+    "style_tags": [
+      "romantic",
+      "glamorous",
+      "elegant"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "pdm-herod-edp",
+    "name": "Herod EDP",
+    "brand": "Parfums de Marly",
+    "price_vnd": 5720000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "cinnamon",
+      "pepper"
+    ],
+    "heart_notes": [
+      "tobacco",
+      "osmanthus",
+      "jasmine"
+    ],
+    "base_notes": [
+      "vanilla",
+      "sandalwood",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "tobacco",
+      "woody",
+      "sweet"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "enigmatic",
+      "sophisticated",
+      "warm"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "pdm-layton-edp",
+    "name": "Layton EDP",
+    "brand": "Parfums de Marly",
+    "price_vnd": 5980000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "apple",
+      "bergamot",
+      "lavender"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "violet",
+      "geranium"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "musk",
+      "vanilla"
+    ],
+    "descriptors": [
+      "floral",
+      "sweet",
+      "woody"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "confident",
+      "elegant",
+      "modern"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "pdm-pegasus-edp",
+    "name": "Pegasus EDP",
+    "brand": "Parfums de Marly",
+    "price_vnd": 5980000,
+    "tier": 4,
+    "family_primary": "aromatic",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "bergamot",
+      "lavender",
+      "apple"
+    ],
+    "heart_notes": [
+      "heliotrope",
+      "jasmine",
+      "geranium"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "musk",
+      "vanilla"
+    ],
+    "descriptors": [
+      "woody",
+      "sweet",
+      "musky"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "confident",
+      "warm",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "clive-christian-1872-feminine",
+    "name": "1872 Feminine",
+    "brand": "Clive Christian",
+    "price_vnd": 7670000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "citrus",
+    "top_notes": [
+      "bergamot",
+      "violet",
+      "mandarin"
+    ],
+    "heart_notes": [
+      "rose",
+      "ylang-ylang",
+      "clove"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "vetiver",
+      "amber"
+    ],
+    "descriptors": [
+      "floral",
+      "spicy",
+      "woody"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "elegant",
+      "vintage",
+      "glamorous"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "clive-christian-1872-masculine",
+    "name": "1872 Masculine",
+    "brand": "Clive Christian",
+    "price_vnd": 7670000,
+    "tier": 4,
+    "family_primary": "citrus",
+    "family_secondary": "woody",
+    "top_notes": [
+      "lemon",
+      "cardamom",
+      "juniper"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "clary sage"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "musk",
+      "amber"
+    ],
+    "descriptors": [
+      "citrus",
+      "woody",
+      "spicy"
+    ],
+    "use_cases": [
+      "special occasion",
+      "office"
+    ],
+    "style_tags": [
+      "confident",
+      "sophisticated",
+      "vintage"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.83,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "penhaligons-halfeti-edp",
+    "name": "Halfeti EDP",
+    "brand": "Penhaligon's",
+    "price_vnd": 5980000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "floral",
+    "top_notes": [
+      "bergamot",
+      "grapefruit",
+      "cardamom"
+    ],
+    "heart_notes": [
+      "rose",
+      "jasmine",
+      "oud"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "amber",
+      "musk"
+    ],
+    "descriptors": [
+      "woody",
+      "floral",
+      "oud"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "mysterious",
+      "sophisticated",
+      "bold"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.86,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "initio-oud-for-greatness",
+    "name": "Oud for Greatness",
+    "brand": "Initio Parfums",
+    "price_vnd": 6240000,
+    "tier": 4,
+    "family_primary": "woody",
+    "top_notes": [
+      "saffron",
+      "nutmeg"
+    ],
+    "heart_notes": [
+      "oud",
+      "iso e super"
+    ],
+    "base_notes": [
+      "ambroxan",
+      "patchouli"
+    ],
+    "descriptors": [
+      "oud",
+      "woody",
+      "spicy"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "bold",
+      "mysterious",
+      "confident"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "initio-side-effect",
+    "name": "Side Effect",
+    "brand": "Initio Parfums",
+    "price_vnd": 6240000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "rum",
+      "cardamom",
+      "nutmeg"
+    ],
+    "heart_notes": [
+      "tobacco",
+      "jasmine",
+      "orris"
+    ],
+    "base_notes": [
+      "vanilla",
+      "musk",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "woody",
+      "sweet",
+      "tobacco"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "enigmatic",
+      "warm",
+      "sensual"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "exnihilo-fleur-narcotique",
+    "name": "Fleur Narcotique",
+    "brand": "Ex Nihilo",
+    "price_vnd": 6240000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "lemon",
+      "bergamot",
+      "peach"
+    ],
+    "heart_notes": [
+      "rose",
+      "peony",
+      "jasmine"
+    ],
+    "base_notes": [
+      "musk",
+      "white amber",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "fresh"
+    ],
+    "use_cases": [
+      "special occasion",
+      "daily casual"
+    ],
+    "style_tags": [
+      "romantic",
+      "glamorous",
+      "effortless"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "vilhelm-dear-polly",
+    "name": "Dear Polly",
+    "brand": "Vilhelm Parfumerie",
+    "price_vnd": 5590000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "green",
+    "top_notes": [
+      "violet",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "white flowers",
+      "jasmine"
+    ],
+    "base_notes": [
+      "cedarwood",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "green",
+      "musky"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "effortless",
+      "free-spirited",
+      "soft"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.82,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "cartier-la-panthere-edp",
+    "name": "La Panthère EDP",
+    "brand": "Cartier",
+    "price_vnd": 5070000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "gardenia",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "gardenia",
+      "jasmine",
+      "rose"
+    ],
+    "base_notes": [
+      "musk",
+      "civet",
+      "vetiver"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "green"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "elegant",
+      "mysterious",
+      "sensual"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "sl-ambre-sultan",
+    "name": "Ambre Sultan",
+    "brand": "Serge Lutens",
+    "price_vnd": 5720000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "resin",
+    "top_notes": [
+      "bay",
+      "coriander",
+      "oregano"
+    ],
+    "heart_notes": [
+      "mastic",
+      "amber"
+    ],
+    "base_notes": [
+      "amber",
+      "sandalwood",
+      "musk",
+      "patchouli"
+    ],
+    "descriptors": [
+      "resin",
+      "woody",
+      "spicy"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "mysterious",
+      "warm",
+      "enigmatic"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "memo-irish-leather",
+    "name": "Irish Leather",
+    "brand": "Memo Paris",
+    "price_vnd": 6240000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "leather",
+    "top_notes": [
+      "bergamot",
+      "green notes"
+    ],
+    "heart_notes": [
+      "leather",
+      "vetiver"
+    ],
+    "base_notes": [
+      "cedarwood",
+      "musk",
+      "amber"
+    ],
+    "descriptors": [
+      "leather",
+      "woody",
+      "fresh"
+    ],
+    "use_cases": [
+      "office",
+      "special occasion"
+    ],
+    "style_tags": [
+      "sophisticated",
+      "cool",
+      "grounded"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.83,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "mfk-br540-extrait",
+    "name": "Baccarat Rouge 540 Extrait",
+    "brand": "Maison Francis Kurkdjian",
+    "price_vnd": 14300000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "jasmine",
+      "saffron"
+    ],
+    "heart_notes": [
+      "ambergris",
+      "fir resin"
+    ],
+    "base_notes": [
+      "cedarwood",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "woody",
+      "resin"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "glamorous",
+      "sophisticated",
+      "bold"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.95,
+    "concentration": "Extrait",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "pdm-carlisle-edp",
+    "name": "Carlisle EDP",
+    "brand": "Parfums de Marly",
+    "price_vnd": 5980000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "woody",
+    "top_notes": [
+      "bergamot",
+      "pink pepper"
+    ],
+    "heart_notes": [
+      "rose",
+      "jasmine",
+      "magnolia"
+    ],
+    "base_notes": [
+      "amber",
+      "vetiver",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "woody",
+      "musky"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "glamorous",
+      "romantic",
+      "elegant"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "tf-soleil-blanc",
+    "name": "Soleil Blanc",
+    "brand": "Tom Ford",
+    "price_vnd": 6370000,
+    "tier": 4,
+    "family_primary": "musky",
+    "family_secondary": "floral",
+    "top_notes": [
+      "aldehydes",
+      "bergamot",
+      "ylang-ylang"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "orange blossom"
+    ],
+    "base_notes": [
+      "white musk",
+      "sandalwood",
+      "amber"
+    ],
+    "descriptors": [
+      "musky",
+      "floral",
+      "sweet"
+    ],
+    "use_cases": [
+      "special occasion",
+      "daily casual",
+      "travel"
+    ],
+    "style_tags": [
+      "effortless",
+      "glamorous",
+      "warm"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "atelier-orange-sanguine",
+    "name": "Orange Sanguine",
+    "brand": "Atelier Cologne",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "citrus",
+    "family_secondary": "woody",
+    "top_notes": [
+      "blood orange",
+      "grapefruit",
+      "basil"
+    ],
+    "heart_notes": [
+      "geranium",
+      "jasmine"
+    ],
+    "base_notes": [
+      "cedarwood",
+      "musk",
+      "amber"
+    ],
+    "descriptors": [
+      "citrus",
+      "fresh",
+      "floral"
+    ],
+    "use_cases": [
+      "daily casual",
+      "outdoor / sporty",
+      "travel"
+    ],
+    "style_tags": [
+      "effortless",
+      "playful",
+      "easy-going"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "sl-fleurs-doranger",
+    "name": "Fleurs d'Oranger",
+    "brand": "Serge Lutens",
+    "price_vnd": 5720000,
+    "tier": 4,
+    "family_primary": "floral",
+    "top_notes": [
+      "orange blossom",
+      "neroli"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "orange blossom",
+      "rose"
+    ],
+    "base_notes": [
+      "musk",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "sweet"
+    ],
+    "use_cases": [
+      "special occasion",
+      "daily casual"
+    ],
+    "style_tags": [
+      "romantic",
+      "warm",
+      "effortless"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.83,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "jhag-superdose",
+    "name": "Not A Perfume Superdose",
+    "brand": "Juliette Has A Gun",
+    "price_vnd": 5590000,
+    "tier": 4,
+    "family_primary": "musky",
+    "top_notes": [
+      "ambroxan"
+    ],
+    "heart_notes": [
+      "ambroxan"
+    ],
+    "base_notes": [
+      "ambroxan"
+    ],
+    "descriptors": [
+      "musky",
+      "clean",
+      "fresh"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office",
+      "evening"
+    ],
+    "style_tags": [
+      "minimal",
+      "effortless",
+      "sensual"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "guerlain-shalimar-edp",
+    "name": "Shalimar EDP",
+    "brand": "Guerlain",
+    "price_vnd": 5460000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "gourmand",
+    "top_notes": [
+      "bergamot",
+      "citrus"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "rose",
+      "iris"
+    ],
+    "base_notes": [
+      "opopanax",
+      "tonka bean",
+      "vanilla",
+      "civet"
+    ],
+    "descriptors": [
+      "woody",
+      "sweet",
+      "floral"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening"
+    ],
+    "style_tags": [
+      "glamorous",
+      "mysterious",
+      "vintage"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.91,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "chloe-roses-de-chloe-edt",
+    "name": "Roses de Chloé EDT",
+    "brand": "Chloé",
+    "price_vnd": 5070000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "bergamot",
+      "lychee",
+      "magnolia"
+    ],
+    "heart_notes": [
+      "rose",
+      "peony",
+      "cedarwood"
+    ],
+    "base_notes": [
+      "white musk",
+      "amber"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "fresh"
+    ],
+    "use_cases": [
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "romantic",
+      "soft",
+      "effortless"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "chloe-edp",
+    "name": "Chloé EDP",
+    "brand": "Chloé",
+    "price_vnd": 5460000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "peony",
+      "sweet pea",
+      "lychee"
+    ],
+    "heart_notes": [
+      "rose",
+      "magnolia",
+      "lily of the valley"
+    ],
+    "base_notes": [
+      "cedarwood",
+      "amber",
+      "cedarwood"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "powdery"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office",
+      "special occasion"
+    ],
+    "style_tags": [
+      "romantic",
+      "soft",
+      "elegant"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.92,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "loewe-aura-floral-edt",
+    "name": "Aura Floral EDT",
+    "brand": "Loewe",
+    "price_vnd": 5070000,
+    "tier": 4,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "violet",
+      "bergamot",
+      "jasmine"
+    ],
+    "heart_notes": [
+      "freesia",
+      "rose",
+      "magnolia"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "white musk"
+    ],
+    "descriptors": [
+      "floral",
+      "musky",
+      "fresh"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "effortless",
+      "soft",
+      "modern"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.82,
+    "concentration": "EDT",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "loewe-001-woman-edp",
+    "name": "001 Woman EDP",
+    "brand": "Loewe",
+    "price_vnd": 3380000,
+    "tier": 2,
+    "family_primary": "musky",
+    "family_secondary": "floral",
+    "top_notes": [
+      "bergamot",
+      "pepper"
+    ],
+    "heart_notes": [
+      "iris",
+      "rose",
+      "jasmine"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "musk"
+    ],
+    "descriptors": [
+      "musky",
+      "floral",
+      "clean"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "minimal",
+      "soft",
+      "effortless"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "loewe-001-man-edp",
+    "name": "001 Man EDP",
+    "brand": "Loewe",
+    "price_vnd": 3380000,
+    "tier": 2,
+    "family_primary": "musky",
+    "family_secondary": "woody",
+    "top_notes": [
+      "lavender",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "iris",
+      "cedarwood"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "musk"
+    ],
+    "descriptors": [
+      "musky",
+      "woody",
+      "clean"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "minimal",
+      "grounded",
+      "easy-going"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.83,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "loewe-aire-anthesis-edp",
+    "name": "Aire Anthesis EDP",
+    "brand": "Loewe",
+    "price_vnd": 3380000,
+    "tier": 2,
+    "family_primary": "floral",
+    "family_secondary": "aquatic",
+    "top_notes": [
+      "pear",
+      "rhubarb"
+    ],
+    "heart_notes": [
+      "peony",
+      "lily of the valley"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "rockrose accord",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "fresh",
+      "musky"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office"
+    ],
+    "style_tags": [
+      "effortless",
+      "soft",
+      "easy-going"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.82,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "loewe-aura-pink-magnolia-edp",
+    "name": "Aura Pink Magnolia EDP",
+    "brand": "Loewe",
+    "price_vnd": 3770000,
+    "tier": 3,
+    "family_primary": "floral",
+    "family_secondary": "musky",
+    "top_notes": [
+      "red fruits",
+      "bergamot"
+    ],
+    "heart_notes": [
+      "pink magnolia",
+      "peony"
+    ],
+    "base_notes": [
+      "sandalwood",
+      "vanilla",
+      "musk"
+    ],
+    "descriptors": [
+      "floral",
+      "sweet",
+      "musky"
+    ],
+    "use_cases": [
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "romantic",
+      "playful",
+      "soft"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "loewe-solo-vulcan-edp",
+    "name": "Solo Vulcan EDP",
+    "brand": "Loewe",
+    "price_vnd": 4160000,
+    "tier": 3,
+    "family_primary": "aromatic",
+    "family_secondary": "woody",
+    "top_notes": [
+      "thyme",
+      "orange flower absolute"
+    ],
+    "heart_notes": [
+      "lavender",
+      "mastic"
+    ],
+    "base_notes": [
+      "vetiver",
+      "woody balsamic accord"
+    ],
+    "descriptors": [
+      "woody",
+      "spicy",
+      "fresh"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "grounded",
+      "sophisticated",
+      "cool"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.83,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "loewe-esencia-elixir-edp",
+    "name": "Esencia Elixir EDP",
+    "brand": "Loewe",
+    "price_vnd": 4810000,
+    "tier": 3,
+    "family_primary": "aromatic",
+    "family_secondary": "woody",
+    "top_notes": [
+      "bergamot",
+      "grapefruit",
+      "mint"
+    ],
+    "heart_notes": [
+      "sage",
+      "orange blossom",
+      "pink pepper"
+    ],
+    "base_notes": [
+      "vetiver",
+      "mastic"
+    ],
+    "descriptors": [
+      "fresh",
+      "woody",
+      "spicy"
+    ],
+    "use_cases": [
+      "office",
+      "daily casual",
+      "special occasion"
+    ],
+    "style_tags": [
+      "confident",
+      "effortless",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.85,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  },
+  {
+    "id": "loewe-earth-elixir-edp",
+    "name": "Earth Elixir EDP",
+    "brand": "Loewe",
+    "price_vnd": 5200000,
+    "tier": 4,
+    "family_primary": "woody",
+    "family_secondary": "floral",
+    "top_notes": [
+      "pear",
+      "black truffle"
+    ],
+    "heart_notes": [
+      "violet",
+      "mimosa"
+    ],
+    "base_notes": [
+      "oud",
+      "sandalwood",
+      "musk"
+    ],
+    "descriptors": [
+      "woody",
+      "floral",
+      "musky"
+    ],
+    "use_cases": [
+      "special occasion",
+      "evening",
+      "office"
+    ],
+    "style_tags": [
+      "mysterious",
+      "grounded",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "unisex"
+    ],
+    "popularity_score": 0.84,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "unisex"
+  },
+  {
+    "id": "nr-musc-noir-edp",
+    "name": "Musc Noir For Her EDP",
+    "brand": "Narciso Rodriguez",
+    "price_vnd": 3380000,
+    "tier": 2,
+    "family_primary": "musky",
+    "family_secondary": "floral",
+    "top_notes": [
+      "plum"
+    ],
+    "heart_notes": [
+      "heliotrope",
+      "musk",
+      "cedarwood",
+      "rose"
+    ],
+    "base_notes": [
+      "suede"
+    ],
+    "descriptors": [
+      "musky",
+      "leather",
+      "floral"
+    ],
+    "use_cases": [
+      "evening",
+      "special occasion"
+    ],
+    "style_tags": [
+      "mysterious",
+      "sensual",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.87,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "nr-pure-musc-edp",
+    "name": "Pure Musc For Her EDP",
+    "brand": "Narciso Rodriguez",
+    "price_vnd": 3380000,
+    "tier": 2,
+    "family_primary": "musky",
+    "family_secondary": "floral",
+    "top_notes": [
+      "musk"
+    ],
+    "heart_notes": [
+      "jasmine",
+      "magnolia",
+      "white flowers"
+    ],
+    "base_notes": [
+      "musk",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "musky",
+      "floral",
+      "clean"
+    ],
+    "use_cases": [
+      "daily casual",
+      "office",
+      "special occasion"
+    ],
+    "style_tags": [
+      "minimal",
+      "soft",
+      "effortless"
+    ],
+    "gender_tags": [
+      "feminine"
+    ],
+    "popularity_score": 0.88,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "feminine"
+  },
+  {
+    "id": "nr-bleu-noir-edp",
+    "name": "Bleu Noir EDP",
+    "brand": "Narciso Rodriguez",
+    "price_vnd": 2860000,
+    "tier": 2,
+    "family_primary": "woody",
+    "family_secondary": "musky",
+    "top_notes": [
+      "cardamom",
+      "black pepper"
+    ],
+    "heart_notes": [
+      "iris",
+      "vetiver"
+    ],
+    "base_notes": [
+      "musk",
+      "amber",
+      "sandalwood"
+    ],
+    "descriptors": [
+      "woody",
+      "musky",
+      "spicy"
+    ],
+    "use_cases": [
+      "office",
+      "evening"
+    ],
+    "style_tags": [
+      "mysterious",
+      "cool",
+      "sophisticated"
+    ],
+    "gender_tags": [
+      "masculine"
+    ],
+    "popularity_score": 0.83,
+    "concentration": "EDP",
+    "volume_ml": 50,
+    "size_variant_of": null,
+    "gender": "masculine"
+  }
+]

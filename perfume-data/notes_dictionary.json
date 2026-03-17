@@ -1,0 +1,910 @@
+[
+  {
+    "canonical": "acacia honey",
+    "category": "gourmand"
+  },
+  {
+    "canonical": "african marigold",
+    "category": "floral"
+  },
+  {
+    "canonical": "aldehydes",
+    "category": "synthetic"
+  },
+  {
+    "canonical": "almond",
+    "category": "nutty"
+  },
+  {
+    "canonical": "amber",
+    "category": "amber"
+  },
+  {
+    "canonical": "ambergris",
+    "category": "amber"
+  },
+  {
+    "canonical": "amberwood",
+    "category": "woody"
+  },
+  {
+    "canonical": "ambrette",
+    "category": "musk"
+  },
+  {
+    "canonical": "ambroxan",
+    "category": "musk"
+  },
+  {
+    "canonical": "angelica",
+    "category": "green"
+  },
+  {
+    "canonical": "apple",
+    "category": "fruity"
+  },
+  {
+    "canonical": "bamboo",
+    "category": "green"
+  },
+  {
+    "canonical": "basil",
+    "category": "green"
+  },
+  {
+    "canonical": "bay",
+    "category": "green"
+  },
+  {
+    "canonical": "benzoin",
+    "category": "resin"
+  },
+  {
+    "canonical": "benzyl benzoate",
+    "category": "resin"
+  },
+  {
+    "canonical": "bergamot",
+    "category": "citrus"
+  },
+  {
+    "canonical": "birch",
+    "category": "woody"
+  },
+  {
+    "canonical": "birch tar",
+    "category": "woody"
+  },
+  {
+    "canonical": "bitter almond",
+    "category": "nutty"
+  },
+  {
+    "canonical": "bitter orange",
+    "category": "citrus"
+  },
+  {
+    "canonical": "black orchid",
+    "category": "floral"
+  },
+  {
+    "canonical": "black pepper",
+    "category": "spicy"
+  },
+  {
+    "canonical": "black rose",
+    "category": "floral"
+  },
+  {
+    "canonical": "black truffle",
+    "category": "earthy"
+  },
+  {
+    "canonical": "black violet",
+    "category": "floral"
+  },
+  {
+    "canonical": "blackberry",
+    "category": "fruity"
+  },
+  {
+    "canonical": "blackcurrant",
+    "category": "fruity"
+  },
+  {
+    "canonical": "blackcurrant leaves",
+    "category": "green"
+  },
+  {
+    "canonical": "blood orange",
+    "category": "citrus"
+  },
+  {
+    "canonical": "bramble",
+    "category": "other"
+  },
+  {
+    "canonical": "brown sugar",
+    "category": "gourmand"
+  },
+  {
+    "canonical": "cacao",
+    "category": "gourmand"
+  },
+  {
+    "canonical": "cacao pod",
+    "category": "gourmand"
+  },
+  {
+    "canonical": "caramel",
+    "category": "gourmand"
+  },
+  {
+    "canonical": "caraway",
+    "category": "spicy"
+  },
+  {
+    "canonical": "cardamom",
+    "category": "spicy"
+  },
+  {
+    "canonical": "carrot seed",
+    "category": "earthy"
+  },
+  {
+    "canonical": "carrot seeds",
+    "category": "earthy"
+  },
+  {
+    "canonical": "cashmeran",
+    "category": "musk"
+  },
+  {
+    "canonical": "cassie",
+    "category": "floral"
+  },
+  {
+    "canonical": "cedarwood",
+    "category": "woody"
+  },
+  {
+    "canonical": "cedrat",
+    "category": "citrus"
+  },
+  {
+    "canonical": "centifolia rose",
+    "category": "floral"
+  },
+  {
+    "canonical": "cherry",
+    "category": "fruity"
+  },
+  {
+    "canonical": "chestnut",
+    "category": "nutty"
+  },
+  {
+    "canonical": "chlorine",
+    "category": "aquatic"
+  },
+  {
+    "canonical": "cinnamon",
+    "category": "spicy"
+  },
+  {
+    "canonical": "citrus",
+    "category": "citrus"
+  },
+  {
+    "canonical": "civet",
+    "category": "animalic"
+  },
+  {
+    "canonical": "clary sage",
+    "category": "green"
+  },
+  {
+    "canonical": "clove",
+    "category": "spicy"
+  },
+  {
+    "canonical": "coconut",
+    "category": "gourmand"
+  },
+  {
+    "canonical": "coffee",
+    "category": "gourmand"
+  },
+  {
+    "canonical": "cognac",
+    "category": "boozy"
+  },
+  {
+    "canonical": "coriander",
+    "category": "spicy"
+  },
+  {
+    "canonical": "coumarin",
+    "category": "gourmand"
+  },
+  {
+    "canonical": "cumin",
+    "category": "spicy"
+  },
+  {
+    "canonical": "cyclamen",
+    "category": "floral"
+  },
+  {
+    "canonical": "cypress",
+    "category": "woody"
+  },
+  {
+    "canonical": "daffodil",
+    "category": "floral"
+  },
+  {
+    "canonical": "damascus rose",
+    "category": "floral"
+  },
+  {
+    "canonical": "dark chocolate",
+    "category": "gourmand"
+  },
+  {
+    "canonical": "davana",
+    "category": "other"
+  },
+  {
+    "canonical": "dill",
+    "category": "green"
+  },
+  {
+    "canonical": "dried fruit",
+    "category": "fruity"
+  },
+  {
+    "canonical": "driftwood",
+    "category": "woody"
+  },
+  {
+    "canonical": "elemi",
+    "category": "resin"
+  },
+  {
+    "canonical": "eucalyptus",
+    "category": "green"
+  },
+  {
+    "canonical": "fig",
+    "category": "fruity"
+  },
+  {
+    "canonical": "fig leaf",
+    "category": "green"
+  },
+  {
+    "canonical": "fig tree bark",
+    "category": "woody"
+  },
+  {
+    "canonical": "fig wood",
+    "category": "woody"
+  },
+  {
+    "canonical": "fir resin",
+    "category": "resin"
+  },
+  {
+    "canonical": "flint",
+    "category": "earthy"
+  },
+  {
+    "canonical": "floral notes",
+    "category": "floral"
+  },
+  {
+    "canonical": "frangipani",
+    "category": "floral"
+  },
+  {
+    "canonical": "freesia",
+    "category": "floral"
+  },
+  {
+    "canonical": "fruity notes",
+    "category": "fruity"
+  },
+  {
+    "canonical": "galbanum",
+    "category": "green"
+  },
+  {
+    "canonical": "gardenia",
+    "category": "floral"
+  },
+  {
+    "canonical": "geranium",
+    "category": "green"
+  },
+  {
+    "canonical": "ginger",
+    "category": "spicy"
+  },
+  {
+    "canonical": "ginger lily",
+    "category": "floral"
+  },
+  {
+    "canonical": "grapefruit",
+    "category": "citrus"
+  },
+  {
+    "canonical": "green fig",
+    "category": "fruity"
+  },
+  {
+    "canonical": "green notes",
+    "category": "green"
+  },
+  {
+    "canonical": "green sage",
+    "category": "green"
+  },
+  {
+    "canonical": "green tangerine",
+    "category": "citrus"
+  },
+  {
+    "canonical": "green tea",
+    "category": "green"
+  },
+  {
+    "canonical": "green tea accord",
+    "category": "green"
+  },
+  {
+    "canonical": "guaiac wood",
+    "category": "woody"
+  },
+  {
+    "canonical": "heather",
+    "category": "green"
+  },
+  {
+    "canonical": "helional",
+    "category": "synthetic"
+  },
+  {
+    "canonical": "heliotrope",
+    "category": "floral"
+  },
+  {
+    "canonical": "hibiscus",
+    "category": "floral"
+  },
+  {
+    "canonical": "honey",
+    "category": "gourmand"
+  },
+  {
+    "canonical": "hyacinth",
+    "category": "floral"
+  },
+  {
+    "canonical": "incense",
+    "category": "resin"
+  },
+  {
+    "canonical": "iris",
+    "category": "floral"
+  },
+  {
+    "canonical": "iso e super",
+    "category": "musk"
+  },
+  {
+    "canonical": "jasmine",
+    "category": "floral"
+  },
+  {
+    "canonical": "jasmine sambac",
+    "category": "floral"
+  },
+  {
+    "canonical": "juniper",
+    "category": "green"
+  },
+  {
+    "canonical": "juniper berry",
+    "category": "green"
+  },
+  {
+    "canonical": "labdanum",
+    "category": "resin"
+  },
+  {
+    "canonical": "laurel",
+    "category": "green"
+  },
+  {
+    "canonical": "lavender",
+    "category": "green"
+  },
+  {
+    "canonical": "lavender absolute",
+    "category": "floral"
+  },
+  {
+    "canonical": "leather",
+    "category": "animalic"
+  },
+  {
+    "canonical": "lemon",
+    "category": "citrus"
+  },
+  {
+    "canonical": "lemon verbena",
+    "category": "citrus"
+  },
+  {
+    "canonical": "lilac",
+    "category": "floral"
+  },
+  {
+    "canonical": "lily",
+    "category": "floral"
+  },
+  {
+    "canonical": "lily of the valley",
+    "category": "floral"
+  },
+  {
+    "canonical": "lime",
+    "category": "citrus"
+  },
+  {
+    "canonical": "lychee",
+    "category": "fruity"
+  },
+  {
+    "canonical": "magnolia",
+    "category": "floral"
+  },
+  {
+    "canonical": "mandarin",
+    "category": "citrus"
+  },
+  {
+    "canonical": "maple",
+    "category": "gourmand"
+  },
+  {
+    "canonical": "marine notes",
+    "category": "aquatic"
+  },
+  {
+    "canonical": "marshmallow",
+    "category": "gourmand"
+  },
+  {
+    "canonical": "mastic",
+    "category": "resin"
+  },
+  {
+    "canonical": "matcha accord",
+    "category": "green"
+  },
+  {
+    "canonical": "melon",
+    "category": "fruity"
+  },
+  {
+    "canonical": "mimosa",
+    "category": "floral"
+  },
+  {
+    "canonical": "mint",
+    "category": "green"
+  },
+  {
+    "canonical": "moss",
+    "category": "green"
+  },
+  {
+    "canonical": "moss accord",
+    "category": "green"
+  },
+  {
+    "canonical": "muguet",
+    "category": "floral"
+  },
+  {
+    "canonical": "mushroom",
+    "category": "earthy"
+  },
+  {
+    "canonical": "musk",
+    "category": "musk"
+  },
+  {
+    "canonical": "myrrh",
+    "category": "resin"
+  },
+  {
+    "canonical": "myrtle",
+    "category": "woody"
+  },
+  {
+    "canonical": "narcissus",
+    "category": "floral"
+  },
+  {
+    "canonical": "nectarine",
+    "category": "fruity"
+  },
+  {
+    "canonical": "neroli",
+    "category": "citrus"
+  },
+  {
+    "canonical": "nutmeg",
+    "category": "spicy"
+  },
+  {
+    "canonical": "oak",
+    "category": "woody"
+  },
+  {
+    "canonical": "oakmoss",
+    "category": "woody"
+  },
+  {
+    "canonical": "olibanum",
+    "category": "resin"
+  },
+  {
+    "canonical": "opopanax",
+    "category": "resin"
+  },
+  {
+    "canonical": "opoponax",
+    "category": "resin"
+  },
+  {
+    "canonical": "orange",
+    "category": "citrus"
+  },
+  {
+    "canonical": "orange blossom",
+    "category": "floral"
+  },
+  {
+    "canonical": "orange flower absolute",
+    "category": "floral"
+  },
+  {
+    "canonical": "orchid",
+    "category": "floral"
+  },
+  {
+    "canonical": "oregano",
+    "category": "green"
+  },
+  {
+    "canonical": "orris",
+    "category": "floral"
+  },
+  {
+    "canonical": "osmanthus",
+    "category": "floral"
+  },
+  {
+    "canonical": "oud",
+    "category": "woody"
+  },
+  {
+    "canonical": "papyrus",
+    "category": "earthy"
+  },
+  {
+    "canonical": "patchouli",
+    "category": "woody"
+  },
+  {
+    "canonical": "peach",
+    "category": "fruity"
+  },
+  {
+    "canonical": "peach blossom",
+    "category": "floral"
+  },
+  {
+    "canonical": "pear",
+    "category": "fruity"
+  },
+  {
+    "canonical": "pelargonium",
+    "category": "green"
+  },
+  {
+    "canonical": "peony",
+    "category": "floral"
+  },
+  {
+    "canonical": "pepper",
+    "category": "spicy"
+  },
+  {
+    "canonical": "peppercorn",
+    "category": "spicy"
+  },
+  {
+    "canonical": "persimmon",
+    "category": "fruity"
+  },
+  {
+    "canonical": "peru balsam",
+    "category": "resin"
+  },
+  {
+    "canonical": "petit grain",
+    "category": "citrus"
+  },
+  {
+    "canonical": "petitgrain",
+    "category": "green"
+  },
+  {
+    "canonical": "pimento",
+    "category": "spicy"
+  },
+  {
+    "canonical": "pine needles",
+    "category": "green"
+  },
+  {
+    "canonical": "pineapple",
+    "category": "fruity"
+  },
+  {
+    "canonical": "pink magnolia",
+    "category": "floral"
+  },
+  {
+    "canonical": "pink pepper",
+    "category": "spicy"
+  },
+  {
+    "canonical": "plum",
+    "category": "fruity"
+  },
+  {
+    "canonical": "praline",
+    "category": "gourmand"
+  },
+  {
+    "canonical": "quince",
+    "category": "fruity"
+  },
+  {
+    "canonical": "rangoon creeper",
+    "category": "floral"
+  },
+  {
+    "canonical": "raspberry",
+    "category": "fruity"
+  },
+  {
+    "canonical": "raspberry blossom",
+    "category": "floral"
+  },
+  {
+    "canonical": "red apple",
+    "category": "fruity"
+  },
+  {
+    "canonical": "red berries",
+    "category": "fruity"
+  },
+  {
+    "canonical": "red fruits",
+    "category": "fruity"
+  },
+  {
+    "canonical": "rhubarb",
+    "category": "green"
+  },
+  {
+    "canonical": "rice",
+    "category": "other"
+  },
+  {
+    "canonical": "rockrose accord",
+    "category": "resin"
+  },
+  {
+    "canonical": "rose",
+    "category": "floral"
+  },
+  {
+    "canonical": "rose water",
+    "category": "floral"
+  },
+  {
+    "canonical": "rosemary",
+    "category": "green"
+  },
+  {
+    "canonical": "rosewood",
+    "category": "woody"
+  },
+  {
+    "canonical": "rum",
+    "category": "boozy"
+  },
+  {
+    "canonical": "saffron",
+    "category": "spicy"
+  },
+  {
+    "canonical": "sage",
+    "category": "green"
+  },
+  {
+    "canonical": "sandalwood",
+    "category": "woody"
+  },
+  {
+    "canonical": "sapodilla",
+    "category": "fruity"
+  },
+  {
+    "canonical": "sea salt",
+    "category": "aquatic"
+  },
+  {
+    "canonical": "sichuan pepper",
+    "category": "spicy"
+  },
+  {
+    "canonical": "smoked tea",
+    "category": "green"
+  },
+  {
+    "canonical": "solar accord",
+    "category": "other"
+  },
+  {
+    "canonical": "spices",
+    "category": "spicy"
+  },
+  {
+    "canonical": "stem",
+    "category": "green"
+  },
+  {
+    "canonical": "suede",
+    "category": "animalic"
+  },
+  {
+    "canonical": "sweet pea",
+    "category": "floral"
+  },
+  {
+    "canonical": "tangerine",
+    "category": "citrus"
+  },
+  {
+    "canonical": "tea",
+    "category": "green"
+  },
+  {
+    "canonical": "teak wood",
+    "category": "woody"
+  },
+  {
+    "canonical": "thyme",
+    "category": "spicy"
+  },
+  {
+    "canonical": "tiare flower",
+    "category": "floral"
+  },
+  {
+    "canonical": "tobacco",
+    "category": "tobacco"
+  },
+  {
+    "canonical": "tobacco blossom",
+    "category": "tobacco"
+  },
+  {
+    "canonical": "tobacco leaf",
+    "category": "tobacco"
+  },
+  {
+    "canonical": "tonka bean",
+    "category": "gourmand"
+  },
+  {
+    "canonical": "tuberose",
+    "category": "floral"
+  },
+  {
+    "canonical": "tulip",
+    "category": "floral"
+  },
+  {
+    "canonical": "turkish rose",
+    "category": "floral"
+  },
+  {
+    "canonical": "vanilla",
+    "category": "gourmand"
+  },
+  {
+    "canonical": "velvet",
+    "category": "other"
+  },
+  {
+    "canonical": "vetiver",
+    "category": "woody"
+  },
+  {
+    "canonical": "violet",
+    "category": "floral"
+  },
+  {
+    "canonical": "violet leaf",
+    "category": "green"
+  },
+  {
+    "canonical": "violet leaves",
+    "category": "green"
+  },
+  {
+    "canonical": "water hyacinth",
+    "category": "floral"
+  },
+  {
+    "canonical": "white amber",
+    "category": "amber"
+  },
+  {
+    "canonical": "white florals",
+    "category": "floral"
+  },
+  {
+    "canonical": "white flowers",
+    "category": "floral"
+  },
+  {
+    "canonical": "white musk",
+    "category": "musk"
+  },
+  {
+    "canonical": "white pepper",
+    "category": "spicy"
+  },
+  {
+    "canonical": "white thyme",
+    "category": "spicy"
+  },
+  {
+    "canonical": "william pear",
+    "category": "fruity"
+  },
+  {
+    "canonical": "woods",
+    "category": "woody"
+  },
+  {
+    "canonical": "woody balsamic accord",
+    "category": "resin"
+  },
+  {
+    "canonical": "ylang-ylang",
+    "category": "floral"
+  }
+]
