@@ -80,8 +80,8 @@ export function applyFallbackAdvanced({ perfumes, profile, current }: any) {
   function refill(type: any) {
     const filtered = filterCandidates(perfumes, profile, type);
     const ranked = rankCandidates(filtered, profile, type);
-    const usedIds = new Set();
-    const usedBrands = new Set();
+    const usedIds = new Set<string>();
+    const usedBrands = new Set<string>();
     
     // seed từ current
     if (current.rational) {
@@ -104,7 +104,8 @@ export function applyFallbackAdvanced({ perfumes, profile, current }: any) {
         item.breakdown.descriptor_match > 0
     );
 
-    if (pool.length > 0) return pool[0];
+    if (pool.length > 0) 
+      return pickUnique(pool, usedIds, usedBrands, 0);
 
     // 2. ADJACENT
     pool = ranked.filter(
@@ -116,7 +117,7 @@ export function applyFallbackAdvanced({ perfumes, profile, current }: any) {
 
     if (pool.length > 0) {
       fallbackLevel = "adjacent";
-      return pool[0];
+      return pickUnique(pool, usedIds, usedBrands, 0);
     }
 
     // 3. INTENT
@@ -126,7 +127,7 @@ export function applyFallbackAdvanced({ perfumes, profile, current }: any) {
 
     if (pool.length > 0) {
       fallbackLevel = "intent";
-      return pool[0];
+      return pickUnique(pool, usedIds, usedBrands, 0);
     }
 
     return null;

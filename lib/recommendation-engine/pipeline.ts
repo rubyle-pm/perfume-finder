@@ -46,20 +46,21 @@ function selectInitialSlots(
   aspirationalRanked: ScoredCandidate[],
   wildcardRanked: ScoredCandidate[],
 ): SlotSelection {
-  const used = new Set<string>();
+  const usedIds = new Set<string>();
   const usedBrands = new Set<string>();
 
   // ✅ STEP 1: luôn pick bestFit trước
-  const rational = pickUnique(rationalRanked, used, usedBrands);
+  const rational = pickUnique(rationalRanked, usedIds, usedBrands);
 
   // ✅ STEP 2: aspirational phải khác bestFit
   let aspirational: ScoredCandidate | null = null;
   for (const item of aspirationalRanked) {
-    const id = item.candidate.perfume.id;
-    if (!used.has(id)) {
+    const p = item.candidate.perfume;
+  
+    if (!usedIds.has(p.id) && !usedBrands.has(p.brand)) {
       aspirational = item;
-      used.add(id);
-      usedBrands.add(item.candidate.perfume.brand);
+      usedIds.add(p.id);
+      usedBrands.add(p.brand);
       break;
     }
   }
@@ -68,9 +69,9 @@ function selectInitialSlots(
   let wildcard: ScoredCandidate | null = null;
   for (const item of wildcardRanked) {
     const id = item.candidate.perfume.id;
-    if (!used.has(id)) {
+    if (!usedIds.has(id)) {
       wildcard = item;
-      used.add(id);
+      usedIds.add(id);
       usedBrands.add(item.candidate.perfume.brand);
       break;
     }
@@ -79,13 +80,110 @@ function selectInitialSlots(
   return { rational, aspirational, wildcard };
 }
 
+function enforceUniqueSlots(
+  selected: {
+    rational: ScoredCandidate | null;
+    aspirational: ScoredCandidate | null;
+    wildcard: ScoredCandidate | null;
+  },
+  ranked: {
+    rational: ScoredCandidate[];
+    aspirational: ScoredCandidate[];
+    wildcard: ScoredCandidate[];
+  }
+) {
+  const usedIds = new Set<string>();
+
+  const rational = selected.rational;
+
+  function similarity(a: ScoredCandidate, b: ScoredCandidate) {
+    const aDesc = new Set(a.candidate.perfume.descriptors);
+    const bDesc = new Set(b.candidate.perfume.descriptors);
+
+    const intersection = [...aDesc].filter(x => bDesc.has(x));
+    const union = new Set([...aDesc, ...bDesc]);
+
+    return intersection.length / union.size;
+  }
+
+  function pick(
+    current: ScoredCandidate | null,
+    pool: ScoredCandidate[],
+    fallbackPools: ScoredCandidate[][],
+    type: "rational" | "aspirational" | "wildcard"
+  ): ScoredCandidate | null {
+
+    // 1. giữ nếu hợp lệ
+    if (current && !usedIds.has(current.candidate.perfume.id)) {
+      usedIds.add(current.candidate.perfume.id);
+      return current;
+    }
+
+    // 2. try own pool
+    for (const item of pool) {
+      if (!usedIds.has(item.candidate.perfume.id)) {
+        usedIds.add(item.candidate.perfume.id);
+        return item;
+      }
+    }
+
+    // 3. cross-pool fallback
+    const crossPool = fallbackPools
+      .flat()
+      .filter(item => !usedIds.has(item.candidate.perfume.id));
+
+    if (crossPool.length === 0) return current;
+
+    let best: ScoredCandidate | null = null;
+
+    if (type === "wildcard") {
+      // 🎯 pick most different from rational
+      best = crossPool.sort((a, b) => {
+        const simA = rational ? similarity(a, rational) : 0;
+        const simB = rational ? similarity(b, rational) : 0;
+        return simA - simB;
+      })[0];
+    } else {
+      // 🎯 pick highest popularity (fallback safe choice)
+      best = crossPool.sort((a, b) => {
+        return (b.candidate.perfume.popularity_score || 0)
+             - (a.candidate.perfume.popularity_score || 0);
+      })[0];
+    }
+
+    if (best) {
+      usedIds.add(best.candidate.perfume.id);
+      return best;
+    }
+
+    return current;
+  }
+
+  return {
+    rational: pick(selected.rational, ranked.rational, [
+      ranked.aspirational,
+      ranked.wildcard,
+    ], "rational"),
+
+    aspirational: pick(selected.aspirational, ranked.aspirational, [
+      ranked.rational,
+      ranked.wildcard,
+    ], "aspirational"),
+
+    wildcard: pick(selected.wildcard, ranked.wildcard, [
+      ranked.rational,
+      ranked.aspirational,
+    ], "wildcard"),
+  };
+}
+
 function selectSlotsStrict(
   rationalRanked: ScoredCandidate[],
   aspirationalRanked: ScoredCandidate[],
   wildcardRanked: ScoredCandidate[],
 ) {
-  const usedIds = new Set();
-  const usedBrands = new Set();
+  const usedIds = new Set<string>();
+  const usedBrands = new Set<string>();
 
   // 1. BEST FIT
   const rational = rationalRanked[0] || null;
@@ -95,16 +193,26 @@ function selectSlotsStrict(
   }
 
   // 2. IDEAL MATCH — khác id + brand
-  const aspirational =
-    aspirationalRanked.find(item => {
-      const p = item.candidate.perfume;
-      return !usedIds.has(p.id) && !usedBrands.has(p.brand);
-    }) || null;
+let aspirational: ScoredCandidate | null = null;
 
-  if (aspirational) {
-    usedIds.add(aspirational.candidate.perfume.id);
-    usedBrands.add(aspirational.candidate.perfume.brand);
-  }
+if (rational) {
+  const adjusted = aspirationalRanked
+    .map(item => {
+      const same = item.candidate.perfume.id === rational.candidate.perfume.id;
+
+      return {
+        ...item,
+        adjustedScore: item.candidate.score - (same ? 0.2 : 0),
+      };
+    })
+    .sort((a, b) => b.adjustedScore - a.adjustedScore);
+
+  aspirational =
+    adjusted.find(item => !usedIds.has(item.candidate.perfume.id)) || null;
+} else {
+  aspirational =
+    aspirationalRanked.find(item => !usedIds.has(item.candidate.perfume.id)) || null;
+}
 
 // help reduce similarity (bestFit, wildcard) 
 function similarity(a: ScoredCandidate, b: ScoredCandidate) {
@@ -124,14 +232,17 @@ const wildcard =
 
     if (usedIds.has(p.id)) return false;
 
-    // 🔥 enforce divergence với bestFit
-    if (rational) {
-      const sim = similarity(rational, item);
-      return sim < 0.1;
-    }
+    const sim = rational
+      ? similarity(item, rational)
+      : 0;
 
-    return true;
-  }) || null;
+    return sim < 0.4; // relax
+  }) ||
+  wildcardRanked.find(item => {
+    const p = item.candidate.perfume;
+    return !usedIds.has(p.id);
+  }) ||
+  null;
 
   return { rational, aspirational, wildcard };
 }
@@ -169,26 +280,26 @@ export function runRecommendationPipeline(
     profile,
     current: selected,
   });
-  
+  const finalSelected = enforceUniqueSlots(
+    fallbackResult,
+    {
+      rational: rationalRanked,
+      aspirational: aspirationalRanked,
+      wildcard: wildcardRanked,
+    }
+  );
   const fallbackLevel = fallbackResult.fallbackLevel;
   
-  if (
-    !fallbackResult.rational ||
-    !fallbackResult.aspirational ||
-    !fallbackResult.wildcard
-  ) {
-  }
-  
   const slots = {
-    bestFit: fallbackResult.rational.candidate,
-    idealMatch: fallbackResult.aspirational.candidate,
-    wildcard: fallbackResult.wildcard.candidate,
+    bestFit: finalSelected.rational!.candidate,
+    idealMatch: finalSelected.aspirational!.candidate,
+    wildcard: finalSelected.wildcard!.candidate,
   };
   
   const scoreBreakdown = [
-    fallbackResult.rational.breakdown,
-    fallbackResult.aspirational.breakdown,
-    fallbackResult.wildcard.breakdown,
+    finalSelected.rational!.breakdown,
+    finalSelected.aspirational!.breakdown,
+    finalSelected.wildcard!.breakdown,
   ];
 
   return buildResult({
