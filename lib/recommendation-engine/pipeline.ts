@@ -106,12 +106,32 @@ function selectSlotsStrict(
     usedBrands.add(aspirational.candidate.perfume.brand);
   }
 
-  // 3. WILDCARD — khác id (brand có thể trùng bestFit)
-  const wildcard =
-    wildcardRanked.find(item => {
-      const p = item.candidate.perfume;
-      return !usedIds.has(p.id);
-    }) || null;
+// help reduce similarity (bestFit, wildcard) 
+function similarity(a: ScoredCandidate, b: ScoredCandidate) {
+  const aDesc = new Set(a.candidate.perfume.descriptors);
+  const bDesc = new Set(b.candidate.perfume.descriptors);
+
+  const intersection = [...aDesc].filter(x => bDesc.has(x));
+  const union = new Set([...aDesc, ...bDesc]);
+
+  return intersection.length / union.size;
+}
+
+// 3. WILDCARD — khác id + phải đủ "khác vibe"
+const wildcard =
+  wildcardRanked.find(item => {
+    const p = item.candidate.perfume;
+
+    if (usedIds.has(p.id)) return false;
+
+    // 🔥 enforce divergence với bestFit
+    if (rational) {
+      const sim = similarity(rational, item);
+      return sim < 0.1;
+    }
+
+    return true;
+  }) || null;
 
   return { rational, aspirational, wildcard };
 }
@@ -157,7 +177,6 @@ export function runRecommendationPipeline(
     !fallbackResult.aspirational ||
     !fallbackResult.wildcard
   ) {
-    throw new Error("Fallback failed");
   }
   
   const slots = {

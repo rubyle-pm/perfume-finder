@@ -54,12 +54,15 @@ function scoreRational(
   const mbtiMatch = overlapRatio(profile.mbti_signals, perfume.style_tags);
   const moodMatch = overlapRatio(profile.mood_signals, perfume.style_tags);
   const intentScore = computeIntentScore(profile.scent_type, perfume.descriptors);
-  const total =
+  let total =
   SCORING_WEIGHTS.rational.descriptor * descriptorMatch +  // scoring.config
   SCORING_WEIGHTS.rational.use_case * useCaseMatch +
   SCORING_WEIGHTS.rational.mbti * mbtiMatch +
   SCORING_WEIGHTS.rational.mood * moodMatch +
   0.05 * intentScore;
+  if (descriptorMatch === 0) {     //soft guard descriptor score  
+    total *= 0.2;
+  }
   return {
     type: "rational",
     total,
@@ -83,8 +86,10 @@ function scoreAspirational(
   SCORING_WEIGHTS.aspirational.style_signal * signalMatch +
   SCORING_WEIGHTS.aspirational.premium * premium +
   0.12 * intentScore;
-  if (signalMatch < 0.25) total *= 0.1;
-
+  if (signalMatch < 0.25) total *= 0.1;   //soft guard signal score 
+  if (descriptorMatch === 0 && intentScore < 0.3) {   //soft guard descriptor, allow intent rescue
+    total *= 0.1;
+  }
   return {
     type: "aspirational",
     total,
@@ -105,14 +110,16 @@ function scoreWildcard(
   const musicSignalMatch = overlapRatio(profile.music_signals, perfume.style_tags);
   const risingSignSignalMatch = overlapRatio(profile.rising_sign_signals, perfume.style_tags);
   const novelty = 1 - descriptorMatch;
-  const total =
+  let total =
   SCORING_WEIGHTS.wildcard.adjacent * adjacentScore +      //scoring.config 
   SCORING_WEIGHTS.wildcard.rising_sign * risingSignSignalMatch +
   SCORING_WEIGHTS.wildcard.style_signal * styleSignalMatch +
   SCORING_WEIGHTS.wildcard.descriptor * descriptorMatch +
   SCORING_WEIGHTS.wildcard.music * musicSignalMatch +
   SCORING_WEIGHTS.wildcard.novelty * novelty;
-
+  if (descriptorMatch === 0) {     //soft guard descriptor score 
+    total *= 0.2;
+  }
   return {
     type: "wildcard",
     total,
