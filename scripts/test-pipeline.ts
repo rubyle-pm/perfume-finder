@@ -1,3 +1,4 @@
+console.log("PIPELINE IMPORT PATH:", require.resolve("../lib/recommendation-engine/pipeline"));
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
@@ -106,7 +107,7 @@ const PERSONAS: Persona[] = [
       mood: "bold_confident_present",
       scent_type: "dark_mysterious",
       dislike_note: ["aquatic_soapy"],
-      weekend_vibe: "late_night_social",
+      weekend_vibe: "late_night_social",  
       style_icon: "classic_bombshell",
       mbti: "ESTP",
       music: "hiphop",

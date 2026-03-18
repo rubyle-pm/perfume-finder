@@ -24,5 +24,5 @@ export const SCORING_WEIGHTS = {
   
   } as const
   
-  export const MIN_SCORE_TO_SHOW = 0.3
+  export const MIN_SCORE_TO_SHOW = 0.25
   export const FALLBACK_THRESHOLD = 0.25

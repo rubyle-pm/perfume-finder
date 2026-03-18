@@ -1,8 +1,10 @@
+console.log("🔥 TEST PIPELINE");
 import { filterCandidates } from "./candidate-filter";
 import { buildResult, type EngineResult } from "./result-select";
 import { rankCandidates, type ScoredCandidate } from "./scoring";
 import type { Perfume, RecommendationScoreBreakdown, UserProfile } from "./types";
 import { MIN_SCORE_TO_SHOW } from "./scoring-config";
+import { applyFallbackAdvanced } from "./fallback";
 
 interface SlotSelection {
   rational: ScoredCandidate | null;
@@ -10,7 +12,7 @@ interface SlotSelection {
   wildcard: ScoredCandidate | null;
 }
 
-function pickUnique(
+function pickUnique(           // avoid dup brand & ids 
   ranked: ScoredCandidate[],
   usedIds: Set<string>,
   usedBrands: Set<string>,
@@ -47,68 +49,71 @@ function selectInitialSlots(
   const used = new Set<string>();
   const usedBrands = new Set<string>();
 
+  // ✅ STEP 1: luôn pick bestFit trước
   const rational = pickUnique(rationalRanked, used, usedBrands);
-  const aspirational = pickUnique(aspirationalRanked, used, usedBrands);
-  const wildcard = pickUnique(wildcardRanked, used, usedBrands);
+
+  // ✅ STEP 2: aspirational phải khác bestFit
+  let aspirational: ScoredCandidate | null = null;
+  for (const item of aspirationalRanked) {
+    const id = item.candidate.perfume.id;
+    if (!used.has(id)) {
+      aspirational = item;
+      used.add(id);
+      usedBrands.add(item.candidate.perfume.brand);
+      break;
+    }
+  }
+
+  // ✅ STEP 3: wildcard phải khác cả 2
+  let wildcard: ScoredCandidate | null = null;
+  for (const item of wildcardRanked) {
+    const id = item.candidate.perfume.id;
+    if (!used.has(id)) {
+      wildcard = item;
+      used.add(id);
+      usedBrands.add(item.candidate.perfume.brand);
+      break;
+    }
+  }
 
   return { rational, aspirational, wildcard };
 }
 
-function fillMissingWithConfidentCandidates(
-  current: SlotSelection,
-  rankedPools: ScoredCandidate[][],
-): SlotSelection {
-  const next: SlotSelection = { ...current };
+function selectSlotsStrict(
+  rationalRanked: ScoredCandidate[],
+  aspirationalRanked: ScoredCandidate[],
+  wildcardRanked: ScoredCandidate[],
+) {
+  const usedIds = new Set();
+  const usedBrands = new Set();
 
-  const usedIds = new Set<string>();
-  const usedBrands = new Set<string>();
-
-  for (const slot of [next.rational, next.aspirational, next.wildcard]) {
-    if (!slot) continue;
-    usedIds.add(slot.candidate.perfume.id);
-    usedBrands.add(slot.candidate.perfume.brand);
+  // 1. BEST FIT
+  const rational = rationalRanked[0] || null;
+  if (rational) {
+    usedIds.add(rational.candidate.perfume.id);
+    usedBrands.add(rational.candidate.perfume.brand);
   }
 
-  const globalRanked = rankedPools
-    .flat()
-    .filter(
-      (item, index, all) =>
-        all.findIndex((other) => other.candidate.perfume.id === item.candidate.perfume.id) === index,
-    )
-    .sort((a, b) => b.candidate.score - a.candidate.score);
+  // 2. IDEAL MATCH — khác id + brand
+  const aspirational =
+    aspirationalRanked.find(item => {
+      const p = item.candidate.perfume;
+      return !usedIds.has(p.id) && !usedBrands.has(p.brand);
+    }) || null;
 
-  const pickNext = (): ScoredCandidate | null => {
-    let winner: ScoredCandidate | null = null;
-    let winnerAdjustedScore = -Infinity;
+  if (aspirational) {
+    usedIds.add(aspirational.candidate.perfume.id);
+    usedBrands.add(aspirational.candidate.perfume.brand);
+  }
 
-    for (const item of globalRanked) {
-      const perfume = item.candidate.perfume;
+  // 3. WILDCARD — khác id (brand có thể trùng bestFit)
+  const wildcard =
+    wildcardRanked.find(item => {
+      const p = item.candidate.perfume;
+      return !usedIds.has(p.id);
+    }) || null;
 
-      const repeatPenalty =
-        (usedBrands.has(perfume.brand) ? 0.1 : 0) +
-        (usedIds.has(perfume.id) ? 0.1 : 0);
-
-      const adjustedScore = item.candidate.score - repeatPenalty;
-
-      if (adjustedScore > winnerAdjustedScore) {
-        winnerAdjustedScore = adjustedScore;
-        winner = item;
-      }
-    }
-
-    if (!winner) return null;
-
-    usedIds.add(winner.candidate.perfume.id);
-    usedBrands.add(winner.candidate.perfume.brand);
-
-    return winner;
-  };
-
-  if (!next.rational) next.rational = pickNext();
-  if (!next.aspirational) next.aspirational = pickNext();
-  if (!next.wildcard) next.wildcard = pickNext();
-
-  return next;
+  return { rational, aspirational, wildcard };
 }
 
 export function runRecommendationPipeline(
@@ -116,6 +121,7 @@ export function runRecommendationPipeline(
   profile: UserProfile,
 ): EngineResult {
   if (perfumes.length === 0) {
+    console.log("🔥 RUN FUNCTION 2");
     throw new Error("runRecommendationPipeline requires at least one perfume");
   }
 
@@ -132,37 +138,44 @@ export function runRecommendationPipeline(
   const wildcardRanked = rankCandidates(wildcardPool, profile, "wildcard")
     .filter((item) => item.candidate.score >= MIN_SCORE_TO_SHOW);
 
-  const initial = selectInitialSlots(
+  const selected = selectSlotsStrict(
     rationalRanked,
     aspirationalRanked,
-    wildcardRanked,
+    wildcardRanked
   );
 
-  const confidentFilled = fillMissingWithConfidentCandidates(initial, [
-    rationalRanked,
-    aspirationalRanked,
-    wildcardRanked,
-  ]);
-
-  if (!confidentFilled.rational || !confidentFilled.aspirational || !confidentFilled.wildcard) {
-    throw new Error("Not enough confident recommendations");
+  const fallbackResult = applyFallbackAdvanced({
+    perfumes,
+    profile,
+    current: selected,
+  });
+  
+  const fallbackLevel = fallbackResult.fallbackLevel;
+  
+  if (
+    !fallbackResult.rational ||
+    !fallbackResult.aspirational ||
+    !fallbackResult.wildcard
+  ) {
+    throw new Error("Fallback failed");
   }
-
+  
   const slots = {
-    bestFit: confidentFilled.rational.candidate,
-    idealMatch: confidentFilled.aspirational.candidate,
-    wildcard: confidentFilled.wildcard.candidate,
+    bestFit: fallbackResult.rational.candidate,
+    idealMatch: fallbackResult.aspirational.candidate,
+    wildcard: fallbackResult.wildcard.candidate,
   };
-
-  const scoreBreakdown: RecommendationScoreBreakdown[] = [
-    confidentFilled.rational.breakdown,
-    confidentFilled.aspirational.breakdown,
-    confidentFilled.wildcard.breakdown,
+  
+  const scoreBreakdown = [
+    fallbackResult.rational.breakdown,
+    fallbackResult.aspirational.breakdown,
+    fallbackResult.wildcard.breakdown,
   ];
 
   return buildResult({
     profile,
     slots,
     scoreBreakdown,
-  });
-}
+    // @ts-ignore, tech debt
+    fallbackLevel,
+  })}

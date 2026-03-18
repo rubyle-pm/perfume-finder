@@ -74,41 +74,53 @@ function refillSlot(
   return pickUnique(globalRanked, usedIds, usedBrands, 0);
 }
 
-export function applyFallback(params: {
-  perfumes: Perfume[];
-  profile: UserProfile;
-  current: SlotSelection;
-  minScore?: number;
-}): SlotSelection {
-  const { perfumes, profile, current } = params;
-  const minScore = params.minScore ?? 0.2;
+export function applyFallbackAdvanced({ perfumes, profile, current }: any) {
+  let fallbackLevel = "none";
 
-  const usedIds = new Set<string>();
-  const usedBrands = new Set<string>();
-  if (current.rational && current.rational.candidate.score >= minScore) {
-    usedIds.add(current.rational.candidate.perfume.id);
-    usedBrands.add(current.rational.candidate.perfume.brand);
-  }
-  if (current.aspirational && current.aspirational.candidate.score >= minScore) {
-    usedIds.add(current.aspirational.candidate.perfume.id);
-    usedBrands.add(current.aspirational.candidate.perfume.brand);
-  }
-  if (current.wildcard && current.wildcard.candidate.score >= minScore) {
-    usedIds.add(current.wildcard.candidate.perfume.id);
-    usedBrands.add(current.wildcard.candidate.perfume.brand);
+  function refill(type: any) {
+    const filtered = filterCandidates(perfumes, profile, type);
+    const ranked = rankCandidates(filtered, profile, type);
+
+    // 1. STRICT (descriptor > 0)
+    let pool = ranked.filter(
+      (item: any) =>
+        item.breakdown &&
+        item.breakdown.descriptor_match &&
+        item.breakdown.descriptor_match > 0
+    );
+
+    if (pool.length > 0) return pool[0];
+
+    // 2. ADJACENT
+    pool = ranked.filter(
+      (item: any) =>
+        item.breakdown &&
+        item.breakdown.adjacent_score &&
+        item.breakdown.adjacent_score > 0.3
+    );
+
+    if (pool.length > 0) {
+      fallbackLevel = "adjacent";
+      return pool[0];
+    }
+
+    // 3. INTENT
+    pool = ranked.filter(
+      (item: any) => item.candidate && item.candidate.score > 0.3
+    );
+
+    if (pool.length > 0) {
+      fallbackLevel = "intent";
+      return pool[0];
+    }
+
+    return null;
   }
 
-  const next: SlotSelection = { ...current };
-
-  if (isWeak(next.rational, minScore)) {
-    next.rational = refillSlot(perfumes, profile, "rational", usedIds, usedBrands, minScore);
-  }
-  if (isWeak(next.aspirational, minScore)) {
-    next.aspirational = refillSlot(perfumes, profile, "aspirational", usedIds, usedBrands, minScore);
-  }
-  if (isWeak(next.wildcard, minScore)) {
-    next.wildcard = refillSlot(perfumes, profile, "wildcard", usedIds, usedBrands, minScore);
-  }
-
-  return next;
+  return {
+    rational: current.rational || refill("rational"),
+    aspirational: current.aspirational || refill("aspirational"),
+    wildcard: current.wildcard || refill("wildcard"),
+    fallbackLevel,
+  };
 }
