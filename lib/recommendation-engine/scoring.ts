@@ -49,11 +49,11 @@ function scoreRational(
   perfume: Perfume,
   profile: UserProfile,
 ): RecommendationScoreBreakdown {
-  const descriptorMatch = overlapRatio(profile.scent_type, perfume.descriptors);
+  const descriptorMatch = overlapRatio(profile.derived_descriptors, perfume.descriptors);
   const useCaseMatch = perfume.use_cases.includes(profile.use_case) ? 1 : 0;
   const mbtiMatch = overlapRatio(profile.mbti_signals, perfume.style_tags);
   const moodMatch = overlapRatio(profile.mood_signals, perfume.style_tags);
-  const intentScore = computeIntentScore(profile.scent_type, perfume.descriptors);
+  const intentScore = computeIntentScore(profile.derived_descriptors, perfume.descriptors);
   let total =
   SCORING_WEIGHTS.rational.descriptor * descriptorMatch +  // scoring.config
   SCORING_WEIGHTS.rational.use_case * useCaseMatch +
@@ -77,9 +77,9 @@ function scoreAspirational(
   perfume: Perfume,
   profile: UserProfile,
 ): RecommendationScoreBreakdown {
-  const descriptorMatch = overlapRatio(profile.scent_type, perfume.descriptors);
+  const descriptorMatch = overlapRatio(profile.derived_descriptors, perfume.descriptors);
   const signalMatch = overlapRatio(profile.signals, perfume.style_tags);
-  const intentScore = computeIntentScore(profile.scent_type, perfume.descriptors);
+  const intentScore = computeIntentScore(profile.derived_descriptors, perfume.descriptors);
   const premium = premiumFactor(perfume, profile);
   let total =
   SCORING_WEIGHTS.aspirational.descriptor * descriptorMatch +  // scoring.config
@@ -103,8 +103,8 @@ function scoreWildcard(
   perfume: Perfume,
   profile: UserProfile,
 ): RecommendationScoreBreakdown {
-  const descriptorMatch = overlapRatio(profile.scent_type, perfume.descriptors);
-  const adjacent = deriveAdjacentDescriptors(profile.scent_type);
+  const descriptorMatch = overlapRatio(profile.derived_descriptors, perfume.descriptors);
+  const adjacent = deriveAdjacentDescriptors(profile.derived_descriptors);
   const adjacentScore = overlapRatio(adjacent, perfume.descriptors);
   const styleSignalMatch = overlapRatio(profile.style_signals, perfume.style_tags);
   const musicSignalMatch = overlapRatio(profile.music_signals, perfume.style_tags);

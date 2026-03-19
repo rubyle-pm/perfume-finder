@@ -33,6 +33,7 @@ import {
   USE_CASES,
   WEEKEND_VIBES,
 } from "./vocabulary";
+import { signalsToDescriptors } from "./signal-descriptor-map";
 import type { UserProfile } from "./types";
 
 export interface QuizAnswers {
@@ -249,9 +250,15 @@ export function buildUserProfile(answers: QuizAnswers): UserProfile {
     .slice(0, MAX_PROFILE_SIGNALS)
     .map(([signal]) => signal);
 
+  const signalDerivedDescriptors = signalsToDescriptors(signals);
+  const derivedDescriptors = Array.from(
+    new Set([...scentTypeDescriptors, ...signalDerivedDescriptors]),
+  ).slice(0, 8);
+
   return {
     price_range: priceRange,
     scent_type: scentTypeDescriptors,
+    derived_descriptors: derivedDescriptors,
     scent_dislikes: scentDislikes,
     gender_pref: genderPref,
     use_case: useCase,
