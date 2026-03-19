@@ -153,7 +153,7 @@ const PERSONAS: Persona[] = [
 ];
 
 function loadPerfumes(): Perfume[] {
-  const dataPath = resolve(process.cwd(), "perfume-data/example_perfumes.json");
+  const dataPath = resolve(process.cwd(), "perfume-data/perfume_dataset.json");
   const raw = JSON.parse(readFileSync(dataPath, "utf8")) as unknown[];
   return raw.map((row) => normalizePerfume(row));
 }

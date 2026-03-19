@@ -2,11 +2,18 @@
 
 import { FormEvent, useMemo, useState, useRef } from "react";  //thêm useRef để tạo scroll-to-next quiz 
 import { useRouter } from "next/navigation";
-import { QUIZ_CONFIG } from "@/lib/recommendation-engine/quiz-config";
+import {
+  DISPLAY_LABELS,
+  QUESTION_DISPLAY,
+  QUIZ_CONFIG,
+} from "@/lib/recommendation-engine/quiz-config";
 
 type AnswerMap = Record<string, string | string[]>;
 
 function prettyLabel(value: string): string {
+  const displayLabel = DISPLAY_LABELS[value as keyof typeof DISPLAY_LABELS];
+  if (displayLabel) return displayLabel;
+
   return value
     .replace(/_/g, " ")
     .replace(/\b\w/g, (char) => char.toUpperCase());
@@ -199,7 +206,7 @@ export default function QuizPage() {
                 Question {index + 1}
               </p>
               <h2 style={{ margin: "6px 0 12px", fontSize: 20, lineHeight: 1.2 }}>
-                {prettyLabel(question.id)}
+                {QUESTION_DISPLAY[question.id]}
               </h2>
               <div style={{ display: "grid", gap: 8 }}>
                 {question.options.map((option) => {
