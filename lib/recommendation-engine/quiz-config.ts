@@ -190,7 +190,7 @@ export const QUESTION_DISPLAY: Record<QuestionId, string> = {   //UI quiz displa
   budget: "What is your budget for 50ml?",
 } as const;
 
-export const QUIZ_CONFIG: readonly QuizQuestion[] = [     //entry point for UI design
+export const QUIZ_CONFIG: readonly QuizQuestion[] = [     //entry point of quiz type for UI design
   { id: "gender_pref", kind: "single", options: GENDER_PREFS },
   { id: "use_case", kind: "single", options: USE_CASES },
   { id: "mood", kind: "single", options: MOODS },

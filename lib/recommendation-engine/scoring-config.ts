@@ -17,9 +17,9 @@ export const SCORING_WEIGHTS = {
       adjacent: 0.3,
       rising_sign: 0.1,
       style_signal: 0.2,
-      descriptor: 0.2,
+      descriptor: 0.1,
       music: 0.1,
-      novelty: 0.1,
+      novelty: 0.2,
     }
   
   } as const

@@ -2,78 +2,71 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { ARCHETYPE_DISPLAY } from "@/lib/recommendation-engine/archetype-display";
+import type { NarrativeResult } from "@/lib/recommendation-engine/narrative";
 import type { EngineResult } from "@/lib/recommendation-engine/result-select";
 import type { RecommendationCandidate } from "@/lib/recommendation-engine/types";
 
-function slotTitle(label: "bestFit" | "idealMatch" | "wildcard"): string {
-  if (label === "bestFit") return "Best Fit";
-  if (label === "idealMatch") return "Ideal Match";
-  return "Wildcard";
+type ResultPayload = EngineResult & {
+  narrative?: NarrativeResult;
+};
+
+function slotLabel(label: "bestFit" | "idealMatch" | "wildcard"): string {
+  if (label === "bestFit") return "YOUR SCENT";
+  if (label === "idealMatch") return "YOUR STATEMENT SCENT";
+  return "YOUR SCENT, WITH A TWIST";
 }
 
 function renderCandidate(
   candidate: RecommendationCandidate,
   label: "bestFit" | "idealMatch" | "wildcard",
+  narrative?: NarrativeResult,
 ) {
+  const reason =
+    label === "bestFit"
+      ? narrative?.best_fit_reason
+      : label === "idealMatch"
+        ? narrative?.ideal_match_reason
+        : narrative?.wildcard_reason;
+
   return (
-    <article
-      key={label}
-      style={{
-        background: "rgba(255,255,255,0.92)",
-        borderRadius: 18,
-        padding: 16,
-        boxShadow: "0 10px 24px rgba(15,23,42,0.08)",
-      }}
-    >
-      <p
-        style={{
-          margin: 0,
-          fontSize: 12,
-          letterSpacing: "0.08em",
-          textTransform: "uppercase",
-          color: "#475569",
-          fontWeight: 700,
-        }}
-      >
-        {slotTitle(label)}
+    <article key={label} className="rounded-2xl border border-slate-200/80 bg-white/90 p-5 shadow-sm">
+      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
+        {slotLabel(label)}
       </p>
-      <h2 style={{ margin: "8px 0 4px", fontSize: 22, lineHeight: 1.2 }}>
-        {candidate.perfume.name}
-      </h2>
-      <p style={{ margin: "0 0 8px", color: "#334155", fontSize: 15 }}>
-        {candidate.perfume.brand}
+      <h3 className="mt-2 text-3xl font-semibold leading-tight text-slate-900">{candidate.perfume.name}</h3>
+      <p className="mt-2 text-sm text-slate-700">
+        {candidate.perfume.brand} - {candidate.perfume.price_vnd.toLocaleString("vi-VN")} ₫
       </p>
-      <p style={{ margin: "0 0 12px", color: "#0f172a", fontSize: 14, fontWeight: 600 }}>
-        Score: {candidate.score.toFixed(3)}
-      </p>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+      {reason ? <p className="mt-3 text-sm italic leading-relaxed text-slate-600">{reason}</p> : null}
+      <div className="mt-4 flex flex-wrap gap-2">
         {candidate.perfume.descriptors.slice(0, 6).map((descriptor) => (
           <span
             key={`${label}-${descriptor}`}
-            style={{
-              border: "1px solid #cbd5e1",
-              borderRadius: 999,
-              padding: "4px 10px",
-              fontSize: 12,
-              color: "#334155",
-            }}
+            className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700"
           >
             {descriptor}
           </span>
         ))}
       </div>
+      <a
+        href="#"
+        className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+      >
+        Shop
+      </a>
     </article>
   );
 }
 
 export default function ResultsPage() {
-  const [result, setResult] = useState<EngineResult | null>(null);
+  const [result, setResult] = useState<ResultPayload | null>(null);
 
   useEffect(() => {
     const raw = sessionStorage.getItem("reco_result");
     if (!raw) return;
     try {
-      setResult(JSON.parse(raw) as EngineResult);
+      setResult(JSON.parse(raw) as ResultPayload);
     } catch {
       setResult(null);
     }
@@ -81,24 +74,11 @@ export default function ResultsPage() {
 
   if (!result) {
     return (
-      <main
-        style={{
-          minHeight: "100dvh",
-          display: "grid",
-          placeItems: "center",
-          padding: 20,
-          background: "linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%)",
-          color: "#0f172a",
-          fontFamily: "Inter, SF Pro Text, -apple-system, sans-serif",
-          textAlign: "center",
-        }}
-      >
-        <div>
-          <h1 style={{ margin: "0 0 8px", fontSize: 28 }}>No Results Yet</h1>
-          <p style={{ margin: "0 0 16px", color: "#334155" }}>
-            Complete the quiz first to see your recommendations.
-          </p>
-          <Link href="/quiz" style={{ color: "#0f172a", fontWeight: 700 }}>
+      <main className="grid min-h-dvh place-items-center bg-gradient-to-b from-slate-50 to-slate-100 px-5 text-center text-slate-900">
+        <div className="max-w-md">
+          <h1 className="text-3xl font-semibold">No Results Yet</h1>
+          <p className="mt-2 text-sm text-slate-600">Complete the quiz first to see your recommendations.</p>
+          <Link href="/quiz" className="mt-4 inline-block text-sm font-semibold text-slate-900 underline">
             Go to Quiz
           </Link>
         </div>
@@ -106,57 +86,36 @@ export default function ResultsPage() {
     );
   }
 
-  return (
-    <main
-      style={{
-        minHeight: "100dvh",
-        background: "linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%)",
-        color: "#0f172a",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: 760,
-          margin: "0 auto",
-          padding: "24px 16px 28px",
-          fontFamily: "Inter, SF Pro Text, -apple-system, sans-serif",
-        }}
-      >
-        <header style={{ marginBottom: 16 }}>
-          <p
-            style={{
-              margin: 0,
-              fontSize: 12,
-              letterSpacing: "0.06em",
-              textTransform: "uppercase",
-              color: "#475569",
-              fontWeight: 700,
-            }}
-          >
-            Your Scent Statement
-          </p>
-          <h1 style={{ margin: "6px 0 8px", fontSize: 30, lineHeight: 1.15 }}>
-            Recommendation Results
-          </h1>
-          <p style={{ margin: 0, color: "#334155", fontSize: 14 }}>
-            Archetype: {result.topPickArchetype ?? "N/A"}
-          </p>
-          <p style={{ margin: "4px 0 0", color: "#334155", fontSize: 14 }}>
-            {result.explanation}
-          </p>
-        </header>
+  const archetypeDisplay = result.topPickArchetype ? ARCHETYPE_DISPLAY[result.topPickArchetype] : null;
 
-        <section style={{ display: "grid", gap: 12 }}>
-          {renderCandidate(result.slots.bestFit, "bestFit")}
-          {renderCandidate(result.slots.idealMatch, "idealMatch")}
-          {renderCandidate(result.slots.wildcard, "wildcard")}
+  return (
+    <main className="min-h-dvh bg-gradient-to-b from-slate-50 via-slate-100 to-slate-100 text-slate-900">
+      <div className="mx-auto flex w-full max-w-2xl flex-col gap-8 px-4 py-8 sm:px-6 sm:py-10">
+        <section className="rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-sm">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+            YOUR SCENT ARCHETYPE
+          </p>
+          <h1 className="mt-3 text-4xl font-semibold leading-tight text-slate-900">
+            {archetypeDisplay?.name ?? "Your Scent Archetype"}
+          </h1>
+          <p className="mt-2 text-base italic text-slate-500">{archetypeDisplay?.tagline ?? ""}</p>
+          {result.narrative?.archetype_description ? (
+            <p className="mt-4 text-base leading-relaxed text-slate-700">{result.narrative.archetype_description}</p>
+          ) : null}
+          <hr className="mt-6 border-slate-200" />
         </section>
 
-        <div style={{ marginTop: 18 }}>
-          <Link href="/quiz" style={{ color: "#0f172a", fontWeight: 700 }}>
+        <section className="grid gap-4">
+          {renderCandidate(result.slots.bestFit, "bestFit", result.narrative)}
+          {renderCandidate(result.slots.idealMatch, "idealMatch", result.narrative)}
+          {renderCandidate(result.slots.wildcard, "wildcard", result.narrative)}
+        </section>
+
+        <footer className="pb-4">
+          <Link href="/quiz" className="text-sm font-semibold text-slate-900 underline">
             Retake Quiz
           </Link>
-        </div>
+        </footer>
       </div>
     </main>
   );

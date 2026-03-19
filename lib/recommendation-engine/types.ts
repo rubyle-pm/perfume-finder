@@ -116,6 +116,7 @@ export function normalizePerfume(raw: any): Perfume {      // NORMALIZE JSON →
 export interface UserProfile {
   price_range: BudgetTier;
   scent_type: Descriptor[];
+  derived_descriptors: Descriptor[];
   scent_dislikes: Descriptor[];
   gender_pref: GenderPref;
   use_case: UseCase;
