@@ -67,6 +67,13 @@ export default function QuizPage() {
     if (!allAnswered) return;
     setSubmitting(true);
     setError(null);
+
+    // Clear any stale result so loading page doesn't skip
+    sessionStorage.removeItem("reco_result");
+
+    // Navigate to loading immediately — API call runs in background
+    router.push("/loading");
+
     try {
       const res = await fetch("/api/recommend", {
         method: "POST",
@@ -79,9 +86,12 @@ export default function QuizPage() {
       }
       const payload = await res.json();
       sessionStorage.setItem("reco_result", JSON.stringify(payload));
-      router.push("/archetype");
+      sessionStorage.setItem("quiz_answers", JSON.stringify(answers));
+      // Loading page is polling sessionStorage — will auto-navigate to /archetype
     } catch (err) {
+      // If API fails while on loading page, navigate back with error state
       setError(err instanceof Error ? err.message : "Unexpected error");
+      router.push("/quiz");
     } finally {
       setSubmitting(false);
     }
