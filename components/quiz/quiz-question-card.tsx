@@ -7,6 +7,7 @@ export interface QuizOption {
   label: string;
   emoji?: string;
   subtitle?: string;
+  imageUrl?: string;
 }
 
 export interface QuizQuestionCardProps {
@@ -14,18 +15,20 @@ export interface QuizQuestionCardProps {
   id: string;
   /** The question text to display */
   questionText: string;
-  /** Selection mode: 'single' for radio, 'multi' for checkbox */
-  kind: "single" | "multi";
+  /** Selection mode: 'single' for radio, 'multi' for checkbox, 'hybrid' for image grid + multi */
+  kind: "single" | "multi" | "hybrid";
   /** Array of options to display */
   options: QuizOption[];
-  /** Currently selected value(s) - string for single, string[] for multi */
+  /** Currently selected value(s) - string for single, string[] for multi/hybrid */
   selectedValues: string | string[];
   /** Callback when selection changes */
   onSelect: (value: string | string[]) => void;
-  /** Optional: Maximum selections allowed for multi-select */
+  /** Optional: Maximum selections allowed for multi-select/hybrid */
   maxSelections?: number;
   /** Optional: Callback after selection (e.g., for auto-advance on single select) */
   onSelectionComplete?: () => void;
+  /** Optional: Question image displayed above options (21:9 aspect ratio) */
+  questionImageUrl?: string;
 }
 
 export function QuizQuestionCard({
@@ -37,8 +40,10 @@ export function QuizQuestionCard({
   onSelect,
   maxSelections = 3,
   onSelectionComplete,
+  questionImageUrl,
 }: QuizQuestionCardProps) {
-  const isMulti = kind === "multi";
+  const isMulti = kind === "multi" || kind === "hybrid";
+  const isHybrid = kind === "hybrid";
   const selectedArray = Array.isArray(selectedValues)
     ? selectedValues
     : selectedValues
@@ -80,12 +85,23 @@ export function QuizQuestionCard({
 
   return (
     <div className="flex flex-col">
+      {/* Question Image - 21:9 aspect ratio placeholder for non-image options */}
+      {questionImageUrl && (
+        <div className="mb-6 aspect-[21/9] w-full overflow-hidden rounded-2xl bg-slate-200">
+          <img
+            src={questionImageUrl}
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
+      )}
+
       {/* Question Text */}
       <h2 className="mb-6 font-serif text-[28px] font-medium leading-tight tracking-[-0.01em] text-slate-900 md:text-[32px]">
         {questionText}
       </h2>
 
-      {/* Multi-select hint */}
+      {/* Multi-select/Hybrid hint */}
       {isMulti && (
         <p className="mb-4 text-sm text-slate-500">
           Select up to {maxSelections}
@@ -97,86 +113,180 @@ export function QuizQuestionCard({
         </p>
       )}
 
-      {/* Options */}
-      <div 
-        className="flex flex-col gap-2.5" 
-        role={isMulti ? "group" : "radiogroup"} 
-        aria-labelledby={`question-${id}`}
-      >
-        {options.map((option) => {
-          const selected = isOptionSelected(option.value);
-          const disabled = isOptionDisabled(option.value);
+      {/* Options - Grid layout for hybrid (with images), List layout for others */}
+      {isHybrid ? (
+        <div 
+          className="grid grid-cols-2 gap-3 md:grid-cols-3" 
+          role="group" 
+          aria-labelledby={`question-${id}`}
+        >
+          {options.map((option) => {
+            const selected = isOptionSelected(option.value);
+            const disabled = isOptionDisabled(option.value);
 
-          return (
-            <label
-              key={option.value}
-              className={`
-                group relative flex min-h-[64px] cursor-pointer items-center gap-4 
-                rounded-2xl border-2 px-4 py-3 transition-all duration-200
-                ${selected
-                  ? "border-slate-900 bg-slate-50"
-                  : "border-slate-300 bg-white hover:border-slate-400"
-                }
-                ${disabled ? "cursor-not-allowed opacity-40" : ""}
-              `}
-            >
-              {/* Hidden input for accessibility */}
-              <input
-                type={isMulti ? "checkbox" : "radio"}
-                name={id}
-                value={option.value}
-                checked={selected}
-                disabled={disabled}
-                onChange={() => handleOptionClick(option.value)}
-                className="sr-only"
-                aria-label={option.label}
-              />
-
-              {/* Emoji */}
-              {option.emoji && (
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center text-[28px]">
-                  {option.emoji}
-                </span>
-              )}
-
-              {/* Text content */}
-              <div className="flex min-w-0 flex-1 flex-col justify-center">
-                <span
-                  className={`
-                    text-[15px] leading-snug transition-colors duration-150
-                    ${selected ? "font-semibold text-slate-900" : "font-medium text-slate-800"}
-                  `}
-                >
-                  {option.label}
-                </span>
-                {option.subtitle && (
-                  <span className="mt-0.5 text-[13px] text-slate-500">
-                    {option.subtitle}
-                  </span>
-                )}
-              </div>
-
-              {/* Checkbox indicator on the right */}
-              <span
+            return (
+              <label
+                key={option.value}
                 className={`
-                  flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-2 
+                  group relative flex cursor-pointer flex-col overflow-hidden rounded-2xl border-2 
                   transition-all duration-200
                   ${selected
-                    ? "border-slate-900 bg-slate-900"
-                    : "border-slate-300 bg-white group-hover:border-slate-400"
+                    ? "border-slate-900 bg-slate-50"
+                    : "border-slate-300 bg-white hover:border-slate-400"
                   }
+                  ${disabled ? "cursor-not-allowed opacity-40" : ""}
                 `}
               >
-                {selected && (
-                  <Check className="h-4 w-4 text-white" strokeWidth={3} />
-                )}
-              </span>
-            </label>
-          );
-        })}
-      </div>
+                {/* Hidden input for accessibility */}
+                <input
+                  type="checkbox"
+                  name={id}
+                  value={option.value}
+                  checked={selected}
+                  disabled={disabled}
+                  onChange={() => handleOptionClick(option.value)}
+                  className="sr-only"
+                  aria-label={option.label}
+                />
 
-      {/* Selection summary pills for multi-select */}
+                {/* Image area */}
+                {option.imageUrl ? (
+                  <div className="aspect-square w-full overflow-hidden bg-slate-100">
+                    <img
+                      src={option.imageUrl}
+                      alt={option.label}
+                      className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-105"
+                    />
+                  </div>
+                ) : (
+                  <div className="flex aspect-square w-full items-center justify-center bg-slate-100">
+                    {option.emoji ? (
+                      <span className="text-[48px]">{option.emoji}</span>
+                    ) : (
+                      <span className="text-4xl text-slate-300">?</span>
+                    )}
+                  </div>
+                )}
+
+                {/* Text content */}
+                <div className="flex items-center justify-between gap-2 px-3 py-2.5">
+                  <div className="min-w-0 flex-1">
+                    <span
+                      className={`
+                        block truncate text-[13px] leading-tight transition-colors duration-150
+                        ${selected ? "font-semibold text-slate-900" : "font-medium text-slate-800"}
+                      `}
+                    >
+                      {option.label}
+                    </span>
+                    {option.subtitle && (
+                      <span className="mt-0.5 block truncate text-[11px] text-slate-500">
+                        {option.subtitle}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Checkbox indicator */}
+                  <span
+                    className={`
+                      flex h-5 w-5 shrink-0 items-center justify-center rounded-md border-2 
+                      transition-all duration-200
+                      ${selected
+                        ? "border-slate-900 bg-slate-900"
+                        : "border-slate-300 bg-white group-hover:border-slate-400"
+                      }
+                    `}
+                  >
+                    {selected && (
+                      <Check className="h-3 w-3 text-white" strokeWidth={3} />
+                    )}
+                  </span>
+                </div>
+              </label>
+            );
+          })}
+        </div>
+      ) : (
+        <div 
+          className="flex flex-col gap-2.5" 
+          role={isMulti ? "group" : "radiogroup"} 
+          aria-labelledby={`question-${id}`}
+        >
+          {options.map((option) => {
+            const selected = isOptionSelected(option.value);
+            const disabled = isOptionDisabled(option.value);
+
+            return (
+              <label
+                key={option.value}
+                className={`
+                  group relative flex min-h-[64px] cursor-pointer items-center gap-4 
+                  rounded-2xl border-2 px-4 py-3 transition-all duration-200
+                  ${selected
+                    ? "border-slate-900 bg-slate-50"
+                    : "border-slate-300 bg-white hover:border-slate-400"
+                  }
+                  ${disabled ? "cursor-not-allowed opacity-40" : ""}
+                `}
+              >
+                {/* Hidden input for accessibility */}
+                <input
+                  type={isMulti ? "checkbox" : "radio"}
+                  name={id}
+                  value={option.value}
+                  checked={selected}
+                  disabled={disabled}
+                  onChange={() => handleOptionClick(option.value)}
+                  className="sr-only"
+                  aria-label={option.label}
+                />
+
+                {/* Emoji */}
+                {option.emoji && (
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center text-[28px]">
+                    {option.emoji}
+                  </span>
+                )}
+
+                {/* Text content */}
+                <div className="flex min-w-0 flex-1 flex-col justify-center">
+                  <span
+                    className={`
+                      text-[15px] leading-snug transition-colors duration-150
+                      ${selected ? "font-semibold text-slate-900" : "font-medium text-slate-800"}
+                    `}
+                  >
+                    {option.label}
+                  </span>
+                  {option.subtitle && (
+                    <span className="mt-0.5 text-[13px] text-slate-500">
+                      {option.subtitle}
+                    </span>
+                  )}
+                </div>
+
+                {/* Checkbox indicator on the right */}
+                <span
+                  className={`
+                    flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-2 
+                    transition-all duration-200
+                    ${selected
+                      ? "border-slate-900 bg-slate-900"
+                      : "border-slate-300 bg-white group-hover:border-slate-400"
+                    }
+                  `}
+                >
+                  {selected && (
+                    <Check className="h-4 w-4 text-white" strokeWidth={3} />
+                  )}
+                </span>
+              </label>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Selection summary pills for multi-select/hybrid */}
       {isMulti && selectedArray.length > 0 && (
         <div className="mt-4 flex flex-wrap gap-2">
           {selectedArray.map((value) => {
