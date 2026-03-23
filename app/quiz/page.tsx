@@ -1,486 +1,401 @@
 "use client";
 
-import { FormEvent, useMemo, useState, useRef } from "react";
-import { useRouter } from "next/navigation";
-import QuizQuestionCard from "@/components/quiz/quiz-question-card";
-import {
-  DISPLAY_LABELS,
-  QUESTION_DISPLAY,
-  QUIZ_CONFIG,
-} from "@/lib/recommendation-engine/quiz-config";
+import { useState, useRef, useEffect } from "react";
+import { QuizQuestionCard } from "@/components/quiz/quiz-question-card";
+import { ArrowLeft, ArrowRight, ChevronDown, Home } from "lucide-react";
+
+// All 12 quiz questions matching quiz-config.ts
+const DEMO_QUESTIONS = [
+  // Q1: gender_pref - single, no image options
+  {
+    id: "gender_pref",
+    kind: "single" as const,
+    questionText: "What kind of scent profile are you drawn to?",
+    questionImageUrl: "/images/quiz/gender-pref-banner.jpg",
+    options: [
+      { value: "feminine", label: "Feminine", emoji: "🌸", subtitle: "Soft, floral, elegant" },
+      { value: "masculine", label: "Masculine", emoji: "🌲", subtitle: "Bold, woody, confident" },
+      { value: "unisex", label: "Unisex", emoji: "✨", subtitle: "Balanced, versatile" },
+    ],
+  },
+  // Q2: use_case - single, no image options
+  {
+    id: "use_case",
+    kind: "single" as const,
+    questionText: "When will you wear this fragrance most?",
+    questionImageUrl: "/images/quiz/use-case-banner.jpg",
+    options: [
+      { value: "office", label: "At work, office", emoji: "💼", subtitle: "Professional settings" },
+      { value: "daily_casual", label: "Daily, casual wear", emoji: "👕", subtitle: "Everyday comfort" },
+      { value: "evening", label: "Date night or hanging out late", emoji: "🌙", subtitle: "Evening occasions" },
+      { value: "outdoor_sporty", label: "Outdoor, being active", emoji: "🏃", subtitle: "Sports & nature" },
+      { value: "special_occasion", label: "Special social occasions", emoji: "🥂", subtitle: "Celebrations" },
+      { value: "travel", label: "Traveling", emoji: "✈️", subtitle: "On the go" },
+      { value: "home_body", label: "At home, comfy in my skin", emoji: "🛋️", subtitle: "Cozy vibes" },
+    ],
+  },
+  // Q3: mood - hybrid with image options
+  {
+    id: "mood",
+    kind: "hybrid" as const,
+    questionText: "What mood do you want your scent to project?",
+    options: [
+      { value: "complicated_seductive_intellectual", label: "Seductive & intellectual", imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" },
+      { value: "soft_romantic_nostalgic", label: "Romantic & nostalgic", imageUrl: "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=400&h=400&fit=crop" },
+      { value: "bold_confident_present", label: "Bold & confident", imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" },
+      { value: "effortless_cool_woke_up_like_this", label: "Effortless & cool", imageUrl: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=400&h=400&fit=crop" },
+      { value: "playful_warm_unexpected", label: "Playful & warm", imageUrl: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=400&fit=crop" },
+      { value: "grounded_calm_quiet_luxury", label: "Grounded & calm", imageUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop" },
+      { value: "mysterious_edgy_artistic", label: "Mysterious & edgy", imageUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=400&fit=crop" },
+    ],
+  },
+  // Q4: scent_type - single, no image options
+  {
+    id: "scent_type",
+    kind: "single" as const,
+    questionText: "Which kinds of scent do you gravitate toward?",
+    questionImageUrl: "/images/quiz/scent-type-banner.jpg",
+    options: [
+      { value: "fresh_airy", label: "Fresh & airy", emoji: "🌬️", subtitle: "Light, breezy notes" },
+      { value: "warm_cozy", label: "Warm & cozy", emoji: "🫦", subtitle: "Inviting, comforting" },
+      { value: "floral_feminine", label: "Floral & feminine", emoji: "🌷", subtitle: "Romantic, delicate" },
+      { value: "dark_mysterious", label: "Dark & mysterious", emoji: "🌙", subtitle: "Intriguing, complex" },
+      { value: "clean_minimal", label: "Clean & minimal", emoji: "🛁", subtitle: "Crisp, understated" },
+      { value: "earthy_natural", label: "Earthy & natural", emoji: "🌿", subtitle: "Grounded, organic" },
+    ],
+  },
+  // Q5: dislike_note - multi, no image options
+  {
+    id: "dislike_note",
+    kind: "multi" as const,
+    questionText: "Are there notes you want to avoid?",
+    questionImageUrl: "/images/quiz/dislike-banner.jpg",
+    options: [
+      { value: "heavy_floral", label: "Heavy floral", emoji: "🌺", subtitle: "Overpowering blooms" },
+      { value: "sweet_gourmand", label: "Sweet gourmand", emoji: "🍬", subtitle: "Candy, pastry notes" },
+      { value: "smoky_tobacco_spicy", label: "Smoky & spicy", emoji: "🔥", subtitle: "Tobacco, smoke" },
+      { value: "incense_resin", label: "Incense & resin", emoji: "🕯️", subtitle: "Aromatherapy notes" },
+      { value: "aquatic_soapy", label: "Aquatic or soapy", emoji: "🌊", subtitle: "Ocean, clean soap" },
+      { value: "fruity_citrus", label: "Fruity & citrus", emoji: "🍊", subtitle: "Bright fruit notes" },
+      { value: "earthy_wet_wood", label: "Earthy, wet wood", emoji: "🪵", subtitle: "Forest floor" },
+      { value: "musk", label: "Musk", emoji: "🫧", subtitle: "Skin-like notes" },
+    ],
+  },
+  // Q6: weekend_vibe - single, no image options
+  {
+    id: "weekend_vibe",
+    kind: "single" as const,
+    questionText: "How would you describe your perfect weekend me-time?",
+    questionImageUrl: "/images/quiz/weekend-banner.jpg",
+    options: [
+      { value: "cozy_solo_cafe", label: "Cozy solo cafe", emoji: "☕", subtitle: "Creative projects, quiet time" },
+      { value: "museum_gallery", label: "Museum wandering", emoji: "🖼️", subtitle: "Art, culture, inspiration" },
+      { value: "hiking_outdoor", label: "Outdoor adventure", emoji: "🏔️", subtitle: "Nature, exploration" },
+      { value: "long_brunch", label: "Long brunch", emoji: "🥐", subtitle: "Friends, good food" },
+      { value: "home_reset", label: "Home-body", emoji: "🛋️", subtitle: "Cleaning, organizing" },
+      { value: "spontaneous_road_trip", label: "Spontaneous road trip", emoji: "🚗", subtitle: "Adventure awaits" },
+      { value: "book_blanket_hermit", label: "Book & blanket", emoji: "😶‍🌫️", subtitle: "Withdraw from the world" },
+      { value: "late_night_social", label: "Late night social", emoji: "🍸", subtitle: "Out till 1am" },
+    ],
+  },
+  // Q7: style_icon - hybrid with images, archetype text only (no star names)
+  {
+    id: "style_icon",
+    kind: "hybrid" as const,
+    questionText: "Who is your style icon?",
+    options: [
+      { value: "clean_girl", label: "Clean girl", imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop" },
+      { value: "soft_girl_next_door", label: "Soft, girl-next-door", imageUrl: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=400&fit=crop" },
+      { value: "modern_feminine", label: "Modern feminine", imageUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=400&fit=crop" },
+      { value: "effortless_chic", label: "Effortless chic", imageUrl: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=400&fit=crop" },
+      { value: "timeless_elegance", label: "Timeless elegance", imageUrl: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=400&fit=crop" },
+      { value: "classic_bombshell", label: "Classic bombshell", imageUrl: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=400&h=400&fit=crop" },
+      { value: "sporty_glam", label: "Sporty glam", imageUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=400&fit=crop" },
+      { value: "boho_indie", label: "Boho indie", imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop" },
+      { value: "rebellious_gen_z", label: "Rebellious, Gen Z", imageUrl: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=400&fit=crop" },
+      { value: "coquette", label: "Coquette", imageUrl: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=400&fit=crop" },
+      { value: "modern_masculinity", label: "Modern masculinity", imageUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop" },
+      { value: "pretty_prince", label: "Pretty prince", imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" },
+      { value: "dark_intellectual_male", label: "Dark intellectual", imageUrl: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=400&fit=crop" },
+      { value: "old_money_masculine", label: "Old money masculine", imageUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop" },
+      { value: "quiet_luxury_feminine", label: "Quiet luxury feminine", imageUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop" },
+      { value: "street_culture", label: "Street culture", imageUrl: "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=400&h=400&fit=crop" },
+    ],
+  },
+  // Q8: mbti - mbti tag-pair layout
+  {
+    id: "mbti",
+    kind: "mbti" as const,
+    questionText: "What is your MBTI?",
+    options: [
+      { value: "INTJ", label: "INTJ" },
+      { value: "INTP", label: "INTP" },
+      { value: "ENTJ", label: "ENTJ" },
+      { value: "ENTP", label: "ENTP" },
+      { value: "INFJ", label: "INFJ" },
+      { value: "INFP", label: "INFP" },
+      { value: "ENFJ", label: "ENFJ" },
+      { value: "ENFP", label: "ENFP" },
+      { value: "ISTJ", label: "ISTJ" },
+      { value: "ISFJ", label: "ISFJ" },
+      { value: "ESTJ", label: "ESTJ" },
+      { value: "ESFJ", label: "ESFJ" },
+      { value: "ISTP", label: "ISTP" },
+      { value: "ISFP", label: "ISFP" },
+      { value: "ESTP", label: "ESTP" },
+      { value: "ESFP", label: "ESFP" },
+    ],
+  },
+  // Q9: music - single, no image options (changed from hybrid)
+  {
+    id: "music",
+    kind: "single" as const,
+    questionText: "What's your favourite genre - or a song you're playing on repeat?",
+    questionImageUrl: "/images/quiz/music-banner.jpg",
+    options: [
+      { value: "pop", label: "Pop", emoji: "🎤", subtitle: "Chart hits, catchy melodies" },
+      { value: "indie", label: "Indie", emoji: "🎸", subtitle: "Alternative, underground" },
+      { value: "rnb_soul", label: "R&B / Soul", emoji: "🎷", subtitle: "Smooth, soulful vibes" },
+      { value: "jazz", label: "Jazz", emoji: "🎺", subtitle: "Classic, improvisational" },
+      { value: "classical", label: "Classical", emoji: "🎻", subtitle: "Timeless compositions" },
+      { value: "kpop", label: "K-pop", emoji: "💜", subtitle: "Korean pop culture" },
+      { value: "hiphop", label: "Hip-hop", emoji: "🎧", subtitle: "Beats, flow, culture" },
+      { value: "electronic", label: "Electronic", emoji: "🎹", subtitle: "Synths, beats, drops" },
+      { value: "folk_acoustic", label: "Folk / Acoustic", emoji: "🪕", subtitle: "Organic, storytelling" },
+      { value: "alternative", label: "Alternative", emoji: "🎵", subtitle: "Genre-defying sounds" },
+      { value: "latin", label: "Latin", emoji: "💃", subtitle: "Rhythmic, passionate" },
+      { value: "musical_theatre", label: "Musical Theatre", emoji: "🎭", subtitle: "Broadway & beyond" },
+    ],
+  },
+  // Q10: closet_aesthetic - hybrid with image options
+  {
+    id: "closet_aesthetic",
+    kind: "hybrid" as const,
+    questionText: "How does your staple closet look?",
+    options: [
+      { value: "cottage_core", label: "Cottage core", imageUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=400&fit=crop" },
+      { value: "streetwear_hiphop", label: "Streetwear / Hip-hop", imageUrl: "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=400&h=400&fit=crop" },
+      { value: "modern_parisian_chic", label: "Modern Parisian chic", imageUrl: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&h=400&fit=crop" },
+      { value: "y2k_trendy", label: "Y2K and trendy", imageUrl: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=400&fit=crop" },
+      { value: "scandinavian_minimal", label: "Scandinavian minimal", imageUrl: "https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&h=400&fit=crop" },
+      { value: "old_money_european", label: "Old money / European", imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" },
+      { value: "clean_sporty", label: "Clean & sporty", imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop" },
+      { value: "experimental", label: "Experimental", imageUrl: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&h=400&fit=crop" },
+      { value: "dark_academia", label: "Dark academia", imageUrl: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=400&fit=crop" },
+      { value: "sensual_glamour", label: "Sensual glamour", imageUrl: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=400&h=400&fit=crop" },
+    ],
+  },
+  // Q11: rising_sign - hybrid with image options
+  {
+    id: "rising_sign",
+    kind: "hybrid" as const,
+    questionText: "What is your rising sign?",
+    options: [
+      { value: "aries", label: "Aries", emoji: "♈", imageUrl: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=400&h=400&fit=crop" },
+      { value: "taurus", label: "Taurus", emoji: "♉", imageUrl: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=400&h=400&fit=crop" },
+      { value: "gemini", label: "Gemini", emoji: "♊", imageUrl: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=400&h=400&fit=crop" },
+      { value: "cancer", label: "Cancer", emoji: "♋", imageUrl: "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=400&h=400&fit=crop" },
+      { value: "leo", label: "Leo", emoji: "♌", imageUrl: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=400&h=400&fit=crop" },
+      { value: "virgo", label: "Virgo", emoji: "♍", imageUrl: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=400&h=400&fit=crop" },
+      { value: "libra", label: "Libra", emoji: "♎", imageUrl: "https://images.unsplash.com/photo-1490730141103-6cac27abb37f?w=400&h=400&fit=crop" },
+      { value: "scorpio", label: "Scorpio", emoji: "♏", imageUrl: "https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?w=400&h=400&fit=crop" },
+      { value: "sagittarius", label: "Sagittarius", emoji: "♐", imageUrl: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&h=400&fit=crop" },
+      { value: "capricorn", label: "Capricorn", emoji: "♑", imageUrl: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=400&h=400&fit=crop" },
+      { value: "aquarius", label: "Aquarius", emoji: "♒", imageUrl: "https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=400&h=400&fit=crop" },
+      { value: "pisces", label: "Pisces", emoji: "♓", imageUrl: "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=400&h=400&fit=crop" },
+    ],
+  },
+  // Q12: budget - single, no image options
+  {
+    id: "budget",
+    kind: "single" as const,
+    questionText: "What is your budget for 50ml?",
+    questionImageUrl: "/images/quiz/budget-banner.jpg",
+    options: [
+      { value: "2_000_000_to_3_500_000", label: "2,000,000 - 3,500,000 VND", emoji: "💰", subtitle: "Entry luxury" },
+      { value: "3_500_000_to_5_000_000", label: "3,500,000 - 5,000,000 VND", emoji: "💎", subtitle: "Mid-range luxury" },
+      { value: "over_5_000_000", label: "Over 5,000,000 VND", emoji: "✨", subtitle: "Premium selection" },
+    ],
+  },
+];
 
 type AnswerMap = Record<string, string | string[]>;
 
-function prettyLabel(value: string): string {
-  const label = DISPLAY_LABELS[value as keyof typeof DISPLAY_LABELS];
-  if (label) return label;
-  return value.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-}
-
-const IMAGE_CARD_QUESTIONS = new Set(["scent_type", "style_icon", "closet_aesthetic"]);
-const CHIP_GRID_QUESTIONS = new Set(["mbti", "rising_sign"]);
-
-export default function QuizPage() {
-  const router = useRouter();
+export default function QuizDemoPage() {
   const [answers, setAnswers] = useState<AnswerMap>({});
-  const questionRefs = useRef<Array<HTMLDivElement | null>>([]);
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const total = QUIZ_CONFIG.length;
-  const answered = useMemo(
-    () =>
-      QUIZ_CONFIG.filter((q) => {
-        const v = answers[q.id];
-        if (Array.isArray(v)) return v.length > 0;
-        return typeof v === "string" && v.length > 0;
-      }).length,
-    [answers],
-  );
-  const progress = Math.round((answered / total) * 100);
-  const allAnswered = answered >= total;
+  const totalQuestions = DEMO_QUESTIONS.length;
+  const currentQuestion = DEMO_QUESTIONS[currentQuestionIndex];
+  const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
 
-  function scrollToNext(index: number) {
-    setTimeout(() => {
-      const next = questionRefs.current[index + 1];
-      if (next) next.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 280);
-  }
-
-  function updateSingle(id: string, value: string, index: number) {
-    setAnswers((prev) => ({ ...prev, [id]: value }));
-    scrollToNext(index);
-  }
-
-  function updateMulti(id: string, value: string, checked: boolean) {
-    setAnswers((prev) => {
-      const current = Array.isArray(prev[id]) ? (prev[id] as string[]) : [];
-      const next = checked
-        ? Array.from(new Set([...current, value])).slice(0, 3)
-        : current.filter((i) => i !== value);
-      return { ...prev, [id]: next };
-    });
-  }
-
-  async function onSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    if (!allAnswered) return;
-    setSubmitting(true);
-    setError(null);
-
-    // Clear any stale result so loading page doesn't skip
-    sessionStorage.removeItem("reco_result");
-
-    // Navigate to loading immediately — API call runs in background
-    router.push("/loading");
-
-    try {
-      const res = await fetch("/api/recommend", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(answers),
-      });
-      if (!res.ok) {
-        const p = (await res.json()) as { error?: string };
-        throw new Error(p.error ?? "Failed to generate recommendation");
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
       }
-      const payload = await res.json();
-      sessionStorage.setItem("reco_result", JSON.stringify(payload));
-      sessionStorage.setItem("quiz_answers", JSON.stringify(answers));
-      // Loading page is polling sessionStorage — will auto-navigate to /archetype
-    } catch (err) {
-      // If API fails while on loading page, navigate back with error state
-      setError(err instanceof Error ? err.message : "Unexpected error");
-      router.push("/quiz");
-    } finally {
-      setSubmitting(false);
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  function handleSelect(questionId: string, value: string | string[]) {
+    setAnswers((prev) => ({ ...prev, [questionId]: value }));
+  }
+
+  function goToNext() {
+    if (currentQuestionIndex < totalQuestions - 1) {
+      setCurrentQuestionIndex((prev) => prev + 1);
     }
   }
 
+  function goToPrevious() {
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex((prev) => prev - 1);
+    }
+  }
+
+  function goToQuestion(index: number) {
+    setCurrentQuestionIndex(index);
+    setIsDropdownOpen(false);
+  }
+
+  function handleSelectionComplete() {
+    // Auto-advance for single-select and mbti questions
+    if (currentQuestion.kind === "single" || currentQuestion.kind === "mbti") {
+      goToNext();
+    }
+  }
+
+  const hasCurrentAnswer = (() => {
+    const answer = answers[currentQuestion.id];
+    if (Array.isArray(answer)) {
+      return answer.length > 0;
+    }
+    return !!answer;
+  })();
+
+  const isLastQuestion = currentQuestionIndex === totalQuestions - 1;
+  const isFirstQuestion = currentQuestionIndex === 0;
+  const isMultiOrHybrid = currentQuestion.kind === "multi" || currentQuestion.kind === "hybrid";
+
   return (
-    <main style={s.page}>
-      {/* Fixed thin progress line at top */}
-      <div style={s.progressBarFixed}>
-        <div style={{ ...s.progressFill, width: `${progress}%` }} />
+    <main className="min-h-dvh bg-gradient-to-b from-[#f8fafc] to-[#eef2f7]">
+      {/* Progress bar - sticky at top */}
+      <div className="sticky top-0 z-20 h-1 w-full bg-slate-200">
+        <div
+          className="h-full bg-gradient-to-r from-slate-900 to-slate-700 transition-all duration-300 ease-out"
+          style={{ width: `${progress}%` }}
+        />
       </div>
 
-      {/* Sticky header */}
-      <div style={s.stickyHeader}>
-        <div style={s.headerInner}>
-          <span style={s.brandLabel}>Scent Statement Finder</span>
-          <span style={s.progressCount}>{answered} / {total}</span>
-        </div>
-      </div>
-
-      <form onSubmit={onSubmit} style={s.form}>
-        <div style={s.questionsStack}>
-          {QUIZ_CONFIG.map((question, index) => {
-            const val = answers[question.id];
-            const isAnswered = Array.isArray(val)
-              ? val.length > 0
-              : typeof val === "string" && val.length > 0;
-
-            return (
-              <div
-                key={question.id}
-                ref={(el) => { questionRefs.current[index] = el; }}
-                style={s.questionCard}
+      <div className="mx-auto max-w-[720px] px-4 pb-32 pt-6 md:px-6">
+        {/* Header - To-do style from reference */}
+        <header className="mb-8 flex items-center justify-between">
+          {/* Left side: Quiz title (italic serif) + Question selector dropdown */}
+          <div className="flex items-center gap-3">
+            <span className="font-serif text-xl italic text-slate-900">Quiz</span>
+            
+            {/* Question number dropdown - white box with border */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                type="button"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="flex items-center gap-1.5 rounded-full border-2 border-slate-900 bg-white px-3 py-1 text-sm font-medium text-slate-900 transition-colors hover:bg-slate-50"
               >
-                <div style={s.questionMeta}>
-                  <span style={s.questionIndex}>{String(index + 1).padStart(2, "0")}</span>
-                  {isAnswered && <span style={s.answeredPill}>✓</span>}
+                {currentQuestionIndex + 1}/{totalQuestions}
+                <ChevronDown className={`h-4 w-4 transition-transform ${isDropdownOpen ? "rotate-180" : ""}`} />
+              </button>
+              
+              {/* Dropdown menu */}
+              {isDropdownOpen && (
+                <div className="absolute left-0 top-full z-30 mt-2 w-64 rounded-2xl border-2 border-slate-200 bg-white py-2 shadow-lg">
+                  {DEMO_QUESTIONS.map((q, index) => {
+                    const hasAnswer = !!answers[q.id];
+                    const isCurrent = index === currentQuestionIndex;
+                    return (
+                      <button
+                        key={q.id}
+                        type="button"
+                        onClick={() => goToQuestion(index)}
+                        className={`flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm transition-colors hover:bg-slate-50 ${
+                          isCurrent ? "bg-slate-100" : ""
+                        }`}
+                      >
+                        <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border-2 text-xs font-semibold ${
+                          isCurrent ? "border-slate-900 bg-slate-900 text-white" : "border-slate-300 text-slate-600"
+                        }`}>
+                          {index + 1}
+                        </span>
+                        <span className="flex-1 truncate text-slate-700">
+                          {q.questionText.length > 30 ? q.questionText.slice(0, 30) + "..." : q.questionText}
+                        </span>
+                        {hasAnswer && (
+                          <span className="h-2 w-2 shrink-0 rounded-full bg-green-500" />
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
-                <h2 style={s.questionTitle}>{QUESTION_DISPLAY[question.id]}</h2>
+              )}
+            </div>
+          </div>
 
-                {question.id === "dislike_note" && (
-                  <p style={s.questionHint}>
-                    Select up to 3 — these will never appear in your recommendations.
-                  </p>
-                )}
-
-                <QuizQuestionCard
-                  id={question.id}
-                  questionText={QUESTION_DISPLAY[question.id]}
-                  kind={
-                    question.kind === "multi"
-                      ? "multi"
-                      : CHIP_GRID_QUESTIONS.has(question.id)
-                      ? "mbti"
-                      : IMAGE_CARD_QUESTIONS.has(question.id)
-                      ? "hybrid"
-                      : "single"
-                  }
-                  options={question.options.map((opt) => ({
-                    value: String(opt),
-                    label: prettyLabel(String(opt)),
-                  }))}
-                  selectedValues={
-                    answers[question.id] ??
-                    (question.kind === "multi" ? [] : "")
-                  }
-                  onSelect={(val) => {
-                    if (Array.isArray(val)) {
-                      setAnswers((prev) => ({
-                        ...prev,
-                        [question.id]: val,
-                      }));
-                    } else {
-                      updateSingle(question.id, val, index);
-                    }
-                  }}
-                  onSelectionComplete={() => scrollToNext(index)}
-                />
-              </div>
-            );
-          })}
-        </div>
-
-        {error && <p style={s.errorText}>{error}</p>}
-
-        <div style={s.stickyBottom}>
+          {/* Right side: Home button (black pill) */}
           <button
-            type="submit"
-            disabled={submitting || !allAnswered}
-            style={{
-              ...s.ctaBtn,
-              opacity: allAnswered ? (submitting ? 0.7 : 1) : 0.38,
-              cursor: allAnswered && !submitting ? "pointer" : "not-allowed",
-            }}
+            type="button"
+            onClick={() => window.location.href = "/"}
+            className="flex items-center gap-1.5 rounded-full bg-slate-900 px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-slate-800"
           >
-            {submitting
-              ? "Finding your matches..."
-              : allAnswered
-              ? "See my scent profile →"
-              : `${total - answered} question${total - answered !== 1 ? "s" : ""} left`}
+            <Home className="h-3.5 w-3.5" />
+            Home
           </button>
+        </header>
+
+        {/* Question Card */}
+        <QuizQuestionCard
+          key={currentQuestion.id}
+          id={currentQuestion.id}
+          questionText={currentQuestion.questionText}
+          kind={currentQuestion.kind}
+          options={currentQuestion.options}
+          selectedValues={answers[currentQuestion.id] || (isMultiOrHybrid ? [] : "")}
+          onSelect={(value) => handleSelect(currentQuestion.id, value)}
+          maxSelections={3}
+          onSelectionComplete={handleSelectionComplete}
+          questionImageUrl={currentQuestion.kind !== "hybrid" && currentQuestion.kind !== "mbti" ? currentQuestion.questionImageUrl : undefined}
+        />
+      </div>
+
+      {/* Sticky bottom navigation */}
+      {isMultiOrHybrid && (
+        <div className="fixed inset-x-0 bottom-0 z-10 bg-gradient-to-t from-[#f8fafc] via-[#f8fafc]/95 to-transparent px-4 pb-6 pt-4">
+          <div className="mx-auto flex max-w-[720px] gap-3">
+            {!isFirstQuestion && (
+              <button
+                type="button"
+                onClick={goToPrevious}
+                className="flex h-12 items-center justify-center gap-2 rounded-full border-2 border-slate-300 bg-white px-6 text-sm font-medium text-slate-700 transition-all hover:border-slate-400 hover:bg-slate-50"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                Back
+              </button>
+            )}
+            <button
+              type="button"
+              onClick={goToNext}
+              disabled={!hasCurrentAnswer || isLastQuestion}
+              className="flex h-12 flex-1 items-center justify-center gap-2 rounded-full bg-slate-900 text-sm font-bold uppercase tracking-[0.06em] text-white transition-all hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              {isLastQuestion ? "See Results" : "Continue"}
+              {!isLastQuestion && <ArrowRight className="h-4 w-4" />}
+            </button>
+          </div>
         </div>
-      </form>
+      )}
     </main>
   );
 }
-
-// ─── Styles ────────────────────────────────────────────────────────────────
-
-const s: Record<string, React.CSSProperties> = {
-  page: {
-    minHeight: "100dvh",
-    background: "linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%)",
-    color: "#0f172a",
-    fontFamily: "'SF Pro Text', -apple-system, 'Helvetica Neue', sans-serif",
-    paddingBottom: 100,
-  },
-  progressBarFixed: {
-    position: "fixed",
-    top: 0, left: 0, right: 0,
-    height: 3,
-    background: "rgba(15,23,42,0.08)",
-    zIndex: 100,
-  },
-  progressFill: {
-    height: "100%",
-    background: "#0f172a",
-    borderRadius: "0 2px 2px 0",
-    transition: "width 350ms ease",
-  },
-  stickyHeader: {
-    position: "sticky",
-    top: 0,
-    zIndex: 50,
-    background: "rgba(248,250,252,0.88)",
-    backdropFilter: "blur(10px)",
-    WebkitBackdropFilter: "blur(10px)",
-    borderBottom: "0.5px solid rgba(15,23,42,0.08)",
-    paddingTop: 3,
-  },
-  headerInner: {
-    maxWidth: 600,
-    margin: "0 auto",
-    padding: "10px 20px",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  brandLabel: {
-    fontSize: 11,
-    letterSpacing: "0.08em",
-    textTransform: "uppercase",
-    color: "#64748b",
-    fontWeight: 600,
-  },
-  progressCount: {
-    fontSize: 12,
-    color: "#94a3b8",
-    fontWeight: 500,
-  },
-  form: {
-    maxWidth: 600,
-    margin: "0 auto",
-    padding: "24px 16px 0",
-  },
-  questionsStack: {
-    display: "grid",
-    gap: 12,
-  },
-  questionCard: {
-    background: "rgba(255,255,255,0.88)",
-    borderRadius: 18,
-    padding: "18px 16px 20px",
-    boxShadow: "0 2px 16px rgba(15,23,42,0.05)",
-    border: "0.5px solid rgba(15,23,42,0.06)",
-  },
-  questionMeta: {
-    display: "flex",
-    alignItems: "center",
-    gap: 8,
-    marginBottom: 6,
-  },
-  questionIndex: {
-    fontSize: 11,
-    letterSpacing: "0.06em",
-    color: "#94a3b8",
-    fontWeight: 600,
-  },
-  answeredPill: {
-    fontSize: 10,
-    background: "#0f172a",
-    color: "#fff",
-    padding: "1px 7px",
-    borderRadius: 999,
-    fontWeight: 600,
-  },
-  questionTitle: {
-    fontSize: 18,
-    fontWeight: 600,
-    lineHeight: 1.3,
-    color: "#0f172a",
-    marginBottom: 14,
-    letterSpacing: "-0.01em",
-  },
-  questionHint: {
-    fontSize: 13,
-    color: "#64748b",
-    marginBottom: 12,
-    lineHeight: 1.5,
-    marginTop: -8,
-  },
-  radioRow: {
-    display: "flex",
-    alignItems: "center",
-    gap: 11,
-    padding: "11px 13px",
-    borderRadius: 12,
-    border: "0.5px solid",
-    cursor: "pointer",
-    transition: "border-color 0.15s, background 0.15s",
-    textAlign: "left",
-    width: "100%",
-    background: "transparent",
-    color: "#0f172a",
-    fontFamily: "inherit",
-    minHeight: 44,
-  },
-  radioDot: {
-    width: 17,
-    height: 17,
-    borderRadius: "50%",
-    border: "1.5px solid",
-    flexShrink: 0,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    transition: "all 0.15s",
-  },
-  radioDotCenter: {
-    width: 7,
-    height: 7,
-    borderRadius: "50%",
-    background: "#fff",
-  },
-  checkBox: {
-    width: 17,
-    height: 17,
-    borderRadius: 4,
-    border: "1.5px solid",
-    flexShrink: 0,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    transition: "all 0.15s",
-  },
-  checkMark: {
-    fontSize: 10,
-    color: "#fff",
-    fontWeight: 700,
-    lineHeight: 1,
-  },
-  radioLabel: {
-    fontSize: 14,
-    lineHeight: 1.45,
-    color: "#0f172a",
-    flex: 1,
-  },
-  moodCard: {
-    display: "flex",
-    alignItems: "flex-start",
-    gap: 10,
-    padding: "13px 14px",
-    borderRadius: 12,
-    border: "0.5px solid",
-    cursor: "pointer",
-    transition: "all 0.15s",
-    fontSize: 14,
-    lineHeight: 1.45,
-    color: "#0f172a",
-    fontFamily: "inherit",
-    width: "100%",
-    minHeight: 44,
-    background: "transparent",
-  },
-  moodCheck: {
-    fontSize: 12,
-    color: "#0f172a",
-    fontWeight: 700,
-    flexShrink: 0,
-    marginTop: 1,
-  },
-  imageCard: {
-    borderRadius: 13,
-    border: "solid",
-    overflow: "hidden",
-    cursor: "pointer",
-    transition: "border-color 0.15s",
-    background: "rgba(255,255,255,0.9)",
-    padding: 0,
-    textAlign: "left",
-    position: "relative",
-    fontFamily: "inherit",
-    color: "#0f172a",
-  },
-  imageSlot: {
-    width: "100%",
-    aspectRatio: "1 / 1",
-    background: "#eef2f7",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-  },
-  imageSelBadge: {
-    position: "absolute",
-    top: 7, right: 7,
-    width: 22, height: 22,
-    borderRadius: "50%",
-    background: "#0f172a",
-    color: "#fff",
-    fontSize: 11,
-    fontWeight: 700,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    zIndex: 2,
-  },
-  imageSlotText: {
-    fontSize: 10,
-    letterSpacing: "0.06em",
-    textTransform: "uppercase",
-    color: "#94a3b8",
-  },
-  imageCardBody: {
-    padding: "8px 10px 10px",
-  },
-  imageCardMain: {
-    fontSize: 12,
-    fontWeight: 600,
-    color: "#0f172a",
-    lineHeight: 1.3,
-    margin: 0,
-  },
-  imageCardSub: {
-    fontSize: 11,
-    color: "#64748b",
-    margin: "2px 0 0",
-    lineHeight: 1.3,
-  },
-  chip: {
-    padding: "9px 6px",
-    borderRadius: 9,
-    border: "0.5px solid",
-    cursor: "pointer",
-    fontSize: 13,
-    fontWeight: 500,
-    transition: "all 0.15s",
-    fontFamily: "inherit",
-    minHeight: 38,
-    letterSpacing: "0.01em",
-  },
-  stickyBottom: {
-    position: "fixed",
-    left: 0, right: 0, bottom: 0,
-    padding: "12px 16px 20px",
-    background: "linear-gradient(180deg, rgba(248,250,252,0) 0%, rgba(238,242,247,1) 30%)",
-    zIndex: 40,
-  },
-  ctaBtn: {
-    display: "block",
-    maxWidth: 600,
-    margin: "0 auto",
-    width: "100%",
-    padding: "15px 24px",
-    borderRadius: 999,
-    border: "none",
-    background: "#0f172a",
-    color: "#fff",
-    fontSize: 14,
-    fontWeight: 700,
-    letterSpacing: "0.04em",
-    textTransform: "uppercase",
-    transition: "opacity 0.2s",
-    fontFamily: "inherit",
-  },
-  errorText: {
-    color: "#b91c1c",
-    fontSize: 13,
-    margin: "12px 0",
-    textAlign: "center",
-  },
-};
