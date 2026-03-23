@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-dvh flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-slate-100 px-4">
+    <main className="flex min-h-dvh flex-col items-center justify-center bg-gradient-to-b from-[#f8fafc] to-[#eef2f7] px-4">
       <div className="max-w-md text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.06em] text-slate-500">
           Component Demo

@@ -5,13 +5,13 @@ import { Check } from "lucide-react";
 export interface QuizOption {
   value: string;
   label: string;
+  emoji?: string;
+  subtitle?: string;
 }
 
 export interface QuizQuestionCardProps {
   /** Unique question identifier */
   id: string;
-  /** Question number for display (1-indexed) */
-  questionNumber: number;
   /** The question text to display */
   questionText: string;
   /** Selection mode: 'single' for radio, 'multi' for checkbox */
@@ -24,13 +24,12 @@ export interface QuizQuestionCardProps {
   onSelect: (value: string | string[]) => void;
   /** Optional: Maximum selections allowed for multi-select */
   maxSelections?: number;
-  /** Optional: Callback after selection (e.g., for auto-scroll on single select) */
+  /** Optional: Callback after selection (e.g., for auto-advance on single select) */
   onSelectionComplete?: () => void;
 }
 
 export function QuizQuestionCard({
   id,
-  questionNumber,
   questionText,
   kind,
   options,
@@ -52,24 +51,20 @@ export function QuizQuestionCard({
       let newValues: string[];
 
       if (isSelected) {
-        // Deselect
         newValues = selectedArray.filter((v) => v !== value);
       } else {
-        // Select (respect max limit)
         if (selectedArray.length >= maxSelections) {
-          return; // Don't add more if limit reached
+          return;
         }
         newValues = [...selectedArray, value];
       }
       onSelect(newValues);
     } else {
-      // Single select
       onSelect(value);
-      // Trigger completion callback for auto-scroll behavior
       if (onSelectionComplete) {
         setTimeout(() => {
           onSelectionComplete();
-        }, 200);
+        }, 300);
       }
     }
   }
@@ -80,36 +75,34 @@ export function QuizQuestionCard({
 
   function isOptionDisabled(value: string): boolean {
     if (!isMulti) return false;
-    // Disable unselected options when max is reached
     return selectedArray.length >= maxSelections && !selectedArray.includes(value);
   }
 
   return (
-    <article className="rounded-2xl bg-white/90 p-3.5 shadow-[0_8px_24px_rgba(15,23,42,0.06)] md:p-6">
-      {/* Question Label */}
-      <p className="mb-1.5 text-xs font-semibold uppercase tracking-[0.05em] text-slate-500">
-        Question {questionNumber}
-      </p>
-
+    <div className="flex flex-col">
       {/* Question Text */}
-      <h2 className="mb-3 text-xl font-semibold leading-tight text-slate-900 md:mb-4">
+      <h2 className="mb-6 font-serif text-[28px] font-medium leading-tight tracking-[-0.01em] text-slate-900 md:text-[32px]">
         {questionText}
       </h2>
 
       {/* Multi-select hint */}
       {isMulti && (
-        <p className="mb-3 text-sm text-slate-500">
-          Select up to {maxSelections} options
+        <p className="mb-4 text-sm text-slate-500">
+          Select up to {maxSelections}
           {selectedArray.length > 0 && (
-            <span className="ml-1 text-slate-700">
-              ({selectedArray.length}/{maxSelections} selected)
+            <span className="ml-1.5 font-medium text-slate-700">
+              ({selectedArray.length}/{maxSelections})
             </span>
           )}
         </p>
       )}
 
       {/* Options */}
-      <div className="grid gap-2" role={isMulti ? "group" : "radiogroup"} aria-labelledby={`question-${id}`}>
+      <div 
+        className="flex flex-col gap-2.5" 
+        role={isMulti ? "group" : "radiogroup"} 
+        aria-labelledby={`question-${id}`}
+      >
         {options.map((option) => {
           const selected = isOptionSelected(option.value);
           const disabled = isOptionDisabled(option.value);
@@ -118,13 +111,13 @@ export function QuizQuestionCard({
             <label
               key={option.value}
               className={`
-                group relative flex min-h-[44px] cursor-pointer items-center gap-3 rounded-xl 
-                px-3 py-2.5 transition-all duration-150
+                group relative flex min-h-[64px] cursor-pointer items-center gap-4 
+                rounded-full border-2 px-4 py-3 transition-all duration-200
                 ${selected
-                  ? "border-[1.5px] border-slate-900 bg-slate-200/80"
-                  : "border border-slate-300 bg-white hover:border-slate-400 hover:bg-slate-50"
+                  ? "border-slate-900 bg-slate-50"
+                  : "border-slate-300 bg-white hover:border-slate-400"
                 }
-                ${disabled ? "cursor-not-allowed opacity-50" : ""}
+                ${disabled ? "cursor-not-allowed opacity-40" : ""}
               `}
             >
               {/* Hidden input for accessibility */}
@@ -139,57 +132,61 @@ export function QuizQuestionCard({
                 aria-label={option.label}
               />
 
-              {/* Custom indicator */}
+              {/* Emoji */}
+              {option.emoji && (
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center text-[28px]">
+                  {option.emoji}
+                </span>
+              )}
+
+              {/* Text content */}
+              <div className="flex min-w-0 flex-1 flex-col justify-center">
+                <span
+                  className={`
+                    text-[15px] leading-snug transition-colors duration-150
+                    ${selected ? "font-semibold text-slate-900" : "font-medium text-slate-800"}
+                  `}
+                >
+                  {option.label}
+                </span>
+                {option.subtitle && (
+                  <span className="mt-0.5 text-[13px] text-slate-500">
+                    {option.subtitle}
+                  </span>
+                )}
+              </div>
+
+              {/* Checkbox indicator on the right */}
               <span
                 className={`
-                  flex h-5 w-5 shrink-0 items-center justify-center transition-all duration-150
-                  ${isMulti ? "rounded-md" : "rounded-full"}
+                  flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-2 
+                  transition-all duration-200
                   ${selected
-                    ? "border-2 border-slate-900 bg-slate-900"
-                    : "border-2 border-slate-400 bg-white group-hover:border-slate-500"
+                    ? "border-slate-900 bg-slate-900"
+                    : "border-slate-300 bg-white group-hover:border-slate-400"
                   }
                 `}
               >
                 {selected && (
-                  isMulti ? (
-                    <Check className="h-3 w-3 text-white" strokeWidth={3} />
-                  ) : (
-                    <span className="h-2 w-2 rounded-full bg-white" />
-                  )
+                  <Check className="h-4 w-4 text-white" strokeWidth={3} />
                 )}
               </span>
-
-              {/* Option label */}
-              <span
-                className={`
-                  flex-1 text-[15px] leading-snug transition-colors duration-150
-                  ${selected ? "font-medium text-slate-900" : "text-slate-700"}
-                `}
-              >
-                {option.label}
-              </span>
-
-              {/* Selected indicator badge (optional visual enhancement) */}
-              {selected && (
-                <span className="shrink-0 text-xs font-medium text-slate-600">
-                  {isMulti ? "" : "Selected"}
-                </span>
-              )}
             </label>
           );
         })}
       </div>
 
-      {/* Selection summary for multi-select */}
+      {/* Selection summary pills for multi-select */}
       {isMulti && selectedArray.length > 0 && (
-        <div className="mt-3 flex flex-wrap gap-1.5">
+        <div className="mt-4 flex flex-wrap gap-2">
           {selectedArray.map((value) => {
             const option = options.find((o) => o.value === value);
             return (
               <span
                 key={value}
-                className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600"
+                className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700"
               >
+                {option?.emoji && <span className="text-sm">{option.emoji}</span>}
                 {option?.label || value}
                 <button
                   type="button"
@@ -198,10 +195,10 @@ export function QuizQuestionCard({
                     e.stopPropagation();
                     handleOptionClick(value);
                   }}
-                  className="ml-0.5 rounded-full p-0.5 text-slate-400 hover:bg-slate-200 hover:text-slate-600"
+                  className="ml-0.5 rounded-full p-0.5 text-slate-400 transition-colors hover:bg-slate-200 hover:text-slate-600"
                   aria-label={`Remove ${option?.label || value}`}
                 >
-                  <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
@@ -210,7 +207,7 @@ export function QuizQuestionCard({
           })}
         </div>
       )}
-    </article>
+    </div>
   );
 }
 
