@@ -134,24 +134,21 @@ export function QuizQuestionCard({
         </p>
       )}
 
-      {/* MBTI Tag-Pair Layout */}
+      {/* MBTI Pill Grid Layout - white pills that turn dark when selected */}
       {isMbti ? (
         <div 
-          className="flex flex-col gap-2.5" 
+          className="flex flex-wrap gap-2.5" 
           role="radiogroup" 
           aria-labelledby={`question-${id}`}
         >
           {options.map((option) => {
             const selected = isOptionSelected(option.value);
-            const description = MBTI_DESCRIPTIONS[option.value] || option.subtitle || "";
+            const description = MBTI_DESCRIPTIONS[option.value] || option.subtitle || option.label;
 
             return (
               <label
                 key={option.value}
-                className={`
-                  group relative flex cursor-pointer items-center gap-2 
-                  transition-all duration-200
-                `}
+                className="cursor-pointer"
               >
                 {/* Hidden input for accessibility */}
                 <input
@@ -161,51 +158,21 @@ export function QuizQuestionCard({
                   checked={selected}
                   onChange={() => handleOptionClick(option.value)}
                   className="sr-only"
-                  aria-label={`${option.value} - ${description}`}
+                  aria-label={description}
                 />
 
-                {/* Black pill - MBTI type */}
+                {/* White outlined pill that turns dark when selected */}
                 <span
                   className={`
-                    flex h-11 items-center justify-center rounded-full px-5 text-[15px] font-semibold 
+                    flex h-11 items-center rounded-full border-2 px-5 text-[15px] font-medium
                     transition-all duration-200
                     ${selected
-                      ? "bg-slate-900 text-white"
-                      : "bg-slate-900 text-white"
-                    }
-                  `}
-                >
-                  {option.value}
-                </span>
-
-                {/* White outlined pill - description */}
-                <span
-                  className={`
-                    flex h-11 flex-1 items-center rounded-full border-2 px-5 text-[15px] 
-                    transition-all duration-200
-                    ${selected
-                      ? "border-slate-900 bg-slate-50 font-medium text-slate-900"
-                      : "border-slate-300 bg-white text-slate-700 group-hover:border-slate-400"
+                      ? "border-slate-900 bg-slate-900 text-white"
+                      : "border-slate-300 bg-white text-slate-700 hover:border-slate-400"
                     }
                   `}
                 >
                   {description}
-                </span>
-
-                {/* Checkbox indicator */}
-                <span
-                  className={`
-                    flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-2 
-                    transition-all duration-200
-                    ${selected
-                      ? "border-slate-900 bg-slate-900"
-                      : "border-slate-300 bg-white group-hover:border-slate-400"
-                    }
-                  `}
-                >
-                  {selected && (
-                    <Check className="h-4 w-4 text-white" strokeWidth={3} />
-                  )}
                 </span>
               </label>
             );
