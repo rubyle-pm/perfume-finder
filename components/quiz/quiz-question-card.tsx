@@ -15,11 +15,11 @@ export interface QuizQuestionCardProps {
   id: string;
   /** The question text to display */
   questionText: string;
-  /** Selection mode: 'single' for radio, 'multi' for checkbox, 'hybrid' for image grid + multi */
-  kind: "single" | "multi" | "hybrid";
+  /** Selection mode: 'single' for radio, 'multi' for checkbox, 'hybrid' for image grid, 'mbti' for tag-pair layout */
+  kind: "single" | "multi" | "hybrid" | "mbti";
   /** Array of options to display */
   options: QuizOption[];
-  /** Currently selected value(s) - string for single, string[] for multi/hybrid */
+  /** Currently selected value(s) - string for single/mbti, string[] for multi/hybrid */
   selectedValues: string | string[];
   /** Callback when selection changes */
   onSelect: (value: string | string[]) => void;
@@ -27,7 +27,7 @@ export interface QuizQuestionCardProps {
   maxSelections?: number;
   /** Optional: Callback after selection (e.g., for auto-advance on single select) */
   onSelectionComplete?: () => void;
-  /** Optional: Question image displayed above options (21:9 aspect ratio) */
+  /** Optional: Question image displayed below question text (21:9 aspect ratio) */
   questionImageUrl?: string;
 }
 
@@ -44,6 +44,7 @@ export function QuizQuestionCard({
 }: QuizQuestionCardProps) {
   const isMulti = kind === "multi" || kind === "hybrid";
   const isHybrid = kind === "hybrid";
+  const isMbti = kind === "mbti";
   const selectedArray = Array.isArray(selectedValues)
     ? selectedValues
     : selectedValues
@@ -83,9 +84,34 @@ export function QuizQuestionCard({
     return selectedArray.length >= maxSelections && !selectedArray.includes(value);
   }
 
+  // MBTI descriptions
+  const MBTI_DESCRIPTIONS: Record<string, string> = {
+    INTJ: "The Architect",
+    INTP: "The Logician",
+    ENTJ: "The Commander",
+    ENTP: "The Debater",
+    INFJ: "The Advocate",
+    INFP: "The Mediator",
+    ENFJ: "The Protagonist",
+    ENFP: "The Campaigner",
+    ISTJ: "The Logistician",
+    ISFJ: "The Defender",
+    ESTJ: "The Executive",
+    ESFJ: "The Consul",
+    ISTP: "The Virtuoso",
+    ISFP: "The Adventurer",
+    ESTP: "The Entrepreneur",
+    ESFP: "The Entertainer",
+  };
+
   return (
     <div className="flex flex-col">
-      {/* Question Image - 21:9 aspect ratio placeholder for non-image options */}
+      {/* Question Text */}
+      <h2 className="mb-6 font-serif text-[28px] font-medium leading-tight tracking-[-0.01em] text-slate-900 md:text-[32px]">
+        {questionText}
+      </h2>
+
+      {/* Question Image - 21:9 aspect ratio placeholder BELOW question text */}
       {questionImageUrl && (
         <div className="mb-6 aspect-[21/9] w-full overflow-hidden rounded-2xl bg-slate-200">
           <img
@@ -95,11 +121,6 @@ export function QuizQuestionCard({
           />
         </div>
       )}
-
-      {/* Question Text */}
-      <h2 className="mb-6 font-serif text-[28px] font-medium leading-tight tracking-[-0.01em] text-slate-900 md:text-[32px]">
-        {questionText}
-      </h2>
 
       {/* Multi-select/Hybrid hint */}
       {isMulti && (
@@ -113,8 +134,85 @@ export function QuizQuestionCard({
         </p>
       )}
 
-      {/* Options - Grid layout for hybrid (with images), List layout for others */}
-      {isHybrid ? (
+      {/* MBTI Tag-Pair Layout */}
+      {isMbti ? (
+        <div 
+          className="flex flex-col gap-2.5" 
+          role="radiogroup" 
+          aria-labelledby={`question-${id}`}
+        >
+          {options.map((option) => {
+            const selected = isOptionSelected(option.value);
+            const description = MBTI_DESCRIPTIONS[option.value] || option.subtitle || "";
+
+            return (
+              <label
+                key={option.value}
+                className={`
+                  group relative flex cursor-pointer items-center gap-2 
+                  transition-all duration-200
+                `}
+              >
+                {/* Hidden input for accessibility */}
+                <input
+                  type="radio"
+                  name={id}
+                  value={option.value}
+                  checked={selected}
+                  onChange={() => handleOptionClick(option.value)}
+                  className="sr-only"
+                  aria-label={`${option.value} - ${description}`}
+                />
+
+                {/* Black pill - MBTI type */}
+                <span
+                  className={`
+                    flex h-11 items-center justify-center rounded-full px-5 text-[15px] font-semibold 
+                    transition-all duration-200
+                    ${selected
+                      ? "bg-slate-900 text-white"
+                      : "bg-slate-900 text-white"
+                    }
+                  `}
+                >
+                  {option.value}
+                </span>
+
+                {/* White outlined pill - description */}
+                <span
+                  className={`
+                    flex h-11 flex-1 items-center rounded-full border-2 px-5 text-[15px] 
+                    transition-all duration-200
+                    ${selected
+                      ? "border-slate-900 bg-slate-50 font-medium text-slate-900"
+                      : "border-slate-300 bg-white text-slate-700 group-hover:border-slate-400"
+                    }
+                  `}
+                >
+                  {description}
+                </span>
+
+                {/* Checkbox indicator */}
+                <span
+                  className={`
+                    flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-2 
+                    transition-all duration-200
+                    ${selected
+                      ? "border-slate-900 bg-slate-900"
+                      : "border-slate-300 bg-white group-hover:border-slate-400"
+                    }
+                  `}
+                >
+                  {selected && (
+                    <Check className="h-4 w-4 text-white" strokeWidth={3} />
+                  )}
+                </span>
+              </label>
+            );
+          })}
+        </div>
+      ) : isHybrid ? (
+        /* Hybrid Grid Layout - with images */
         <div 
           className="grid grid-cols-2 gap-3 md:grid-cols-3" 
           role="group" 
@@ -179,11 +277,6 @@ export function QuizQuestionCard({
                     >
                       {option.label}
                     </span>
-                    {option.subtitle && (
-                      <span className="mt-0.5 block truncate text-[11px] text-slate-500">
-                        {option.subtitle}
-                      </span>
-                    )}
                   </div>
 
                   {/* Checkbox indicator */}
@@ -207,6 +300,7 @@ export function QuizQuestionCard({
           })}
         </div>
       ) : (
+        /* Standard List Layout - single/multi */
         <div 
           className="flex flex-col gap-2.5" 
           role={isMulti ? "group" : "radiogroup"} 
