@@ -1,6 +1,23 @@
 "use client";
 
-import { Check } from "lucide-react";
+function CheckIcon({ className }: { className: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M20 6L9 17L4 12"
+        stroke="currentColor"
+        strokeWidth={3}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 export interface QuizOption {
   value: string;
@@ -204,7 +221,7 @@ export function QuizQuestionCard({
                   `}
                 >
                   {selected && (
-                    <Check className="h-4 w-4 text-white" strokeWidth={3} />
+                    <CheckIcon className="h-4 w-4 text-white" />
                   )}
                 </span>
               </label>
@@ -291,7 +308,7 @@ export function QuizQuestionCard({
                     `}
                   >
                     {selected && (
-                      <Check className="h-3 w-3 text-white" strokeWidth={3} />
+                      <CheckIcon className="h-3 w-3 text-white" />
                     )}
                   </span>
                 </div>
@@ -371,7 +388,7 @@ export function QuizQuestionCard({
                   `}
                 >
                   {selected && (
-                    <Check className="h-4 w-4 text-white" strokeWidth={3} />
+                    <CheckIcon className="h-4 w-4 text-white" />
                   )}
                 </span>
               </label>

@@ -2,6 +2,7 @@
 
 import { FormEvent, useMemo, useState, useRef } from "react";
 import { useRouter } from "next/navigation";
+import QuizQuestionCard from "@/components/quiz/quiz-question-card";
 import {
   DISPLAY_LABELS,
   QUESTION_DISPLAY,
@@ -17,7 +18,6 @@ function prettyLabel(value: string): string {
 }
 
 const IMAGE_CARD_QUESTIONS = new Set(["scent_type", "style_icon", "closet_aesthetic"]);
-const MOOD_CARD_QUESTIONS = new Set(["mood", "weekend_vibe"]);
 const CHIP_GRID_QUESTIONS = new Set(["mbti", "rising_sign"]);
 
 export default function QuizPage() {
@@ -138,38 +138,38 @@ export default function QuizPage() {
                   </p>
                 )}
 
-                {question.kind === "multi" ? (
-                  <MultiSelect
-                    question={question}
-                    current={(answers[question.id] as string[]) ?? []}
-                    onUpdate={(v, checked) => updateMulti(question.id, v, checked)}
-                  />
-                ) : CHIP_GRID_QUESTIONS.has(question.id) ? (
-                  <ChipGrid
-                    question={question}
-                    current={answers[question.id] as string}
-                    cols={question.id === "mbti" ? 4 : 3}
-                    onUpdate={(v) => updateSingle(question.id, v, index)}
-                  />
-                ) : IMAGE_CARD_QUESTIONS.has(question.id) ? (
-                  <ImageCardGrid
-                    question={question}
-                    current={answers[question.id] as string}
-                    onUpdate={(v) => updateSingle(question.id, v, index)}
-                  />
-                ) : MOOD_CARD_QUESTIONS.has(question.id) ? (
-                  <MoodCardList
-                    question={question}
-                    current={answers[question.id] as string}
-                    onUpdate={(v) => updateSingle(question.id, v, index)}
-                  />
-                ) : (
-                  <RadioList
-                    question={question}
-                    current={answers[question.id] as string}
-                    onUpdate={(v) => updateSingle(question.id, v, index)}
-                  />
-                )}
+                <QuizQuestionCard
+                  id={question.id}
+                  questionText={QUESTION_DISPLAY[question.id]}
+                  kind={
+                    question.kind === "multi"
+                      ? "multi"
+                      : CHIP_GRID_QUESTIONS.has(question.id)
+                      ? "mbti"
+                      : IMAGE_CARD_QUESTIONS.has(question.id)
+                      ? "hybrid"
+                      : "single"
+                  }
+                  options={question.options.map((opt) => ({
+                    value: String(opt),
+                    label: prettyLabel(String(opt)),
+                  }))}
+                  selectedValues={
+                    answers[question.id] ??
+                    (question.kind === "multi" ? [] : "")
+                  }
+                  onSelect={(val) => {
+                    if (Array.isArray(val)) {
+                      setAnswers((prev) => ({
+                        ...prev,
+                        [question.id]: val,
+                      }));
+                    } else {
+                      updateSingle(question.id, val, index);
+                    }
+                  }}
+                  onSelectionComplete={() => scrollToNext(index)}
+                />
               </div>
             );
           })}
@@ -196,175 +196,6 @@ export default function QuizPage() {
         </div>
       </form>
     </main>
-  );
-}
-
-// ─── Sub-components ────────────────────────────────────────────────────────
-
-function RadioList({
-  question, current, onUpdate,
-}: {
-  question: (typeof QUIZ_CONFIG)[number];
-  current: string | undefined;
-  onUpdate: (v: string) => void;
-}) {
-  return (
-    <div style={{ display: "grid", gap: 6 }}>
-      {question.options.map((opt) => {
-        const val = String(opt);
-        const sel = current === val;
-        return (
-          <button key={val} type="button" onClick={() => onUpdate(val)}
-            style={{
-              ...s.radioRow,
-              borderColor: sel ? "#0f172a" : "rgba(15,23,42,0.12)",
-              background: sel ? "rgba(15,23,42,0.04)" : "transparent",
-            }}>
-            <span style={{
-              ...s.radioDot,
-              borderColor: sel ? "#0f172a" : "rgba(15,23,42,0.25)",
-              background: sel ? "#0f172a" : "transparent",
-            }}>
-              {sel && <span style={s.radioDotCenter} />}
-            </span>
-            <span style={s.radioLabel}>{prettyLabel(val)}</span>
-          </button>
-        );
-      })}
-    </div>
-  );
-}
-
-function MoodCardList({
-  question, current, onUpdate,
-}: {
-  question: (typeof QUIZ_CONFIG)[number];
-  current: string | undefined;
-  onUpdate: (v: string) => void;
-}) {
-  return (
-    <div style={{ display: "grid", gap: 7 }}>
-      {question.options.map((opt) => {
-        const val = String(opt);
-        const sel = current === val;
-        return (
-          <button key={val} type="button" onClick={() => onUpdate(val)}
-            style={{
-              ...s.moodCard,
-              borderColor: sel ? "#0f172a" : "rgba(15,23,42,0.1)",
-              background: sel ? "rgba(15,23,42,0.04)" : "rgba(255,255,255,0.6)",
-              fontWeight: sel ? 500 : 400,
-            }}>
-            {sel && <span style={s.moodCheck}>✓</span>}
-            <span style={{ textAlign: "left", flex: 1 }}>{prettyLabel(val)}</span>
-          </button>
-        );
-      })}
-    </div>
-  );
-}
-
-function ImageCardGrid({
-  question, current, onUpdate,
-}: {
-  question: (typeof QUIZ_CONFIG)[number];
-  current: string | undefined;
-  onUpdate: (v: string) => void;
-}) {
-  return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
-      {question.options.map((opt) => {
-        const val = String(opt);
-        const label = prettyLabel(val);
-        const [main, sub] = label.includes(" — ") ? label.split(" — ") : [label, null];
-        const sel = current === val;
-        return (
-          <button key={val} type="button" onClick={() => onUpdate(val)}
-            style={{
-              ...s.imageCard,
-              borderColor: sel ? "#0f172a" : "rgba(15,23,42,0.1)",
-              borderWidth: sel ? 1.5 : 0.5,
-            }}>
-            {/* Image slot — swap <div> for <Image> when assets are ready */}
-            <div style={s.imageSlot}>
-              {sel && <div style={s.imageSelBadge}>✓</div>}
-              <span style={s.imageSlotText}>image</span>
-            </div>
-            <div style={s.imageCardBody}>
-              <p style={s.imageCardMain}>{main}</p>
-              {sub && <p style={s.imageCardSub}>{sub}</p>}
-            </div>
-          </button>
-        );
-      })}
-    </div>
-  );
-}
-
-function ChipGrid({
-  question, current, cols, onUpdate,
-}: {
-  question: (typeof QUIZ_CONFIG)[number];
-  current: string | undefined;
-  cols: number;
-  onUpdate: (v: string) => void;
-}) {
-  return (
-    <div style={{ display: "grid", gridTemplateColumns: `repeat(${cols}, 1fr)`, gap: 6 }}>
-      {question.options.map((opt) => {
-        const val = String(opt);
-        const sel = current === val;
-        return (
-          <button key={val} type="button" onClick={() => onUpdate(val)}
-            style={{
-              ...s.chip,
-              background: sel ? "#0f172a" : "transparent",
-              color: sel ? "#fff" : "#0f172a",
-              borderColor: sel ? "#0f172a" : "rgba(15,23,42,0.2)",
-            }}>
-            {prettyLabel(val)}
-          </button>
-        );
-      })}
-    </div>
-  );
-}
-
-function MultiSelect({
-  question, current, onUpdate,
-}: {
-  question: (typeof QUIZ_CONFIG)[number];
-  current: string[];
-  onUpdate: (v: string, checked: boolean) => void;
-}) {
-  const MAX = 3;
-  return (
-    <div style={{ display: "grid", gap: 6 }}>
-      {question.options.map((opt) => {
-        const val = String(opt);
-        const sel = current.includes(val);
-        const limitHit = current.length >= MAX && !sel;
-        return (
-          <button key={val} type="button" disabled={limitHit}
-            onClick={() => onUpdate(val, !sel)}
-            style={{
-              ...s.radioRow,
-              borderColor: sel ? "#0f172a" : "rgba(15,23,42,0.12)",
-              background: sel ? "rgba(15,23,42,0.04)" : "transparent",
-              opacity: limitHit ? 0.3 : 1,
-            }}>
-            <span style={{
-              ...s.checkBox,
-              borderColor: sel ? "#0f172a" : "rgba(15,23,42,0.25)",
-              background: sel ? "#0f172a" : "transparent",
-            }}>
-              {sel && <span style={s.checkMark}>✓</span>}
-            </span>
-            <span style={s.radioLabel}>{prettyLabel(val)}</span>
-          </button>
-        );
-      })}
-    </div>
   );
 }
 
