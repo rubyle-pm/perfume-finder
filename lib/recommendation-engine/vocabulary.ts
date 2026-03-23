@@ -143,7 +143,7 @@ export const SCENT_TYPES = [
 
 export type ScentType = (typeof SCENT_TYPES)[number];
 
-export const SCENT_TYPE_DESCRIPTOR_MAP: Record<ScentType, Descriptor[]> = {
+export const SCENT_TYPE_DESCRIPTOR_MAP: Record<ScentType, Descriptor[]> = {  // need more diverse 
   fresh_airy: ["fresh", "aquatic"],
   warm_cozy: ["vanilla", "amber"],
   floral_feminine: ["floral", "powdery"],
