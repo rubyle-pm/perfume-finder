@@ -112,7 +112,7 @@ export function QuizQuestionCard({
               key={option.value}
               className={`
                 group relative flex min-h-[64px] cursor-pointer items-center gap-4 
-                rounded-full border-2 px-4 py-3 transition-all duration-200
+                rounded-2xl border-2 px-4 py-3 transition-all duration-200
                 ${selected
                   ? "border-slate-900 bg-slate-50"
                   : "border-slate-300 bg-white hover:border-slate-400"
