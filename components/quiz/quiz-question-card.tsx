@@ -84,26 +84,6 @@ export function QuizQuestionCard({
     return selectedArray.length >= maxSelections && !selectedArray.includes(value);
   }
 
-  // MBTI descriptions
-  const MBTI_DESCRIPTIONS: Record<string, string> = {
-    INTJ: "The Architect",
-    INTP: "The Logician",
-    ENTJ: "The Commander",
-    ENTP: "The Debater",
-    INFJ: "The Advocate",
-    INFP: "The Mediator",
-    ENFJ: "The Protagonist",
-    ENFP: "The Campaigner",
-    ISTJ: "The Logistician",
-    ISFJ: "The Defender",
-    ESTJ: "The Executive",
-    ESFJ: "The Consul",
-    ISTP: "The Virtuoso",
-    ISFP: "The Adventurer",
-    ESTP: "The Entrepreneur",
-    ESFP: "The Entertainer",
-  };
-
   return (
     <div className="flex flex-col">
       {/* Question Text */}
