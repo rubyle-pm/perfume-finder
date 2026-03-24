@@ -1,73 +1,91 @@
-"use client";  
+"use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 
 const MESSAGES = [
-  "Reading your signals...",
-  "Mapping your scent identity...",
-  "Finding your archetype...",
-  "Selecting your matches...",
+  "Reading your scent signals…",
+  "Matching your archetype…",
+  "Curating your recommendations…",
+  "Almost there…",
 ];
 
 export default function LoadingPage() {
   const router = useRouter();
-  const [msgIndex, setMsgIndex] = useState(0);
-  const [dots, setDots] = useState(0);
+  const called = useRef(false);
 
-  // Cycle through messages every 1.8s
   useEffect(() => {
-    const interval = setInterval(() => {
-      setMsgIndex((i) => (i + 1) % MESSAGES.length);
-    }, 1800);
-    return () => clearInterval(interval);
-  }, []);
+    if (called.current) return;
+    called.current = true;
 
-  // Animate dots
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setDots((d) => (d + 1) % 4);
-    }, 400);
-    return () => clearInterval(interval);
-  }, []);
+    async function run() {
+      try {
+        const raw = sessionStorage.getItem("quiz_answers");
+        const answers = raw ? JSON.parse(raw) : {};
 
-  // Navigate to archetype once result is in sessionStorage
-  useEffect(() => {
-    const check = setInterval(() => {
-      if (sessionStorage.getItem("reco_result")) {
-        clearInterval(check);
-        router.push("/archetype");
+        const res = await fetch("/api/recommend", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(answers),
+        });
+
+        if (!res.ok) throw new Error("API error");
+
+        const result = await res.json();
+        sessionStorage.setItem("reco_result", JSON.stringify(result));
+        router.replace("/archetype");
+      } catch (err) {
+        console.error("Recommendation failed:", err);
+        // Still navigate — archetype page shows graceful empty state
+        router.replace("/archetype");
       }
-    }, 200);
-    return () => clearInterval(check);
-  }, [router]);
+    }
 
-  const dotStr = ".".repeat(dots);
+    run();
+  }, [router]);
 
   return (
     <main style={s.page}>
-      {/* Animated orb */}
-      <div style={s.orbWrap}>
-        <div style={s.orb} />
-        <div style={s.orbRing} />
-      </div>
+      <div style={s.inner}>
+        {/* Animated logo mark */}
+        <div style={s.logoMark}>
+          <div style={s.ring1} />
+          <div style={s.ring2} />
+          <div style={s.dot} />
+        </div>
 
-      {/* Message */}
-      <div style={s.textBlock}>
-        <p style={s.message}>
-          {MESSAGES[msgIndex]}{dotStr}
-        </p>
-        <p style={s.subtext}>This takes a few seconds</p>
+        <p style={s.eyebrow}>Scent Statement Finder</p>
+        <h1 style={s.headline}>Finding your<br /><em style={s.accent}>signature scent</em></h1>
+
+        <div style={s.messageTrack}>
+          {MESSAGES.map((msg, i) => (
+            <p key={i} style={{ ...s.message, animationDelay: `${i * 1.4}s` }}>
+              {msg}
+            </p>
+          ))}
+        </div>
       </div>
 
       <style>{`
-        @keyframes pulse {
-          0%, 100% { transform: scale(1); opacity: 0.9; }
-          50% { transform: scale(1.08); opacity: 1; }
+        @keyframes pulse-ring {
+          0%, 100% { transform: scale(1); opacity: 0.4; }
+          50% { transform: scale(1.18); opacity: 0.15; }
         }
-        @keyframes ring {
-          0% { transform: scale(0.85); opacity: 0.4; }
-          100% { transform: scale(1.5); opacity: 0; }
+        @keyframes pulse-ring2 {
+          0%, 100% { transform: scale(1); opacity: 0.25; }
+          50% { transform: scale(1.35); opacity: 0.08; }
+        }
+        @keyframes dot-breathe {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(0.85); }
+        }
+        @keyframes msg-fade {
+          0% { opacity: 0; transform: translateY(6px); }
+          10%, 85% { opacity: 1; transform: translateY(0); }
+          100% { opacity: 0; transform: translateY(-4px); }
+        }
+        .loading-msg {
+          animation: msg-fade 1.4s ease forwards;
         }
       `}</style>
     </main>
@@ -78,56 +96,85 @@ const s: Record<string, React.CSSProperties> = {
   page: {
     minHeight: "100dvh",
     display: "flex",
-    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    gap: 40,
     background: "#0f172a",
-    color: "#fff",
-    fontFamily: "'SF Pro Text', -apple-system, 'Helvetica Neue', sans-serif",
+    color: "#f8fafc",
+    fontFamily: "var(--font-inter), 'SF Pro Text', -apple-system, sans-serif",
   },
-  orbWrap: {
-    position: "relative",
-    width: 80,
-    height: 80,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  orb: {
-    width: 48,
-    height: 48,
-    borderRadius: "50%",
-    background: "rgba(255,255,255,0.12)",
-    border: "0.5px solid rgba(255,255,255,0.2)",
-    animation: "pulse 2s ease-in-out infinite",
-  },
-  orbRing: {
-    position: "absolute",
-    width: 48,
-    height: 48,
-    borderRadius: "50%",
-    border: "0.5px solid rgba(255,255,255,0.3)",
-    animation: "ring 2s ease-out infinite",
-  },
-  textBlock: {
+  inner: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    gap: 8,
+    gap: 0,
+    padding: "0 24px",
+    textAlign: "center",
+  },
+  logoMark: {
+    position: "relative",
+    width: 64,
+    height: 64,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 32,
+  },
+  ring1: {
+    position: "absolute",
+    inset: 0,
+    borderRadius: "50%",
+    border: "1px solid rgba(248,250,252,0.3)",
+    animation: "pulse-ring 2.4s ease-in-out infinite",
+  },
+  ring2: {
+    position: "absolute",
+    inset: -12,
+    borderRadius: "50%",
+    border: "1px solid rgba(248,250,252,0.12)",
+    animation: "pulse-ring2 2.4s ease-in-out infinite",
+  },
+  dot: {
+    width: 12,
+    height: 12,
+    borderRadius: "50%",
+    background: "#f8fafc",
+    animation: "dot-breathe 2.4s ease-in-out infinite",
+  },
+  eyebrow: {
+    fontSize: 10,
+    letterSpacing: "0.14em",
+    textTransform: "uppercase",
+    color: "rgba(248,250,252,0.4)",
+    fontWeight: 600,
+    marginBottom: 14,
+  },
+  headline: {
+    fontSize: "clamp(28px, 8vw, 40px)",
+    fontWeight: 700,
+    lineHeight: 1.15,
+    letterSpacing: "-0.02em",
+    color: "#f8fafc",
+    marginBottom: 36,
+    fontFamily: "var(--font-playfair), Georgia, serif",
+  },
+  accent: {
+    fontStyle: "italic",
+    fontWeight: 400,
+  },
+  messageTrack: {
+    height: 24,
+    position: "relative",
+    overflow: "hidden",
+    width: "100%",
   },
   message: {
-    fontSize: 16,
-    fontWeight: 500,
-    color: "rgba(255,255,255,0.9)",
+    position: "absolute",
+    width: "100%",
+    fontSize: 13,
+    color: "rgba(248,250,252,0.5)",
     letterSpacing: "0.01em",
-    minWidth: 260,
-    textAlign: "center",
-    transition: "opacity 0.3s ease",
-  },
-  subtext: {
-    fontSize: 12,
-    color: "rgba(255,255,255,0.3)",
-    letterSpacing: "0.04em",
+    animation: "msg-fade 1.4s ease forwards",
+    opacity: 0,
   },
 };
+

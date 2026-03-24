@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { QuizQuestionCard } from "@/components/quiz/quiz-question-card";
 import { ArrowLeft, ArrowRight, ChevronDown, Home } from "lucide-react";
 
@@ -222,6 +223,7 @@ const DEMO_QUESTIONS = [
 type AnswerMap = Record<string, string | string[]>;
 
 export default function QuizDemoPage() {
+  const router = useRouter();
   const [answers, setAnswers] = useState<AnswerMap>({});
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -249,6 +251,10 @@ export default function QuizDemoPage() {
   function goToNext() {
     if (currentQuestionIndex < totalQuestions - 1) {
       setCurrentQuestionIndex((prev) => prev + 1);
+    } else {
+      // Last question — save answers and go to loading
+      sessionStorage.setItem("quiz_answers", JSON.stringify(answers));
+      router.push("/loading");
     }
   }
 
@@ -298,7 +304,7 @@ export default function QuizDemoPage() {
           {/* Left side: Quiz title (italic serif) + Question selector dropdown */}
           <div className="flex items-center gap-3">
             <span className="font-serif text-xl italic text-slate-900">Quiz</span>
-            
+
             {/* Question number dropdown - white box with border */}
             <div className="relative" ref={dropdownRef}>
               <button
@@ -309,7 +315,7 @@ export default function QuizDemoPage() {
                 {currentQuestionIndex + 1}/{totalQuestions}
                 <ChevronDown className={`h-4 w-4 transition-transform ${isDropdownOpen ? "rotate-180" : ""}`} />
               </button>
-              
+
               {/* Dropdown menu */}
               {isDropdownOpen && (
                 <div className="absolute left-0 top-full z-30 mt-2 w-64 rounded-2xl border-2 border-slate-200 bg-white py-2 shadow-lg">
@@ -321,13 +327,11 @@ export default function QuizDemoPage() {
                         key={q.id}
                         type="button"
                         onClick={() => goToQuestion(index)}
-                        className={`flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm transition-colors hover:bg-slate-50 ${
-                          isCurrent ? "bg-slate-100" : ""
-                        }`}
+                        className={`flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm transition-colors hover:bg-slate-50 ${isCurrent ? "bg-slate-100" : ""
+                          }`}
                       >
-                        <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border-2 text-xs font-semibold ${
-                          isCurrent ? "border-slate-900 bg-slate-900 text-white" : "border-slate-300 text-slate-600"
-                        }`}>
+                        <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border-2 text-xs font-semibold ${isCurrent ? "border-slate-900 bg-slate-900 text-white" : "border-slate-300 text-slate-600"
+                          }`}>
                           {index + 1}
                         </span>
                         <span className="flex-1 truncate text-slate-700">
@@ -387,7 +391,7 @@ export default function QuizDemoPage() {
             <button
               type="button"
               onClick={goToNext}
-              disabled={!hasCurrentAnswer || isLastQuestion}
+              disabled={!hasCurrentAnswer}
               className="flex h-12 flex-1 items-center justify-center gap-2 rounded-full bg-slate-900 text-sm font-bold uppercase tracking-[0.06em] text-white transition-all hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-50"
             >
               {isLastQuestion ? "See Results" : "Continue"}
