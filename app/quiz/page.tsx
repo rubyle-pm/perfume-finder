@@ -314,7 +314,7 @@ export default function QuizDemoPage() {
               <button
                 type="button"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="flex items-center gap-1.5 rounded-full border-2 border-[#1C1917] bg-white px-3 py-1 text-sm font-medium text-[#1C1917] transition-colors hover:bg-[#F5F5F4]"
+                className="ds-btn ds-btn-sm border border-[#1C1917]"
               >
                 {currentQuestionIndex + 1}/{totalQuestions}
                 <ChevronDown className={`h-4 w-4 transition-transform ${isDropdownOpen ? "rotate-180" : ""}`} />
@@ -354,7 +354,7 @@ export default function QuizDemoPage() {
           <button
             type="button"
             onClick={() => window.location.href = "/"}
-            className="flex items-center gap-1.5 rounded-full bg-[#1C1917] px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[#292524]"
+            className="ds-btn ds-btn-sm"
           >
             <Home className="h-3.5 w-3.5" />
             Home
@@ -384,7 +384,7 @@ export default function QuizDemoPage() {
               <button
                 type="button"
                 onClick={goToPrevious}
-                className="flex h-12 items-center justify-center gap-2 rounded-full border-2 border-[#E7E5E4] bg-white px-6 text-sm font-medium text-[#44403C] transition-all hover:border-[#A8A29E] hover:bg-[#F5F5F4]"
+                className="ds-btn ds-btn-ghost"
               >
                 <ArrowLeft className="h-4 w-4" />
                 Back
@@ -394,7 +394,7 @@ export default function QuizDemoPage() {
               type="button"
               onClick={goToNext}
               disabled={!hasCurrentAnswer}
-              className="flex h-12 flex-1 items-center justify-center gap-2 rounded-full bg-[#1C1917] text-sm font-bold uppercase tracking-[0.06em] text-white transition-all hover:bg-[#292524] disabled:cursor-not-allowed disabled:opacity-50"
+              className="ds-btn ds-btn-primary flex-1 text-sm font-bold uppercase tracking-[0.06em] disabled:cursor-not-allowed disabled:opacity-40"
             >
               {isLastQuestion ? "See Results" : "Continue"}
               {!isLastQuestion && <ArrowRight className="h-4 w-4" />}

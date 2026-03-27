@@ -5,35 +5,41 @@
   --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
 }
 
-/* Design Tokens for Scent Statement Finder */
+/* ─── Design Tokens ──────────────────────────────────────────────────────── */
 :root {
-  /* Page backgrounds */
-  --page-bg-start: #f8fafc;
-  --page-bg-end: #eef2f7;
+  /* Page */
+  --page-bg: #FAFAF8;
 
   /* Surfaces */
-  --surface: rgba(255, 255, 255, 0.90);
-  --surface-hover: #f1f5f9;
+  --surface: #ffffff;
+  --surface-subtle: #F5F5F4;
 
   /* Borders */
-  --border-default: #cbd5e1;
-  --border-active: #0f172a;
+  --border: #E7E5E4;
+  --border-strong: #1C1917;
 
-  /* Text */
-  --text-primary: #0f172a;
-  --text-secondary: #334155;
-  --text-muted: #64748b;
+  /* Text hierarchy (warm neutrals) */
+  --text-primary:   #1C1917;
+  --text-secondary: #44403C;
+  --text-muted:     #57534E;
+  --text-faint:     #A8A29E;
 
-  /* CTA */
-  --cta-bg: #0f172a;
-  --cta-text: #ffffff;
+  /* Brand */
+  --blue: #0088FF;
+  --blue-hover: #0077EE;
 
-  /* Tags/Pills */
-  --tag-bg: #f1f5f9;
-  --tag-border: #e2e8f0;
+  /* Button — iOS-core aesthetic */
+  --btn-bg:          #E7E5E4;          /* warm gray at rest  */
+  --btn-text:        #1C1917;
+  --btn-bg-hover:    #0088FF;          /* iOS blue on hover  */
+  --btn-text-hover:  #ffffff;
+  --btn-radius:      1000px;
+  --btn-font:        var(--font-inter), -apple-system, "SF Pro Text", sans-serif;
+  --btn-weight:      500;
+  --btn-tracking:    -0.23px;
 }
 
-/* Global Styles */
+/* ─── Global Styles ──────────────────────────────────────────────────────── */
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -41,11 +47,97 @@ html {
 
 body {
   font-family: var(--font-sans);
+  background: var(--page-bg);
   color: var(--text-primary);
 }
 
-/* Selection styling */
 ::selection {
-  background-color: #0f172a;
+  background-color: #1C1917;
   color: #ffffff;
 }
+
+/* ─── Shared Button Component ────────────────────────────────────────────── */
+/*
+  .ds-btn          — base pill button (gray → blue on hover)
+  .ds-btn-primary  — solid blue immediately (no hover needed)
+  .ds-btn-ghost    — outlined, transparent bg
+*/
+
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 28px;
+  min-height: 44px;
+  border-radius: var(--btn-radius);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: var(--btn-font);
+  font-size: 15px;
+  font-weight: var(--btn-weight);
+  letter-spacing: var(--btn-tracking);
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.ds-btn:hover {
+  background: var(--btn-bg-hover);
+  color: var(--btn-text-hover);
+}
+
+.ds-btn:disabled,
+.ds-btn[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Primary: always blue */
+.ds-btn-primary {
+  background: var(--blue);
+  color: #ffffff;
+}
+.ds-btn-primary:hover {
+  background: var(--blue-hover);
+  color: #ffffff;
+}
+
+/* Ghost: outlined */
+.ds-btn-ghost {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid var(--border);
+}
+.ds-btn-ghost:hover {
+  background: var(--blue);
+  color: #ffffff;
+  border-color: var(--blue);
+}
+
+/* Size variants */
+.ds-btn-sm {
+  font-size: 13px;
+  padding: 8px 20px;
+  min-height: 36px;
+}
+
+.ds-btn-lg {
+  font-size: 16px;
+  padding: 15px 40px;
+  min-height: 52px;
+}
+
+/* ─── Font Utility Classes ───────────────────────────────────────────────── */
+.font-playfair {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+  font-weight: 400;
+}
+
+.font-inter {
+  font-family: var(--font-inter), "Inter", -apple-system, sans-serif;
+}
+

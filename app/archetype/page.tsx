@@ -110,7 +110,7 @@ export default function ArchetypePage() {
 import { ARCHETYPE_SIGNAL_MAP } from "@/lib/recommendation-engine/vocabulary";
 
 function getArchetypeSignals(archetypeId: string): string[] {
-  return (ARCHETYPE_SIGNAL_MAP as Record<string, readonly string[]>)[archetypeId] ?? [];
+  return [...((ARCHETYPE_SIGNAL_MAP as Record<string, readonly string[]>)[archetypeId] ?? [])];
 }
 
 function getAnswerSummary(result: ResultPayload): { label: string; value: string }[] {
@@ -143,7 +143,7 @@ const s: Record<string, React.CSSProperties> = {
     minHeight: "100dvh",
     background: "#FAFAF8",
     color: "#1C1917",
-    fontFamily: "'SF Pro Text', -apple-system, 'Helvetica Neue', sans-serif",
+    fontFamily: "var(--font-inter), -apple-system, 'Helvetica Neue', sans-serif",
   },
   emptyState: {
     display: "flex",
@@ -197,8 +197,8 @@ const s: Record<string, React.CSSProperties> = {
   },
   archetypeName: {
     fontSize: "clamp(28px, 8vw, 40px)",
-    fontWeight: 700,
-    lineHeight: 1.1,
+    fontFamily: "var(--font-playfair), 'Playfair Display', Georgia, serif",
+    fontWeight: 400,
     letterSpacing: "-0.02em",
     color: "#1C1917",
     marginBottom: 8,
@@ -283,18 +283,18 @@ const s: Record<string, React.CSSProperties> = {
   ctaBtn: {
     display: "block",
     textAlign: "center",
-    padding: "15px 24px",
-    borderRadius: 999,
-    background: "#1C1917",
-    color: "#fff",
-    fontSize: 14,
-    fontWeight: 700,
-    letterSpacing: "0.05em",
-    textTransform: "uppercase",
+    padding: "12px 28px",
+    borderRadius: 1000,
+    background: "#E7E5E4",
+    color: "#1C1917",
+    fontSize: 15,
+    fontWeight: 500,
+    letterSpacing: "-0.23px",
     textDecoration: "none",
     marginBottom: 16,
-    minHeight: 52,
-    lineHeight: 1.2,
+    minHeight: 44,
+    fontFamily: "var(--font-inter), -apple-system, sans-serif",
+    transition: "background 0.18s ease, color 0.18s ease",
   },
   retakeLink: {
     display: "block",
