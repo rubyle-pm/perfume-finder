@@ -124,13 +124,19 @@ export function QuizQuestionCard({
   return (
     <div className="flex flex-col">
       {/* Question Text */}
-      <h2 className="mb-6 font-serif text-[28px] font-medium leading-tight tracking-[-0.01em] text-slate-900 md:text-[32px]">
+      <h2
+        className="mb-6 text-[28px] leading-tight tracking-[-0.01em] text-slate-900 md:text-[32px]"
+        style={{
+          fontFamily: "var(--font-playfair), 'Playfair Display', serif",
+          fontWeight: 500
+        }}
+      >
         {questionText}
       </h2>
 
       {/* Question Image - 21:9 aspect ratio placeholder BELOW question text */}
       {questionImageUrl && (
-        <div className="mb-6 aspect-[21/9] w-full overflow-hidden rounded-2xl bg-slate-200">
+        <div className="mb-6 aspect-[21/9] w-full overflow-hidden rounded-2xl bg-[#E7E5E4]">
           <img
             src={questionImageUrl}
             alt=""
@@ -141,10 +147,10 @@ export function QuizQuestionCard({
 
       {/* Multi-select/Hybrid hint */}
       {isMulti && (
-        <p className="mb-4 text-sm text-slate-500">
+        <p className="mb-4 text-sm text-[#A8A29E]">
           Select up to {maxSelections}
           {selectedArray.length > 0 && (
-            <span className="ml-1.5 font-medium text-slate-700">
+            <span className="ml-1.5 font-medium text-[#44403C]">
               ({selectedArray.length}/{maxSelections})
             </span>
           )}
@@ -153,9 +159,9 @@ export function QuizQuestionCard({
 
       {/* MBTI Tag-Pair Layout */}
       {isMbti ? (
-        <div 
-          className="flex flex-col gap-2.5" 
-          role="radiogroup" 
+        <div
+          className="flex flex-col gap-2.5"
+          role="radiogroup"
           aria-labelledby={`question-${id}`}
         >
           {options.map((option) => {
@@ -187,8 +193,8 @@ export function QuizQuestionCard({
                     flex h-11 items-center justify-center rounded-full px-5 text-[15px] font-semibold 
                     transition-all duration-200
                     ${selected
-                      ? "bg-slate-900 text-white"
-                      : "bg-slate-900 text-white"
+                      ? "bg-[#1C1917] text-white"
+                      : "bg-[#1C1917] text-white"
                     }
                   `}
                 >
@@ -201,8 +207,8 @@ export function QuizQuestionCard({
                     flex h-11 flex-1 items-center rounded-full border-2 px-5 text-[15px] 
                     transition-all duration-200
                     ${selected
-                      ? "border-slate-900 bg-slate-50 font-medium text-slate-900"
-                      : "border-slate-300 bg-white text-slate-700 group-hover:border-slate-400"
+                      ? "border-[#1C1917] bg-[#F5F5F4] font-medium text-[#1C1917]"
+                      : "border-[#E7E5E4] bg-white text-[#44403C] group-hover:border-[#A8A29E]"
                     }
                   `}
                 >
@@ -215,8 +221,8 @@ export function QuizQuestionCard({
                     flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-2 
                     transition-all duration-200
                     ${selected
-                      ? "border-slate-900 bg-slate-900"
-                      : "border-slate-300 bg-white group-hover:border-slate-400"
+                      ? "border-[#1C1917] bg-[#1C1917]"
+                      : "border-[#E7E5E4] bg-white group-hover:border-[#A8A29E]"
                     }
                   `}
                 >
@@ -230,9 +236,9 @@ export function QuizQuestionCard({
         </div>
       ) : isHybrid ? (
         /* Hybrid Grid Layout - with images */
-        <div 
-          className="grid grid-cols-2 gap-3 md:grid-cols-3" 
-          role="group" 
+        <div
+          className="grid grid-cols-2 gap-3 md:grid-cols-3"
+          role="group"
           aria-labelledby={`question-${id}`}
         >
           {options.map((option) => {
@@ -246,8 +252,8 @@ export function QuizQuestionCard({
                   group relative flex cursor-pointer flex-col overflow-hidden rounded-2xl border-2 
                   transition-all duration-200
                   ${selected
-                    ? "border-slate-900 bg-slate-50"
-                    : "border-slate-300 bg-white hover:border-slate-400"
+                    ? "border-[#1C1917] bg-[#F5F5F4]"
+                    : "border-[#E7E5E4] bg-white hover:border-[#A8A29E]"
                   }
                   ${disabled ? "cursor-not-allowed opacity-40" : ""}
                 `}
@@ -266,7 +272,7 @@ export function QuizQuestionCard({
 
                 {/* Image area */}
                 {option.imageUrl ? (
-                  <div className="aspect-square w-full overflow-hidden bg-slate-100">
+                  <div className="aspect-square w-full overflow-hidden bg-[#F5F5F4]">
                     <img
                       src={option.imageUrl}
                       alt={option.label}
@@ -274,11 +280,11 @@ export function QuizQuestionCard({
                     />
                   </div>
                 ) : (
-                  <div className="flex aspect-square w-full items-center justify-center bg-slate-100">
+                  <div className="flex aspect-square w-full items-center justify-center bg-[#F5F5F4]">
                     {option.emoji ? (
                       <span className="text-[48px]">{option.emoji}</span>
                     ) : (
-                      <span className="text-4xl text-slate-300">?</span>
+                      <span className="text-4xl text-[#E7E5E4]">?</span>
                     )}
                   </div>
                 )}
@@ -289,7 +295,7 @@ export function QuizQuestionCard({
                     <span
                       className={`
                         block truncate text-[13px] leading-tight transition-colors duration-150
-                        ${selected ? "font-semibold text-slate-900" : "font-medium text-slate-800"}
+                        ${selected ? "font-semibold text-[#1C1917]" : "font-medium text-[#292524]"}
                       `}
                     >
                       {option.label}
@@ -302,8 +308,8 @@ export function QuizQuestionCard({
                       flex h-5 w-5 shrink-0 items-center justify-center rounded-md border-2 
                       transition-all duration-200
                       ${selected
-                        ? "border-slate-900 bg-slate-900"
-                        : "border-slate-300 bg-white group-hover:border-slate-400"
+                        ? "border-[#1C1917] bg-[#1C1917]"
+                        : "border-[#E7E5E4] bg-white group-hover:border-[#A8A29E]"
                       }
                     `}
                   >
@@ -318,9 +324,9 @@ export function QuizQuestionCard({
         </div>
       ) : (
         /* Standard List Layout - single/multi */
-        <div 
-          className="flex flex-col gap-2.5" 
-          role={isMulti ? "group" : "radiogroup"} 
+        <div
+          className="flex flex-col gap-2.5"
+          role={isMulti ? "group" : "radiogroup"}
           aria-labelledby={`question-${id}`}
         >
           {options.map((option) => {
@@ -334,8 +340,8 @@ export function QuizQuestionCard({
                   group relative flex min-h-[64px] cursor-pointer items-center gap-4 
                   rounded-2xl border-2 px-4 py-3 transition-all duration-200
                   ${selected
-                    ? "border-slate-900 bg-slate-50"
-                    : "border-slate-300 bg-white hover:border-slate-400"
+                    ? "border-[#1C1917] bg-[#F5F5F4]"
+                    : "border-[#E7E5E4] bg-white hover:border-[#A8A29E]"
                   }
                   ${disabled ? "cursor-not-allowed opacity-40" : ""}
                 `}
@@ -364,13 +370,13 @@ export function QuizQuestionCard({
                   <span
                     className={`
                       text-[15px] leading-snug transition-colors duration-150
-                      ${selected ? "font-semibold text-slate-900" : "font-medium text-slate-800"}
+                      ${selected ? "font-semibold text-[#1C1917]" : "font-medium text-[#292524]"}
                     `}
                   >
                     {option.label}
                   </span>
                   {option.subtitle && (
-                    <span className="mt-0.5 text-[13px] text-slate-500">
+                    <span className="mt-0.5 text-[13px] text-[#A8A29E]">
                       {option.subtitle}
                     </span>
                   )}
@@ -382,8 +388,8 @@ export function QuizQuestionCard({
                     flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-2 
                     transition-all duration-200
                     ${selected
-                      ? "border-slate-900 bg-slate-900"
-                      : "border-slate-300 bg-white group-hover:border-slate-400"
+                      ? "border-[#1C1917] bg-[#1C1917]"
+                      : "border-[#E7E5E4] bg-white group-hover:border-[#A8A29E]"
                     }
                   `}
                 >
@@ -405,7 +411,7 @@ export function QuizQuestionCard({
             return (
               <span
                 key={value}
-                className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700"
+                className="inline-flex items-center gap-1.5 rounded-full border border-[#E7E5E4] bg-[#F5F5F4] px-3 py-1 text-xs font-medium text-[#44403C]"
               >
                 {option?.emoji && <span className="text-sm">{option.emoji}</span>}
                 {option?.label || value}
@@ -416,7 +422,7 @@ export function QuizQuestionCard({
                     e.stopPropagation();
                     handleOptionClick(value);
                   }}
-                  className="ml-0.5 rounded-full p-0.5 text-slate-400 transition-colors hover:bg-slate-200 hover:text-slate-600"
+                  className="ml-0.5 rounded-full p-0.5 text-[#A8A29E] transition-colors hover:bg-[#E7E5E4] hover:text-[#57534E]"
                   aria-label={`Remove ${option?.label || value}`}
                 >
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
