@@ -2,6 +2,45 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+
+// ─── Inject CSS keyframes once ────────────────────────────────────────────────
+
+const KEYFRAMES = `
+  @keyframes floatA {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50%       { transform: translateY(-10px) rotate(0.5deg); }
+  }
+  @keyframes floatB {
+    0%, 100% { transform: translateY(0px) rotate(-0.5deg); }
+    50%       { transform: translateY(-14px) rotate(0.3deg); }
+  }
+  @keyframes floatC {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    40%       { transform: translateY(-8px) translateX(4px); }
+    80%       { transform: translateY(-4px) translateX(-3px); }
+  }
+  @keyframes floatD {
+    0%, 100% { transform: translateY(0px) rotate(0.09deg); }
+    50%       { transform: translateY(-12px) rotate(-0.3deg); }
+  }
+  @keyframes notifSlide {
+    from { transform: translateY(-110%); opacity: 0; }
+    to   { transform: translateY(0);     opacity: 1; }
+  }
+  @keyframes revealLine {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes revealCTA {
+    from { opacity: 0; transform: translateY(16px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0)    scale(1); }
+  }
+  @keyframes revealHandle {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+`;
 
 // ─── Sub-components ────────────────────────────────────────────────────────────
 
@@ -98,11 +137,35 @@ function hlItalicStyle(): React.CSSProperties {
   };
 }
 
+// Staggered reveal helper
+function reveal(delayS: number): React.CSSProperties {
+  return {
+    opacity: 0,
+    animation: `revealLine 0.7s cubic-bezier(0.22,1,0.36,1) ${delayS}s forwards`,
+  };
+}
 const iconSize = "clamp(1.7rem, 7.5vw, 3.2rem)";
 
 // ─── MAIN PAGE ────────────────────────────────────────────────────────────────
 
 export default function HomePage() {
+  const [scrolled, setScrolled] = useState(false);
+
+  // Inject keyframes
+  useEffect(() => {
+    const style = document.createElement("style");
+    style.textContent = KEYFRAMES;
+    document.head.appendChild(style);
+    return () => { document.head.removeChild(style); };
+  }, []);
+
+  // Track scroll for notification glass deepening
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <div style={{ minHeight: "100dvh", background: "#FAFAF8", position: "relative", overflow: "hidden" }}>
 
@@ -115,7 +178,7 @@ export default function HomePage() {
           backgroundSize: "200px 200px",
           pointerEvents: "none",
           zIndex: 1,
-          opacity: 0.5,
+          opacity: 0.7,
           mixBlendMode: "overlay",
         }}
       />
@@ -124,30 +187,36 @@ export default function HomePage() {
 
       {/* NOTIFICATION — top, 16px margin each side */}
       <div style={{
-        position: "absolute",
+        position: "fixed",
         top: 16,
         left: 16,
         right: 16,
-        zIndex: 200,
+        zIndex: 300,
         borderRadius: 16,
         overflow: "hidden",
         ...GLASS,
+        boxShadow: scrolled
+          ? "0 12px 40px rgba(0,0,0,0.18), inset 0 0.5px 0 rgba(255,255,255,0.85)"
+          : "0 8px 32px rgba(0,0,0,0.10), inset 0 0.5px 0 rgba(255,255,255,0.85)",
+        transition: "box-shadow 0.4s ease",
+        animation: "notifSlide 1s cubic-bezier(0.22,1,0.36,1) 2s both",  // config notif 
       }}>
         <Notif />
       </div>
 
-      {/* MONICA WINDOW — top left, partially off-screen left edge */}
+      {/* MONICA WINDOW — floatA */}
       <div style={{
         position: "absolute",
-        top: "clamp(100px, 18vh, 200px)", ///18vh up or down
-        left: "clamp(8px, 3vw, 24px)",
+        top: "clamp(100px, 18vh, 200px)",
+        left: "clamp(8px, 4vw, 24px)",
         width: "clamp(88px, 25vw, 120px)",
         height: "clamp(110px, 32vw, 150px)",
         background: "#fff",
         boxShadow: "0 5px 15px rgba(0,0,0,0.25)",
-        borderRadius: 15,
+        borderRadius: 14,
         overflow: "hidden",
         zIndex: 2,
+        animation: "floatA 7s ease-in-out 0s infinite",
       }}>
         <WinChrome />
         <div style={{ position: "relative", width: "100%", height: "calc(100% - 22px)" }}>
@@ -155,35 +224,28 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* BAG — top center, flipped vertically per Figma export (scaleY -1) */}
+      {/* BAG — wrapper handles position, inner div handles float animation */}
       <div style={{
         position: "absolute",
-        top: "clamp(55px, 10vh, 90px)",
+        top: "clamp(55px, 4vh, 110px)",
         left: "49%",
-        transform: "translateX(-50%) translateX(-8%) scaleY(-1)",
-        width: "clamp(100px, 26vw, 175px)",
-        height: "clamp(62px, 16vw, 108px)",
+        transform: "translateX(-58%) scaleY(-1)",
+        width: "clamp(100px, 30vw, 175px)",
+        height: "clamp(62px, 24vw, 108px)",
         boxShadow: "0px 4px 20px rgba(0,0,0,0.2)",
         borderRadius: 14,
         overflow: "hidden",
         zIndex: 5,
       }}>
-        <Image src="/images/bag.jpg" alt="" fill style={{ objectFit: "cover", objectPosition: "center top" }} />
+        <div style={{
+          position: "absolute", inset: 0,
+          animation: "floatA 9s ease-in-out 1s infinite",
+        }}>
+          <Image src="/images/bag.jpg" alt="" fill style={{ objectFit: "cover", objectPosition: "center top" }} />
+        </div>
       </div>
 
-      {/* TOMFORD + MARTINI — bottom left, combined image */}
-      <div style={{
-        position: "absolute",
-        bottom: "clamp(50px, 10vh, 100px)", // 10vh to up
-        left: "clamp(30px, 2vw, 0px)",
-        width: "clamp(150px, 36vw, 240px)",
-        height: "clamp(150px, 36vw, 240px)",
-        zIndex: 20,
-      }}>
-        <Image src="/images/tomford_martini.png" alt="" fill style={{ objectFit: "contain" }} />
-      </div>
-
-      {/* DIPTYQUE + FIG — top right, combined image */}
+      {/* DIPTYQUE + FIG — floatC, organic drift */}
       <div style={{
         position: "absolute",
         top: "clamp(100px, 18vh, 140px)",
@@ -191,14 +253,28 @@ export default function HomePage() {
         width: "clamp(130px, 35vw, 200px)",
         height: "clamp(130px, 35vw, 200px)",
         zIndex: 10,
+        animation: "floatC 8s ease-in-out 0.5s infinite",
       }}>
         <Image src="/images/diptyque_fig.png" alt="" fill style={{ objectFit: "contain" }} />
       </div>
 
-      {/* MOODBOARD WINDOW — bottom right */}
+      {/* TOMFORD + MARTINI — floatB, offset delay */}
       <div style={{
         position: "absolute",
-        bottom: "clamp(50px, 20vh, 120px)", /// 125px to up
+        bottom: "clamp(50px, 10vh, 100px)",
+        left: "clamp(40px, 2vw, 0px)",
+        width: "clamp(150px, 36vw, 240px)",
+        height: "clamp(150px, 36vw, 240px)",
+        zIndex: 20,
+        animation: "floatB 10s ease-in-out 2s infinite",
+      }}>
+        <Image src="/images/tomford_martini.png" alt="" fill style={{ objectFit: "contain" }} />
+      </div>
+
+      {/* MOODBOARD WINDOW — floatD, slowest */}
+      <div style={{
+        position: "absolute",
+        bottom: "clamp(50px, 20vh, 115px)",
         right: "clamp(25px, 2vw, 20px)",
         width: "clamp(140px, 42vw, 220px)",
         height: "clamp(105px, 24vw, 155px)",
@@ -207,7 +283,7 @@ export default function HomePage() {
         borderRadius: 15,
         overflow: "hidden",
         zIndex: 2,
-        transform: "rotate(0.09deg)",
+        animation: "floatD 11s ease-in-out 1.5s infinite",
       }}>
         <WinChrome colored />
         <div style={{ position: "relative", width: "100%", height: "calc(100% - 22px)" }}>
@@ -227,7 +303,6 @@ export default function HomePage() {
         textAlign: "center",
         // Top padding reserves space for notification + decorative top elements
         // Bottom padding reserves space for martini/moodboard
-        //padding: "clamp(200px, 38vh, 340px) 1rem clamp(190px, 34vh, 300px)",
         padding: "clamp(200px, 38vh, 340px) 1rem clamp(190px, 34vh, 300px)",
         gap: 0,
       }}>
@@ -241,6 +316,7 @@ export default function HomePage() {
           letterSpacing: "-0.03em",
           color: "#000",
           marginBottom: "0.1em",
+          //...reveal(0.4),
         }}>
           POV:
         </p>
@@ -249,26 +325,20 @@ export default function HomePage() {
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.25em" }}>
 
           {/* You've [toggle] */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.7em" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.7em", ...reveal(0.65) }}>
             <span style={serifStyle()}>You've</span>
             <Toggle style={{ transform: "rotate(-0.29deg) translateY(4px)" }} />
           </div>
 
-          {/* [folder] discovered your [disco] */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5em" }}>
-            <Image
-              src="/images/folder_icon.png"
-              alt=""
-              width={48}
-              height={48}
-              style={{ width: iconSize, height: iconSize, objectFit: "contain", display: "inline-block" }}
-            />
+          {/* [👀] discovered your [disco] */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5em", ...reveal(0.95) }}>
+            <span style={{ fontSize: iconSize, lineHeight: 1, display: "inline-block" }}>👀</span>
             <span style={serifStyle()}>discovered your</span>
             <span style={{ fontSize: iconSize, lineHeight: 1, display: "inline-block" }}>🪩</span>
           </div>
 
           {/* Statement Scent today */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.3em" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.3em", ...reveal(1.05) }}>
             <em style={hlItalicStyle()}>Statement Scent</em>
             <span style={serifStyle()}>today</span>
           </div>
@@ -278,20 +348,19 @@ export default function HomePage() {
         {/* CTA */}
         <Link
           href="/quiz"
+          className="ds-btn ds-btn-glass ds-btn-lg"
           style={{
-            marginTop: "clamp(1.6rem, 4.5vh, 2.8rem)",
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 6,
-            padding: "clamp(10px, 1.8vh, 16px) clamp(24px, 5vw, 40px)",
-            background: "#0088FF",
-            borderRadius: 1000,
-            textDecoration: "none",
-            whiteSpace: "nowrap",
+            marginTop: "clamp(1.6rem, 5.5vh, 2.8rem)",
+            background: "rgba(235, 235, 235, 0.88)",
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
+            color: "#3C3C3E",
+            border: "1px solid rgba(255,255,255,0.6)",
+            boxShadow: "inset 0 0.5px 0 rgba(255,255,255,0.9), 0 1px 4px rgba(0,0,0,0.06)",
           }}
         >
-          <span style={{ fontSize: "clamp(12px, 2vw, 15px)", color: "#fff", lineHeight: 1 }}>▶</span>
-          <span style={{ fontFamily: "-apple-system,'SF Pro',sans-serif", fontSize: "clamp(14px, 2.5vw, 18px)", fontWeight: 500, letterSpacing: "-0.23px", color: "#fff" }}>
+          <span style={{ fontSize: "clamp(12px, 2vw, 15px)", lineHeight: 1 }}>▶</span>
+          <span style={{ fontFamily: "var(--font-inter), -apple-system, 'SF Pro', sans-serif", fontSize: "clamp(14px, 2.5vw, 18px)", fontWeight: 500, letterSpacing: "-0.23px" }}>
             Play Now
           </span>
         </Link>
@@ -304,12 +373,12 @@ export default function HomePage() {
           fontSize: "clamp(12px, 1.8vw, 18px)",
           letterSpacing: "-0.3px",
           color: "#808080",
+          opacity: 0,
+          animation: "revealHandle 0.8s ease 1.6s forwards",
         }}>
           @haz.perfume
         </p>
-
       </main>
     </div>
   );
 }
-

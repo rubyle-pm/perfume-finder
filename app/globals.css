@@ -19,24 +19,26 @@
   --border-strong: #1C1917;
 
   /* Text hierarchy (warm neutrals) */
-  --text-primary:   #1C1917;
+  --text-primary: #1C1917;
   --text-secondary: #44403C;
-  --text-muted:     #57534E;
-  --text-faint:     #A8A29E;
+  --text-muted: #57534E;
+  --text-faint: #A8A29E;
 
   /* Brand */
   --blue: #0088FF;
   --blue-hover: #0077EE;
 
-  /* Button — iOS-core aesthetic */
-  --btn-bg:          #E7E5E4;          /* warm gray at rest  */
-  --btn-text:        #1C1917;
-  --btn-bg-hover:    #0088FF;          /* iOS blue on hover  */
-  --btn-text-hover:  #ffffff;
-  --btn-radius:      1000px;
-  --btn-font:        var(--font-inter), -apple-system, "SF Pro Text", sans-serif;
-  --btn-weight:      500;
-  --btn-tracking:    -0.23px;
+  /* Button — iOS Light/Dark gray */
+  --btn-bg: #F2F2F7;
+  /* Light/Gray at rest    */
+  --btn-text: #1C1917;
+  --btn-bg-hover: #2C2C2E;
+  /* Dark/Gray on hover    */
+  --btn-text-hover: #ffffff;
+  --btn-radius: 1000px;
+  --btn-font: var(--font-inter), -apple-system, "SF Pro Text", sans-serif;
+  --btn-weight: 500;
+  --btn-tracking: -0.23px;
 }
 
 /* ─── Global Styles ──────────────────────────────────────────────────────── */
@@ -96,14 +98,32 @@ body {
   pointer-events: none;
 }
 
-/* Primary: always blue */
+/* Primary: always dark charcoal */
 .ds-btn-primary {
-  background: var(--blue);
+  background: #2C2C2E;
   color: #ffffff;
 }
+
 .ds-btn-primary:hover {
-  background: var(--blue-hover);
+  background: #3A3A3C;
   color: #ffffff;
+}
+
+/* Glass: frosted light gray pill */
+.ds-btn-glass {
+  background: rgba(235, 235, 235, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #3C3C3E;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 0.5px 0 rgba(255, 255, 255, 0.9), 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.ds-btn-glass:hover {
+  background: #2C2C2E !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
 }
 
 /* Ghost: outlined */
@@ -112,10 +132,11 @@ body {
   color: var(--text-primary);
   border: 1.5px solid var(--border);
 }
+
 .ds-btn-ghost:hover {
-  background: var(--blue);
+  background: #2C2C2E;
   color: #ffffff;
-  border-color: var(--blue);
+  border-color: transparent;
 }
 
 /* Size variants */
@@ -140,4 +161,3 @@ body {
 .font-inter {
   font-family: var(--font-inter), "Inter", -apple-system, sans-serif;
 }
-

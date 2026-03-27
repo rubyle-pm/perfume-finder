@@ -314,7 +314,15 @@ export default function QuizDemoPage() {
               <button
                 type="button"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="ds-btn ds-btn-sm border border-[#1C1917]"
+                className="ds-btn ds-btn-glass ds-btn-sm"
+                style={{
+                  background: "rgba(235, 235, 235, 0.88)",
+                  backdropFilter: "blur(12px)",
+                  WebkitBackdropFilter: "blur(12px)",
+                  color: "#3C3C3E",
+                  border: "1px solid rgba(255,255,255,0.6)",
+                  boxShadow: "inset 0 0.5px 0 rgba(255,255,255,0.9), 0 1px 4px rgba(0,0,0,0.06)",
+                }}
               >
                 {currentQuestionIndex + 1}/{totalQuestions}
                 <ChevronDown className={`h-4 w-4 transition-transform ${isDropdownOpen ? "rotate-180" : ""}`} />
@@ -354,9 +362,16 @@ export default function QuizDemoPage() {
           <button
             type="button"
             onClick={() => window.location.href = "/"}
-            className="ds-btn ds-btn-sm"
+            className="ds-btn ds-btn-glass ds-btn-sm"
+            style={{
+              background: "rgba(235, 235, 235, 0.88)",
+              backdropFilter: "blur(12px)",
+              WebkitBackdropFilter: "blur(12px)",
+              color: "#3C3C3E",
+              border: "1px solid rgba(255,255,255,0.6)",
+              boxShadow: "inset 0 0.5px 0 rgba(255,255,255,0.9), 0 1px 4px rgba(0,0,0,0.06)",
+            }}
           >
-            <Home className="h-3.5 w-3.5" />
             Home
           </button>
         </header>
@@ -379,14 +394,13 @@ export default function QuizDemoPage() {
       {/* Sticky bottom navigation */}
       {isMultiOrHybrid && (
         <div className="fixed inset-x-0 bottom-0 z-10 bg-gradient-to-t from-[#FAFAF8] via-[#FAFAF8]/90 to-transparent px-4 pb-6 pt-4">
-          <div className="mx-auto flex max-w-[720px] gap-3">
+        <div className="mx-auto flex max-w-[720px] gap-3">
             {!isFirstQuestion && (
               <button
                 type="button"
                 onClick={goToPrevious}
-                className="ds-btn ds-btn-ghost"
+                className="ds-btn ds-btn-glass flex-1"
               >
-                <ArrowLeft className="h-4 w-4" />
                 Back
               </button>
             )}
@@ -394,10 +408,9 @@ export default function QuizDemoPage() {
               type="button"
               onClick={goToNext}
               disabled={!hasCurrentAnswer}
-              className="ds-btn ds-btn-primary flex-1 text-sm font-bold uppercase tracking-[0.06em] disabled:cursor-not-allowed disabled:opacity-40"
+              className="ds-btn ds-btn-primary flex-1 disabled:cursor-not-allowed disabled:opacity-40"
             >
-              {isLastQuestion ? "See Results" : "Continue"}
-              {!isLastQuestion && <ArrowRight className="h-4 w-4" />}
+              {isLastQuestion ? "See Results" : "Next"}
             </button>
           </div>
         </div>
