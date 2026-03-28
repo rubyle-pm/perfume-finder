@@ -1,4 +1,4 @@
-/**
+4/**
  * vocabulary.ts
  * Source of truth for all controlled enum values used across the
  * Scent Statement Finder recommendation engine.
@@ -390,7 +390,7 @@ export type BudgetTier = (typeof BUDGET_TIERS)[number];
 export const BUDGET_TIER_MAX: Record<BudgetTier, number> = {
   "2_000_000_to_3_500_000": 3_500_000,
   "3_500_000_to_5_000_000": 5_000_000,
-  "over_5_000_000":          Infinity,
+  "over_5_000_000": Infinity,
 };
 
 // Tier 4 = >5M = premium — boost multiplier trong aspirational scoring

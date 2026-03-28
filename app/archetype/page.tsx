@@ -53,10 +53,10 @@ export default function ArchetypePage() {
 
       {/* Content */}
       <div style={s.content}>
-        <p style={s.eyebrow}>Your scent archetype</p>
+        <p style={s.eyebrow}>Your Fragrance DNA</p>
 
         <h1 style={s.archetypeName}>
-          {archetype?.name ?? "Your Scent Archetype"}
+          {archetype?.name ?? "Your Fragrance DNA"}
         </h1>
 
         {archetype?.tagline && (
@@ -82,8 +82,7 @@ export default function ArchetypePage() {
 
         {/* Answer review — compact 2-col grid */}
         <div style={s.reviewSection}>
-          <p style={s.reviewLabel}>Your answers</p>
-          <Link href="/quiz" style={s.reviewEditLink}>Edit</Link>
+          <p style={s.reviewLabel}>Based on your scent profile</p>
         </div>
         <div style={s.reviewGrid}>
           {getAnswerSummary(result).map(({ label, value }) => (
@@ -96,7 +95,7 @@ export default function ArchetypePage() {
 
         {/* CTA */}
         <Link href="/results" style={s.ctaBtn}>
-          See my scent matches →
+          Explore curated fragrances →
         </Link>
 
         <Link href="/quiz" style={s.retakeLink}>Retake quiz</Link>
@@ -122,11 +121,11 @@ function getAnswerSummary(result: ResultPayload): { label: string; value: string
     const r = JSON.parse(raw) as ResultPayload;
     const items: { label: string; value: string }[] = [];
     if (r.topPickArchetype) {
-      items.push({ label: "Archetype", value: r.topPickArchetype.replace(/_/g, " ") });
+      items.push({ label: "You are a ", value: r.topPickArchetype.replace(/_/g, " ") });
     }
     if (r.slots?.bestFit?.perfume) {
       items.push({
-        label: "Best fit",
+        label: "Best match",
         value: r.slots.bestFit.perfume.name,
       });
     }
@@ -249,12 +248,6 @@ const s: Record<string, React.CSSProperties> = {
     textTransform: "uppercase",
     color: "#A8A29E",
     fontWeight: 600,
-  },
-  reviewEditLink: {
-    fontSize: 12,
-    color: "#57534E",
-    textDecoration: "underline",
-    fontWeight: 500,
   },
   reviewGrid: {
     display: "grid",

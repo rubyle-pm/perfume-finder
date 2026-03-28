@@ -32,8 +32,8 @@ export interface QuizQuestionCardProps {
   id: string;
   /** The question text to display */
   questionText: string;
-  /** Selection mode: 'single' for radio, 'multi' for checkbox, 'hybrid' for image grid, 'mbti' for tag-pair layout */
-  kind: "single" | "multi" | "hybrid" | "mbti";
+  /** Selection mode: 'single' for radio, 'multi' for checkbox, 'hybrid' for image grid, 'pill' for compact emoji-pill grid */
+  kind: "single" | "multi" | "hybrid" | "mbti" | "pill";
   /** Array of options to display */
   options: QuizOption[];
   /** Currently selected value(s) - string for single/mbti, string[] for multi/hybrid */
@@ -62,6 +62,7 @@ export function QuizQuestionCard({
   const isMulti = kind === "multi" || kind === "hybrid";
   const isHybrid = kind === "hybrid";
   const isMbti = kind === "mbti";
+  const isPill = kind === "pill";
   const selectedArray = Array.isArray(selectedValues)
     ? selectedValues
     : selectedValues
@@ -83,6 +84,7 @@ export function QuizQuestionCard({
       }
       onSelect(newValues);
     } else {
+      // single / pill / mbti — radio behaviour
       onSelect(value);
       if (onSelectionComplete) {
         setTimeout(() => {
@@ -157,8 +159,47 @@ export function QuizQuestionCard({
         </p>
       )}
 
-      {/* MBTI Tag-Pair Layout */}
-      {isMbti ? (
+      {/* Pill Grid Layout — single-select, wrapping flex, emoji + label */}
+      {isPill ? (
+        <div
+          className="flex flex-wrap gap-2.5"
+          role="radiogroup"
+          aria-labelledby={`question-${id}`}
+        >
+          {options.map((option) => {
+            const selected = isOptionSelected(option.value);
+            return (
+              <label key={option.value} className="cursor-pointer">
+                <input
+                  type="radio"
+                  name={id}
+                  value={option.value}
+                  checked={selected}
+                  onChange={() => handleOptionClick(option.value)}
+                  className="sr-only"
+                  aria-label={option.label}
+                />
+                <span
+                  className={`
+                    inline-flex items-center gap-2 rounded-full border-2 px-4 py-2.5
+                    text-[14px] font-medium transition-all duration-200 select-none
+                    ${selected
+                      ? "border-[#1C1917] bg-[#1C1917] text-white shadow-sm"
+                      : "border-[#E7E5E4] bg-white text-[#44403C] hover:border-[#A8A29E] hover:bg-[#FAFAF8]"
+                    }
+                  `}
+                >
+                  {option.emoji && (
+                    <span className="text-[16px] leading-none">{option.emoji}</span>
+                  )}
+                  <span>{option.label}</span>
+                </span>
+              </label>
+            );
+          })}
+        </div>
+      ) : isMbti ? (
+        /* Legacy MBTI Tag-Pair Layout — kept for backwards compat */
         <div
           className="flex flex-col gap-2.5"
           role="radiogroup"
@@ -176,7 +217,6 @@ export function QuizQuestionCard({
                   transition-all duration-200
                 `}
               >
-                {/* Hidden input for accessibility */}
                 <input
                   type="radio"
                   name={id}
@@ -186,22 +226,14 @@ export function QuizQuestionCard({
                   className="sr-only"
                   aria-label={`${option.value} - ${description}`}
                 />
-
-                {/* Black pill - MBTI type */}
                 <span
                   className={`
                     flex h-11 items-center justify-center rounded-full px-5 text-[15px] font-semibold 
-                    transition-all duration-200
-                    ${selected
-                      ? "bg-[#1C1917] text-white"
-                      : "bg-[#1C1917] text-white"
-                    }
+                    transition-all duration-200 bg-[#1C1917] text-white
                   `}
                 >
                   {option.value}
                 </span>
-
-                {/* White outlined pill - description */}
                 <span
                   className={`
                     flex h-11 flex-1 items-center rounded-full border-2 px-5 text-[15px] 
@@ -214,8 +246,6 @@ export function QuizQuestionCard({
                 >
                   {description}
                 </span>
-
-                {/* Checkbox indicator */}
                 <span
                   className={`
                     flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-2 
@@ -226,9 +256,7 @@ export function QuizQuestionCard({
                     }
                   `}
                 >
-                  {selected && (
-                    <CheckIcon className="h-4 w-4 text-white" />
-                  )}
+                  {selected && <CheckIcon className="h-4 w-4 text-white" />}
                 </span>
               </label>
             );

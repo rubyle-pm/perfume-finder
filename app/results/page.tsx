@@ -12,15 +12,15 @@ type SlotKey = "bestFit" | "idealMatch" | "wildcard";
 
 const SLOT_META: Record<SlotKey, { eyebrow: string; label: string }> = {
   bestFit: {
-    eyebrow: "Your scent",
+    eyebrow: "Built for your everyday",
     label: "Your scent, but better",
   },
   idealMatch: {
-    eyebrow: "Your statement scent",
+    eyebrow: "Your statement fragrance",
     label: "The one that announces you",
   },
   wildcard: {
-    eyebrow: "Your scent, with a twist",
+    eyebrow: "You with a twist",
     label: "The unexpected one",
   },
 };
@@ -52,8 +52,8 @@ export default function ResultsPage() {
     <main style={s.page}>
       {/* Header */}
       <div style={s.header}>
-        <Link href="/archetype" style={s.backLink}>← Your archetype</Link>
-        <p style={s.headerTitle}>Your scent matches</p>
+        <Link href="/archetype" style={s.backLink}>← Back to scent profile</Link>
+        <p style={s.headerTitle}>Your essence, in a bottle</p>
       </div>
 
       <div style={s.content}>
@@ -63,8 +63,8 @@ export default function ResultsPage() {
           const reason = slotKey === "bestFit"
             ? result.narrative?.best_fit_reason
             : slotKey === "idealMatch"
-            ? result.narrative?.ideal_match_reason
-            : result.narrative?.wildcard_reason;
+              ? result.narrative?.ideal_match_reason
+              : result.narrative?.wildcard_reason;
 
           return (
             <PerfumeSection
@@ -78,7 +78,7 @@ export default function ResultsPage() {
 
         {/* Summary card strip at bottom */}
         <div style={s.summarySection}>
-          <p style={s.summaryLabel}>All 3 matches</p>
+          <p style={s.summaryLabel}>Choose your next fragrance</p>
           <div style={s.summaryRow}>
             {slots.map((slotKey) => {
               const candidate = result.slots?.[slotKey];

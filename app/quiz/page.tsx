@@ -35,11 +35,12 @@ const DEMO_QUESTIONS = [
       { value: "home_body", label: "At home, comfy in my skin", emoji: "🛋️", subtitle: "Cozy vibes" },
     ],
   },
-  // Q3: mood - hybrid with image options
+  // Q3: mood - hybrid image grid (1 option only)
   {
     id: "mood",
     kind: "hybrid" as const,
     questionText: "What mood do you want your scent to project?",
+    maxSelections: 1,
     options: [
       { value: "complicated_seductive_intellectual", label: "Seductive & intellectual", imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" },
       { value: "soft_romantic_nostalgic", label: "Romantic & nostalgic", imageUrl: "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=400&h=400&fit=crop" },
@@ -50,12 +51,13 @@ const DEMO_QUESTIONS = [
       { value: "mysterious_edgy_artistic", label: "Mysterious & edgy", imageUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=400&fit=crop" },
     ],
   },
-  // Q4: scent_type - single, no image options
+  // Q4: scent_type - multi, max 2 options
   {
     id: "scent_type",
-    kind: "single" as const,
+    kind: "multi" as const,
     questionText: "Which kinds of scent do you gravitate toward?",
     questionImageUrl: "/images/quiz/scent-type-banner.jpg",
+    maxSelections: 2,
     options: [
       { value: "fresh_airy", label: "Fresh & airy", emoji: "🌬️", subtitle: "Light, breezy notes" },
       { value: "warm_cozy", label: "Warm & cozy", emoji: "🫦", subtitle: "Inviting, comforting" },
@@ -99,11 +101,12 @@ const DEMO_QUESTIONS = [
       { value: "late_night_social", label: "Late night social", emoji: "🍸", subtitle: "Out till 1am" },
     ],
   },
-  // Q7: style_icon - hybrid with images, archetype text only (no star names)
+  // Q7: style_icon - hybrid image grid, max 2 options
   {
     id: "style_icon",
     kind: "hybrid" as const,
     questionText: "Who is your style icon?",
+    maxSelections: 2,
     options: [
       { value: "clean_girl", label: "Clean girl", imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop" },
       { value: "soft_girl_next_door", label: "Soft, girl-next-door", imageUrl: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=400&fit=crop" },
@@ -123,28 +126,28 @@ const DEMO_QUESTIONS = [
       { value: "street_culture", label: "Street culture", imageUrl: "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=400&h=400&fit=crop" },
     ],
   },
-  // Q8: mbti - mbti tag-pair layout
+  // Q8: mbti - single-select pill layout with emoji
   {
     id: "mbti",
-    kind: "mbti" as const,
+    kind: "pill" as const,
     questionText: "What is your MBTI?",
     options: [
-      { value: "INTJ", label: "INTJ" },
-      { value: "INTP", label: "INTP" },
-      { value: "ENTJ", label: "ENTJ" },
-      { value: "ENTP", label: "ENTP" },
-      { value: "INFJ", label: "INFJ" },
-      { value: "INFP", label: "INFP" },
-      { value: "ENFJ", label: "ENFJ" },
-      { value: "ENFP", label: "ENFP" },
-      { value: "ISTJ", label: "ISTJ" },
-      { value: "ISFJ", label: "ISFJ" },
-      { value: "ESTJ", label: "ESTJ" },
-      { value: "ESFJ", label: "ESFJ" },
-      { value: "ISTP", label: "ISTP" },
-      { value: "ISFP", label: "ISFP" },
-      { value: "ESTP", label: "ESTP" },
-      { value: "ESFP", label: "ESFP" },
+      { value: "INTJ", label: "INTJ", emoji: "🏛️" },
+      { value: "INTP", label: "INTP", emoji: "🔬" },
+      { value: "ENTJ", label: "ENTJ", emoji: "👑" },
+      { value: "ENTP", label: "ENTP", emoji: "⚡" },
+      { value: "INFJ", label: "INFJ", emoji: "🌿" },
+      { value: "INFP", label: "INFP", emoji: "🌙" },
+      { value: "ENFJ", label: "ENFJ", emoji: "🌟" },
+      { value: "ENFP", label: "ENFP", emoji: "🦋" },
+      { value: "ISTJ", label: "ISTJ", emoji: "📐" },
+      { value: "ISFJ", label: "ISFJ", emoji: "🤍" },
+      { value: "ESTJ", label: "ESTJ", emoji: "🏗️" },
+      { value: "ESFJ", label: "ESFJ", emoji: "🌻" },
+      { value: "ISTP", label: "ISTP", emoji: "🔧" },
+      { value: "ISFP", label: "ISFP", emoji: "🎨" },
+      { value: "ESTP", label: "ESTP", emoji: "🎯" },
+      { value: "ESFP", label: "ESFP", emoji: "🎉" },
     ],
   },
   // Q9: music - single, no image options (changed from hybrid)
@@ -186,24 +189,24 @@ const DEMO_QUESTIONS = [
       { value: "sensual_glamour", label: "Sensual glamour", imageUrl: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=400&h=400&fit=crop" },
     ],
   },
-  // Q11: rising_sign - hybrid with image options
+  // Q11: rising_sign - single-select pill layout with emoji (same style as MBTI)
   {
     id: "rising_sign",
-    kind: "hybrid" as const,
+    kind: "pill" as const,
     questionText: "What is your rising sign?",
     options: [
-      { value: "aries", label: "Aries", emoji: "♈", imageUrl: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=400&h=400&fit=crop" },
-      { value: "taurus", label: "Taurus", emoji: "♉", imageUrl: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=400&h=400&fit=crop" },
-      { value: "gemini", label: "Gemini", emoji: "♊", imageUrl: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=400&h=400&fit=crop" },
-      { value: "cancer", label: "Cancer", emoji: "♋", imageUrl: "https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=400&h=400&fit=crop" },
-      { value: "leo", label: "Leo", emoji: "♌", imageUrl: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=400&h=400&fit=crop" },
-      { value: "virgo", label: "Virgo", emoji: "♍", imageUrl: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=400&h=400&fit=crop" },
-      { value: "libra", label: "Libra", emoji: "♎", imageUrl: "https://images.unsplash.com/photo-1490730141103-6cac27abb37f?w=400&h=400&fit=crop" },
-      { value: "scorpio", label: "Scorpio", emoji: "♏", imageUrl: "https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?w=400&h=400&fit=crop" },
-      { value: "sagittarius", label: "Sagittarius", emoji: "♐", imageUrl: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&h=400&fit=crop" },
-      { value: "capricorn", label: "Capricorn", emoji: "♑", imageUrl: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=400&h=400&fit=crop" },
-      { value: "aquarius", label: "Aquarius", emoji: "♒", imageUrl: "https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=400&h=400&fit=crop" },
-      { value: "pisces", label: "Pisces", emoji: "♓", imageUrl: "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=400&h=400&fit=crop" },
+      { value: "aries", label: "Aries", emoji: "♈" },
+      { value: "taurus", label: "Taurus", emoji: "♉" },
+      { value: "gemini", label: "Gemini", emoji: "♊" },
+      { value: "cancer", label: "Cancer", emoji: "♋" },
+      { value: "leo", label: "Leo", emoji: "♌" },
+      { value: "virgo", label: "Virgo", emoji: "♍" },
+      { value: "libra", label: "Libra", emoji: "♎" },
+      { value: "scorpio", label: "Scorpio", emoji: "♏" },
+      { value: "sagittarius", label: "Sagittarius", emoji: "♐" },
+      { value: "capricorn", label: "Capricorn", emoji: "♑" },
+      { value: "aquarius", label: "Aquarius", emoji: "♒" },
+      { value: "pisces", label: "Pisces", emoji: "♓" },
     ],
   },
   // Q12: budget - single, no image options
@@ -270,8 +273,8 @@ export default function QuizDemoPage() {
   }
 
   function handleSelectionComplete() {
-    // Auto-advance for single-select and mbti questions
-    if (currentQuestion.kind === "single" || currentQuestion.kind === "mbti") {
+    // Auto-advance for single-select and pill questions
+    if (currentQuestion.kind === "single" || currentQuestion.kind === "pill") {
       goToNext();
     }
   }
@@ -287,6 +290,7 @@ export default function QuizDemoPage() {
   const isLastQuestion = currentQuestionIndex === totalQuestions - 1;
   const isFirstQuestion = currentQuestionIndex === 0;
   const isMultiOrHybrid = currentQuestion.kind === "multi" || currentQuestion.kind === "hybrid";
+  const currentMaxSelections = (currentQuestion as { maxSelections?: number }).maxSelections;
 
   return (
     <main className="min-h-dvh bg-[#FAFAF8]">
@@ -385,9 +389,9 @@ export default function QuizDemoPage() {
           options={currentQuestion.options}
           selectedValues={answers[currentQuestion.id] || (isMultiOrHybrid ? [] : "")}
           onSelect={(value) => handleSelect(currentQuestion.id, value)}
-          maxSelections={3}
+          maxSelections={currentMaxSelections ?? 3}
           onSelectionComplete={handleSelectionComplete}
-          questionImageUrl={currentQuestion.kind !== "hybrid" && currentQuestion.kind !== "mbti" ? currentQuestion.questionImageUrl : undefined}
+          questionImageUrl={currentQuestion.kind !== "hybrid" && currentQuestion.kind !== "pill" ? currentQuestion.questionImageUrl : undefined}
         />
       </div>
 

@@ -40,10 +40,10 @@ export interface QuizAnswers {
   gender_pref?: GenderPref | string;
   use_case?: UseCase | string;
   mood?: Mood | string;
-  scent_type?: ScentType | string;
+  scent_type?: ScentType[] | ScentType | string[] | string;  // now multi (max 2)
   dislike_note?: DislikeNote[] | DislikeNote | string[] | string;
   weekend_vibe?: WeekendVibe | string;
-  style_icon?: StyleIcon | string;
+  style_icon?: StyleIcon[] | StyleIcon | string[] | string;  // now multi (max 2)
   mbti?: MbtiType | string;
   music?: MusicGenre | string;
   closet_aesthetic?: ClosetAesthetic | string;
@@ -196,10 +196,11 @@ export function buildUserProfile(answers: QuizAnswers): UserProfile {
   const useCase = pickOne(answers.use_case, USE_CASES) ?? USE_CASES[0];
   const priceRange = pickOne(answers.budget, BUDGET_TIERS) ?? BUDGET_TIERS[0];
 
-  const scentType = pickOne(answers.scent_type, SCENT_TYPES);
-  const scentTypeDescriptors: Descriptor[] = scentType
-    ? [...SCENT_TYPE_DESCRIPTOR_MAP[scentType]]
-    : [];
+  // scent_type: now multi-select (max 2) — merge descriptor arrays
+  const scentTypes = pickMany(answers.scent_type, SCENT_TYPES);
+  const scentTypeDescriptors: Descriptor[] = Array.from(
+    new Set(scentTypes.flatMap((st) => SCENT_TYPE_DESCRIPTOR_MAP[st])),
+  );
 
   const dislikeNotes = pickMany(answers.dislike_note, DISLIKE_NOTES);
   const scentDislikes = Array.from(
@@ -216,8 +217,11 @@ export function buildUserProfile(answers: QuizAnswers): UserProfile {
   const weekendSignals = weekend ? WEEKEND_VIBE_SIGNAL_MAP[weekend] : [];
   if (weekendSignals.length > 0) addSignals(score, weekendSignals, SIGNAL_WEIGHT.weekend_vibe);
 
-  const styleIcon = pickOne(answers.style_icon, STYLE_ICONS);
-  const styleSignals = styleIcon ? STYLE_ICON_SIGNAL_MAP[styleIcon] : [];
+  // style_icon: now multi-select (max 2) — merge signal arrays
+  const styleIcons = pickMany(answers.style_icon, STYLE_ICONS);
+  const styleSignals = Array.from(
+    new Set(styleIcons.flatMap((si) => STYLE_ICON_SIGNAL_MAP[si])),
+  ) as Signal[];
   if (styleSignals.length > 0) addSignals(score, styleSignals, SIGNAL_WEIGHT.style_icon);
 
   const music = pickOne(answers.music, MUSIC_GENRES);
