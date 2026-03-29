@@ -48,9 +48,9 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
   background: var(--page-bg);
   color: var(--text-primary);
+  font-family: var(--font-inter), sans-serif;
 }
 
 ::selection {

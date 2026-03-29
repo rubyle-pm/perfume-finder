@@ -78,11 +78,21 @@ export function QuizQuestionCard({
         newValues = selectedArray.filter((v) => v !== value);
       } else {
         if (selectedArray.length >= maxSelections) {
-          return;
+          // If maxSelections===1, replace instead of block (radio-like)
+          if (maxSelections === 1) {
+            newValues = [value];
+          } else {
+            return;
+          }
+        } else {
+          newValues = [...selectedArray, value];
         }
-        newValues = [...selectedArray, value];
       }
       onSelect(newValues);
+      // Auto-advance when max-1 multi reaches its single selection
+      if (maxSelections === 1 && newValues.length === 1 && onSelectionComplete) {
+        setTimeout(() => onSelectionComplete(), 280);
+      }
     } else {
       // single / pill / mbti — radio behaviour
       onSelect(value);
@@ -147,8 +157,8 @@ export function QuizQuestionCard({
         </div>
       )}
 
-      {/* Multi-select/Hybrid hint */}
-      {isMulti && (
+      {/* Multi-select/Hybrid selection hint — only show when maxSelections > 1 */}
+      {isMulti && maxSelections > 1 && (
         <p className="mb-4 text-sm text-[#A8A29E]">
           Select up to {maxSelections}
           {selectedArray.length > 0 && (
@@ -159,7 +169,7 @@ export function QuizQuestionCard({
         </p>
       )}
 
-      {/* Pill Grid Layout — single-select, wrapping flex, emoji + label */}
+      {/* ─── PILL LAYOUT — single-select, wrapping flex, emoji + label ─── */}
       {isPill ? (
         <div
           className="flex flex-wrap gap-2.5"
@@ -180,26 +190,42 @@ export function QuizQuestionCard({
                   aria-label={option.label}
                 />
                 <span
-                  className={`
-                    inline-flex items-center gap-2 rounded-full border-2 px-4 py-2.5
-                    text-[14px] font-medium transition-all duration-200 select-none
-                    ${selected
-                      ? "border-[#1C1917] bg-[#1C1917] text-white shadow-sm"
-                      : "border-[#E7E5E4] bg-white text-[#44403C] hover:border-[#A8A29E] hover:bg-[#FAFAF8]"
-                    }
-                  `}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    borderRadius: "32px",
+                    border: selected ? "0.5px solid #1a1a1a" : "0.5px solid #D8D5CE",
+                    padding: "10px 18px",
+                    background: selected ? "#1a1a1a" : "transparent",
+                    cursor: "pointer",
+                    transition: "all 0.15s",
+                    userSelect: "none",
+                  }}
                 >
                   {option.emoji && (
-                    <span className="text-[16px] leading-none">{option.emoji}</span>
+                    <span style={{ fontSize: "22px", lineHeight: 1 }}>{option.emoji}</span>
                   )}
-                  <span>{option.label}</span>
+                  <span
+                    style={{
+                      fontSize: "22px",
+                      fontWeight: selected ? 400 : 300,
+                      color: selected ? "#FAFAF8" : "#3D3B36",
+                      letterSpacing: "-0.01em",
+                      lineHeight: 1,
+                      fontFamily: "var(--font-inter), 'Inter', sans-serif",
+                    }}
+                  >
+                    {option.label}
+                  </span>
                 </span>
               </label>
             );
           })}
         </div>
+
       ) : isMbti ? (
-        /* Legacy MBTI Tag-Pair Layout — kept for backwards compat */
+        /* ─── LEGACY MBTI LAYOUT — kept for backwards compat ─── */
         <div
           className="flex flex-col gap-2.5"
           role="radiogroup"
@@ -228,15 +254,20 @@ export function QuizQuestionCard({
                 />
                 <span
                   className={`
-                    flex h-11 items-center justify-center rounded-full px-5 text-[15px] font-semibold 
-                    transition-all duration-200 bg-[#1C1917] text-white
+                    inline-flex items-center gap-1.5 rounded-xl border-2 px-3 py-1.5 text-sm font-semibold
+                    transition-all duration-200
+                    ${selected
+                      ? "border-[#1C1917] bg-[#1C1917] text-white"
+                      : "border-[#E7E5E4] bg-white text-[#44403C] group-hover:border-[#A8A29E]"
+                    }
                   `}
                 >
-                  {option.value}
+                  {option.emoji && <span className="text-base">{option.emoji}</span>}
+                  {option.label}
                 </span>
                 <span
                   className={`
-                    flex h-11 flex-1 items-center rounded-full border-2 px-5 text-[15px] 
+                    rounded-lg border px-2 py-1 text-xs
                     transition-all duration-200
                     ${selected
                       ? "border-[#1C1917] bg-[#F5F5F4] font-medium text-[#1C1917]"
@@ -262,10 +293,11 @@ export function QuizQuestionCard({
             );
           })}
         </div>
+
       ) : isHybrid ? (
-        /* Hybrid Grid Layout - with images */
+        /* ─── HYBRID IMAGE GRID LAYOUT ─── */
         <div
-          className="grid grid-cols-2 gap-3 md:grid-cols-3"
+          className="grid grid-cols-2 gap-x-4 gap-y-0"
           role="group"
           aria-labelledby={`question-${id}`}
         >
@@ -276,17 +308,13 @@ export function QuizQuestionCard({
             return (
               <label
                 key={option.value}
-                className={`
-                  group relative flex cursor-pointer flex-col overflow-hidden rounded-2xl border-2 
-                  transition-all duration-200
-                  ${selected
-                    ? "border-[#1C1917] bg-[#F5F5F4]"
-                    : "border-[#E7E5E4] bg-white hover:border-[#A8A29E]"
-                  }
-                  ${disabled ? "cursor-not-allowed opacity-40" : ""}
-                `}
+                style={{
+                  cursor: disabled ? "not-allowed" : "pointer",
+                  opacity: disabled ? 0.4 : 1,
+                  paddingBottom: "24px",
+                  display: "block",
+                }}
               >
-                {/* Hidden input for accessibility */}
                 <input
                   type="checkbox"
                   name={id}
@@ -298,83 +326,119 @@ export function QuizQuestionCard({
                   aria-label={option.label}
                 />
 
-                {/* Image area */}
-                {option.imageUrl ? (
-                  <div className="aspect-square w-full overflow-hidden bg-[#F5F5F4]">
+                {/* Image tile */}
+                <div
+                  style={{
+                    width: "100%",
+                    aspectRatio: "4/3",
+                    overflow: "hidden",
+                    marginBottom: "12px",
+                    position: "relative",
+                    transition: "opacity 0.18s",
+                  }}
+                >
+                  {/* Glass selection overlay */}
+                  {selected && (
+                    <div
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        background: "rgba(255,255,255,0.18)",
+                        backdropFilter: "blur(0px)",
+                        boxShadow: "inset 0 0 0 1.5px rgba(26,26,26,0.35)",
+                        zIndex: 1,
+                        transition: "all 0.18s",
+                      }}
+                    />
+                  )}
+                  {option.imageUrl ? (
                     <img
                       src={option.imageUrl}
                       alt={option.label}
-                      className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-105"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        display: "block",
+                        filter: selected ? "brightness(0.9)" : "none",
+                        transition: "filter 0.18s",
+                      }}
                     />
-                  </div>
-                ) : (
-                  <div className="flex aspect-square w-full items-center justify-center bg-[#F5F5F4]">
-                    {option.emoji ? (
-                      <span className="text-[48px]">{option.emoji}</span>
-                    ) : (
-                      <span className="text-4xl text-[#E7E5E4]">?</span>
-                    )}
-                  </div>
-                )}
-
-                {/* Text content */}
-                <div className="flex items-center justify-between gap-2 px-3 py-2.5">
-                  <div className="min-w-0 flex-1">
-                    <span
-                      className={`
-                        block truncate text-[13px] leading-tight transition-colors duration-150
-                        ${selected ? "font-semibold text-[#1C1917]" : "font-medium text-[#292524]"}
-                      `}
+                  ) : (
+                    <div
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        background: selected
+                          ? "rgba(26,26,26,0.06)"
+                          : "#F0EDE6",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontSize: "32px",
+                        transition: "background 0.18s",
+                      }}
                     >
-                      {option.label}
-                    </span>
-                  </div>
-
-                  {/* Checkbox indicator */}
-                  <span
-                    className={`
-                      flex h-5 w-5 shrink-0 items-center justify-center rounded-md border-2 
-                      transition-all duration-200
-                      ${selected
-                        ? "border-[#1C1917] bg-[#1C1917]"
-                        : "border-[#E7E5E4] bg-white group-hover:border-[#A8A29E]"
-                      }
-                    `}
-                  >
-                    {selected && (
-                      <CheckIcon className="h-3 w-3 text-white" />
-                    )}
-                  </span>
+                      {option.emoji || "?"}
+                    </div>
+                  )}
                 </div>
+
+                {/* Hairline rule */}
+                <hr style={{ border: "none", borderTop: "0.5px solid #D8D5CE", marginBottom: "10px" }} />
+
+                {/* Label */}
+                <span
+                  style={{
+                    display: "block",
+                    fontSize: "20px",
+                    fontWeight: selected ? 500 : 300,
+                    color: selected ? "#1a1a1a" : "#3D3B36",
+                    letterSpacing: "-0.015em",
+                    lineHeight: 1.15,
+                    fontFamily: "var(--font-inter), 'Inter', sans-serif",
+                    transition: "color 0.15s, font-weight 0.15s",
+                  }}
+                >
+                  {option.label}
+                </span>
               </label>
             );
           })}
         </div>
+
       ) : (
-        /* Standard List Layout - single/multi */
+        /* ─── STANDARD LIST LAYOUT — single / multi ─── */
         <div
-          className="flex flex-col gap-2.5"
           role={isMulti ? "group" : "radiogroup"}
           aria-labelledby={`question-${id}`}
         >
-          {options.map((option) => {
+          {options.map((option, index) => {
             const selected = isOptionSelected(option.value);
             const disabled = isOptionDisabled(option.value);
 
             return (
               <label
                 key={option.value}
-                className={`
-                  group relative flex min-h-[64px] cursor-pointer items-center gap-4 
-                  rounded-2xl border-2 px-4 py-3 transition-all duration-200
-                  ${selected
-                    ? "border-[#1C1917] bg-[#F5F5F4]"
-                    : "border-[#E7E5E4] bg-white hover:border-[#A8A29E]"
-                  }
-                  ${disabled ? "cursor-not-allowed opacity-40" : ""}
-                `}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  borderTop: "0.5px solid #D8D5CE",
+                  borderBottom: index === options.length - 1 ? "0.5px solid #D8D5CE" : "none",
+                  padding: "12px 16px",
+                  cursor: disabled ? "not-allowed" : "pointer",
+                  opacity: disabled ? 0.4 : 1,
+                  position: "relative",
+                  // iOS glass selected: subtle tinted background, sharp edges
+                  background: selected
+                    ? "rgba(26, 26, 26, 0.045)"
+                    : "transparent",
+                  transition: "background 0.18s",
+                }}
               >
-                {/* Hidden input for accessibility */}
+                {/* Remove the heavy left accent bar — replaced by background glass tint */}
+
                 <input
                   type={isMulti ? "checkbox" : "radio"}
                   name={id}
@@ -386,45 +450,52 @@ export function QuizQuestionCard({
                   aria-label={option.label}
                 />
 
-                {/* Emoji */}
-                {option.emoji && (
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center text-[28px]">
-                    {option.emoji}
-                  </span>
-                )}
-
-                {/* Text content */}
-                <div className="flex min-w-0 flex-1 flex-col justify-center">
+                {/* Left: emoji + label */}
+                <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                  {option.emoji && (
+                    <span style={{ fontSize: "22px", width: "28px", textAlign: "center", flexShrink: 0 }}>  {/*config emoji size*/}
+                      {option.emoji}
+                    </span>
+                  )}
                   <span
-                    className={`
-                      text-[15px] leading-snug transition-colors duration-150
-                      ${selected ? "font-semibold text-[#1C1917]" : "font-medium text-[#292524]"}
-                    `}
+                    style={{
+                      fontSize: "22px",
+                      fontWeight: selected ? 500 : 300,
+                      color: selected ? "#1a1a1a" : "#3D3B36",
+                      letterSpacing: "-0.01em",
+                      lineHeight: 1.15,
+                      fontFamily: "var(--font-inter), 'Inter', sans-serif",
+                      transition: "color 0.15s",
+                    }}
                   >
                     {option.label}
                   </span>
-                  {option.subtitle && (
-                    <span className="mt-0.5 text-[13px] text-[#A8A29E]">
-                      {option.subtitle}
-                    </span>
-                  )}
                 </div>
 
-                {/* Checkbox indicator on the right */}
-                <span
-                  className={`
-                    flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-2 
-                    transition-all duration-200
-                    ${selected
-                      ? "border-[#1C1917] bg-[#1C1917]"
-                      : "border-[#E7E5E4] bg-white group-hover:border-[#A8A29E]"
-                    }
-                  `}
-                >
-                  {selected && (
-                    <CheckIcon className="h-4 w-4 text-white" />
-                  )}
-                </span>
+                {/* Right: checkbox for multi only — iOS glass style */}
+                {isMulti && (
+                  <span
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: "22px",
+                      height: "22px",
+                      borderRadius: "50%",
+                      border: selected
+                        ? "1.5px solid rgba(26,26,26,0.5)"
+                        : "1px solid rgba(188,186,179,0.7)",
+                      background: selected
+                        ? "rgba(26,26,26,0.12)"
+                        : "rgba(255,255,255,0.5)",
+                      flexShrink: 0,
+                      backdropFilter: selected ? "blur(4px)" : "none",
+                      transition: "all 0.18s",
+                    }}
+                  >
+                    {selected && <span style={{ color: "#1a1a1a", display: "flex" }}><CheckIcon className="h-3 w-3" /></span>}
+                  </span>
+                )}
               </label>
             );
           })}
@@ -467,3 +538,4 @@ export function QuizQuestionCard({
 }
 
 export default QuizQuestionCard;
+

@@ -95,7 +95,7 @@ export default function ArchetypePage() {
 
         {/* CTA */}
         <Link href="/results" style={s.ctaBtn}>
-          Explore curated fragrances →
+          Explore more →
         </Link>
 
         <Link href="/quiz" style={s.retakeLink}>Retake quiz</Link>
@@ -125,7 +125,7 @@ function getAnswerSummary(result: ResultPayload): { label: string; value: string
     }
     if (r.slots?.bestFit?.perfume) {
       items.push({
-        label: "Best match",
+        label: "Your signature scent",
         value: r.slots.bestFit.perfume.name,
       });
     }

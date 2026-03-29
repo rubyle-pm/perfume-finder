@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { Suspense, useState, useRef, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { QuizQuestionCard } from "@/components/quiz/quiz-question-card";
-import { ArrowLeft, ArrowRight, ChevronDown, Home } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 // All 12 quiz questions matching quiz-config.ts
 const DEMO_QUESTIONS = [
@@ -35,7 +35,7 @@ const DEMO_QUESTIONS = [
       { value: "home_body", label: "At home, comfy in my skin", emoji: "🛋️", subtitle: "Cozy vibes" },
     ],
   },
-  // Q3: mood - hybrid image grid (1 option only)
+  // Q3: mood - hybrid image grid (1 option only, auto-advances like single)
   {
     id: "mood",
     kind: "hybrid" as const,
@@ -131,6 +131,7 @@ const DEMO_QUESTIONS = [
     id: "mbti",
     kind: "pill" as const,
     questionText: "What is your MBTI?",
+    questionImageUrl: "/images/quiz/mbti-banner.jpg",
     options: [
       { value: "INTJ", label: "INTJ", emoji: "🏛️" },
       { value: "INTP", label: "INTP", emoji: "🔬" },
@@ -171,11 +172,12 @@ const DEMO_QUESTIONS = [
       { value: "musical_theatre", label: "Musical Theatre", emoji: "🎭", subtitle: "Broadway & beyond" },
     ],
   },
-  // Q10: closet_aesthetic - hybrid with image options
+  // Q10: closet_aesthetic - hybrid with image options, max 2
   {
     id: "closet_aesthetic",
     kind: "hybrid" as const,
     questionText: "How does your staple closet look?",
+    maxSelections: 2,
     options: [
       { value: "cottage_core", label: "Cottage core", imageUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=400&fit=crop" },
       { value: "streetwear_hiphop", label: "Streetwear / Hip-hop", imageUrl: "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=400&h=400&fit=crop" },
@@ -194,6 +196,7 @@ const DEMO_QUESTIONS = [
     id: "rising_sign",
     kind: "pill" as const,
     questionText: "What is your rising sign?",
+    questionImageUrl: "/images/quiz/rising-sign-banner.jpg",
     options: [
       { value: "aries", label: "Aries", emoji: "♈" },
       { value: "taurus", label: "Taurus", emoji: "♉" },
@@ -223,10 +226,29 @@ const DEMO_QUESTIONS = [
   },
 ];
 
+// Questions that MUST be answered before results can be generated
+const MANDATORY_QUESTION_IDS = new Set([
+  "gender_pref",  // Q1
+  "use_case",     // Q2
+  "mood",         // Q3
+  "scent_type",   // Q4
+  "dislike_note", // Q5
+  "weekend_vibe", // Q6
+  "budget",       // Q12
+]);
+
 type AnswerMap = Record<string, string | string[]>;
 
-export default function QuizDemoPage() {
+/** Helper: does an answer entry count as "answered" */
+function hasAnswer(answers: AnswerMap, id: string): boolean {
+  const a = answers[id];
+  if (Array.isArray(a)) return a.length > 0;
+  return !!a;
+}
+
+function QuizDemoPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [answers, setAnswers] = useState<AnswerMap>({});
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -235,6 +257,25 @@ export default function QuizDemoPage() {
   const totalQuestions = DEMO_QUESTIONS.length;
   const currentQuestion = DEMO_QUESTIONS[currentQuestionIndex];
   const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
+
+  // Restore saved answers and jump to ?q=N on load
+  useEffect(() => {
+    const saved = sessionStorage.getItem("quiz_answers");
+    if (saved) {
+      try { setAnswers(JSON.parse(saved)); } catch { /* ignore */ }
+    }
+    const qParam = searchParams.get("q");
+    if (qParam !== null) {
+      const idx = parseInt(qParam, 10);
+      if (!isNaN(idx) && idx >= 0 && idx < DEMO_QUESTIONS.length) {
+        setCurrentQuestionIndex(idx);
+      }
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // True when user was sent here from the review page to edit one question
+  const fromReview = searchParams.get("from") === "review";
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -248,16 +289,23 @@ export default function QuizDemoPage() {
   }, []);
 
   function handleSelect(questionId: string, value: string | string[]) {
-    setAnswers((prev) => ({ ...prev, [questionId]: value }));
+    const updated = { ...answers, [questionId]: value };
+    setAnswers(updated);
+    // Keep sessionStorage in sync so review page always has latest answers
+    sessionStorage.setItem("quiz_answers", JSON.stringify(updated));
   }
 
   function goToNext() {
+    // If editing from review, always go back to review after any advance
+    if (fromReview) {
+      router.push("/quiz/review");
+      return;
+    }
     if (currentQuestionIndex < totalQuestions - 1) {
       setCurrentQuestionIndex((prev) => prev + 1);
     } else {
-      // Last question — save answers and go to loading
-      sessionStorage.setItem("quiz_answers", JSON.stringify(answers));
-      router.push("/loading");
+      // Last question — handleSelect already saved to sessionStorage; just navigate
+      router.push("/quiz/review");
     }
   }
 
@@ -272,20 +320,27 @@ export default function QuizDemoPage() {
     setIsDropdownOpen(false);
   }
 
+  // Auto-advance for single & pill; ALSO for mood hybrid (maxSelections===1)
   function handleSelectionComplete() {
-    // Auto-advance for single-select and pill questions
-    if (currentQuestion.kind === "single" || currentQuestion.kind === "pill") {
+    const isMoodSingleSelect =
+      currentQuestion.id === "mood" &&
+      (currentQuestion as { maxSelections?: number }).maxSelections === 1;
+    if (
+      currentQuestion.kind === "single" ||
+      currentQuestion.kind === "pill" ||
+      isMoodSingleSelect
+    ) {
       goToNext();
     }
   }
 
-  const hasCurrentAnswer = (() => {
-    const answer = answers[currentQuestion.id];
-    if (Array.isArray(answer)) {
-      return answer.length > 0;
-    }
-    return !!answer;
-  })();
+  // Check mandatory questions are all answered
+  const missingMandatory = DEMO_QUESTIONS.filter(
+    (q) => MANDATORY_QUESTION_IDS.has(q.id) && !hasAnswer(answers, q.id),
+  );
+  const allMandatoryAnswered = missingMandatory.length === 0;
+
+  const hasCurrentAnswer = hasAnswer(answers, currentQuestion.id);
 
   const isLastQuestion = currentQuestionIndex === totalQuestions - 1;
   const isFirstQuestion = currentQuestionIndex === 0;
@@ -335,9 +390,22 @@ export default function QuizDemoPage() {
               {/* Dropdown menu */}
               {isDropdownOpen && (
                 <div className="absolute left-0 top-full z-30 mt-2 w-64 rounded-2xl border-2 border-[#E7E5E4] bg-white py-2 shadow-lg">
+                  {/* Home link at top of list */}
+                  <button
+                    type="button"
+                    onClick={() => { setIsDropdownOpen(false); window.location.href = "/"; }}
+                    className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm transition-colors hover:bg-[#F5F5F4]"
+                  >
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border-2 border-[#E7E5E4] text-[#57534E]">
+                      👾
+                    </span>
+                    <span className="flex-1 text-[#44403C]">Welcome~</span>
+                  </button>
+                  <hr className="mx-4 border-t border-[#E7E5E4]" />
                   {DEMO_QUESTIONS.map((q, index) => {
-                    const hasAnswer = !!answers[q.id];
+                    const answered = hasAnswer(answers, q.id);
                     const isCurrent = index === currentQuestionIndex;
+                    const isMandatory = MANDATORY_QUESTION_IDS.has(q.id);
                     return (
                       <button
                         key={q.id}
@@ -351,7 +419,10 @@ export default function QuizDemoPage() {
                         <span className="flex-1 truncate text-[#44403C]">
                           {q.questionText.length > 30 ? q.questionText.slice(0, 30) + "..." : q.questionText}
                         </span>
-                        {hasAnswer && (
+                        {isMandatory && !answered && (
+                          <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wide text-[#808080]">must</span>
+                        )}
+                        {answered && (
                           <span className="h-2 w-2 shrink-0 rounded-full bg-green-500" />
                         )}
                       </button>
@@ -362,22 +433,26 @@ export default function QuizDemoPage() {
             </div>
           </div>
 
-          {/* Right side: Home button (black pill) */}
-          <button
-            type="button"
-            onClick={() => window.location.href = "/"}
-            className="ds-btn ds-btn-glass ds-btn-sm"
-            style={{
-              background: "rgba(235, 235, 235, 0.88)",
-              backdropFilter: "blur(12px)",
-              WebkitBackdropFilter: "blur(12px)",
-              color: "#3C3C3E",
-              border: "1px solid rgba(255,255,255,0.6)",
-              boxShadow: "inset 0 0.5px 0 rgba(255,255,255,0.9), 0 1px 4px rgba(0,0,0,0.06)",
-            }}
-          >
-            Home
-          </button>
+          {/* Right side: Back button — navigates to previous question */}
+          {!isFirstQuestion ? (
+            <button
+              type="button"
+              onClick={goToPrevious}
+              className="ds-btn ds-btn-glass ds-btn-sm"
+              style={{
+                background: "rgba(235, 235, 235, 0.88)",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
+                color: "#3C3C3E",
+                border: "1px solid rgba(255,255,255,0.6)",
+                boxShadow: "inset 0 0.5px 0 rgba(255,255,255,0.9), 0 1px 4px rgba(0,0,0,0.06)",
+              }}
+            >
+              ← Back
+            </button>
+          ) : (
+            <span />
+          )}
         </header>
 
         {/* Question Card */}
@@ -386,39 +461,58 @@ export default function QuizDemoPage() {
           id={currentQuestion.id}
           questionText={currentQuestion.questionText}
           kind={currentQuestion.kind}
-          options={currentQuestion.options}
+          options={currentQuestion.options ?? []}
           selectedValues={answers[currentQuestion.id] || (isMultiOrHybrid ? [] : "")}
           onSelect={(value) => handleSelect(currentQuestion.id, value)}
           maxSelections={currentMaxSelections ?? 3}
           onSelectionComplete={handleSelectionComplete}
-          questionImageUrl={currentQuestion.kind !== "hybrid" && currentQuestion.kind !== "pill" ? currentQuestion.questionImageUrl : undefined}
+          questionImageUrl={(currentQuestion as { questionImageUrl?: string }).questionImageUrl}
         />
       </div>
 
-      {/* Sticky bottom navigation */}
-      {isMultiOrHybrid && (
+      {/* Sticky bottom navigation — for multi/hybrid, but NOT mood (which auto-advances) */}
+      {isMultiOrHybrid && currentQuestion.id !== "mood" && (
         <div className="fixed inset-x-0 bottom-0 z-10 bg-gradient-to-t from-[#FAFAF8] via-[#FAFAF8]/90 to-transparent px-4 pb-6 pt-4">
-        <div className="mx-auto flex max-w-[720px] gap-3">
-            {!isFirstQuestion && (
+          <div className="mx-auto max-w-[720px]">
+            {/* Mandatory warning — shown only on last question if gate not clear */}
+            {isLastQuestion && !allMandatoryAnswered && (
+              <div className="mb-3 rounded-xl border border-[#FCA5A5] bg-[#FEF2F2] px-4 py-3 text-sm text-[#DC2626]">
+                <strong>Almost there!</strong> Please answer the required questions first:{" "}
+                {missingMandatory.map((q, i) => (
+                  <button
+                    key={q.id}
+                    type="button"
+                    onClick={() => goToQuestion(DEMO_QUESTIONS.indexOf(q))}
+                    className="underline"
+                  >
+                    {i > 0 ? ", " : ""}
+                    Q{DEMO_QUESTIONS.indexOf(q) + 1}
+                  </button>
+                ))}
+              </div>
+            )}
+            <div className="flex justify-center">
               <button
                 type="button"
-                onClick={goToPrevious}
-                className="ds-btn ds-btn-glass flex-1"
+                onClick={isLastQuestion && !allMandatoryAnswered ? undefined : goToNext}
+                disabled={!hasCurrentAnswer || (isLastQuestion && !allMandatoryAnswered)}
+                className="ds-btn ds-btn-primary w-full max-w-[360px] disabled:cursor-not-allowed disabled:opacity-40"
               >
-                Back
+                {isLastQuestion ? "Review & finish" : "Next"}
               </button>
-            )}
-            <button
-              type="button"
-              onClick={goToNext}
-              disabled={!hasCurrentAnswer}
-              className="ds-btn ds-btn-primary flex-1 disabled:cursor-not-allowed disabled:opacity-40"
-            >
-              {isLastQuestion ? "See Results" : "Next"}
-            </button>
+            </div>
           </div>
         </div>
       )}
     </main>
+  );
+}
+
+/** Suspense wrapper required by Next.js App Router for useSearchParams */
+export default function QuizPage() {
+  return (
+    <Suspense fallback={<div style={{ minHeight: "100dvh", background: "#FAFAF8" }} />}>
+      <QuizDemoPage />
+    </Suspense>
   );
 }

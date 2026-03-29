@@ -1,0 +1,32 @@
+{
+  "ysl-libre-edp": {
+    "status": "failed",
+    "error": "No confident match heavily outweighed penalties (best score = -100)",
+    "brand": "YSL",
+    "name": "Libre EDP"
+  },
+  "ysl-libre-intense-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Libre-Intense-62318.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.62318.jpg",
+    "path": "../public/perfume-image/perfume-bottles/ysl-libre-intense-edp.jpg"
+  },
+  "ysl-myslf-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/MYSLF-Eau-de-Parfum-84094.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.84094.jpg",
+    "path": "../public/perfume-image/perfume-bottles/ysl-myslf-edp.jpg"
+  },
+  "ysl-black-opium-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Black-Opium-25324.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.25324.jpg",
+    "path": "../public/perfume-image/perfume-bottles/ysl-black-opium-edp.jpg"
+  },
+  "ysl-la-nuit-de-lhomme-edt": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/La-Nuit-de-l-Homme-5521.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5521.jpg",
+    "path": "../public/perfume-image/perfume-bottles/ysl-la-nuit-de-lhomme-edt.jpg"
+  }
+}

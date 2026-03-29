@@ -201,7 +201,7 @@ export const QUIZ_CONFIG: readonly QuizQuestion[] = [     //entry point of quiz 
   { id: "style_icon", kind: "hybrid", maxSelections: 2, options: STYLE_ICONS },
   { id: "mbti", kind: "pill", options: MBTI_TYPES },
   { id: "music", kind: "single", options: MUSIC_GENRES },
-  { id: "closet_aesthetic", kind: "hybrid", options: CLOSET_AESTHETICS },
+  { id: "closet_aesthetic", kind: "hybrid", maxSelections: 2, options: CLOSET_AESTHETICS },
   { id: "rising_sign", kind: "pill", options: RISING_SIGNS },
   { id: "budget", kind: "single", options: BUDGET_TIERS },
 ] as const;
