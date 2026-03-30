@@ -167,12 +167,12 @@ function PerfumeSection({
 
       {/* CTA buttons */}
       <div style={s.btnRow}>
-        <a
+        <Link
           href={`/perfume/${perfume.id}`}
           style={s.btnSecondary}
         >
           View details
-        </a>
+        </Link>
         <a
           href="#"
           style={s.btnPrimary}
