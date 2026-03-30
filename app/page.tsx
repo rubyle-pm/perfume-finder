@@ -79,21 +79,19 @@ function Toggle({ style, ...props }: React.HTMLAttributes<HTMLSpanElement>) {
     <span
       {...props}
       style={{
-        display: "inline-flex", justifyContent: "space-between", alignItems: "center",
-        padding: 2,
-        width: "clamp(40px, 10vw, 62px)",
-        height: "clamp(20px, 5vw, 28px)",
+        display: "inline-flex", justifyContent: "flex-end", alignItems: "center",
+        padding: "clamp(2px, 0.5vw, 4px)",
+        width: "clamp(46px, 12vw, 70px)",
+        height: "clamp(26px, 7vw, 40px)",
         background: "#34C759", borderRadius: 100, flexShrink: 0,
-        transform: "rotate(-0.29deg)",
         ...style,
       }}
     >
-      <span style={{ fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.7)", paddingLeft: 4, fontFamily: "-apple-system,sans-serif", lineHeight: 1 }}>I</span>
       <span style={{
-        width: "clamp(16px, 3.5vw, 24px)",
-        height: "clamp(16px, 3.5vw, 24px)",
+        width: "calc(clamp(26px, 7vw, 40px) - clamp(4px, 1vw, 8px))",
+        height: "calc(clamp(26px, 7vw, 40px) - clamp(4px, 1vw, 8px))",
         background: "#fff", borderRadius: "50%", flexShrink: 0,
-        boxShadow: "0 1px 3px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.04)"
+        boxShadow: "0 2px 4px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.04)"
       }} />
     </span>
   );
@@ -130,8 +128,7 @@ function hlItalicStyle(): React.CSSProperties {
     lineHeight: 0.95,
     letterSpacing: "-0.3px",
     color: "#000",
-    background: "#D2E4F8",
-    borderRadius: 2,
+    background: "#BDE0FF",
     padding: "0 4px",
     whiteSpace: "nowrap",
   };
@@ -310,37 +307,42 @@ export default function HomePage() {
         {/* POV: */}
         <p style={{
           fontFamily: "var(--font-inter),'Inter',sans-serif",
-          fontWeight: 600,
-          fontSize: "clamp(2.2rem, 9vw, 4.4rem)",
+          fontWeight: 700,
+          fontSize: "clamp(2.5rem, 10vw, 4.8rem)",
           lineHeight: 0.9,
           letterSpacing: "-0.03em",
           color: "#000",
-          marginBottom: "0.1em",
-          //...reveal(0.4),
+          marginBottom: "0.25em",
         }}>
           POV:
         </p>
 
         {/* Headline lines */}
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.25em" }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.15em", position: "relative" }}>
 
           {/* You've [toggle] */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.7em", ...reveal(0.65) }}>
-            <span style={serifStyle()}>You've</span>
-            <Toggle style={{ transform: "rotate(-0.29deg) translateY(4px)" }} />
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5em", ...reveal(0.65) }}>
+            <span style={{ ...serifStyle(), fontSize: "clamp(2.5rem, 10vw, 5.2rem)" }}>You’ve</span>
+            <Toggle />
           </div>
 
-          {/* [👀] discovered your [disco] */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5em", ...reveal(0.95) }}>
-            <span style={{ fontSize: iconSize, lineHeight: 1, display: "inline-block" }}>👀</span>
-            <span style={serifStyle()}>discovered your</span>
-            <span style={{ fontSize: iconSize, lineHeight: 1, display: "inline-block" }}>🪩</span>
+          {/* 👀 discovered your 🪩 */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.35em", ...reveal(0.95) }}>
+            <span style={{ fontSize: "clamp(2.2rem, 9vw, 4.5rem)", lineHeight: 1, display: "inline-block" }}>👀</span>
+            <span style={{ ...serifStyle(), fontSize: "clamp(2.5rem, 10vw, 5.2rem)" }}>discovered your</span>
+            <span style={{ fontSize: "clamp(2.2rem, 9vw, 4.5rem)", lineHeight: 1, display: "inline-block" }}>🪩</span>
           </div>
 
           {/* Statement Scent today */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.3em", ...reveal(1.05) }}>
-            <em style={hlItalicStyle()}>Statement Scent</em>
-            <span style={serifStyle()}>today</span>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.4em", ...reveal(1.05) }}>
+            <span style={{ position: "relative", display: "inline-flex", alignItems: "center" }}>
+              <span style={{ position: "absolute", left: -2, top: "-5%", width: 2, height: "110%", background: "#007AFF", zIndex: 10 }} />
+              <span style={{ position: "absolute", left: -7, top: "-5%", width: 12, height: 12, borderRadius: "50%", background: "#007AFF", zIndex: 10, transform: "translateY(-50%)" }} />
+              <em style={{ ...hlItalicStyle(), fontSize: "clamp(2.5rem, 10vw, 5.2rem)" }}>Statement Scent</em>
+              <span style={{ position: "absolute", right: -2, bottom: "-5%", width: 2, height: "110%", background: "#007AFF", zIndex: 10 }} />
+              <span style={{ position: "absolute", right: -7, bottom: "-5%", width: 12, height: 12, borderRadius: "50%", background: "#007AFF", zIndex: 10, transform: "translateY(50%)" }} />
+            </span>
+            <span style={{ ...serifStyle(), fontSize: "clamp(2.5rem, 10vw, 5.2rem)" }}>today</span>
           </div>
 
         </div>
@@ -361,7 +363,7 @@ export default function HomePage() {
         >
           <span style={{ fontSize: "clamp(12px, 2vw, 15px)", lineHeight: 1 }}>▶</span>
           <span style={{ fontFamily: "var(--font-inter), -apple-system, 'SF Pro', sans-serif", fontSize: "clamp(14px, 2.5vw, 18px)", fontWeight: 500, letterSpacing: "-0.23px" }}>
-            Play Now
+            Start
           </span>
         </Link>
 

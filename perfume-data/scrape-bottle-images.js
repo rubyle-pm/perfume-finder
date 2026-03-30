@@ -210,7 +210,8 @@ function sleep(ms) {
 // ─── Scrape one entry using an open Puppeteer page ────────────────────────
 async function scrapeEntry(page, entry) {
   const { brand, name } = entry;
-  const query = encodeURIComponent(`${brand} ${searchName(name)}`);
+  const searchBrand = getBrandSlug(brand).replace(/-/g, " "); // expand abbreviations: "YSL" → "Yves Saint Laurent"
+  const query = encodeURIComponent(`${searchBrand} ${searchName(name)}`);
   const searchUrl = `https://www.fragrantica.com/search/?query=${query}`;
 
   // Step 1: search page
@@ -243,6 +244,11 @@ async function scrapeEntry(page, entry) {
   scored.sort((a, b) => b.score - a.score);
 
   const best = scored[0];
+
+  // DEBUG: print all candidates so we can diagnose unexpected failures
+  if (process.env.DEBUG_SCORES) {
+    scored.forEach(r => console.log(`    [${r.score}] ${r.text.replace(/\n/g, " ").slice(0, 80)} → ${r.url.slice(-30)}`));
+  }
 
   console.log(`  🎯 best match: ${best.text} | score=${best.score}`);
 
