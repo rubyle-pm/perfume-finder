@@ -1,12 +1,23 @@
+// mapping bottle image to detail page
 export const NOTE_IMAGES = [
   "amber", "aquatic", "citrus", "clean", "floral", "fresh",
   "gourmand", "green", "iris", "jasmine", "leather", "musk",
   "oud", "powdery", "resin", "rose", "sandalwood", "smoke",
-  "sweet", "tobacco", "vanilla", "vertiver", "woody"
+  "sweet", "tobacco", "vanilla", "vertiver", "woody",
+  "matcha", "patchouli", "fig", "tuberose"
 ];
 
 const NORMALIZATION_MAP: Record<string, string> = {
-  "vetiver": "vertiver" // Mapping to match file name typo
+  "vetiver": "vertiver", // Mapping to match file name typo
+  "ambroxan": "amber",
+  "gardenia": "floral",
+  "frangipani": "floral",
+  "sea salt": "aquatic",
+  "driftwood": "woody",
+  "sage": "green",
+  "praline": "sweet",
+  "moss": "green",
+  "cedarwood": "woody",
 };
 
 /**

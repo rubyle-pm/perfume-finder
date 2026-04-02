@@ -300,16 +300,16 @@ export default function HomePage() {
         textAlign: "center",
         // Top padding reserves space for notification + decorative top elements
         // Bottom padding reserves space for martini/moodboard
-        padding: "clamp(200px, 38vh, 340px) 1rem clamp(190px, 34vh, 300px)",
+        padding: "clamp(200px, 38vh, 340px) 14px clamp(190px, 34vh, 300px)",
         gap: 0,
       }}>
 
         {/* POV: */}
         <p style={{
           fontFamily: "var(--font-inter),'Inter',sans-serif",
-          fontWeight: 700,
-          fontSize: "clamp(2.5rem, 10vw, 4.8rem)",
-          lineHeight: 0.9,
+          fontWeight: 600,
+          fontSize: "clamp(2.25rem, 10vw, 4.3rem)",
+          lineHeight: 0.6,
           letterSpacing: "-0.03em",
           color: "#000",
           marginBottom: "0.25em",
@@ -318,31 +318,35 @@ export default function HomePage() {
         </p>
 
         {/* Headline lines */}
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.15em", position: "relative" }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.15em", position: "relative", width: "100%", padding: "0 14px", boxSizing: "border-box" }}>
 
           {/* You've [toggle] */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.5em", ...reveal(0.65) }}>
-            <span style={{ ...serifStyle(), fontSize: "clamp(2.5rem, 10vw, 5.2rem)" }}>You’ve</span>
+            <span style={{ ...serifStyle(), fontSize: "clamp(2.25rem, 10vw, 4.68rem)" }}>You’ve</span>
             <Toggle />
           </div>
 
           {/* 👀 discovered your 🪩 */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.35em", ...reveal(0.95) }}>
-            <span style={{ fontSize: "clamp(2.2rem, 9vw, 4.5rem)", lineHeight: 1, display: "inline-block" }}>👀</span>
-            <span style={{ ...serifStyle(), fontSize: "clamp(2.5rem, 10vw, 5.2rem)" }}>discovered your</span>
-            <span style={{ fontSize: "clamp(2.2rem, 9vw, 4.5rem)", lineHeight: 1, display: "inline-block" }}>🪩</span>
+            <span style={{ fontSize: "clamp(1.98rem, 8.1vw, 4.05rem)", lineHeight: 1, display: "inline-block" }}>👀</span>
+            <span style={{ ...serifStyle(), fontSize: "clamp(2.25rem, 10vw, 4.68rem)" }}>discovered your</span>
+            <span style={{ fontSize: "clamp(1.98rem, 8.1vw, 4.05rem)", lineHeight: 1, display: "inline-block" }}>🪩</span>
           </div>
 
-          {/* Statement Scent today */}
+          {/* Statement Scent */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.4em", ...reveal(1.05) }}>
             <span style={{ position: "relative", display: "inline-flex", alignItems: "center" }}>
               <span style={{ position: "absolute", left: -2, top: "-5%", width: 2, height: "110%", background: "#007AFF", zIndex: 10 }} />
               <span style={{ position: "absolute", left: -7, top: "-5%", width: 12, height: 12, borderRadius: "50%", background: "#007AFF", zIndex: 10, transform: "translateY(-50%)" }} />
-              <em style={{ ...hlItalicStyle(), fontSize: "clamp(2.5rem, 10vw, 5.2rem)" }}>Statement Scent</em>
+              <em style={{ ...hlItalicStyle(), fontSize: "clamp(2.25rem, 10vw, 4.68rem)" }}>Statement Scent</em>
               <span style={{ position: "absolute", right: -2, bottom: "-5%", width: 2, height: "110%", background: "#007AFF", zIndex: 10 }} />
               <span style={{ position: "absolute", right: -7, bottom: "-5%", width: 12, height: 12, borderRadius: "50%", background: "#007AFF", zIndex: 10, transform: "translateY(50%)" }} />
             </span>
-            <span style={{ ...serifStyle(), fontSize: "clamp(2.5rem, 10vw, 5.2rem)" }}>today</span>
+          </div>
+
+          {/* today */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0.4em", ...reveal(1.15) }}>
+            <span style={{ ...serifStyle(), fontSize: "clamp(2.25rem, 10vw, 4.68rem)" }}>today</span>
           </div>
 
         </div>

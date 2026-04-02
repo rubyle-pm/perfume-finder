@@ -10,18 +10,21 @@ type ResultPayload = EngineResult & { narrative?: NarrativeResult };
 
 type SlotKey = "bestFit" | "idealMatch" | "wildcard";
 
-const SLOT_META: Record<SlotKey, { eyebrow: string; label: string }> = {
+const SLOT_META: Record<SlotKey, { eyebrow: string; label: string; short: string }> = {
   bestFit: {
     eyebrow: "Built for your everyday",
     label: "Your scent, but better",
+    short: "Everyday",
   },
   idealMatch: {
     eyebrow: "Your statement fragrance",
     label: "The one that announces you",
+    short: "Statement",
   },
   wildcard: {
     eyebrow: "You with a twist",
     label: "The unexpected one",
+    short: "Wildcard",
   },
 };
 
@@ -52,7 +55,7 @@ export default function ResultsPage() {
     <main style={s.page}>
       {/* Header */}
       <div style={s.header}>
-        <Link href="/archetype" style={s.backLink}>← Back to scent profile</Link>
+        <Link href="/archetype" style={s.backLink}>← Back</Link>
         <p style={s.headerTitle}>Your essence, in a bottle</p>
       </div>
 
@@ -85,9 +88,16 @@ export default function ResultsPage() {
               if (!candidate) return null;
               return (
                 <div key={slotKey} style={s.summaryCard}>
+                  <div style={s.summaryCardBadge}>
+                    <span style={s.summaryBadgeDot}></span>
+                    {SLOT_META[slotKey].short}
+                  </div>
                   <div style={s.summaryImageSlot}>
-                    {/* Replace with <Image> */}
-                    <span style={s.summaryImageText}>img</span>
+                    <BottleImage
+                      perfumeId={candidate.perfume.id}
+                      perfumeName={candidate.perfume.name}
+                      fallback={<span style={s.summaryImageText}>img</span>}
+                    />
                   </div>
                   <p style={s.summaryCardName}>{candidate.perfume.name}</p>
                   <p style={s.summaryCardBrand}>{candidate.perfume.brand}</p>
@@ -102,6 +112,33 @@ export default function ResultsPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+// ─── Image Component ───────────────────────────────────────────────────────
+
+function BottleImage({ perfumeId, perfumeName, fallback }: { perfumeId: string, perfumeName: string, fallback: React.ReactNode }) {
+  const [imgError, setImgError] = useState(false);
+  const bottleUrl = `/perfume-image/perfume-bottles/${perfumeId}.jpg`;
+
+  if (imgError) {
+    return <>{fallback}</>;
+  }
+
+  return (
+    <img
+      src={bottleUrl}
+      alt={perfumeName}
+      style={{
+        position: "relative",
+        zIndex: 2,
+        height: "100%",
+        width: "100%",
+        objectFit: "contain",
+        transform: "scale(0.7)",
+      }}
+      onError={() => setImgError(true)}
+    />
   );
 }
 
@@ -131,19 +168,16 @@ function PerfumeSection({
 
       {/* Bottle image — full width, square */}
       <div style={s.bottleImageSlot}>
-        {/*
-          Replace with:
-          <Image
-            src={`/images/perfumes/${perfume.id}.jpg`}
-            alt={perfume.name}
-            fill
-            style={{ objectFit: "contain", padding: "16px" }}
-          />
-        */}
-        <span style={s.bottleImageText}>
-          {perfume.name}<br />
-          <span style={{ fontSize: 10, opacity: 0.5 }}>bottle image</span>
-        </span>
+        <BottleImage
+          perfumeId={perfume.id}
+          perfumeName={perfume.name}
+          fallback={
+            <span style={s.bottleImageText}>
+              {perfume.name}<br />
+              <span style={{ fontSize: 10, opacity: 0.5 }}>bottle image</span>
+            </span>
+          }
+        />
       </div>
 
       {/* Name + brand */}
@@ -169,13 +203,13 @@ function PerfumeSection({
       <div style={s.btnRow}>
         <Link
           href={`/perfume/${perfume.id}`}
-          style={s.btnSecondary}
+          className="ds-btn ds-btn-glass"
         >
-          View details
+          See why
         </Link>
         <a
-          href="#"
-          style={s.btnPrimary}
+          href="https://www.instagram.com/haz.perfumes/"
+          className="ds-btn ds-btn-primary"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -251,19 +285,23 @@ const s: Record<string, React.CSSProperties> = {
     padding: "28px 20px 0",
   },
   perfumeEyebrow: {
+    display: "inline-block",
     fontSize: 11,
     letterSpacing: "0.1em",
     textTransform: "uppercase",
-    color: "#A8A29E",
+    color: "#1C1917",
+    background: "rgba(28,25,23,0.06)", // Slight pill background
+    padding: "6px 14px",
+    borderRadius: 999,
     fontWeight: 600,
-    marginBottom: 14,
+    marginBottom: 16,
   },
 
   // Full-width bottle image — square
   bottleImageSlot: {
     width: "100%",
     aspectRatio: "1 / 1",
-    background: "#EDE9E4",
+    background: "#fff",
     borderRadius: 16,
     display: "flex",
     alignItems: "center",
@@ -404,10 +442,30 @@ const s: Record<string, React.CSSProperties> = {
     border: "0.5px solid rgba(28,25,23,0.08)",
     background: "rgba(255,255,255,0.7)",
   },
+  summaryCardBadge: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 4,
+    fontSize: 9,
+    fontWeight: 700,
+    letterSpacing: "0.08em",
+    textTransform: "uppercase",
+    color: "#44403C",
+    background: "#F5F5F4",
+    padding: "6px 4px",
+    borderBottom: "0.5px solid rgba(28,25,23,0.08)",
+  },
+  summaryBadgeDot: {
+    width: 4,
+    height: 4,
+    borderRadius: "50%",
+    background: "#1C1917",
+  },
   summaryImageSlot: {
     width: "100%",
     aspectRatio: "1 / 1",
-    background: "#EDE9E4",
+    background: "#fff",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",

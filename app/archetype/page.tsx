@@ -36,6 +36,12 @@ export default function ArchetypePage() {
 
   return (
     <main style={s.page}>
+      {/* Header */}
+      <div style={s.header}>
+        <Link href="/quiz/review" style={s.backLink}>← Back</Link>
+        <p style={s.headerTitle}>Your essence, in a bottle</p>
+      </div>
+
       {/* Hero image slot — replace with botanical/editorial image */}
       <div style={s.heroSlot}>
         {/*
@@ -82,7 +88,7 @@ export default function ArchetypePage() {
 
         {/* Answer review — compact 2-col grid */}
         <div style={s.reviewSection}>
-          <p style={s.reviewLabel}>Based on your scent profile</p>
+          <p style={s.reviewLabel}>Based on your profile</p>
         </div>
         <div style={s.reviewGrid}>
           {getAnswerSummary(result).map(({ label, value }) => (
@@ -95,10 +101,8 @@ export default function ArchetypePage() {
 
         {/* CTA */}
         <Link href="/results" style={s.ctaBtn}>
-          Explore more →
+          Explore your Statement Scents →
         </Link>
-
-        <Link href="/quiz" style={s.retakeLink}>Retake quiz</Link>
       </div>
     </main>
   );
@@ -125,7 +129,7 @@ function getAnswerSummary(result: ResultPayload): { label: string; value: string
     }
     if (r.slots?.bestFit?.perfume) {
       items.push({
-        label: "Your signature scent",
+        label: "Your daily scent",
         value: r.slots.bestFit.perfume.name,
       });
     }
@@ -161,6 +165,31 @@ const s: Record<string, React.CSSProperties> = {
     fontWeight: 600,
     color: "#1C1917",
     textDecoration: "underline",
+  },
+  header: {
+    position: "sticky",
+    top: 0,
+    zIndex: 50,
+    background: "rgba(250,250,248,0.9)",
+    backdropFilter: "blur(10px)",
+    WebkitBackdropFilter: "blur(10px)",
+    borderBottom: "0.5px solid rgba(28,25,23,0.08)",
+    padding: "12px 20px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  backLink: {
+    fontSize: 13,
+    color: "#57534E",
+    textDecoration: "none",
+    fontWeight: 500,
+  },
+  headerTitle: {
+    fontSize: 13,
+    fontWeight: 600,
+    color: "#1C1917",
+    margin: 0,
   },
   heroSlot: {
     width: "100%",

@@ -1,3 +1,5 @@
+// view detail page
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -12,12 +14,30 @@ import { EngineResult } from "@/lib/recommendation-engine/result-select";
 type ResultPayload = EngineResult & { narrative?: NarrativeResult };
 
 const c = {
-  bg: "#F5F2EC",
+  bg: "#FAFAF8",
   ink: "#1C1C1A",
   muted: "#9A9690",
   border: "#DDD9D0",
   pillBg: "#E8E5DE"
 };
+
+function generateVibe(perfume: Perfume, matchedUseCase: UseCase | null, signals: string[] = [], descriptors: string[] = [], slotKey: string = "bestFit") {
+  const occasion = matchedUseCase ? matchedUseCase.replace(/_/g, " ") : "any occasion";
+  const vibe = signals.length > 0 ? signals.slice(0, 2).join(" and ") : "refined";
+  const pref = descriptors.length > 0 ? descriptors[0] : perfume.family_primary.replace(/_/g, " ");
+
+  const tops = perfume.top_notes.slice(0, 2).join(" and ") || "fresh notes";
+  const hearts = perfume.heart_notes.slice(0, 2).join(" and ") || "complex accords";
+  const bases = perfume.base_notes.slice(0, 2).join(" and ") || "deep resonance";
+
+  if (slotKey === "bestFit") {
+    return `Designed for your everyday rotation, this fragrance perfectly echoes your ${vibe} natural energy. It opens with vibrant ${tops}, leading into a lush ${pref} heart of ${hearts}. A true extension of your personal style anchored by a confident base of ${bases}.`;
+  } else if (slotKey === "idealMatch") {
+    return `A statement piece created to announce you. It projects a commanding ${vibe} aura, opening with striking ${tops}. The signature ${pref} heart of ${hearts} settles into an undeniable base of ${bases}, leaving a memorable impression.`;
+  } else {
+    return `An unexpected twist that uniquely works. It pushes your boundaries with vibrant ${tops}, yet retains a subtle ${vibe} charm through a distinct ${pref} heart of ${hearts}. A creative exploration anchored beautifully by ${bases}.`;
+  }
+}
 
 export default function PerfumeDetailPage() {
   const router = useRouter();
@@ -25,7 +45,7 @@ export default function PerfumeDetailPage() {
   const id = params.id as string;
 
   const [perfume, setPerfume] = useState<Perfume | null>(null);
-  const [reason, setReason] = useState<string>("");
+  const [vibeDesc, setVibeDesc] = useState<string>("");
   const [matchedUseCase, setMatchedUseCase] = useState<UseCase | null>(null);
   const [imgError, setImgError] = useState(false);
 
@@ -39,24 +59,23 @@ export default function PerfumeDetailPage() {
         if (!slots) return;
 
         let foundCandidate: RecommendationCandidate | undefined;
-        let foundReason = "";
+        let slotMatchType = "bestFit";
 
         // Check slots for this perfume
-        if (slots.bestFit?.perfume.id === id) {
-          foundCandidate = slots.bestFit;
-          foundReason = parsed.narrative?.best_fit_reason || "";
-        } else if (slots.idealMatch?.perfume.id === id) {
-          foundCandidate = slots.idealMatch;
-          foundReason = parsed.narrative?.ideal_match_reason || "";
-        } else if (slots.wildcard?.perfume.id === id) {
-          foundCandidate = slots.wildcard;
-          foundReason = parsed.narrative?.wildcard_reason || "";
-        }
+        if (slots.bestFit?.perfume.id === id) { foundCandidate = slots.bestFit; slotMatchType = "bestFit"; }
+        else if (slots.idealMatch?.perfume.id === id) { foundCandidate = slots.idealMatch; slotMatchType = "idealMatch"; }
+        else if (slots.wildcard?.perfume.id === id) { foundCandidate = slots.wildcard; slotMatchType = "wildcard"; }
 
         if (foundCandidate) {
           setPerfume(foundCandidate.perfume);
-          setReason(foundReason);
           setMatchedUseCase(foundCandidate.matchSignals?.use_case || null);
+          setVibeDesc(generateVibe(
+            foundCandidate.perfume,
+            foundCandidate.matchSignals?.use_case || null,
+            foundCandidate.matchSignals?.signals,
+            foundCandidate.matchSignals?.descriptors,
+            slotMatchType
+          ));
         }
       } catch (err) {
         console.error("Failed to parse reco_result", err);
@@ -70,37 +89,39 @@ export default function PerfumeDetailPage() {
   const noteImgUrl = getNoteImageMapping(perfume.top_notes, perfume.heart_notes, perfume.base_notes);
 
   return (
-    <div style={s.page}>
-      {/* Top bar */}
-      <button style={s.back} onClick={() => router.back()}>
-        ← Back
-      </button>
+    <div style={s.mainPage}>
+      {/* Header */}
+      <div style={s.header}>
+        <button onClick={() => router.back()} style={s.backLink}>← Back</button>
+        <p style={s.headerTitle}>Your essence, in a bottle</p>
+      </div>
+
+      <div style={s.page}>
 
       {/* Bottle Hero */}
       <div style={s.bottleHero}>
         <div style={s.bottleOrb}></div>
-        
-        {!imgError ? (
-          <img 
-            src={bottleUrl} 
+
+        {imgError ? (
+          <svg style={s.bottleSvg} width="80" height="200" viewBox="0 0 80 200" fill="none">
+            <rect x="29" y="0" width="22" height="14" rx="2" fill="#C8BFB0" opacity="0.85" />
+            <rect x="24" y="12" width="32" height="7" rx="1" fill="#B8AFA0" />
+            <path d="M17 44 Q8 74 8 120 Q8 170 16 184 Q27 198 40 198 Q53 198 64 184 Q72 170 72 120 Q72 74 63 44 Q56 28 40 28 Q24 28 17 44Z" fill="#D9D0C2" opacity="0.88" />
+            <path d="M24 19 Q18 32 17 44 Q24 28 40 28 Q56 28 63 44 Q62 32 56 19Z" fill="#C4BAA8" />
+            <rect x="29" y="12" width="22" height="7" rx="1" fill="#EAE2D6" />
+            <rect x="12" y="138" width="56" height="28" rx="1" fill="white" opacity="0.5" />
+            <line x1="17" y1="145" x2="63" y2="145" stroke="#8B7B68" strokeWidth="0.5" opacity="0.38" />
+            <line x1="17" y1="150" x2="63" y2="150" stroke="#8B7B68" strokeWidth="0.4" opacity="0.25" />
+            <line x1="17" y1="155" x2="48" y2="155" stroke="#8B7B68" strokeWidth="0.4" opacity="0.18" />
+          </svg>
+        ) : (
+          <img
+            src={bottleUrl}
             alt={perfume.name}
             style={s.bottleImage}
             onError={() => setImgError(true)}
           />
-        ) : (
-          <svg style={s.bottleSvg} width="80" height="200" viewBox="0 0 80 200" fill="none">
-            <rect x="29" y="0" width="22" height="14" rx="2" fill="#C8BFB0" opacity="0.85"/>
-            <rect x="24" y="12" width="32" height="7" rx="1" fill="#B8AFA0"/>
-            <path d="M17 44 Q8 74 8 120 Q8 170 16 184 Q27 198 40 198 Q53 198 64 184 Q72 170 72 120 Q72 74 63 44 Q56 28 40 28 Q24 28 17 44Z" fill="#D9D0C2" opacity="0.88"/>
-            <path d="M24 19 Q18 32 17 44 Q24 28 40 28 Q56 28 63 44 Q62 32 56 19Z" fill="#C4BAA8"/>
-            <rect x="29" y="12" width="22" height="7" rx="1" fill="#EAE2D6"/>
-            <rect x="12" y="138" width="56" height="28" rx="1" fill="white" opacity="0.5"/>
-            <line x1="17" y1="145" x2="63" y2="145" stroke="#8B7B68" strokeWidth="0.5" opacity="0.38"/>
-            <line x1="17" y1="150" x2="63" y2="150" stroke="#8B7B68" strokeWidth="0.4" opacity="0.25"/>
-            <line x1="17" y1="155" x2="48" y2="155" stroke="#8B7B68" strokeWidth="0.4" opacity="0.18"/>
-          </svg>
         )}
-        <div style={s.placeholderLabel}>Bottle image · {perfume.brand} {perfume.name}</div>
       </div>
 
       <div style={s.content}>
@@ -126,7 +147,7 @@ export default function PerfumeDetailPage() {
         {/* AI Description (Using narrative reasoning) */}
         <div>
           <div style={s.secLabel}>About this fragrance</div>
-          <p style={s.descItalic}>{reason || `A statement from ${perfume.brand}, combining ${perfume.descriptors.slice(0, 3).join(", ")} notes in a well arranged composition.`}</p>
+          <p style={s.descItalic}>{vibeDesc}</p>
           <div style={s.aiTag}>Generated for your profile</div>
         </div>
       </div>
@@ -175,38 +196,60 @@ export default function PerfumeDetailPage() {
 
       {/* CTA */}
       <div style={s.ctaSection}>
-        <button style={s.ctaBtn}>Where to buy →</button>
+        <button className="ds-btn ds-btn-glass" style={{ flex: 1 }} onClick={() => router.push('/')}>Back to Home</button>
+        <button className="ds-btn ds-btn-primary" style={{ flex: 1 }} onClick={() => window.open('https://www.instagram.com/haz.perfumes/', '_blank')}>Shop ↗</button>
+      </div>
       </div>
     </div>
   );
 }
 
 const s: Record<string, React.CSSProperties> = {
+  mainPage: {
+    minHeight: "100dvh",
+    background: c.bg,
+    color: c.ink,
+    fontFamily: "var(--font-inter, -apple-system, sans-serif)",
+  },
   page: {
     maxWidth: 680,
     margin: "0 auto",
     padding: "0 0 5rem",
-    background: c.bg,
-    fontFamily: "var(--font-inter, -apple-system, sans-serif)",
-    color: c.ink,
-    minHeight: "100dvh",
   },
-  back: {
-    display: "inline-flex",
+  header: {
+    position: "sticky",
+    top: 0,
+    zIndex: 50,
+    background: "rgba(250,250,248,0.9)",
+    backdropFilter: "blur(10px)",
+    WebkitBackdropFilter: "blur(10px)",
+    borderBottom: "0.5px solid rgba(28,25,23,0.08)",
+    padding: "12px 20px",
+    display: "flex",
+    justifyContent: "space-between",
     alignItems: "center",
-    gap: 6,
+  },
+  backLink: {
     fontSize: 13,
-    color: c.muted,
-    cursor: "pointer",
-    padding: "1.5rem 1.5rem",
+    color: "#57534E",
+    textDecoration: "none",
+    fontWeight: 500,
     background: "none",
     border: "none",
+    cursor: "pointer",
+    padding: 0,
     fontFamily: "var(--font-inter, -apple-system, sans-serif)",
+  },
+  headerTitle: {
+    fontSize: 13,
+    fontWeight: 600,
+    color: "#1C1917",
+    margin: 0,
   },
   bottleHero: {
     width: "100%",
-    aspectRatio: "3/2",
-    background: c.bg,
+    aspectRatio: "16/9",
+    background: "#fff",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -215,16 +258,12 @@ const s: Record<string, React.CSSProperties> = {
     overflow: "hidden"
   },
   bottleOrb: {
-    position: "absolute",
-    width: 240,
-    height: 240,
-    borderRadius: "50%",
-    background: "radial-gradient(ellipse at 40% 35%, #EDE8E0 0%, #D5CEBC 55%, #BDB49E 100%)",
-    opacity: 0.4,
+    display: "none" // Hiding orb on white bg to keep clean frame style
   },
   bottleSvg: {
     position: "relative",
     zIndex: 2,
+    transform: "scale(0.7)",
   },
   bottleImage: {
     position: "relative",
@@ -232,6 +271,7 @@ const s: Record<string, React.CSSProperties> = {
     height: "100%",
     width: "100%",
     objectFit: "contain",
+    transform: "scale(0.7)",
   },
   placeholderLabel: {
     position: "absolute",
@@ -317,7 +357,7 @@ const s: Record<string, React.CSSProperties> = {
     color: c.muted,
   },
   notesSection: {
-    margin: "2.5rem -1.5rem 0",
+    margin: "2.5rem 0 0",
   },
   notesPanel: {
     position: "relative",
@@ -419,16 +459,7 @@ const s: Record<string, React.CSSProperties> = {
   },
   ctaSection: {
     padding: "2rem 1.5rem 0",
-  },
-  ctaBtn: {
-    width: "100%",
-    padding: 17,
-    borderRadius: 9999,
-    background: c.ink,
-    color: c.bg,
-    fontFamily: "var(--font-inter, -apple-system, sans-serif)",
-    fontSize: 15,
-    border: "none",
-    cursor: "pointer",
+    display: "flex",
+    gap: "0.75rem",
   }
 };

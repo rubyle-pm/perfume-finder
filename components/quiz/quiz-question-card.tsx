@@ -25,6 +25,9 @@ export interface QuizOption {
   emoji?: string;
   subtitle?: string;
   imageUrl?: string;
+  imagePosition?: string;
+  gender?: "female" | "male";
+  pairId?: string;
 }
 
 export interface QuizQuestionCardProps {
@@ -330,7 +333,7 @@ export function QuizQuestionCard({
                 <div
                   style={{
                     width: "100%",
-                    aspectRatio: "4/3",
+                    aspectRatio: "3/4",
                     overflow: "hidden",
                     marginBottom: "12px",
                     position: "relative",
@@ -359,6 +362,7 @@ export function QuizQuestionCard({
                         width: "100%",
                         height: "100%",
                         objectFit: "cover",
+                        objectPosition: option.imagePosition || "center",
                         display: "block",
                         filter: selected ? "brightness(0.9)" : "none",
                         transition: "filter 0.18s",
@@ -402,6 +406,21 @@ export function QuizQuestionCard({
                 >
                   {option.label}
                 </span>
+                {option.subtitle && (
+                  <span
+                    style={{
+                      display: "block",
+                      fontSize: "13px",
+                      fontWeight: 400,
+                      color: "#A19E95",
+                      marginTop: "3px",
+                      lineHeight: 1.25,
+                      fontFamily: "var(--font-inter), 'Inter', sans-serif",
+                    }}
+                  >
+                    {option.subtitle}
+                  </span>
+                )}
               </label>
             );
           })}

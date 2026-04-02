@@ -4,6 +4,7 @@ import { Suspense, useState, useRef, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { QuizQuestionCard } from "@/components/quiz/quiz-question-card";
 import { ChevronDown } from "lucide-react";
+import type { QuizOption } from "@/components/quiz/quiz-question-card";
 
 // All 12 quiz questions matching quiz-config.ts
 const DEMO_QUESTIONS = [
@@ -12,7 +13,7 @@ const DEMO_QUESTIONS = [
     id: "gender_pref",
     kind: "single" as const,
     questionText: "What kind of scent profile are you drawn to?",
-    questionImageUrl: "/images/quiz/gender-pref-banner.jpg",
+    questionImageUrl: "/quiz-image/quiz1.jpg",
     options: [
       { value: "feminine", label: "Feminine", emoji: "🌸", subtitle: "Soft, floral, elegant" },
       { value: "masculine", label: "Masculine", emoji: "🌲", subtitle: "Bold, woody, confident" },
@@ -24,9 +25,9 @@ const DEMO_QUESTIONS = [
     id: "use_case",
     kind: "single" as const,
     questionText: "When will you wear this fragrance most?",
-    questionImageUrl: "/images/quiz/use-case-banner.jpg",
+    questionImageUrl: "/quiz-image/quiz2.jpg",
     options: [
-      { value: "office", label: "At work, office", emoji: "💼", subtitle: "Professional settings" },
+      { value: "office", label: "At work & office", emoji: "💼", subtitle: "Professional settings" },
       { value: "daily_casual", label: "Daily, casual wear", emoji: "👕", subtitle: "Everyday comfort" },
       { value: "evening", label: "Date night or hanging out late", emoji: "🌙", subtitle: "Evening occasions" },
       { value: "outdoor_sporty", label: "Outdoor, being active", emoji: "🏃", subtitle: "Sports & nature" },
@@ -35,20 +36,21 @@ const DEMO_QUESTIONS = [
       { value: "home_body", label: "At home, comfy in my skin", emoji: "🛋️", subtitle: "Cozy vibes" },
     ],
   },
-  // Q3: mood - hybrid image grid (1 option only, auto-advances like single)
+  // Q3: mood - multi, max 2 options
   {
     id: "mood",
-    kind: "hybrid" as const,
+    kind: "multi" as const,
     questionText: "What mood do you want your scent to project?",
-    maxSelections: 1,
+    questionImageUrl: "/quiz-image/quiz3.jpg",
+    maxSelections: 2,
     options: [
-      { value: "complicated_seductive_intellectual", label: "Seductive & intellectual", imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" },
-      { value: "soft_romantic_nostalgic", label: "Romantic & nostalgic", imageUrl: "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=400&h=400&fit=crop" },
-      { value: "bold_confident_present", label: "Bold & confident", imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" },
-      { value: "effortless_cool_woke_up_like_this", label: "Effortless & cool", imageUrl: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=400&h=400&fit=crop" },
-      { value: "playful_warm_unexpected", label: "Playful & warm", imageUrl: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=400&fit=crop" },
-      { value: "grounded_calm_quiet_luxury", label: "Grounded & calm", imageUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop" },
-      { value: "mysterious_edgy_artistic", label: "Mysterious & edgy", imageUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=400&fit=crop" },
+      { value: "complicated_seductive_intellectual", label: "Seductive yet intellectual", emoji: "🍷", subtitle: "Deep and complex" },
+      { value: "soft_romantic_nostalgic", label: "Romantic, a bit nostalgic", emoji: "🕊️", subtitle: "Soft and delicate" },
+      { value: "bold_confident_present", label: "Bold and confident", emoji: "🦁", subtitle: "Commanding presence" },
+      { value: "effortless_cool_woke_up_like_this", label: "Effortless and cool", emoji: "😎", subtitle: "Relaxed charm" },
+      { value: "playful_warm_unexpected", label: "Playful and warm", emoji: "✨", subtitle: "Bright and inviting" },
+      { value: "grounded_calm_quiet_luxury", label: "Grounded, calm, loudly quiet", emoji: "🧘", subtitle: "Quiet luxury" },
+      { value: "mysterious_edgy_artistic", label: "Mysterious, edgy, might be artistic", emoji: "🌑", subtitle: "Artistic aura" },
     ],
   },
   // Q4: scent_type - multi, max 2 options
@@ -56,7 +58,7 @@ const DEMO_QUESTIONS = [
     id: "scent_type",
     kind: "multi" as const,
     questionText: "Which kinds of scent do you gravitate toward?",
-    questionImageUrl: "/images/quiz/scent-type-banner.jpg",
+    questionImageUrl: "/quiz-image/quiz4.jpg",
     maxSelections: 2,
     options: [
       { value: "fresh_airy", label: "Fresh & airy", emoji: "🌬️", subtitle: "Light, breezy notes" },
@@ -72,7 +74,7 @@ const DEMO_QUESTIONS = [
     id: "dislike_note",
     kind: "multi" as const,
     questionText: "Are there notes you want to avoid?",
-    questionImageUrl: "/images/quiz/dislike-banner.jpg",
+    questionImageUrl: "/quiz-image/quiz5.jpg",
     options: [
       { value: "heavy_floral", label: "Heavy floral", emoji: "🌺", subtitle: "Overpowering blooms" },
       { value: "sweet_gourmand", label: "Sweet gourmand", emoji: "🍬", subtitle: "Candy, pastry notes" },
@@ -84,21 +86,22 @@ const DEMO_QUESTIONS = [
       { value: "musk", label: "Musk", emoji: "🫧", subtitle: "Skin-like notes" },
     ],
   },
-  // Q6: weekend_vibe - single, no image options
+  // Q6: weekend_vibe - hybrid image grid, max 1 option
   {
     id: "weekend_vibe",
-    kind: "single" as const,
+    kind: "hybrid" as const,
     questionText: "How would you describe your perfect weekend me-time?",
-    questionImageUrl: "/images/quiz/weekend-banner.jpg",
+    maxSelections: 1,
     options: [
-      { value: "cozy_solo_cafe", label: "Cozy solo cafe", emoji: "☕", subtitle: "Creative projects, quiet time" },
-      { value: "museum_gallery", label: "Museum wandering", emoji: "🖼️", subtitle: "Art, culture, inspiration" },
-      { value: "hiking_outdoor", label: "Outdoor adventure", emoji: "🏔️", subtitle: "Nature, exploration" },
-      { value: "long_brunch", label: "Long brunch", emoji: "🥐", subtitle: "Friends, good food" },
-      { value: "home_reset", label: "Home-body", emoji: "🛋️", subtitle: "Cleaning, organizing" },
-      { value: "spontaneous_road_trip", label: "Spontaneous road trip", emoji: "🚗", subtitle: "Adventure awaits" },
-      { value: "book_blanket_hermit", label: "Book & blanket", emoji: "😶‍🌫️", subtitle: "Withdraw from the world" },
-      { value: "late_night_social", label: "Late night social", emoji: "🍸", subtitle: "Out till 1am" },
+      { value: "book_and_blanket", label: "Book & blanket, away from the world", imageUrl: "/quiz-image/quiz6/book-&-blanket.jpg" },
+      { value: "brunch", label: "Long brunch with friends", imageUrl: "/quiz-image/quiz6/brunch.jpg" },
+      { value: "cozy_social", label: "Cozy indoor boardgame night", imageUrl: "/quiz-image/quiz6/cozy-social.jpg" },
+      { value: "home_reset", label: "Weekend home reset", imageUrl: "/quiz-image/quiz6/home-reset.jpg" },
+      { value: "museum", label: "Museum & exhibition wandering", imageUrl: "/quiz-image/quiz6/museum.jpg" },
+      { value: "nightlife", label: "Late night hangouts", imageUrl: "/quiz-image/quiz6/nightlife.jpg" },
+      { value: "outdoor", label: "Outdoor adventure", imageUrl: "/quiz-image/quiz6/outdoor.jpg" },
+      { value: "roadtrip", label: "Spontaneous road trip", imageUrl: "/quiz-image/quiz6/roadtrip.jpg" },
+      { value: "solo_cafe", label: "Solo cafe, reading or doing side quests", imageUrl: "/quiz-image/quiz6/solo-cafe.jpg" },
     ],
   },
   // Q7: style_icon - hybrid image grid, max 2 options
@@ -108,22 +111,30 @@ const DEMO_QUESTIONS = [
     questionText: "Who is your style icon?",
     maxSelections: 2,
     options: [
-      { value: "clean_girl", label: "Clean girl", imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop" },
-      { value: "soft_girl_next_door", label: "Soft, girl-next-door", imageUrl: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=400&fit=crop" },
-      { value: "modern_feminine", label: "Modern feminine", imageUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=400&fit=crop" },
-      { value: "effortless_chic", label: "Effortless chic", imageUrl: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=400&fit=crop" },
-      { value: "timeless_elegance", label: "Timeless elegance", imageUrl: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=400&fit=crop" },
-      { value: "classic_bombshell", label: "Classic bombshell", imageUrl: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=400&h=400&fit=crop" },
-      { value: "sporty_glam", label: "Sporty glam", imageUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=400&fit=crop" },
-      { value: "boho_indie", label: "Boho indie", imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop" },
-      { value: "rebellious_gen_z", label: "Rebellious, Gen Z", imageUrl: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=400&fit=crop" },
-      { value: "coquette", label: "Coquette", imageUrl: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=400&fit=crop" },
-      { value: "modern_masculinity", label: "Modern masculinity", imageUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop" },
-      { value: "pretty_prince", label: "Pretty prince", imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" },
-      { value: "dark_intellectual_male", label: "Dark intellectual", imageUrl: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=400&fit=crop" },
-      { value: "old_money_masculine", label: "Old money masculine", imageUrl: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop" },
-      { value: "quiet_luxury_feminine", label: "Quiet luxury feminine", imageUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop" },
-      { value: "street_culture", label: "Street culture", imageUrl: "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=400&h=400&fit=crop" },
+      { value: "anya_taylor_joy", label: "Anya Taylor-Joy", subtitle: "Dark academia, poetic", imageUrl: "/quiz-image/quiz7/anya-dark.jpg", gender: "female", pairId: "dark_academia", imagePosition: "center 20%" },
+      { value: "robert_pattinson", label: "Robert Pattinson", subtitle: "Dark academia, poetic", imageUrl: "/quiz-image/quiz7/robert-dark.jpg", gender: "male", pairId: "dark_academia", imagePosition: "center 15%" },
+      { value: "theo_james", label: "Theo James", subtitle: "Classic gentlemen, refined", imageUrl: "/quiz-image/quiz7/james-classic.jpg", gender: "male", pairId: "elegant", imagePosition: "center 10%" },
+      { value: "song_hye_kyo", label: "Song Hye Kyo", subtitle: "Classic elegance, refined", imageUrl: "/quiz-image/quiz7/SHK-classic.jpg", gender: "female", pairId: "elegant", imagePosition: "center 25%" },
+      { value: "asap_rocky", label: "A$AP Rocky", subtitle: "Streetwear, off-duty cool", imageUrl: "/quiz-image/quiz7/asap-streetwear.jpg", gender: "male", pairId: "streetwear", imagePosition: "center 15%" },
+      { value: "bella_hadid", label: "Bella Hadid", subtitle: "Streetwear, off-duty cool", imageUrl: "/quiz-image/quiz7/bella-streetwear.jpg", gender: "female", pairId: "streetwear", imagePosition: "center 20%" },
+      { value: "hailey_bieber", label: "Hailey Bieber", subtitle: "Clean girl, inner glow", imageUrl: "/quiz-image/quiz7/hailey-clean.jpg", gender: "female", pairId: "minimal", imagePosition: "center 15%" },
+      { value: "tom_hardy", label: "Tom Hardy", subtitle: "Raw, rugged masculine", imageUrl: "/quiz-image/quiz7/hardy-rugged.jpg", gender: "male", pairId: "minimal", imagePosition: "center 10%" },
+      { value: "kim_go_eun", label: "Kim Go Eun", subtitle: "Quiet, gentle, intellectual", imageUrl: "/quiz-image/quiz7/kge-lowkey.jpg", gender: "female", pairId: "intellectual", imagePosition: "center 25%" },
+      { value: "gong_yoo", label: "Gong Yoo", subtitle: "Quiet, gentle, intellectual", imageUrl: "/quiz-image/quiz7/gongyoo-lowkey.jpg", gender: "male", pairId: "intellectual", imagePosition: "center 15%" },
+      { value: "billie_eilish", label: "Billie Eilish", subtitle: "Rebellious, introspective, edgy", imageUrl: "/quiz-image/quiz7/billie-rebel.jpg", gender: "female", pairId: "rebel", imagePosition: "center 20%" },
+      { value: "g_dragon", label: "G-Dragon", subtitle: "Rebellious, introspective, edgy", imageUrl: "/quiz-image/quiz7/gd-rebel.jpg", gender: "male", pairId: "rebel", imagePosition: "center 15%" },
+      { value: "dakota_johnson", label: "Dakota Johnson", subtitle: "Effortless chic, European", imageUrl: "/quiz-image/quiz7/dakota-effortless.jpg", gender: "female", pairId: "effortless", imagePosition: "center 20%" },
+      { value: "jacob_elordi", label: "Jacob Elordi", subtitle: "Effortless chic, European", imageUrl: "/quiz-image/quiz7/jarcob-effortless.jpg", gender: "male", pairId: "effortless", imagePosition: "center 15%" },
+      { value: "wonyoung", label: "Wonyoung", subtitle: "Candy girl, dreamy vibe", imageUrl: "/quiz-image/quiz7/wonyoung-dreamy.jpg", gender: "female", pairId: "sweet", imagePosition: "center 25%" },
+      { value: "cha_eun_woo", label: "Cha Eun Woo", subtitle: "Pretty boy, dreamy vibe", imageUrl: "/quiz-image/quiz7/CEW-dreamy.jpg", gender: "male", pairId: "sweet", imagePosition: "center 10%" },
+      { value: "rose_park", label: "Rosé", subtitle: "Soft glow, girl-next-door vibe", imageUrl: "/quiz-image/quiz7/rosie-soft.jpg", gender: "female", pairId: "soft", imagePosition: "center 15%" },
+      { value: "hua_quang_han", label: "Hứa Quang Hán", subtitle: "Soft glow, boyfriend material", imageUrl: "/quiz-image/quiz7/HQH-soft.jpg", gender: "male", pairId: "soft", imagePosition: "center 20%" },
+      { value: "monica_bellucci", label: "Monica Bellucci", subtitle: "Sensual, slow-burn", imageUrl: "/quiz-image/quiz7/monica-sensual.jpg", gender: "female", pairId: "sensual", imagePosition: "center 20%" },
+      { value: "austin_butler", label: "Austin Butler", subtitle: "Sensual, slow-burn", imageUrl: "/quiz-image/quiz7/austin-sensual.jpg", gender: "male", pairId: "sensual", imagePosition: "center 15%" },
+      { value: "zoe_kravitz", label: "Zoë Kravitz", subtitle: "Indie, relaxed, a bit artsy", imageUrl: "/quiz-image/quiz7/zoe-indie.jpg", gender: "female", pairId: "indie", imagePosition: "center 20%" },
+      { value: "brad_pitt", label: "Brad Pitt", subtitle: "Indie, relaxed fit, playful", imageUrl: "/quiz-image/quiz7/brad-indie.jpg", gender: "male", pairId: "indie", imagePosition: "center 15%" },
+      { value: "zendaya", label: "Zendaya", subtitle: "Modern feminine, confident", imageUrl: "/quiz-image/quiz7/zendaya-modern.jpg", gender: "female", pairId: "modern", imagePosition: "center 25%" },
+      { value: "harry_styles", label: "Harry Styles", subtitle: "Modern masculine, expressive", imageUrl: "/quiz-image/quiz7/harry-modern.jpg", gender: "male", pairId: "modern", imagePosition: "center 15%" },
     ],
   },
   // Q8: mbti - single-select pill layout with emoji
@@ -131,7 +142,7 @@ const DEMO_QUESTIONS = [
     id: "mbti",
     kind: "pill" as const,
     questionText: "What is your MBTI?",
-    questionImageUrl: "/images/quiz/mbti-banner.jpg",
+    questionImageUrl: "/quiz-image/quiz8.jpg",
     options: [
       { value: "INTJ", label: "INTJ", emoji: "🏛️" },
       { value: "INTP", label: "INTP", emoji: "🔬" },
@@ -156,7 +167,7 @@ const DEMO_QUESTIONS = [
     id: "music",
     kind: "single" as const,
     questionText: "What's your favourite genre - or a song you're playing on repeat?",
-    questionImageUrl: "/images/quiz/music-banner.jpg",
+    questionImageUrl: "/quiz-image/quiz9.jpg",
     options: [
       { value: "pop", label: "Pop", emoji: "🎤", subtitle: "Chart hits, catchy melodies" },
       { value: "indie", label: "Indie", emoji: "🎸", subtitle: "Alternative, underground" },
@@ -179,16 +190,34 @@ const DEMO_QUESTIONS = [
     questionText: "How does your staple closet look?",
     maxSelections: 2,
     options: [
-      { value: "cottage_core", label: "Cottage core", imageUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=400&fit=crop" },
-      { value: "streetwear_hiphop", label: "Streetwear / Hip-hop", imageUrl: "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=400&h=400&fit=crop" },
-      { value: "modern_parisian_chic", label: "Modern Parisian chic", imageUrl: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&h=400&fit=crop" },
-      { value: "y2k_trendy", label: "Y2K and trendy", imageUrl: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=400&fit=crop" },
-      { value: "scandinavian_minimal", label: "Scandinavian minimal", imageUrl: "https://images.unsplash.com/photo-1558171813-4c088753af8f?w=400&h=400&fit=crop" },
-      { value: "old_money_european", label: "Old money / European", imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" },
-      { value: "clean_sporty", label: "Clean & sporty", imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop" },
-      { value: "experimental", label: "Experimental", imageUrl: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&h=400&fit=crop" },
-      { value: "dark_academia", label: "Dark academia", imageUrl: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=400&fit=crop" },
-      { value: "sensual_glamour", label: "Sensual glamour", imageUrl: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=400&h=400&fit=crop" },
+      // Female
+      { value: "dark_academia", label: "Dark Academia", imageUrl: "/quiz-image/quiz10/female/academia.jpg", gender: "female", pairId: "academia" },
+      { value: "modern_parisian_chic", label: "Modern Parisian chic", imageUrl: "/quiz-image/quiz10/female/chic.jpg", gender: "female", pairId: "chic" },
+      { value: "cottage_core", label: "Cottage core", imageUrl: "/quiz-image/quiz10/female/cottage.jpg", gender: "female", pairId: "cottage_core" },
+      { value: "sensual_glamour", label: "Sensual glamour", imageUrl: "/quiz-image/quiz10/female/glam.jpg", gender: "female", pairId: "glam" },
+      { value: "refined_office", label: "Refined office", imageUrl: "/quiz-image/quiz10/female/office.jpg", gender: "female", pairId: "office" },
+      { value: "old_money_european", label: "Old money / European", imageUrl: "/quiz-image/quiz10/female/old-money.jpg", gender: "female", pairId: "old_money" },
+      { value: "retro_chic", label: "Retro, grandpa style", imageUrl: "/quiz-image/quiz10/female/retro.jpg", gender: "female", pairId: "retro" },
+      { value: "scandinavian_minimal", label: "Scandinavian minimal", imageUrl: "/quiz-image/quiz10/female/scandi.jpg", gender: "female", pairId: "scandi" },
+      { value: "smart_casual", label: "Smart casual", imageUrl: "/quiz-image/quiz10/female/smart-casual.jpg", gender: "female", pairId: "smart_casual" },
+      { value: "clean_sporty", label: "Athleisure", imageUrl: "/quiz-image/quiz10/female/sporty.jpg", gender: "female", pairId: "sporty" },
+      { value: "streetwear_hiphop", label: "Streetwear / Hip-hop", imageUrl: "/quiz-image/quiz10/female/streetwear.jpg", gender: "female", pairId: "streetwear" },
+      { value: "urban_modern", label: "Urban modern", imageUrl: "/quiz-image/quiz10/female/urban.jpg", gender: "female", pairId: "urban" },
+      { value: "y2k_trendy", label: "Y2K and trendy", imageUrl: "/quiz-image/quiz10/female/y2k.jpg", gender: "female", pairId: "y2k" },
+
+      // Male
+      { value: "dark_academia", label: "Dark Academia", imageUrl: "/quiz-image/quiz10/male/academia.jpg", gender: "male", pairId: "academia" },
+      { value: "modern_parisian_chic", label: "Modern Parisian chic", imageUrl: "/quiz-image/quiz10/male/chic-european.jpg", gender: "male", pairId: "chic" },
+      { value: "sensual_glamour", label: "Sensual glamour", imageUrl: "/quiz-image/quiz10/male/glam.jpg", gender: "male", pairId: "glam" },
+      { value: "old_money_european", label: "Old money / European", imageUrl: "/quiz-image/quiz10/male/old-money.jpg", gender: "male", pairId: "old_money" },
+      { value: "retro_chic", label: "Retro, grandpa style", imageUrl: "/quiz-image/quiz10/male/retro.jpg", gender: "male", pairId: "retro" },
+      { value: "rusty", label: "Rusty, rugged", imageUrl: "/quiz-image/quiz10/male/rusty.jpg", gender: "male", pairId: "rusty" },
+      { value: "scandinavian_minimal", label: "Scandinavian minimal", imageUrl: "/quiz-image/quiz10/male/scandi.jpg", gender: "male", pairId: "scandi" },
+      { value: "smart_casual", label: "Smart casual", imageUrl: "/quiz-image/quiz10/male/smart-casual.jpg", gender: "male", pairId: "smart_casual" },
+      { value: "clean_sporty", label: "Athleisure", imageUrl: "/quiz-image/quiz10/male/sporty.jpg", gender: "male", pairId: "sporty" },
+      { value: "streetwear_hiphop", label: "Streetwear / Hip-hop", imageUrl: "/quiz-image/quiz10/male/streetwear.jpg", gender: "male", pairId: "streetwear" },
+      { value: "urban_modern", label: "Urban modern", imageUrl: "/quiz-image/quiz10/male/urban.jpg", gender: "male", pairId: "urban" },
+      { value: "y2k_trendy", label: "Y2K and trendy", imageUrl: "/quiz-image/quiz10/male/y2k.jpg", gender: "male", pairId: "y2k" },
     ],
   },
   // Q11: rising_sign - single-select pill layout with emoji (same style as MBTI)
@@ -196,7 +225,7 @@ const DEMO_QUESTIONS = [
     id: "rising_sign",
     kind: "pill" as const,
     questionText: "What is your rising sign?",
-    questionImageUrl: "/images/quiz/rising-sign-banner.jpg",
+    questionImageUrl: "/quiz-image/quiz11.jpg",
     options: [
       { value: "aries", label: "Aries", emoji: "♈" },
       { value: "taurus", label: "Taurus", emoji: "♉" },
@@ -217,7 +246,7 @@ const DEMO_QUESTIONS = [
     id: "budget",
     kind: "single" as const,
     questionText: "What is your budget for 50ml?",
-    questionImageUrl: "/images/quiz/budget-banner.jpg",
+    questionImageUrl: "/quiz-image/quiz12.jpg",
     options: [
       { value: "2_000_000_to_3_500_000", label: "2,000,000 - 3,500,000 VND", emoji: "💰", subtitle: "Entry luxury" },
       { value: "3_500_000_to_5_000_000", label: "3,500,000 - 5,000,000 VND", emoji: "💎", subtitle: "Mid-range luxury" },
@@ -271,7 +300,7 @@ function QuizDemoPage() {
         setCurrentQuestionIndex(idx);
       }
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // True when user was sent here from the review page to edit one question
@@ -320,15 +349,15 @@ function QuizDemoPage() {
     setIsDropdownOpen(false);
   }
 
-  // Auto-advance for single & pill; ALSO for mood hybrid (maxSelections===1)
+  // Auto-advance for single & pill; ALSO for hybrid single selects
   function handleSelectionComplete() {
-    const isMoodSingleSelect =
-      currentQuestion.id === "mood" &&
+    const isWeekendVibeSingleSelect =
+      currentQuestion.id === "weekend_vibe" &&
       (currentQuestion as { maxSelections?: number }).maxSelections === 1;
     if (
       currentQuestion.kind === "single" ||
       currentQuestion.kind === "pill" ||
-      isMoodSingleSelect
+      isWeekendVibeSingleSelect
     ) {
       goToNext();
     }
@@ -456,22 +485,72 @@ function QuizDemoPage() {
         </header>
 
         {/* Question Card */}
-        <QuizQuestionCard
-          key={currentQuestion.id}
-          id={currentQuestion.id}
-          questionText={currentQuestion.questionText}
-          kind={currentQuestion.kind}
-          options={currentQuestion.options ?? []}
-          selectedValues={answers[currentQuestion.id] || (isMultiOrHybrid ? [] : "")}
-          onSelect={(value) => handleSelect(currentQuestion.id, value)}
-          maxSelections={currentMaxSelections ?? 3}
-          onSelectionComplete={handleSelectionComplete}
-          questionImageUrl={(currentQuestion as { questionImageUrl?: string }).questionImageUrl}
-        />
+        {(() => {
+          let visibleOptions: QuizOption[] = (currentQuestion.options as QuizOption[]) ?? [];
+
+          if (currentQuestion.id === "style_icon") {
+            const genderPref = answers.gender_pref;
+            if (genderPref === "feminine") {
+              visibleOptions = visibleOptions.filter(o => o.gender === "female");
+            } else if (genderPref === "masculine") {
+              visibleOptions = visibleOptions.filter(o => o.gender === "male");
+            } else {
+              // Unisex: Surface specific representatives as requested
+              const unisexRepresentatives = new Set([
+                "anya_taylor_joy", "bella_hadid", "song_hye_kyo", "dakota_johnson",
+                "cha_eun_woo", "zendaya", "zoe_kravitz", "g_dragon",
+                "rose_park", "hailey_bieber", "gong_yoo", "monica_bellucci"
+              ]);
+              visibleOptions = visibleOptions.filter(o => unisexRepresentatives.has(o.value));
+            }
+          }
+
+          if (currentQuestion.id === "closet_aesthetic") {
+            const genderPref = answers.gender_pref;
+            if (genderPref === "feminine") {
+              visibleOptions = visibleOptions.filter(o => o.gender === "female");
+            } else if (genderPref === "masculine") {
+              visibleOptions = visibleOptions.filter(o => o.gender === "male");
+            } else {
+              // Unisex: Surface exactly 11 unique styles (pick best shot for each)
+              const unisexPairs = [
+                { pairId: "academia", gender: "female" },
+                { pairId: "chic", gender: "male" },
+                { pairId: "old_money", gender: "female" },
+                { pairId: "scandi", gender: "male" },
+                { pairId: "streetwear", gender: "female" },
+                { pairId: "y2k", gender: "male" },
+                { pairId: "sporty", gender: "female" },
+                { pairId: "retro", gender: "male" },
+                { pairId: "urban", gender: "female" },
+                { pairId: "smart_casual", gender: "male" },
+                { pairId: "glam", gender: "female" },
+              ];
+              visibleOptions = unisexPairs.map(p =>
+                visibleOptions.find(o => o.pairId === p.pairId && o.gender === p.gender)
+              ).filter(Boolean) as QuizOption[];
+            }
+          }
+
+          return (
+            <QuizQuestionCard
+              key={currentQuestion.id}
+              id={currentQuestion.id}
+              questionText={currentQuestion.questionText}
+              kind={currentQuestion.kind}
+              options={visibleOptions}
+              selectedValues={answers[currentQuestion.id] || (isMultiOrHybrid ? [] : "")}
+              onSelect={(value: string | string[]) => handleSelect(currentQuestion.id, value)}
+              maxSelections={currentMaxSelections ?? 3}
+              onSelectionComplete={handleSelectionComplete}
+              questionImageUrl={(currentQuestion as { questionImageUrl?: string }).questionImageUrl}
+            />
+          );
+        })()}
       </div>
 
-      {/* Sticky bottom navigation — for multi/hybrid, but NOT mood (which auto-advances) */}
-      {isMultiOrHybrid && currentQuestion.id !== "mood" && (
+      {/* Sticky bottom navigation — for multi/hybrid, but NOT weekend_vibe (which auto-advances) */}
+      {isMultiOrHybrid && currentQuestion.id !== "weekend_vibe" && (
         <div className="fixed inset-x-0 bottom-0 z-10 bg-gradient-to-t from-[#FAFAF8] via-[#FAFAF8]/90 to-transparent px-4 pb-6 pt-4">
           <div className="mx-auto max-w-[720px]">
             {/* Mandatory warning — shown only on last question if gate not clear */}
