@@ -46,6 +46,10 @@ export const SIGNALS = [
   "easy_going",
   "sophisticated",
   "glamorous",
+  "natural",
+  "stylish",
+  "structured",
+  "artsy",
 ] as const;
 
 export type Signal = (typeof SIGNALS)[number];
@@ -335,11 +339,11 @@ export type MbtiDimension = "E" | "I" | "S" | "N" | "T" | "F" | "J" | "P";
 export const MBTI_DIMENSION_SIGNAL_MAP: Record<MbtiDimension, Signal[]> = {
   E: ["bold", "playful", "confident"],
   I: ["introspective", "mysterious"],
-  S: ["grounded", "easy_going"],
-  N: ["intellectual", "enigmatic"],
+  S: ["grounded", "easy_going", "natural"],
+  N: ["intellectual", "enigmatic", "artsy"],
   T: ["cool", "sophisticated"],
   F: ["romantic", "warm"],
-  J: ["elegant", "sophisticated"],
+  J: ["elegant", "sophisticated", "structured"],
   P: ["effortless", "free_spirited"],
 };
 
@@ -415,33 +419,39 @@ export type PerfumeTier = (typeof PERFUME_TIERS)[number];
 // ---------------------------------------------------------------------------
 
 export const ARCHETYPE_IDS = [
+  "bare_glow",
   "effortless_muse",
-  "clean_minimalist",
-  "romantic_dreamer",
+  "corporate_pragmatist",
+  "understated_classic",
+  "playful_sweetheart",
+  "playful_charmer",
+  "soft_romantic",
+  "old_soul",
+  "off_duty_trendsetter",
+  "free_spirit",
   "modern_icon",
-  "quiet_luxury",
   "dark_intellectual",
   "the_sensualist",
   "edge_walker",
-  "free_spirit",
-  "sporty_glam",
-  "coquette",
 ] as const;
 
 export type ArchetypeId = (typeof ARCHETYPE_IDS)[number];
 
 export const ARCHETYPE_SIGNAL_MAP: Record<ArchetypeId, Signal[]> = {
-  effortless_muse: ["effortless", "cool", "free_spirited"],
-  clean_minimalist: ["minimal", "cool", "sophisticated"],
-  romantic_dreamer: ["romantic", "soft", "nostalgic"],
+  bare_glow: ["warm", "natural", "easy_going"],
+  effortless_muse: ["modern", "effortless", "stylish"],
+  corporate_pragmatist: ["structured", "sophisticated", "confident", "modern"],
+  understated_classic: ["elegant", "sophisticated", "grounded"],
+  playful_sweetheart: ["playful", "romantic", "soft"],
+  playful_charmer: ["grounded", "natural", "free_spirited", "playful"],
+  soft_romantic: ["romantic", "soft", "nostalgic"],
+  old_soul: ["nostalgic", "introspective", "vintage"],
+  off_duty_trendsetter: ["cool", "modern", "stylish"],
+  free_spirit: ["free_spirited", "artsy", "playful", "warm"],
   modern_icon: ["bold", "confident", "modern"],
-  quiet_luxury: ["elegant", "sophisticated", "grounded"],
   dark_intellectual: ["intellectual", "mysterious", "enigmatic"],
   the_sensualist: ["sensual", "glamorous", "bold"],
-  edge_walker: ["edgy", "menacing", "enigmatic"],
-  free_spirit: ["free_spirited", "warm", "playful"],
-  sporty_glam: ["bold", "easy_going", "cool"],
-  coquette: ["playful", "warm", "romantic"],
+  edge_walker: ["edgy", "menacing", "artsy"],
 };
 
 // ---------------------------------------------------------------------------
