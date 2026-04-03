@@ -193,7 +193,8 @@ const s: Record<string, React.CSSProperties> = {
   },
   heroSlot: {
     width: "100%",
-    height: "42dvh",
+    height: "45dvh",
+    maxHeight: 400,
     background: "#292524",
     display: "flex",
     alignItems: "center",
