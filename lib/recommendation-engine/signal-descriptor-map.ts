@@ -3,14 +3,7 @@
 import { DESCRIPTORS, SIGNALS } from "./vocabulary";
 import type { Descriptor, Signal } from "./vocabulary";
 
-const SENSUAL_CLUSTER: readonly Descriptor[] = [  
-  "musky",
-  "amber",
-  "spicy",
-  "smoky",
-  "oud",
-  "vanilla",
-];
+const SENSUAL_CLUSTER: readonly Descriptor[] = ["musky", "amber", "spicy", "smoky", "oud", "vanilla"];
 const SOFT_CLUSTER: readonly Descriptor[] = ["powdery", "floral"];
 const FRESH_CLUSTER: readonly Descriptor[] = ["fresh", "citrus", "aquatic", "clean"];
 const WOODY_CLUSTER: readonly Descriptor[] = ["woody", "sandalwood", "vetiver"];

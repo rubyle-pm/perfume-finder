@@ -1,4 +1,4 @@
-/**
+4/**
  * vocabulary.ts
  * Source of truth for all controlled enum values used across the
  * Scent Statement Finder recommendation engine.
@@ -143,7 +143,7 @@ export const SCENT_TYPES = [
 
 export type ScentType = (typeof SCENT_TYPES)[number];
 
-export const SCENT_TYPE_DESCRIPTOR_MAP: Record<ScentType, Descriptor[]> = {
+export const SCENT_TYPE_DESCRIPTOR_MAP: Record<ScentType, Descriptor[]> = {  // need more diverse 
   fresh_airy: ["fresh", "aquatic"],
   warm_cozy: ["vanilla", "amber"],
   floral_feminine: ["floral", "powdery"],
@@ -196,9 +196,13 @@ export const CLOSET_AESTHETICS = [
   "scandinavian_minimal",
   "old_money_european",
   "clean_sporty",
-  "experimental",
+  "rusty",
   "dark_academia",
   "sensual_glamour",
+  "retro_chic",
+  "urban_modern",
+  "smart_casual",
+  "refined_office",
 ] as const;
 
 export type ClosetAesthetic = (typeof CLOSET_AESTHETICS)[number];
@@ -227,20 +231,21 @@ export const MUSIC_GENRES = [
 export type MusicGenre = (typeof MUSIC_GENRES)[number];
 
 // ---------------------------------------------------------------------------
-// WEEKEND VIBE — 8 values
+// WEEKEND VIBE — 9 values
 // Single-select lifestyle question (Q6).
-// Maps to signals via quiz option mapping.
+// Maps to signals via profile-builder mapping.
 // ---------------------------------------------------------------------------
 
 export const WEEKEND_VIBES = [
-  "cozy_solo_cafe",
-  "museum_gallery",
-  "hiking_outdoor",
-  "long_brunch",
+  "book_and_blanket",
+  "brunch",
+  "cozy_social",
   "home_reset",
-  "spontaneous_road_trip",
-  "book_blanket_hermit",
-  "late_night_social",
+  "museum",
+  "nightlife",
+  "outdoor",
+  "roadtrip",
+  "solo_cafe",
 ] as const;
 
 export type WeekendVibe = (typeof WEEKEND_VIBES)[number];
@@ -270,28 +275,30 @@ export type Mood = (typeof MOODS)[number];
 // ---------------------------------------------------------------------------
 
 export const STYLE_ICONS = [
-  "clean_girl",
-  "soft_girl_next_door",
-  "modern_feminine",
-  "effortless_chic",
-  "timeless_elegance",
-  "classic_bombshell",
-  "sporty_glam",
-  "boho_indie",
-  "rebellious_gen_z",
-  "coquette",
-  "modern_masculinity",
-  "pretty_prince",
-  "boy_next_door_casual",
-  "mature_low_key",
-  "dark_intellectual_male",
-  "old_money_masculine",
-  "quiet_luxury_feminine",
-  "rugged_masculine",
-  "street_culture",
-  "old_school_menace",
-  "candy_girl_first_love",
-  "dark_intellectual_female",
+  "anya_taylor_joy",
+  "robert_pattinson",
+  "theo_james",
+  "song_hye_kyo",
+  "asap_rocky",
+  "bella_hadid",
+  "hailey_bieber",
+  "tom_hardy",
+  "kim_go_eun",
+  "gong_yoo",
+  "billie_eilish",
+  "g_dragon",
+  "dakota_johnson",
+  "jacob_elordi",
+  "wonyoung",
+  "cha_eun_woo",
+  "rose_park",
+  "hua_quang_han",
+  "monica_bellucci",
+  "austin_butler",
+  "zoe_kravitz",
+  "brad_pitt",
+  "zendaya",
+  "harry_styles",
 ] as const;
 
 export type StyleIcon = (typeof STYLE_ICONS)[number];
@@ -390,7 +397,7 @@ export type BudgetTier = (typeof BUDGET_TIERS)[number];
 export const BUDGET_TIER_MAX: Record<BudgetTier, number> = {
   "2_000_000_to_3_500_000": 3_500_000,
   "3_500_000_to_5_000_000": 5_000_000,
-  "over_5_000_000":          Infinity,
+  "over_5_000_000": Infinity,
 };
 
 // Tier 4 = >5M = premium — boost multiplier trong aspirational scoring

@@ -1,0 +1,1302 @@
+{
+  "ysl-libre-intense-edp": {
+    "status": "skipped",
+    "path": "../public/perfume-image/perfume-bottles/ysl-libre-intense-edp.jpg"
+  },
+  "ysl-myslf-edp": {
+    "status": "skipped",
+    "path": "../public/perfume-image/perfume-bottles/ysl-myslf-edp.jpg"
+  },
+  "ysl-black-opium-edp": {
+    "status": "skipped",
+    "path": "../public/perfume-image/perfume-bottles/ysl-black-opium-edp.jpg"
+  },
+  "ysl-la-nuit-de-lhomme-edt": {
+    "status": "skipped",
+    "path": "../public/perfume-image/perfume-bottles/ysl-la-nuit-de-lhomme-edt.jpg"
+  },
+  "ysl-libre-edp": {
+    "status": "failed",
+    "error": "No confident match heavily outweighed penalties (best score = -100)",
+    "brand": "YSL",
+    "name": "Libre EDP"
+  },
+  "dior-miss-dior-edt": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Dior/Miss-Dior-Cherie-213.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.213.jpg",
+    "path": "../public/perfume-image/perfume-bottles/dior-miss-dior-edt.jpg"
+  },
+  "dior-sauvage-edt": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Dior/Balade-Sauvage-48398.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.48398.jpg",
+    "path": "../public/perfume-image/perfume-bottles/dior-sauvage-edt.jpg"
+  },
+  "dior-homme-intense-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Dior/Dior-Homme-Voyage-6017.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6017.jpg",
+    "path": "../public/perfume-image/perfume-bottles/dior-homme-intense-edp.jpg"
+  },
+  "dior-poison-girl-edp": {
+    "status": "failed",
+    "error": "No confident match heavily outweighed penalties (best score = -100)",
+    "brand": "Dior",
+    "name": "Poison Girl EDP"
+  },
+  "dior-fahrenheit-edt": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Dior/Fahrenheit-32-987.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.987.jpg",
+    "path": "../public/perfume-image/perfume-bottles/dior-fahrenheit-edt.jpg"
+  },
+  "gucci-flora-gorgeous-gardenia-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Gucci/Flora-Gorgeous-Gardenia-68578.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.68578.jpg",
+    "path": "../public/perfume-image/perfume-bottles/gucci-flora-gorgeous-gardenia-edp.jpg"
+  },
+  "gucci-flora-gorgeous-jasmine-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Gucci/Flora-Gorgeous-Jasmine-75190.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.75190.jpg",
+    "path": "../public/perfume-image/perfume-bottles/gucci-flora-gorgeous-jasmine-edp.jpg"
+  },
+  "gucci-bloom-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Gucci/Gucci-Bloom-44894.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.44894.jpg",
+    "path": "../public/perfume-image/perfume-bottles/gucci-bloom-edp.jpg"
+  },
+  "gucci-guilty-pour-femme-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Gucci/Gucci-Guilty-Black-Pour-Femme-17321.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.17321.jpg",
+    "path": "../public/perfume-image/perfume-bottles/gucci-guilty-pour-femme-edp.jpg"
+  },
+  "gucci-guilty-absolute-pour-homme": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Gucci/Guilty-Pour-Homme-Eau-de-Parfum-59987.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.59987.jpg",
+    "path": "../public/perfume-image/perfume-bottles/gucci-guilty-absolute-pour-homme.jpg"
+  },
+  "chanel-allure-homme-sport-edt": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Chanel/Allure-Homme-Sport-607.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.607.jpg",
+    "path": "../public/perfume-image/perfume-bottles/chanel-allure-homme-sport-edt.jpg"
+  },
+  "valentino-donna-born-in-roma-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Valentino/Valentino-Donna-Born-In-Roma-55805.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.55805.jpg",
+    "path": "../public/perfume-image/perfume-bottles/valentino-donna-born-in-roma-edp.jpg"
+  },
+  "valentino-uomo-born-in-roma-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Valentino/Valentino-Uomo-Born-in-Roma-55963.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.55963.jpg",
+    "path": "../public/perfume-image/perfume-bottles/valentino-uomo-born-in-roma-edp.jpg"
+  },
+  "mugler-alien-goddess-edp": {
+    "status": "failed",
+    "error": "No confident match heavily outweighed penalties (best score = -5)",
+    "brand": "Mugler",
+    "name": "Alien Goddess EDP"
+  },
+  "mugler-angel-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Mugler/Angel-Glamorama-28089.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.28089.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mugler-angel-edp.jpg"
+  },
+  "mugler-alien-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Mugler/Alien-707.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.707.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mugler-alien-edp.jpg"
+  },
+  "ch-good-girl-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Carolina-Herrera/Good-Girl-39681.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.39681.jpg",
+    "path": "../public/perfume-image/perfume-bottles/ch-good-girl-edp.jpg"
+  },
+  "ch-bad-boy-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Carolina-Herrera/Bad-Boy-55449.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.55449.jpg",
+    "path": "../public/perfume-image/perfume-bottles/ch-bad-boy-edp.jpg"
+  },
+  "ch-good-girl-blush-edt": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Carolina-Herrera/Good-Girl-Blush-78576.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.78576.jpg",
+    "path": "../public/perfume-image/perfume-bottles/ch-good-girl-blush-edt.jpg"
+  },
+  "armani-acqua-di-gio-edt": {
+    "status": "failed",
+    "error": "Product page failed validation. Only found 1 matching notes.",
+    "brand": "Giorgio Armani",
+    "name": "Acqua di Giò EDT"
+  },
+  "armani-acqua-di-gio-parfum": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Giorgio-Armani/Acqua-di-Gio-410.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.410.jpg",
+    "path": "../public/perfume-image/perfume-bottles/armani-acqua-di-gio-parfum.jpg"
+  },
+  "armani-si-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Giorgio-Armani/Si-Rose-Signature-II-Eau-de-Parfum-43453.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.43453.jpg",
+    "path": "../public/perfume-image/perfume-bottles/armani-si-edp.jpg"
+  },
+  "vr-flowerbomb-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Viktor-Rolf/Flowerbomb-1460.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1460.jpg",
+    "path": "../public/perfume-image/perfume-bottles/vr-flowerbomb-edp.jpg"
+  },
+  "vr-spicebomb-extreme-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Viktor-Rolf/Spicebomb-Extreme-30499.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.30499.jpg",
+    "path": "../public/perfume-image/perfume-bottles/vr-spicebomb-extreme-edp.jpg"
+  },
+  "jpg-scandal-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Jean-Paul-Gaultier/Scandal-45651.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.45651.jpg",
+    "path": "../public/perfume-image/perfume-bottles/jpg-scandal-edp.jpg"
+  },
+  "jpg-so-scandal-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Jean-Paul-Gaultier/So-Scandal-60942.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.60942.jpg",
+    "path": "../public/perfume-image/perfume-bottles/jpg-so-scandal-edp.jpg"
+  },
+  "dg-the-one-edp-man": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Dolce-Gabbana/The-One-for-Men-Eau-de-Parfum-31909.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31909.jpg",
+    "path": "../public/perfume-image/perfume-bottles/dg-the-one-edp-man.jpg"
+  },
+  "dg-devotion-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Devotion-84951.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.84951.jpg",
+    "path": "../public/perfume-image/perfume-bottles/dg-devotion-edp.jpg"
+  },
+  "givenchy-linterdit-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Givenchy/L-Interdit-Eau-de-Parfum-51488.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.51488.jpg",
+    "path": "../public/perfume-image/perfume-bottles/givenchy-linterdit-edp.jpg"
+  },
+  "givenchy-gentleman-society-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Givenchy/Gentleman-Society-Eau-de-Parfum-Ambree-101102.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.101102.jpg",
+    "path": "../public/perfume-image/perfume-bottles/givenchy-gentleman-society-edp.jpg"
+  },
+  "bvlgari-man-in-black-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Bvlgari/Bvlgari-Man-In-Black-26358.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.26358.jpg",
+    "path": "../public/perfume-image/perfume-bottles/bvlgari-man-in-black-edp.jpg"
+  },
+  "dg-light-blue-edt-woman": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Light-Blue-Eau-de-Toilette-104985.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.104985.jpg",
+    "path": "../public/perfume-image/perfume-bottles/dg-light-blue-edt-woman.jpg"
+  },
+  "dg-light-blue-edt-man": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Dolce-Gabbana/Light-Blue-Pour-Homme-Eau-de-Toilette-104984.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.104984.jpg",
+    "path": "../public/perfume-image/perfume-bottles/dg-light-blue-edt-man.jpg"
+  },
+  "nr-for-her-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Narciso-Rodriguez/Narciso-Rodriguez-for-Her-Eau-de-Parfum-14319.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.14319.jpg",
+    "path": "../public/perfume-image/perfume-bottles/nr-for-her-edp.jpg"
+  },
+  "lancome-la-vie-est-belle-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Lancome/La-Vie-Est-Belle-L-Eau-de-Parfum-Legere-18639.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.18639.jpg",
+    "path": "../public/perfume-image/perfume-bottles/lancome-la-vie-est-belle-edp.jpg"
+  },
+  "pr-1million-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Rabanne/1-Million-3747.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3747.jpg",
+    "path": "../public/perfume-image/perfume-bottles/pr-1million-edp.jpg"
+  },
+  "pr-olympea-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Rabanne/Olympea-Aqua-Eau-de-Parfum-Legere-48759.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.48759.jpg",
+    "path": "../public/perfume-image/perfume-bottles/pr-olympea-edp.jpg"
+  },
+  "chanel-chance-eau-tendre-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Chanel/Chance-Eau-Tendre-Eau-de-Parfum-52359.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.52359.jpg",
+    "path": "../public/perfume-image/perfume-bottles/chanel-chance-eau-tendre-edp.jpg"
+  },
+  "chanel-chance-eau-fraiche-edt": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Chanel/Chance-Eau-Fraiche-1483.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1483.jpg",
+    "path": "../public/perfume-image/perfume-bottles/chanel-chance-eau-fraiche-edt.jpg"
+  },
+  "chanel-no5-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Chanel/Chanel-No-5-Eau-de-Parfum-40069.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.40069.jpg",
+    "path": "../public/perfume-image/perfume-bottles/chanel-no5-edp.jpg"
+  },
+  "chanel-coco-mademoiselle-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Chanel/Coco-Mademoiselle-Parfum-6928.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6928.jpg",
+    "path": "../public/perfume-image/perfume-bottles/chanel-coco-mademoiselle-edp.jpg"
+  },
+  "chanel-bleu-de-chanel-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Chanel/Bleu-de-Chanel-Eau-de-Parfum-25967.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.25967.jpg",
+    "path": "../public/perfume-image/perfume-bottles/chanel-bleu-de-chanel-edp.jpg"
+  },
+  "chanel-bleu-de-chanel-edt": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Chanel/Bleu-de-Chanel-9099.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.9099.jpg",
+    "path": "../public/perfume-image/perfume-bottles/chanel-bleu-de-chanel-edt.jpg"
+  },
+  "chanel-coco-mademoiselle-edt": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Chanel/Coco-Mademoiselle-Eau-de-Toilette-612.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.612.jpg",
+    "path": "../public/perfume-image/perfume-bottles/chanel-coco-mademoiselle-edt.jpg"
+  },
+  "chanel-gabrielle-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Chanel/Gabrielle-43718.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.43718.jpg",
+    "path": "../public/perfume-image/perfume-bottles/chanel-gabrielle-edp.jpg"
+  },
+  "dior-miss-dior-edp": {
+    "status": "failed",
+    "error": "Product page failed validation. Only found 1 matching notes.",
+    "brand": "Dior",
+    "name": "Miss Dior EDP"
+  },
+  "dior-sauvage-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Dior/Balade-Sauvage-48398.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.48398.jpg",
+    "path": "../public/perfume-image/perfume-bottles/dior-sauvage-edp.jpg"
+  },
+  "dior-jadore-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Dior/Le-Nectar-de-J-Adore-118816.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.118816.jpg",
+    "path": "../public/perfume-image/perfume-bottles/dior-jadore-edp.jpg"
+  },
+  "dior-miss-dior-blooming-edt": {
+    "status": "failed",
+    "error": "No confident match heavily outweighed penalties (best score = -6)",
+    "brand": "Dior",
+    "name": "Miss Dior Blooming Bouquet EDT"
+  },
+  "dior-homme-parfum": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Dior/Dior-Homme-Voyage-6017.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6017.jpg",
+    "path": "../public/perfume-image/perfume-bottles/dior-homme-parfum.jpg"
+  },
+  "prada-paradoxe-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Prada/Prada-Paradoxe-75668.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.75668.jpg",
+    "path": "../public/perfume-image/perfume-bottles/prada-paradoxe-edp.jpg"
+  },
+  "prada-paradoxe-intense-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Prada/Prada-Paradoxe-Intense-83988.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.83988.jpg",
+    "path": "../public/perfume-image/perfume-bottles/prada-paradoxe-intense-edp.jpg"
+  },
+  "prada-luna-rossa-ocean-edp": {
+    "status": "failed",
+    "error": "Product page failed validation. Only found 1 matching notes.",
+    "brand": "Prada",
+    "name": "Luna Rossa Ocean EDP"
+  },
+  "hermes-twilly-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Hermes/Twilly-d-Hermes-Eau-Poivree-Eau-de-Parfum-55983.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.55983.jpg",
+    "path": "../public/perfume-image/perfume-bottles/hermes-twilly-edp.jpg"
+  },
+  "hermes-terre-dhermes-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Hermes/Terre-d-Hermes-17.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.17.jpg",
+    "path": "../public/perfume-image/perfume-bottles/hermes-terre-dhermes-edp.jpg"
+  },
+  "hermes-terre-dhermes-edt": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Hermes/Terre-d-Hermes-Flacon-H-2020-Eau-de-Toilette-59010.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.59010.jpg",
+    "path": "../public/perfume-image/perfume-bottles/hermes-terre-dhermes-edt.jpg"
+  },
+  "hermes-h24-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Hermes/H24-Eau-de-Parfum-75811.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.75811.jpg",
+    "path": "../public/perfume-image/perfume-bottles/hermes-h24-edp.jpg"
+  },
+  "hermes-jour-dhermes-edt": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Hermes/Jour-d-Hermes-17076.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.17076.jpg",
+    "path": "../public/perfume-image/perfume-bottles/hermes-jour-dhermes-edt.jpg"
+  },
+  "jm-wood-sage-sea-salt": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Jo-Malone-London/Wood-Sage-Sea-Salt-25529.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.25529.jpg",
+    "path": "../public/perfume-image/perfume-bottles/jm-wood-sage-sea-salt.jpg"
+  },
+  "jm-peony-blush-suede": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Jo-Malone-London/Peony-Blush-Suede-18767.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.18767.jpg",
+    "path": "../public/perfume-image/perfume-bottles/jm-peony-blush-suede.jpg"
+  },
+  "jm-lime-basil-mandarin": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Jo-Malone-London/Lime-Basil-Mandarin-5585.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5585.jpg",
+    "path": "../public/perfume-image/perfume-bottles/jm-lime-basil-mandarin.jpg"
+  },
+  "jm-english-pear-freesia": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Jo-Malone-London/English-Pear-Freesia-10314.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.10314.jpg",
+    "path": "../public/perfume-image/perfume-bottles/jm-english-pear-freesia.jpg"
+  },
+  "jm-blackberry-bay": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Jo-Malone-London/Blackberry-Bay-15134.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.15134.jpg",
+    "path": "../public/perfume-image/perfume-bottles/jm-blackberry-bay.jpg"
+  },
+  "jm-nectarine-blossom-honey": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Jo-Malone-London/Nectarine-Blossom-amp-Honey-3782.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3782.jpg",
+    "path": "../public/perfume-image/perfume-bottles/jm-nectarine-blossom-honey.jpg"
+  },
+  "jm-rose-white-musk": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Jo-Malone-London/Rose-Blush-Cologne-2023-79466.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.79466.jpg",
+    "path": "../public/perfume-image/perfume-bottles/jm-rose-white-musk.jpg"
+  },
+  "jm-velvet-rose-oud": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Jo-Malone-London/Velvet-Rose-Oud-15286.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.15286.jpg",
+    "path": "../public/perfume-image/perfume-bottles/jm-velvet-rose-oud.jpg"
+  },
+  "jm-dark-amber-ginger-lily": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Jo-Malone-London/Dark-Amber-Ginger-Lily-3783.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3783.jpg",
+    "path": "../public/perfume-image/perfume-bottles/jm-dark-amber-ginger-lily.jpg"
+  },
+  "jm-bronze-wood-leather": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Jo-Malone-London/Bronze-Wood-Leather-52803.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.52803.jpg",
+    "path": "../public/perfume-image/perfume-bottles/jm-bronze-wood-leather.jpg"
+  },
+  "mmr-beach-walk": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Martin-Margiela/Beach-Walk-15261.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.15261.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mmr-beach-walk.jpg"
+  },
+  "mmr-jazz-club": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Martin-Margiela/Jazz-Club-20541.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.20541.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mmr-jazz-club.jpg"
+  },
+  "mmr-by-the-fireplace": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Martin-Margiela/By-the-Fireplace-31623.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31623.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mmr-by-the-fireplace.jpg"
+  },
+  "mmr-flower-market": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Martin-Margiela/Flower-Market-15260.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.15260.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mmr-flower-market.jpg"
+  },
+  "mmr-sailing-day": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Martin-Margiela/Sailing-Day-47891.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.47891.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mmr-sailing-day.jpg"
+  },
+  "mmr-under-lemon-tree": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Martin-Margiela/Under-The-Lemon-Tree-53379.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.53379.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mmr-under-lemon-tree.jpg"
+  },
+  "mmr-whispers-library": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Martin-Margiela/Whispers-in-the-Library-53537.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.53537.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mmr-whispers-library.jpg"
+  },
+  "mmr-coffee-break": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Martin-Margiela/Coffee-Break-55926.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.55926.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mmr-coffee-break.jpg"
+  },
+  "mmr-afternoon-swim": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Martin-Margiela/Afternoon-Delight-95923.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.95923.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mmr-afternoon-swim.jpg"
+  },
+  "mmr-on-a-date": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Martin-Margiela/On-A-Date-78292.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.78292.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mmr-on-a-date.jpg"
+  },
+  "mmr-at-the-barbers": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Martin-Margiela/At-The-Barber-s-30262.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.30262.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mmr-at-the-barbers.jpg"
+  },
+  "mmr-spring-day": {
+    "status": "failed",
+    "error": "Product page failed validation. Only found 1 matching notes.",
+    "brand": "Maison Margiela",
+    "name": "Replica Spring Day"
+  },
+  "byredo-gypsy-water": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Byredo/Gypsy-Water-3575.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3575.jpg",
+    "path": "../public/perfume-image/perfume-bottles/byredo-gypsy-water.jpg"
+  },
+  "byredo-bal-dafrique": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Byredo/Bal-d-Afrique-6458.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6458.jpg",
+    "path": "../public/perfume-image/perfume-bottles/byredo-bal-dafrique.jpg"
+  },
+  "byredo-mojave-ghost": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Byredo/Mojave-Ghost-27040.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.27040.jpg",
+    "path": "../public/perfume-image/perfume-bottles/byredo-mojave-ghost.jpg"
+  },
+  "byredo-blanche": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Byredo/Blanche-6686.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6686.jpg",
+    "path": "../public/perfume-image/perfume-bottles/byredo-blanche.jpg"
+  },
+  "byredo-la-tulipe": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Byredo/La-Tulipe-8441.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.8441.jpg",
+    "path": "../public/perfume-image/perfume-bottles/byredo-la-tulipe.jpg"
+  },
+  "byredo-rose-of-no-mans-land": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Byredo/Rose-Of-No-Man-s-Land-31931.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31931.jpg",
+    "path": "../public/perfume-image/perfume-bottles/byredo-rose-of-no-mans-land.jpg"
+  },
+  "byredo-super-cedar": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Byredo/Super-Cedar-35530.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.35530.jpg",
+    "path": "../public/perfume-image/perfume-bottles/byredo-super-cedar.jpg"
+  },
+  "byredo-black-saffron": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Byredo/Black-Saffron-16220.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.16220.jpg",
+    "path": "../public/perfume-image/perfume-bottles/byredo-black-saffron.jpg"
+  },
+  "byredo-bibliotheque": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Byredo/Bibliotheque-43324.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.43324.jpg",
+    "path": "../public/perfume-image/perfume-bottles/byredo-bibliotheque.jpg"
+  },
+  "byredo-mixed-emotions": {
+    "status": "failed",
+    "error": "Product page failed validation. Only found 0 matching notes.",
+    "brand": "Byredo",
+    "name": "Mixed Emotions"
+  },
+  "byredo-pulp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Byredo/Pulp-3576.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3576.jpg",
+    "path": "../public/perfume-image/perfume-bottles/byredo-pulp.jpg"
+  },
+  "byredo-slow-dance": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Byredo/Slow-Dance-57007.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.57007.jpg",
+    "path": "../public/perfume-image/perfume-bottles/byredo-slow-dance.jpg"
+  },
+  "byredo-velvet-haze": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Byredo/Velvet-Haze-46358.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.46358.jpg",
+    "path": "../public/perfume-image/perfume-bottles/byredo-velvet-haze.jpg"
+  },
+  "byredo-tobacco-mandarin": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Byredo/Tobacco-Mandarin-63031.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.63031.jpg",
+    "path": "../public/perfume-image/perfume-bottles/byredo-tobacco-mandarin.jpg"
+  },
+  "diptyque-eau-rose-edp": {
+    "status": "failed",
+    "error": "Product page failed validation. Only found 1 matching notes.",
+    "brand": "Diptyque",
+    "name": "Eau Rose EDP"
+  },
+  "diptyque-tam-dao-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Diptyque/Tam-Dao-Eau-de-Parfum-49104.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.49104.jpg",
+    "path": "../public/perfume-image/perfume-bottles/diptyque-tam-dao-edp.jpg"
+  },
+  "diptyque-philosykos-edp": {
+    "status": "failed",
+    "error": "Product page failed validation. Only found 1 matching notes.",
+    "brand": "Diptyque",
+    "name": "Philosykos EDP"
+  },
+  "diptyque-lombre-dans-leau": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Diptyque/L-Ombre-Dans-L-Eau-Eau-de-Parfum-49099.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.49099.jpg",
+    "path": "../public/perfume-image/perfume-bottles/diptyque-lombre-dans-leau.jpg"
+  },
+  "diptyque-do-son-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Diptyque/Do-Son-Eau-de-Parfum-49098.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.49098.jpg",
+    "path": "../public/perfume-image/perfume-bottles/diptyque-do-son-edp.jpg"
+  },
+  "diptyque-eau-capitale": {
+    "status": "failed",
+    "error": "Product page failed validation. Only found 1 matching notes.",
+    "brand": "Diptyque",
+    "name": "Eau Capitale"
+  },
+  "diptyque-vetyverio-edt": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Diptyque/Vetyverio-Eau-de-Toilette-8787.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.8787.jpg",
+    "path": "../public/perfume-image/perfume-bottles/diptyque-vetyverio-edt.jpg"
+  },
+  "diptyque-eau-duelle-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Diptyque/Eau-Duelle-Eau-de-Parfum-49100.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.49100.jpg",
+    "path": "../public/perfume-image/perfume-bottles/diptyque-eau-duelle-edp.jpg"
+  },
+  "diptyque-florabellio-edt": {
+    "status": "failed",
+    "error": "Product page failed validation. Only found 1 matching notes.",
+    "brand": "Diptyque",
+    "name": "Florabellio EDT"
+  },
+  "diptyque-eau-des-sens-edt": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Diptyque/Eau-des-Sens-Eau-de-Toilette-35678.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.35678.jpg",
+    "path": "../public/perfume-image/perfume-bottles/diptyque-eau-des-sens-edt.jpg"
+  },
+  "lelabo-santal-33": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Le-Labo/Santal-33-12201.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12201.jpg",
+    "path": "../public/perfume-image/perfume-bottles/lelabo-santal-33.jpg"
+  },
+  "lelabo-another-13": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Le-Labo/Another-13-10131.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.10131.jpg",
+    "path": "../public/perfume-image/perfume-bottles/lelabo-another-13.jpg"
+  },
+  "lelabo-rose-31": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Le-Labo/Rose-31-3678.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3678.jpg",
+    "path": "../public/perfume-image/perfume-bottles/lelabo-rose-31.jpg"
+  },
+  "lelabo-the-noir-29": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Le-Labo/The-Noir-29-31872.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31872.jpg",
+    "path": "../public/perfume-image/perfume-bottles/lelabo-the-noir-29.jpg"
+  },
+  "lelabo-bergamote-22": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Le-Labo/Bergamote-22-6327.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6327.jpg",
+    "path": "../public/perfume-image/perfume-bottles/lelabo-bergamote-22.jpg"
+  },
+  "lelabo-neroli-36": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Le-Labo/Neroli-36-6330.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6330.jpg",
+    "path": "../public/perfume-image/perfume-bottles/lelabo-neroli-36.jpg"
+  },
+  "lelabo-lys-41": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Le-Labo/Lys-41-18382.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.18382.jpg",
+    "path": "../public/perfume-image/perfume-bottles/lelabo-lys-41.jpg"
+  },
+  "lelabo-iris-39": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Le-Labo/Iris-39-6336.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6336.jpg",
+    "path": "../public/perfume-image/perfume-bottles/lelabo-iris-39.jpg"
+  },
+  "lelabo-patchouli-24": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Le-Labo/Patchouli-24-6332.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6332.jpg",
+    "path": "../public/perfume-image/perfume-bottles/lelabo-patchouli-24.jpg"
+  },
+  "lelabo-vetiver-46": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Le-Labo/Vetiver-46-6328.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6328.jpg",
+    "path": "../public/perfume-image/perfume-bottles/lelabo-vetiver-46.jpg"
+  },
+  "adp-colonia-edc": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Acqua-di-Parma/Acqua-di-Parma-Colonia-1681.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1681.jpg",
+    "path": "../public/perfume-image/perfume-bottles/adp-colonia-edc.jpg"
+  },
+  "adp-rosa-nobile-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Acqua-di-Parma/Rosa-Nobile-26577.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.26577.jpg",
+    "path": "../public/perfume-image/perfume-bottles/adp-rosa-nobile-edp.jpg"
+  },
+  "sl-feminite-du-bois": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Serge-Lutens/Feminite-du-Bois-5749.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5749.jpg",
+    "path": "../public/perfume-image/perfume-bottles/sl-feminite-du-bois.jpg"
+  },
+  "sl-la-fille-de-berlin": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Serge-Lutens/La-Fille-de-Berlin-17162.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.17162.jpg",
+    "path": "../public/perfume-image/perfume-bottles/sl-la-fille-de-berlin.jpg"
+  },
+  "jhag-not-a-perfume": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Juliette-Has-A-Gun/Not-A-Perfume-10296.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.10296.jpg",
+    "path": "../public/perfume-image/perfume-bottles/jhag-not-a-perfume.jpg"
+  },
+  "initio-atomic-rose": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Initio-Parfums-Prives/Atomic-Rose-57587.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.57587.jpg",
+    "path": "../public/perfume-image/perfume-bottles/initio-atomic-rose.jpg"
+  },
+  "initio-rehab": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Initio-Parfums-Prives/Rehab-50351.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.50351.jpg",
+    "path": "../public/perfume-image/perfume-bottles/initio-rehab.jpg"
+  },
+  "creed-aventus": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Creed/Aventus-9828.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.9828.jpg",
+    "path": "../public/perfume-image/perfume-bottles/creed-aventus.jpg"
+  },
+  "creed-aventus-for-her": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Creed/Aventus-for-Her-38497.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.38497.jpg",
+    "path": "../public/perfume-image/perfume-bottles/creed-aventus-for-her.jpg"
+  },
+  "creed-green-irish-tweed": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Creed/Green-Irish-Tweed-474.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.474.jpg",
+    "path": "../public/perfume-image/perfume-bottles/creed-green-irish-tweed.jpg"
+  },
+  "creed-silver-mountain-water": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Creed/Silver-Mountain-Water-472.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.472.jpg",
+    "path": "../public/perfume-image/perfume-bottles/creed-silver-mountain-water.jpg"
+  },
+  "creed-love-in-white": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Creed/Love-in-White-4262.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4262.jpg",
+    "path": "../public/perfume-image/perfume-bottles/creed-love-in-white.jpg"
+  },
+  "creed-original-vetiver": {
+    "status": "failed",
+    "error": "No confident match heavily outweighed penalties (best score = -100)",
+    "brand": "Creed",
+    "name": "Original Vetiver"
+  },
+  "tf-tobacco-vanille": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Tom-Ford/Tobacco-Vanille-1825.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1825.jpg",
+    "path": "../public/perfume-image/perfume-bottles/tf-tobacco-vanille.jpg"
+  },
+  "tf-oud-wood": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Tom-Ford/Oud-Wood-1826.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1826.jpg",
+    "path": "../public/perfume-image/perfume-bottles/tf-oud-wood.jpg"
+  },
+  "tf-rose-prick": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Tom-Ford/Rose-Prick-58781.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.58781.jpg",
+    "path": "../public/perfume-image/perfume-bottles/tf-rose-prick.jpg"
+  },
+  "tf-lost-cherry": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Tom-Ford/Lost-Cherry-51411.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.51411.jpg",
+    "path": "../public/perfume-image/perfume-bottles/tf-lost-cherry.jpg"
+  },
+  "tf-ombre-leather": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Tom-Ford/Ombre-Leather-2018-50239.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.50239.jpg",
+    "path": "../public/perfume-image/perfume-bottles/tf-ombre-leather.jpg"
+  },
+  "tf-noir-edp": {
+    "status": "failed",
+    "error": "No confident match heavily outweighed penalties (best score = -100)",
+    "brand": "Tom Ford",
+    "name": "Noir EDP"
+  },
+  "tf-black-orchid-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Rasasi/Hawas-Black-96817.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.96817.jpg",
+    "path": "../public/perfume-image/perfume-bottles/tf-black-orchid-edp.jpg"
+  },
+  "tf-costa-azzurra": {
+    "status": "failed",
+    "error": "No confident match heavily outweighed penalties (best score = -100)",
+    "brand": "Tom Ford",
+    "name": "Costa Azzurra"
+  },
+  "tf-noir-de-noir": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Yves-Saint-Laurent/Y-Eau-de-Parfum-50757.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.50757.jpg",
+    "path": "../public/perfume-image/perfume-bottles/tf-noir-de-noir.jpg"
+  },
+  "tf-velvet-orchid-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Tom-Ford/Velvet-Orchid-22963.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.22963.jpg",
+    "path": "../public/perfume-image/perfume-bottles/tf-velvet-orchid-edp.jpg"
+  },
+  "byredo-accord-oud": {
+    "status": "failed",
+    "error": "No confident match heavily outweighed penalties (best score = -100)",
+    "brand": "Byredo",
+    "name": "Accord Oud"
+  },
+  "byredo-eleventh-hour": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Byredo/Eleventh-Hour-50934.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.50934.jpg",
+    "path": "../public/perfume-image/perfume-bottles/byredo-eleventh-hour.jpg"
+  },
+  "byredo-sellier": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Byredo/Sellier-58572.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.58572.jpg",
+    "path": "../public/perfume-image/perfume-bottles/byredo-sellier.jpg"
+  },
+  "byredo-inflorescence": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Byredo/Inflorescence-17798.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.17798.jpg",
+    "path": "../public/perfume-image/perfume-bottles/byredo-inflorescence.jpg"
+  },
+  "diptyque-tam-dao-parfum": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Diptyque/Tam-Dao-Eau-de-Parfum-49104.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.49104.jpg",
+    "path": "../public/perfume-image/perfume-bottles/diptyque-tam-dao-parfum.jpg"
+  },
+  "diptyque-do-son-parfum": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Diptyque/Impossible-Bouquet-Do-Son-59803.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.59803.jpg",
+    "path": "../public/perfume-image/perfume-bottles/diptyque-do-son-parfum.jpg"
+  },
+  "lelabo-oud-27": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Le-Labo/Oud-27-6329.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.6329.jpg",
+    "path": "../public/perfume-image/perfume-bottles/lelabo-oud-27.jpg"
+  },
+  "lelabo-cedrat-37": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Le-Labo/Cedrat-37-Berlin-68788.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.68788.jpg",
+    "path": "../public/perfume-image/perfume-bottles/lelabo-cedrat-37.jpg"
+  },
+  "lelabo-rose-31-100ml": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Le-Labo/Rose-31-3678.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.3678.jpg",
+    "path": "../public/perfume-image/perfume-bottles/lelabo-rose-31-100ml.jpg"
+  },
+  "lelabo-the-noir-100ml": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Le-Labo/The-Noir-29-31872.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31872.jpg",
+    "path": "../public/perfume-image/perfume-bottles/lelabo-the-noir-100ml.jpg"
+  },
+  "mmr-matcha-meditation-edt": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Martin-Margiela/Matcha-Meditation-64805.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.64805.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mmr-matcha-meditation-edt.jpg"
+  },
+  "mmr-lazy-sunday-morning": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Martin-Margiela/Lazy-Sunday-Morning-20542.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.20542.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mmr-lazy-sunday-morning.jpg"
+  },
+  "mmr-autumn-vibes": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Martin-Margiela/Autumn-Vibes-67789.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.67789.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mmr-autumn-vibes.jpg"
+  },
+  "mmr-by-the-fireplace-100ml": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Martin-Margiela/By-the-Fireplace-31623.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31623.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mmr-by-the-fireplace-100ml.jpg"
+  },
+  "fm-portrait-of-a-lady": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Frederic-Malle/Portrait-of-a-Lady-10464.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.10464.jpg?t=1772748723",
+    "path": "../public/perfume-image/perfume-bottles/fm-portrait-of-a-lady.jpg"
+  },
+  "fm-carnal-flower": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Frederic-Malle/Carnal-Flower-1024.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1024.jpg?t=1772748497",
+    "path": "../public/perfume-image/perfume-bottles/fm-carnal-flower.jpg"
+  },
+  "fm-musc-ravageur": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Frederic-Malle/Musc-Ravageur-1801.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1801.jpg?t=1772749893",
+    "path": "../public/perfume-image/perfume-bottles/fm-musc-ravageur.jpg"
+  },
+  "fm-une-fleur-de-cassie": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Frederic-Malle/Une-Fleur-de-Cassie-4773.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4773.jpg?t=1772750325",
+    "path": "../public/perfume-image/perfume-bottles/fm-une-fleur-de-cassie.jpg"
+  },
+  "fm-the-night": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Frederic-Malle/The-Night-28407.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.28407.jpg?t=1772751161",
+    "path": "../public/perfume-image/perfume-bottles/fm-the-night.jpg"
+  },
+  "fm-cologne-indelebile": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Frederic-Malle/Cologne-Indelebile-30353.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.30353.jpg?t=1772752545",
+    "path": "../public/perfume-image/perfume-bottles/fm-cologne-indelebile.jpg"
+  },
+  "kilian-love-dont-be-shy": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/By-Kilian/Love-Don-t-Be-Shy-4322.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4322.jpg",
+    "path": "../public/perfume-image/perfume-bottles/kilian-love-dont-be-shy.jpg"
+  },
+  "kilian-good-girl-gone-bad": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/By-Kilian/Good-Girl-Gone-Bad-15924.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.15924.jpg",
+    "path": "../public/perfume-image/perfume-bottles/kilian-good-girl-gone-bad.jpg"
+  },
+  "kilian-angels-share": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/By-Kilian/Angels-Share-62615.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.62615.jpg",
+    "path": "../public/perfume-image/perfume-bottles/kilian-angels-share.jpg"
+  },
+  "kilian-apple-brandy": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Martin-Margiela/By-the-Fireplace-31623.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31623.jpg",
+    "path": "../public/perfume-image/perfume-bottles/kilian-apple-brandy.jpg"
+  },
+  "kilian-black-phantom": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/By-Kilian/Black-Phantom-43632.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.43632.jpg",
+    "path": "../public/perfume-image/perfume-bottles/kilian-black-phantom.jpg"
+  },
+  "kilian-dark-lord": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/By-Kilian/Dark-Lord-50603.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.50603.jpg",
+    "path": "../public/perfume-image/perfume-bottles/kilian-dark-lord.jpg"
+  },
+  "amouage-interlude-man": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Amouage/Interlude-Man-15294.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.15294.jpg",
+    "path": "../public/perfume-image/perfume-bottles/amouage-interlude-man.jpg"
+  },
+  "amouage-reflection-woman": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Amouage/Reflection-Woman-919.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.919.jpg",
+    "path": "../public/perfume-image/perfume-bottles/amouage-reflection-woman.jpg"
+  },
+  "amouage-honour-man": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Amouage/Honour-Man-12763.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12763.jpg",
+    "path": "../public/perfume-image/perfume-bottles/amouage-honour-man.jpg"
+  },
+  "amouage-beloved-woman": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Amouage/Beloved-Woman-15184.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.15184.jpg",
+    "path": "../public/perfume-image/perfume-bottles/amouage-beloved-woman.jpg"
+  },
+  "amouage-fate-woman": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Amouage/Fate-Woman-18542.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.18542.jpg",
+    "path": "../public/perfume-image/perfume-bottles/amouage-fate-woman.jpg"
+  },
+  "roja-elysium": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Roja-Dove/Elysium-Pour-Homme-Parfum-47480.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.47480.jpg",
+    "path": "../public/perfume-image/perfume-bottles/roja-elysium.jpg"
+  },
+  "roja-enigma-woman": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Roja-Dove/Enigma-Pour-Femme-Essence-De-Parfum-65871.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.65871.jpg",
+    "path": "../public/perfume-image/perfume-bottles/roja-enigma-woman.jpg"
+  },
+  "roja-scandal-man": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Roja-Dove/Scandal-Pour-Homme-Parfum-Cologne-57874.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.57874.jpg",
+    "path": "../public/perfume-image/perfume-bottles/roja-scandal-man.jpg"
+  },
+  "roja-haute-luxe": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Roja-Dove/Roja-Haute-Luxe-21359.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.21359.jpg",
+    "path": "../public/perfume-image/perfume-bottles/roja-haute-luxe.jpg"
+  },
+  "xerjoff-naxos": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Xerjoff/XJ-1861-Naxos-30529.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.30529.jpg",
+    "path": "../public/perfume-image/perfume-bottles/xerjoff-naxos.jpg"
+  },
+  "xerjoff-erba-pura": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Xerjoff/Erba-Pura-55157.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.55157.jpg",
+    "path": "../public/perfume-image/perfume-bottles/xerjoff-erba-pura.jpg"
+  },
+  "xerjoff-alexandria-ii": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Xerjoff/Alexandria-II-17786.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.17786.jpg",
+    "path": "../public/perfume-image/perfume-bottles/xerjoff-alexandria-ii.jpg"
+  },
+  "xerjoff-lira": {
+    "status": "failed",
+    "error": "No confident match heavily outweighed penalties (best score = -100)",
+    "brand": "Xerjoff",
+    "name": "Lira"
+  },
+  "mfk-baccarat-rouge-540": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Francis-Kurkdjian/Baccarat-Rouge-540-33519.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.33519.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mfk-baccarat-rouge-540.jpg"
+  },
+  "mfk-grand-soir": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Francis-Kurkdjian/Grand-Soir-40816.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.40816.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mfk-grand-soir.jpg"
+  },
+  "mfk-aqua-universalis-forte": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Francis-Kurkdjian/Aqua-Universalis-Forte-12710.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.12710.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mfk-aqua-universalis-forte.jpg"
+  },
+  "pdm-delina-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Parfums-de-Marly/Delina-43871.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.43871.jpg",
+    "path": "../public/perfume-image/perfume-bottles/pdm-delina-edp.jpg"
+  },
+  "pdm-herod-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Parfums-de-Marly/Herod-16939.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.16939.jpg",
+    "path": "../public/perfume-image/perfume-bottles/pdm-herod-edp.jpg"
+  },
+  "pdm-layton-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Parfums-de-Marly/Layton-39314.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.39314.jpg",
+    "path": "../public/perfume-image/perfume-bottles/pdm-layton-edp.jpg"
+  },
+  "pdm-pegasus-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Parfums-de-Marly/Pegasus-16938.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.16938.jpg",
+    "path": "../public/perfume-image/perfume-bottles/pdm-pegasus-edp.jpg"
+  },
+  "clive-christian-1872-feminine": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Clive-Christian/1872-For-Women-4647.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4647.jpg",
+    "path": "../public/perfume-image/perfume-bottles/clive-christian-1872-feminine.jpg"
+  },
+  "clive-christian-1872-masculine": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Clive-Christian/1872-For-Men-4646.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.4646.jpg",
+    "path": "../public/perfume-image/perfume-bottles/clive-christian-1872-masculine.jpg"
+  },
+  "penhaligons-halfeti-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Penhaligon-s/Halfeti-31396.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.31396.jpg",
+    "path": "../public/perfume-image/perfume-bottles/penhaligons-halfeti-edp.jpg"
+  },
+  "initio-oud-for-greatness": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Initio-Parfums-Prives/Oud-for-Greatness-53641.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.53641.jpg",
+    "path": "../public/perfume-image/perfume-bottles/initio-oud-for-greatness.jpg"
+  },
+  "initio-side-effect": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Initio-Parfums-Prives/Side-Effect-42260.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.42260.jpg",
+    "path": "../public/perfume-image/perfume-bottles/initio-side-effect.jpg"
+  },
+  "exnihilo-fleur-narcotique": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Ex-Nihilo/Fleur-Narcotique-27571.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.27571.jpg",
+    "path": "../public/perfume-image/perfume-bottles/exnihilo-fleur-narcotique.jpg"
+  },
+  "vilhelm-dear-polly": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Vilhelm-Parfumerie/Dear-Polly-30928.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.30928.jpg",
+    "path": "../public/perfume-image/perfume-bottles/vilhelm-dear-polly.jpg"
+  },
+  "cartier-la-panthere-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Cartier/La-Panthere-23295.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.23295.jpg",
+    "path": "../public/perfume-image/perfume-bottles/cartier-la-panthere-edp.jpg"
+  },
+  "sl-ambre-sultan": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Serge-Lutens/Ambre-Sultan-2760.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.2760.jpg",
+    "path": "../public/perfume-image/perfume-bottles/sl-ambre-sultan.jpg"
+  },
+  "memo-irish-leather": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Memo-Paris/Irish-Leather-18393.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.18393.jpg?t=1772620409",
+    "path": "../public/perfume-image/perfume-bottles/memo-irish-leather.jpg"
+  },
+  "mfk-br540-extrait": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Maison-Francis-Kurkdjian/Baccarat-Rouge-540-Extrait-de-Parfum-46066.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.46066.jpg",
+    "path": "../public/perfume-image/perfume-bottles/mfk-br540-extrait.jpg"
+  },
+  "pdm-carlisle-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Parfums-de-Marly/Carlisle-33514.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.33514.jpg",
+    "path": "../public/perfume-image/perfume-bottles/pdm-carlisle-edp.jpg"
+  },
+  "tf-soleil-blanc": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Tom-Ford/Soleil-Blanc-34893.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.34893.jpg",
+    "path": "../public/perfume-image/perfume-bottles/tf-soleil-blanc.jpg"
+  },
+  "atelier-orange-sanguine": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Atelier-Cologne/Orange-Sanguine-9420.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.9420.jpg",
+    "path": "../public/perfume-image/perfume-bottles/atelier-orange-sanguine.jpg"
+  },
+  "sl-fleurs-doranger": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Serge-Lutens/Fleurs-d-Oranger-545.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.545.jpg",
+    "path": "../public/perfume-image/perfume-bottles/sl-fleurs-doranger.jpg"
+  },
+  "jhag-superdose": {
+    "status": "failed",
+    "error": "Product page failed validation. Only found 0 matching notes.",
+    "brand": "Juliette Has A Gun",
+    "name": "Not A Perfume Superdose"
+  },
+  "guerlain-shalimar-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Guerlain/Shalimar-Eau-de-Parfum-53.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.53.jpg",
+    "path": "../public/perfume-image/perfume-bottles/guerlain-shalimar-edp.jpg"
+  },
+  "chloe-roses-de-chloe-edt": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Chloe/Chloe-Eau-de-Toilette-5886.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.5886.jpg",
+    "path": "../public/perfume-image/perfume-bottles/chloe-roses-de-chloe-edt.jpg"
+  },
+  "chloe-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Chloe/Chloe-Eau-de-Parfum-1733.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1733.jpg",
+    "path": "../public/perfume-image/perfume-bottles/chloe-edp.jpg"
+  },
+  "loewe-aura-floral-edt": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Loewe/Aura-Eau-de-Toilette-26257.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.26257.jpg",
+    "path": "../public/perfume-image/perfume-bottles/loewe-aura-floral-edt.jpg"
+  },
+  "loewe-001-woman-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Loewe/Loewe-001-Woman-40790.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.40790.jpg",
+    "path": "../public/perfume-image/perfume-bottles/loewe-001-woman-edp.jpg"
+  },
+  "loewe-001-man-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Omanluxury/Khanjar-51546.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.51546.jpg",
+    "path": "../public/perfume-image/perfume-bottles/loewe-001-man-edp.jpg"
+  },
+  "loewe-aire-anthesis-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Loewe/Aire-Anthesis-80101.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.80101.jpg",
+    "path": "../public/perfume-image/perfume-bottles/loewe-aire-anthesis-edp.jpg"
+  },
+  "loewe-aura-pink-magnolia-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Loewe/Aura-Loewe-Pink-Magnolia-60645.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.60645.jpg",
+    "path": "../public/perfume-image/perfume-bottles/loewe-aura-pink-magnolia-edp.jpg"
+  },
+  "loewe-solo-vulcan-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Loewe/Solo-Vulcan-89703.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.89703.jpg",
+    "path": "../public/perfume-image/perfume-bottles/loewe-solo-vulcan-edp.jpg"
+  },
+  "loewe-esencia-elixir-edp": {
+    "status": "failed",
+    "error": "Product page failed validation. Only found 1 matching notes.",
+    "brand": "Loewe",
+    "name": "Esencia Elixir EDP"
+  },
+  "loewe-earth-elixir-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Loewe/Earth-Elixir-95394.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.95394.jpg",
+    "path": "../public/perfume-image/perfume-bottles/loewe-earth-elixir-edp.jpg"
+  },
+  "nr-musc-noir-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Tom-Ford/Tobacco-Vanille-1825.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.1825.jpg",
+    "path": "../public/perfume-image/perfume-bottles/nr-musc-noir-edp.jpg"
+  },
+  "nr-pure-musc-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Tom-Ford/Lost-Cherry-51411.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.51411.jpg",
+    "path": "../public/perfume-image/perfume-bottles/nr-pure-musc-edp.jpg"
+  },
+  "nr-bleu-noir-edp": {
+    "status": "ok",
+    "productUrl": "https://www.fragrantica.com/perfume/Narciso-Rodriguez/Narciso-Rodriguez-for-Him-Bleu-Noir-Eau-de-Parfum-47950.html",
+    "imageUrl": "https://fimgs.net/mdimg/perfume-thumbs/375x500.47950.jpg",
+    "path": "../public/perfume-image/perfume-bottles/nr-bleu-noir-edp.jpg"
+  }
+}

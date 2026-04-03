@@ -1,3 +1,5 @@
+// AI narrative generator + prompt to call API 
+
 import { ARCHETYPE_DISPLAY } from "./archetype-display";
 import type { EngineResult } from "./result-select";
 import type { Perfume, UserProfile } from "./types";

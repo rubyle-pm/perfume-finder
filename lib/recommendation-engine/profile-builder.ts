@@ -40,10 +40,10 @@ export interface QuizAnswers {
   gender_pref?: GenderPref | string;
   use_case?: UseCase | string;
   mood?: Mood | string;
-  scent_type?: ScentType | string;
+  scent_type?: ScentType[] | ScentType | string[] | string;  // now multi (max 2)
   dislike_note?: DislikeNote[] | DislikeNote | string[] | string;
   weekend_vibe?: WeekendVibe | string;
-  style_icon?: StyleIcon | string;
+  style_icon?: StyleIcon[] | StyleIcon | string[] | string;  // now multi (max 2)
   mbti?: MbtiType | string;
   music?: MusicGenre | string;
   closet_aesthetic?: ClosetAesthetic | string;
@@ -79,14 +79,15 @@ const MUSIC_SIGNAL_MAP: Record<MusicGenre, Signal[]> = {
 };
 
 const WEEKEND_VIBE_SIGNAL_MAP: Record<WeekendVibe, Signal[]> = {
-  cozy_solo_cafe: ["cozy", "introspective"],
-  museum_gallery: ["intellectual", "enigmatic"],
-  hiking_outdoor: ["grounded", "free_spirited"],
-  long_brunch: ["playful", "warm"],
+  book_and_blanket: ["introspective", "nostalgic", "cozy"],
+  brunch: ["playful", "warm"],
+  cozy_social: ["warm", "easy_going", "cozy", "playful"],
   home_reset: ["minimal", "grounded"],
-  spontaneous_road_trip: ["free_spirited", "easy_going"],
-  book_blanket_hermit: ["introspective", "nostalgic", "cozy"],
-  late_night_social: ["bold", "glamorous"],
+  museum: ["intellectual", "enigmatic"],
+  nightlife: ["easy_going", "free_spirited"],
+  outdoor: ["grounded", "free_spirited"],
+  roadtrip: ["free_spirited", "easy_going"],
+  solo_cafe: ["cozy", "introspective"],
 };
 
 const CLOSET_SIGNAL_MAP: Record<ClosetAesthetic, Signal[]> = {
@@ -97,34 +98,40 @@ const CLOSET_SIGNAL_MAP: Record<ClosetAesthetic, Signal[]> = {
   scandinavian_minimal: ["minimal", "cool"],
   old_money_european: ["elegant", "sophisticated"],
   clean_sporty: ["easy_going", "cool"],
-  experimental: ["edgy", "enigmatic"],
+  rusty: ["grounded", "edgy"],
   dark_academia: ["intellectual", "mysterious"],
   sensual_glamour: ["sensual", "glamorous"],
+  retro_chic: ["playful", "vintage"],
+  urban_modern: ["modern", "confident"],
+  smart_casual: ["easy_going", "minimal"],
+  refined_office: ["sophisticated", "minimal"],
 };
 
 const STYLE_ICON_SIGNAL_MAP: Record<StyleIcon, Signal[]> = {
-  clean_girl: ["minimal", "soft"],
-  soft_girl_next_door: ["soft", "romantic"],
-  modern_feminine: ["modern", "elegant"],
-  effortless_chic: ["effortless", "elegant"],
-  timeless_elegance: ["elegant", "sophisticated"],
-  classic_bombshell: ["glamorous", "sensual"],
-  sporty_glam: ["bold", "cool"],
-  boho_indie: ["free_spirited", "effortless"],
-  rebellious_gen_z: ["edgy", "bold"],
-  coquette: ["romantic", "playful"],
-  modern_masculinity: ["modern", "confident"],
-  pretty_prince: ["soft", "elegant"],
-  boy_next_door_casual: ["easy_going", "warm"],
-  mature_low_key: ["grounded", "sophisticated"],
-  dark_intellectual_male: ["mysterious", "intellectual"],
-  old_money_masculine: ["sophisticated", "confident"],
-  quiet_luxury_feminine: ["elegant", "minimal"],
-  rugged_masculine: ["bold", "grounded"],
-  street_culture: ["edgy", "cool"],
-  old_school_menace: ["menacing", "enigmatic"],
-  candy_girl_first_love: ["soft", "playful"],
-  dark_intellectual_female: ["mysterious", "intellectual"],
+  anya_taylor_joy: ["intellectual", "mysterious", "enigmatic"],
+  robert_pattinson: ["intellectual", "mysterious", "enigmatic"],
+  theo_james: ["elegant", "sophisticated", "grounded"],
+  song_hye_kyo: ["elegant", "sophisticated", "grounded"],
+  asap_rocky: ["bold", "cool", "edgy"],
+  bella_hadid: ["bold", "cool", "edgy"],
+  hailey_bieber: ["minimal", "cool", "modern"],
+  tom_hardy: ["grounded", "minimal", "menacing"],
+  kim_go_eun: ["intellectual", "grounded", "minimal"],
+  gong_yoo: ["intellectual", "grounded", "minimal"],
+  billie_eilish: ["edgy", "bold", "introspective"],
+  g_dragon: ["edgy", "bold", "introspective"],
+  dakota_johnson: ["effortless", "elegant", "cool"],
+  jacob_elordi: ["effortless", "elegant", "cool"],
+  wonyoung: ["romantic", "soft", "playful"],
+  cha_eun_woo: ["romantic", "soft", "playful"],
+  rose_park: ["soft", "warm", "modern"],
+  hua_quang_han: ["soft", "warm", "modern"],
+  monica_bellucci: ["sensual", "glamorous", "bold", "warm"],
+  austin_butler: ["sensual", "glamorous", "bold", "warm"],
+  zoe_kravitz: ["free_spirited", "playful", "artistic" as any], // Adding artistic if it exists, otherwise similar signals
+  brad_pitt: ["free_spirited", "effortless", "grounded"],
+  zendaya: ["bold", "confident", "modern"],
+  harry_styles: ["bold", "confident", "modern"],
 };
 
 const MOOD_SIGNAL_MAP: Record<Mood, Signal[]> = {
@@ -196,10 +203,11 @@ export function buildUserProfile(answers: QuizAnswers): UserProfile {
   const useCase = pickOne(answers.use_case, USE_CASES) ?? USE_CASES[0];
   const priceRange = pickOne(answers.budget, BUDGET_TIERS) ?? BUDGET_TIERS[0];
 
-  const scentType = pickOne(answers.scent_type, SCENT_TYPES);
-  const scentTypeDescriptors: Descriptor[] = scentType
-    ? [...SCENT_TYPE_DESCRIPTOR_MAP[scentType]]
-    : [];
+  // scent_type: now multi-select (max 2) — merge descriptor arrays
+  const scentTypes = pickMany(answers.scent_type, SCENT_TYPES);
+  const scentTypeDescriptors: Descriptor[] = Array.from(
+    new Set(scentTypes.flatMap((st) => SCENT_TYPE_DESCRIPTOR_MAP[st])),
+  );
 
   const dislikeNotes = pickMany(answers.dislike_note, DISLIKE_NOTES);
   const scentDislikes = Array.from(
@@ -216,8 +224,11 @@ export function buildUserProfile(answers: QuizAnswers): UserProfile {
   const weekendSignals = weekend ? WEEKEND_VIBE_SIGNAL_MAP[weekend] : [];
   if (weekendSignals.length > 0) addSignals(score, weekendSignals, SIGNAL_WEIGHT.weekend_vibe);
 
-  const styleIcon = pickOne(answers.style_icon, STYLE_ICONS);
-  const styleSignals = styleIcon ? STYLE_ICON_SIGNAL_MAP[styleIcon] : [];
+  // style_icon: now multi-select (max 2) — merge signal arrays
+  const styleIcons = pickMany(answers.style_icon, STYLE_ICONS);
+  const styleSignals = Array.from(
+    new Set(styleIcons.flatMap((si) => STYLE_ICON_SIGNAL_MAP[si])),
+  ) as Signal[];
   if (styleSignals.length > 0) addSignals(score, styleSignals, SIGNAL_WEIGHT.style_icon);
 
   const music = pickOne(answers.music, MUSIC_GENRES);

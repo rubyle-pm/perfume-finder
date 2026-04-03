@@ -29,12 +29,13 @@ import {
   WEEKEND_VIBES,
 } from "./vocabulary";
 
-type QuizQuestionKind = "single" | "multi" | "hybrid";
+type QuizQuestionKind = "single" | "multi" | "hybrid" | "pill";
 
 interface BaseQuizQuestion<T extends QuestionId, V extends string> {
   id: T;
   kind: QuizQuestionKind;
   options: readonly V[];
+  maxSelections?: number;
 }
 
 export type QuizQuestion =
@@ -101,37 +102,40 @@ export const DISPLAY_LABELS: Record<DisplayLabelValue, string> = {   // UI optio
   earthy_wet_wood: "Earthy, wet wood",
   musk: "Musk",
 
-  cozy_solo_cafe: "Cozy solo project in a cafe",
-  museum_gallery: "Museum or gallery wandering",
-  hiking_outdoor: "Hiking or outdoor adventure",
-  long_brunch: "Long brunch & hang out with friends",
+  book_and_blanket: "Book and blanket, withdraw from the world",
+  brunch: "Long brunch & hang out with friends",
+  cozy_social: "Cozy social gathering",
   home_reset: "Home reset — cleaning, organising",
-  spontaneous_road_trip: "Spontaneous road trip",
-  book_blanket_hermit: "Book and blanket, withdraw from the world",
-  late_night_social: "Late night social, out till 1am",
+  museum: "Museum or gallery wandering",
+  nightlife: "Late night social",
+  outdoor: "Hiking or outdoor adventure",
+  roadtrip: "Spontaneous road trip",
+  solo_cafe: "Cozy solo project in a cafe",
 
-  clean_girl: "Clean girl — Hailey Bieber",
-  soft_girl_next_door: "Soft, girl-next-door — Rosé",
-  modern_feminine: "Modern feminine — Zendaya",
-  effortless_chic: "Effortless chic — Dakota Johnson",
-  timeless_elegance: "Timeless elegance — Audrey Hepburn",
-  classic_bombshell: "Classic bombshell — Monica Bellucci",
-  sporty_glam: "Sporty glam — Bella Hadid",
-  boho_indie: "Boho indie — Zoë Kravitz",
-  rebellious_gen_z: "Rebellious, Gen Z — Billie Eilish",
-  coquette: "Coquette — Elle Fanning",
-  modern_masculinity: "Modern masculinity — Timothée Chalamet / Harry Styles",
-  pretty_prince: "Pretty prince — Cha Eun Woo",
-  boy_next_door_casual: "Boy-next-door, casual — Hứa Quang Hán",
-  mature_low_key: "Mature, low-key — Gong Yoo",
-  dark_intellectual_male: "Dark intellectual — Robert Pattinson",
-  old_money_masculine: "Old money masculine — Theo James",
-  quiet_luxury_feminine: "Quiet luxury feminine — Song Hye Kyo",
-  rugged_masculine: "Rugged masculine — Tom Hardy",
-  street_culture: "Street culture — A$AP Rocky",
-  old_school_menace: "Old-school menace — Cillian Murphy as Thomas Shelby",
-  candy_girl_first_love: "Candy girl, first love — Wonyoung",
-  dark_intellectual_female: "Dark intellectual — Anya Taylor-Joy",
+  anya_taylor_joy: "Anya Taylor-Joy (Dark academia, poetic)",
+  robert_pattinson: "Robert Pattinson (Dark academia, poetic)",
+  theo_james: "Theo James (Elegant, refined)",
+  song_hye_kyo: "Song Hye Kyo (Elegant, refined)",
+  asap_rocky: "A$AP Rocky (Streetwear, off-duty cool)",
+  bella_hadid: "Bella Hadid (Streetwear, off-duty cool)",
+  hailey_bieber: "Hailey Bieber (Raw, minimal)",
+  tom_hardy: "Tom Hardy (Raw, minimal)",
+  kim_go_eun: "Kim Go Eun (Quiet, gentle, intellectual)",
+  gong_yoo: "Gong Yoo (Quiet, gentle, intellectual)",
+  billie_eilish: "Billie Eilish (Rebel, introspective, edgy)",
+  g_dragon: "G-Dragon (Rebel, introspective, edgy)",
+  dakota_johnson: "Dakota Johnson (Effortless chic, European)",
+  jacob_elordi: "Jacob Elordi (Effortless chic, European)",
+  wonyoung: "Wonyoung (Sweet romantic, dreamy)",
+  cha_eun_woo: "Cha Eun Woo (Sweet romantic, dreamy)",
+  rose_park: "Rosé (Soft glow, girl/boyfriend material)",
+  hua_quang_han: "Hứa Quang Hán (Soft glow, girl/boyfriend material)",
+  monica_bellucci: "Monica Bellucci (Sensual, slow-burn)",
+  austin_butler: "Austin Butler (Sensual, slow-burn)",
+  zoe_kravitz: "Zoë Kravitz (Artsy, indie, relaxed)",
+  brad_pitt: "Brad Pitt (Artsy, indie, relaxed)",
+  zendaya: "Zendaya (Modern, confident)",
+  harry_styles: "Harry Styles (Modern, confident)",
 
   pop: "Pop",
   indie: "Indie",
@@ -153,9 +157,13 @@ export const DISPLAY_LABELS: Record<DisplayLabelValue, string> = {   // UI optio
   scandinavian_minimal: "Scandinavian minimal",
   old_money_european: "Old money / European elegant",
   clean_sporty: "Clean & sporty",
-  experimental: "Experimental",
+  rusty: "Rusty, rugged",
   dark_academia: "Dark academia",
   sensual_glamour: "Sensual glamour",
+  retro_chic: "Retro, grandpa style",
+  urban_modern: "Urban modern",
+  smart_casual: "Smart casual",
+  refined_office: "Refined office",
 
   aries: "Aries",
   taurus: "Taurus",
@@ -193,15 +201,15 @@ export const QUESTION_DISPLAY: Record<QuestionId, string> = {   //UI quiz displa
 export const QUIZ_CONFIG: readonly QuizQuestion[] = [     //entry point of quiz type for UI design
   { id: "gender_pref", kind: "single", options: GENDER_PREFS },
   { id: "use_case", kind: "single", options: USE_CASES },
-  { id: "mood", kind: "single", options: MOODS },
-  { id: "scent_type", kind: "single", options: SCENT_TYPES },
+  { id: "mood", kind: "multi", maxSelections: 2, options: MOODS },
+  { id: "scent_type", kind: "multi", maxSelections: 2, options: SCENT_TYPES },
   { id: "dislike_note", kind: "multi", options: DISLIKE_NOTES },
-  { id: "weekend_vibe", kind: "single", options: WEEKEND_VIBES },
-  { id: "style_icon", kind: "hybrid", options: STYLE_ICONS },
-  { id: "mbti", kind: "single", options: MBTI_TYPES },
-  { id: "music", kind: "hybrid", options: MUSIC_GENRES },
-  { id: "closet_aesthetic", kind: "single", options: CLOSET_AESTHETICS },
-  { id: "rising_sign", kind: "single", options: RISING_SIGNS },
+  { id: "weekend_vibe", kind: "hybrid", maxSelections: 1, options: WEEKEND_VIBES },
+  { id: "style_icon", kind: "hybrid", maxSelections: 2, options: STYLE_ICONS },
+  { id: "mbti", kind: "pill", options: MBTI_TYPES },
+  { id: "music", kind: "single", options: MUSIC_GENRES },
+  { id: "closet_aesthetic", kind: "hybrid", maxSelections: 2, options: CLOSET_AESTHETICS },
+  { id: "rising_sign", kind: "pill", options: RISING_SIGNS },
   { id: "budget", kind: "single", options: BUDGET_TIERS },
 ] as const;
 

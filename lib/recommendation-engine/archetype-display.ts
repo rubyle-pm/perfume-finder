@@ -1,3 +1,5 @@
+//config copy layer for Archetype 
+
 import type { ArchetypeId } from "./vocabulary";
 
 export interface ArchetypeDisplay {
