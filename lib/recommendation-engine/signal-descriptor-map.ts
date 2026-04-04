@@ -41,6 +41,10 @@ const SIGNAL_DESCRIPTOR_MAP: Record<Signal, readonly Descriptor[]> = {    // sig
   edgy: [],
   free_spirited: [],
   vintage: [],
+  natural: FRESH_CLUSTER,
+  stylish: [],
+  structured: WOODY_CLUSTER,
+  artsy: [],
 };
 
 const SIGNAL_SET = new Set<Signal>(SIGNALS);
