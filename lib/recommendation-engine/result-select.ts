@@ -26,6 +26,11 @@ function inferTopArchetype(profile: UserProfile): ArchetypeId | null {
   for (const [archetype, signals] of Object.entries(ARCHETYPE_SIGNAL_MAP) as Array<
     [ArchetypeId, readonly string[]]
   >) {
+    // Enforce gender constraints as requested
+    if (archetype === "playful_sweetheart" && profile.gender_pref !== "feminine") continue;
+    if (archetype === "playful_charmer" && profile.gender_pref === "feminine") continue;
+    if (archetype === "modern_icon" && profile.gender_pref === "masculine") continue;
+
     const hits = signals.filter((s) => profile.signals.includes(s as typeof profile.signals[number]))
       .length;
     const score = hits / signals.length;

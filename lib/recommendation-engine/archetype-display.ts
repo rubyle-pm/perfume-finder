@@ -5,51 +5,73 @@ import type { ArchetypeId } from "./vocabulary";
 export interface ArchetypeDisplay {
   name: string;
   tagline: string;
+  image?: string;
 }
 
 export const ARCHETYPE_DISPLAY: Record<ArchetypeId, ArchetypeDisplay> = {
+  bare_glow: {
+    name: "The Bare Glow",
+    tagline: "Warm, natural, easy-going. Comfort is your aesthetic.",
+    image: "/archetype-image/bare-glow.jpg",
+  },
   effortless_muse: {
-    name: "The Effortless Muse",
+    name: "The Effortless Chic",
     tagline: "Understated. Nonchalant, yet Magnetic. Like you weren't even trying.",
+    image: "/archetype-image/effortless-chic.jpg",
   },
-  clean_minimalist: {
-    name: "The Minimalist",
-    tagline: "Precise. Clean. Productive. Your presence is the statement.",
+  corporate_pragmatist: {
+    name: "The Corporate Pragmatist",
+    tagline: "Smart, structured, and quietly polished. Function meets taste.",
+    image: "/archetype-image/corporate.jpg",
   },
-  romantic_dreamer: {
-    name: "The Romantic Dreamer",
-    tagline: "Warm, intimate, and quietly unforgettable.",
+  understated_classic: {
+    name: "The Understated Classic",
+    tagline: "No noise. Quiet-luxury presence. The kind that doesn’t need announcing.",
+    image: "/archetype-image/classic.jpg",
+  },
+  playful_sweetheart: {
+    name: "The Playful Sweetheart",
+    tagline: "Soft feminine, sweet, and a little mischievous. Raw — but never plain.",
+    image: "/archetype-image/sweetheart.jpg",
+  },
+  playful_charmer: {
+    name: "The Playful Charmer",
+    tagline: "Unpolished, sun-warmed, a bit rusty. The old-school vibe that is dangerously fun to flirt with.",
+    image: "/archetype-image/charmer.jpg",
+  },
+  soft_romantic: {
+    name: "Soft Romantic",
+    tagline: "Gentle, cozy, quietly lingering — like a sweet summer-break memory you revisit.",
+    image: "/archetype-image/soft-romantic.jpg",
+  },
+  old_soul: {
+    name: "Old Soul",
+    tagline: "Nostalgic, introspective, cultural, and a little removed from the present.",
+    image: "/archetype-image/old-soul.jpg",
+  },
+  off_duty_trendsetter: {
+    name: "Off-Duty Trendsetter",
+    tagline: "Intentionally cool, casually confident, and always ahead of the curve.",
+    image: "/archetype-image/trendsetter.jpg",
   },
   modern_icon: {
     name: "The Modern Icon",
-    tagline: "Bold. Self-assured. You walk in and the room notices.",
-  },
-  quiet_luxury: {
-    name: "Quiet Luxury",
-    tagline: "Refined without announcing itself. Old soul, sharp eye.",
+    tagline: "Bold. Self-assured. Charismatic. You walk in and the room notices.",
+    image: "/archetype-image/modern-icon.jpg",
   },
   dark_intellectual: {
-    name: "The Dark Intellectual",
-    tagline: "Complex. A little cryptic. Endlessly interesting.",
+    name: "The Whimsical Intellectual",
+    tagline: "Complex. Unreadable. A little cryptic. An endlessly interesting nerd.",
+    image: "/archetype-image/academia.jpg",
   },
   the_sensualist: {
     name: "The Sensualist",
-    tagline: "Rich, confident, undeniably present.",
+    tagline: "Warm skin, low light, slow tension. Seductive and irresistible.",
+    image: "/archetype-image/sensualist.jpg",
   },
   edge_walker: {
-    name: "The Edge Walker",
-    tagline: "Unexpected. Unsettling in the best way.",
-  },
-  free_spirit: {
-    name: "The Free Spirit",
-    tagline: "Warm chaos, full of energy. Boredom is not an option.",
-  },
-  sporty_glam: {
-    name: "The Sporty Glam",
-    tagline: "Easy energy, effortless cool, quietly striking.",
-  },
-  coquette: {
-    name: "The Coquette",
-    tagline: "Soft but never simple. Sweet with an edge.",
+    name: "The Challenger",
+    tagline: "Unexpected. Break conventions for sport. You’re not for everyone — and that’s the point.",
+    image: "/archetype-image/edge-walker.jpg",
   },
 };
