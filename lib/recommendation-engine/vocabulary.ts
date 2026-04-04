@@ -7,8 +7,6 @@
  * categorical value MUST only use values from this file.
  * No free-text allowed. No invented values.
  * Do not mix signal vocabulary with descriptor vocabulary.
- *
- * Auto-generated from vocabulary.md — do not edit manually.
  */
 
 // ---------------------------------------------------------------------------
@@ -428,7 +426,6 @@ export const ARCHETYPE_IDS = [
   "soft_romantic",
   "old_soul",
   "off_duty_trendsetter",
-  "free_spirit",
   "modern_icon",
   "dark_intellectual",
   "the_sensualist",
@@ -438,20 +435,19 @@ export const ARCHETYPE_IDS = [
 export type ArchetypeId = (typeof ARCHETYPE_IDS)[number];
 
 export const ARCHETYPE_SIGNAL_MAP: Record<ArchetypeId, Signal[]> = {
-  bare_glow: ["warm", "natural", "easy_going"],
-  effortless_muse: ["modern", "effortless", "stylish"],
+  bare_glow: ["minimal", "natural", "easy_going", "warm"],
+  effortless_muse: ["modern", "effortless", "stylish", "minimal"],
   corporate_pragmatist: ["structured", "sophisticated", "confident", "modern"],
   understated_classic: ["elegant", "sophisticated", "grounded"],
-  playful_sweetheart: ["playful", "romantic", "soft"],
-  playful_charmer: ["grounded", "natural", "free_spirited", "playful"],
-  soft_romantic: ["romantic", "soft", "nostalgic"],
-  old_soul: ["nostalgic", "introspective", "vintage"],
-  off_duty_trendsetter: ["cool", "modern", "stylish"],
-  free_spirit: ["free_spirited", "artsy", "playful", "warm"],
-  modern_icon: ["bold", "confident", "modern"],
-  dark_intellectual: ["intellectual", "mysterious", "enigmatic"],
-  the_sensualist: ["sensual", "glamorous", "bold"],
-  edge_walker: ["edgy", "menacing", "artsy"],
+  playful_sweetheart: ["playful", "romantic", "soft", "cozy"],
+  playful_charmer: ["grounded", "natural", "free_spirited", "menacing"],
+  soft_romantic: ["romantic", "soft", "modern", "cozy"],
+  old_soul: ["nostalgic", "introspective", "vintage", "artsy"],
+  off_duty_trendsetter: ["cool", "modern", "stylish", "confident"],
+  modern_icon: ["bold", "confident", "modern", "glamorous"],
+  dark_intellectual: ["intellectual", "mysterious", "enigmatic", "artsy"],
+  the_sensualist: ["sensual", "glamorous", "bold", "warm"],
+  edge_walker: ["edgy", "introspective", "artsy", "bold"],
 };
 
 // ---------------------------------------------------------------------------

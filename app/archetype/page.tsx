@@ -44,17 +44,18 @@ export default function ArchetypePage() {
 
       {/* Hero image slot — replace with botanical/editorial image */}
       <div style={s.heroSlot}>
-        {/*
-          Replace with:
-          <Image src="/images/archetype-hero.jpg" alt="" fill style={{ objectFit: "cover" }} />
-          
-          Design direction: Byredo-inspired. Botanical, organic, minimal words.
-          Dark or moody palette. No face, just texture/ingredient.
-        */}
-        <span style={s.heroPlaceholder}>
-          Archetype hero image<br />
-          <span style={{ fontSize: 11, opacity: 0.6 }}>Botanical / organic editorial — no faces</span>
-        </span>
+        {archetype?.image ? (
+          <img 
+            src={archetype.image} 
+            alt={archetype.name} 
+            style={{ width: "100%", height: "100%", objectFit: "cover" }} 
+          />
+        ) : (
+          <span style={s.heroPlaceholder}>
+            Archetype hero image<br />
+            <span style={{ fontSize: 11, opacity: 0.6 }}>Botanical / organic editorial — no faces</span>
+          </span>
+        )}
       </div>
 
       {/* Content */}
