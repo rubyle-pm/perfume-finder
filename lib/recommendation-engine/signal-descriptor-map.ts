@@ -10,41 +10,47 @@ const WOODY_CLUSTER: readonly Descriptor[] = ["woody", "sandalwood", "vetiver"];
 const GOURMAND_CLUSTER: readonly Descriptor[] = ["gourmand", "vanilla", "sweet"];
 
 const SIGNAL_DESCRIPTOR_MAP: Record<Signal, readonly Descriptor[]> = {    // signal → descriptor reverse lookup
-  sensual: SENSUAL_CLUSTER,
-  glamorous: SENSUAL_CLUSTER,
-  mysterious: SENSUAL_CLUSTER,
-  enigmatic: SENSUAL_CLUSTER,
-  menacing: SENSUAL_CLUSTER,
+  sensual:      SENSUAL_CLUSTER,
+  glamorous:    SENSUAL_CLUSTER,
+  mysterious:   SENSUAL_CLUSTER,
+  enigmatic:    SENSUAL_CLUSTER,
+  menacing:     SENSUAL_CLUSTER,
 
-  romantic: SOFT_CLUSTER,
-  soft: SOFT_CLUSTER,
-  nostalgic: SOFT_CLUSTER,
-  playful: SOFT_CLUSTER,
+  romantic:     SOFT_CLUSTER,
+  soft:         SOFT_CLUSTER,
+  nostalgic:    SOFT_CLUSTER,
+  playful:      SOFT_CLUSTER,
 
-  effortless: FRESH_CLUSTER,
-  minimal: FRESH_CLUSTER,
-  cool: FRESH_CLUSTER,
-  easy_going: FRESH_CLUSTER,
-  modern: FRESH_CLUSTER,
+  effortless:   FRESH_CLUSTER,
+  minimal:      FRESH_CLUSTER,
+  cool:         FRESH_CLUSTER,
+  easy_going:   FRESH_CLUSTER,
+  modern:       FRESH_CLUSTER,
 
-  grounded: WOODY_CLUSTER,
+  grounded:     WOODY_CLUSTER,
   sophisticated: WOODY_CLUSTER,
-  elegant: WOODY_CLUSTER,
+  elegant:      WOODY_CLUSTER,
   intellectual: WOODY_CLUSTER,
   introspective: WOODY_CLUSTER,
+  structured:   WOODY_CLUSTER,
 
-  warm: [...SOFT_CLUSTER, ...GOURMAND_CLUSTER],
-  cozy: [...SOFT_CLUSTER, ...GOURMAND_CLUSTER],
+  warm:         [...SOFT_CLUSTER, ...GOURMAND_CLUSTER],
+  cozy:         [...SOFT_CLUSTER, ...GOURMAND_CLUSTER],
 
-  bold: [],
-  confident: [],
-  edgy: [],
-  free_spirited: [],
-  vintage: [],
-  natural: FRESH_CLUSTER,
-  stylish: [],
-  structured: WOODY_CLUSTER,
-  artsy: [],
+  natural:      FRESH_CLUSTER,
+
+  // Fix #4 — previously empty signals mapped to semantically appropriate descriptors
+  bold:         ["leather", "smoky", "spicy", "oud"],       // assertive, dark, powerful
+  confident:    ["woody", "leather", "smoky"],               // grounded strength
+  edgy:         ["leather", "oud", "smoky", "resin"],        // dark, unconventional
+  free_spirited: ["fresh", "citrus", "green", "aquatic"],    // open-air, light, unrestrained
+  vintage:      ["iris", "powdery", "rose", "sandalwood"],   // retro elegance, soft nostalgia
+  stylish:      ["iris", "powdery", "woody", "clean"],       // refined, put-together
+  artsy:        ["resin", "smoky", "vetiver", "oud"],        // complex, unusual, layered
+
+  // New signals added for sporty / adventurous weekend vibes
+  sporty:       ["fresh", "aquatic", "citrus", "clean"],     // active, clean energy
+  adventurous:  ["fresh", "green", "citrus", "woody"],       // outdoorsy, exploration
 };
 
 const SIGNAL_SET = new Set<Signal>(SIGNALS);

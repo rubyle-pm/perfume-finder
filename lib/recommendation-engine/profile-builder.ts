@@ -64,30 +64,30 @@ const SIGNAL_WEIGHT = {
 const MAX_PROFILE_SIGNALS = 8;
 
 const MUSIC_SIGNAL_MAP: Record<MusicGenre, Signal[]> = {
-  pop: ["playful", "modern"],
+  pop: ["playful", "modern", "easy_going"],
   indie: ["nostalgic", "free_spirited", "artsy"],
   rnb_soul: ["sensual", "warm", "stylish"],
-  jazz: ["sophisticated", "warm"],
+  jazz: ["sophisticated", "nostalgic", "warm"],
   classical: ["elegant", "intellectual", "structured"],
   kpop: ["playful", "modern", "stylish"],
   hiphop: ["bold", "cool", "stylish"],
-  electronic: ["edgy", "modern"],
+  electronic: ["edgy", "modern", "cool"],
   folk_acoustic: ["grounded", "warm", "natural"],
   alternative: ["edgy", "introspective", "artsy"],
-  latin: ["playful", "warm"],
-  musical_theatre: ["glamorous", "playful"],
+  latin: ["playful", "warm", "sensual"],
+  musical_theatre: ["glamorous", "playful", "romantic"],
 };
 
 const WEEKEND_VIBE_SIGNAL_MAP: Record<WeekendVibe, Signal[]> = {
-  book_and_blanket: ["introspective", "nostalgic", "cozy"],
-  brunch: ["playful", "warm"],
+  book_and_blanket: ["introspective", "intellectual", "cozy"],
+  brunch: ["playful", "warm", "easy_going"],
   cozy_social: ["warm", "easy_going", "cozy", "playful"],
-  home_reset: ["minimal", "grounded"],
-  museum: ["intellectual", "artsy"],
-  nightlife: ["easy_going", "free_spirited"],
-  outdoor: ["grounded", "natural"],
-  roadtrip: ["free_spirited", "easy_going"],
-  solo_cafe: ["cozy", "introspective"],
+  home_reset: ["minimal", "grounded", "structured"],
+  museum: ["intellectual", "artsy", "sophisticated"],
+  nightlife: ["easy_going", "free_spirited", "glamorous"],
+  outdoor: ["modern", "natural", "sporty"],
+  roadtrip: ["free_spirited", "natural", "adventurous"],
+  solo_cafe: ["structured", "cozy", "intellectual"],
 };
 
 const CLOSET_SIGNAL_MAP: Record<ClosetAesthetic, Signal[]> = {

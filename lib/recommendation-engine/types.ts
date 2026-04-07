@@ -72,10 +72,10 @@ export interface Perfume {
   style_tags: Signal[];
   gender_tags: GenderTag[];
   popularity_score: number;
-    // UI display fields — not used by scoring engine
-    concentration?: string;
-    volume_ml?: number;
-    size_variant_of?: string | null;
+  // UI display fields — not used by scoring engine
+  concentration?: string;
+  volume_ml?: number;
+  size_variant_of?: string | null;
 }
 
 export function normalizePerfume(raw: any): Perfume {      // NORMALIZE JSON → normalized Perfume
@@ -88,24 +88,24 @@ export function normalizePerfume(raw: any): Perfume {      // NORMALIZE JSON →
   );
 
   return {
-    id:               raw.id,
-    name:             raw.name,
-    brand:            raw.brand,
-    price_vnd:        raw.price_vnd,
-    tier:             raw.tier as PerfumeTier,
-    family_primary:   raw.family_primary,
+    id: raw.id,
+    name: raw.name,
+    brand: raw.brand,
+    price_vnd: raw.price_vnd,
+    tier: raw.tier as PerfumeTier,
+    family_primary: raw.family_primary,
     family_secondary: raw.family_secondary ?? null,
-    top_notes:        raw.top_notes,
-    heart_notes:      raw.heart_notes,
-    base_notes:       raw.base_notes,
+    top_notes: raw.top_notes,
+    heart_notes: raw.heart_notes,
+    base_notes: raw.base_notes,
     descriptors: normalizedDescriptors,
-    use_cases:   raw.use_cases.map(normalizeUseCase).filter(Boolean) as UseCase[],
-    style_tags:  raw.style_tags.map(normalizeSignal).filter(Boolean) as Signal[],
-    gender_tags:      raw.gender_tags as GenderTag[],
+    use_cases: raw.use_cases.map(normalizeUseCase).filter(Boolean) as UseCase[],
+    style_tags: raw.style_tags.map(normalizeSignal).filter(Boolean) as Signal[],
+    gender_tags: raw.gender_tags as GenderTag[],
     popularity_score: raw.popularity_score,
-    concentration:    raw.concentration,
-  volume_ml:        raw.volume_ml,
-  size_variant_of:  raw.size_variant_of ?? null,
+    concentration: raw.concentration,
+    volume_ml: raw.volume_ml,
+    size_variant_of: raw.size_variant_of ?? null,
   };
 }
 

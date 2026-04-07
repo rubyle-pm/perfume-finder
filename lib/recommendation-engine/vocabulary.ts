@@ -48,6 +48,8 @@ export const SIGNALS = [
   "stylish",
   "structured",
   "artsy",
+  "sporty",
+  "adventurous",
 ] as const;
 
 export type Signal = (typeof SIGNALS)[number];
