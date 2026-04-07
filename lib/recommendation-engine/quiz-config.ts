@@ -201,11 +201,11 @@ export const QUESTION_DISPLAY: Record<QuestionId, string> = {   //UI quiz displa
 export const QUIZ_CONFIG: readonly QuizQuestion[] = [     //entry point of quiz type for UI design
   { id: "gender_pref", kind: "single", options: GENDER_PREFS },
   { id: "use_case", kind: "single", options: USE_CASES },
-  { id: "mood", kind: "multi", maxSelections: 2, options: MOODS },
+  { id: "mood", kind: "single", options: MOODS },
   { id: "scent_type", kind: "multi", maxSelections: 2, options: SCENT_TYPES },
   { id: "dislike_note", kind: "multi", options: DISLIKE_NOTES },
-  { id: "weekend_vibe", kind: "hybrid", maxSelections: 1, options: WEEKEND_VIBES },
-  { id: "style_icon", kind: "hybrid", maxSelections: 2, options: STYLE_ICONS },
+  { id: "weekend_vibe", kind: "single", options: WEEKEND_VIBES }, // user asked for Q3 and Q7, checking others
+  { id: "style_icon", kind: "single", options: STYLE_ICONS },
   { id: "mbti", kind: "pill", options: MBTI_TYPES },
   { id: "music", kind: "single", options: MUSIC_GENRES },
   { id: "closet_aesthetic", kind: "hybrid", maxSelections: 2, options: CLOSET_AESTHETICS },

@@ -52,24 +52,24 @@ function scoreRational(
   const descriptorMatch = overlapRatio(profile.derived_descriptors, perfume.descriptors);
   const useCaseMatch = perfume.use_cases.includes(profile.use_case) ? 1 : 0;
   const mbtiMatch = overlapRatio(profile.mbti_signals, perfume.style_tags);
-  const moodMatch = overlapRatio(profile.mood_signals, perfume.style_tags);
   const intentScore = computeIntentScore(profile.derived_descriptors, perfume.descriptors);
+
   let total =
-  SCORING_WEIGHTS.rational.descriptor * descriptorMatch +  // scoring.config
-  SCORING_WEIGHTS.rational.use_case * useCaseMatch +
-  SCORING_WEIGHTS.rational.mbti * mbtiMatch +
-  SCORING_WEIGHTS.rational.mood * moodMatch +
-  0.05 * intentScore;
-  if (descriptorMatch === 0) {     //soft guard descriptor score  
+    SCORING_WEIGHTS.rational.descriptor * descriptorMatch +
+    SCORING_WEIGHTS.rational.use_case * useCaseMatch +
+    SCORING_WEIGHTS.rational.mbti * mbtiMatch +
+    0.05 * intentScore;
+
+  if (descriptorMatch === 0) {
     total *= 0.2;
   }
+
   return {
     type: "rational",
     total,
     descriptor_match: descriptorMatch,
     use_case_match: useCaseMatch,
     mbti_match: mbtiMatch,
-    mood_match: moodMatch,
   }
 }
 
@@ -79,22 +79,28 @@ function scoreAspirational(
 ): RecommendationScoreBreakdown {
   const descriptorMatch = overlapRatio(profile.derived_descriptors, perfume.descriptors);
   const signalMatch = overlapRatio(profile.signals, perfume.style_tags);
+  const moodMatch = overlapRatio(profile.mood_signals, perfume.style_tags);
   const intentScore = computeIntentScore(profile.derived_descriptors, perfume.descriptors);
   const premium = premiumFactor(perfume, profile);
+
   let total =
-  SCORING_WEIGHTS.aspirational.descriptor * descriptorMatch +  // scoring.config
-  SCORING_WEIGHTS.aspirational.style_signal * signalMatch +
-  SCORING_WEIGHTS.aspirational.premium * premium +
-  0.12 * intentScore;
-  if (signalMatch < 0.25) total *= 0.1;   //soft guard signal score 
-  if (descriptorMatch === 0 && intentScore < 0.3) {   //soft guard descriptor, allow intent rescue
+    SCORING_WEIGHTS.aspirational.descriptor * descriptorMatch +
+    SCORING_WEIGHTS.aspirational.style_signal * signalMatch +
+    SCORING_WEIGHTS.aspirational.premium * premium +
+    SCORING_WEIGHTS.aspirational.mood * moodMatch +
+    0.12 * intentScore;
+
+  if (signalMatch < 0.25) total *= 0.1;
+  if (descriptorMatch === 0 && intentScore < 0.3) {
     total *= 0.1;
   }
+
   return {
     type: "aspirational",
     total,
     descriptor_match: descriptorMatch,
     signal_match: signalMatch,
+    mood_match: moodMatch,
     premium_factor: premium,
   };
 }
@@ -106,27 +112,26 @@ function scoreWildcard(
   const descriptorMatch = overlapRatio(profile.derived_descriptors, perfume.descriptors);
   const adjacent = deriveAdjacentDescriptors(profile.derived_descriptors);
   const adjacentScore = overlapRatio(adjacent, perfume.descriptors);
-  const styleSignalMatch = overlapRatio(profile.style_signals, perfume.style_tags);
   const musicSignalMatch = overlapRatio(profile.music_signals, perfume.style_tags);
-  const risingSignSignalMatch = overlapRatio(profile.rising_sign_signals, perfume.style_tags);
   const novelty = 1 - descriptorMatch;
+
   let total =
-  SCORING_WEIGHTS.wildcard.adjacent * adjacentScore +      //scoring.config 
-  SCORING_WEIGHTS.wildcard.rising_sign * risingSignSignalMatch +
-  SCORING_WEIGHTS.wildcard.style_signal * styleSignalMatch +
-  SCORING_WEIGHTS.wildcard.descriptor * descriptorMatch +
-  SCORING_WEIGHTS.wildcard.music * musicSignalMatch +
-  SCORING_WEIGHTS.wildcard.novelty * novelty;
-  if (descriptorMatch === 0) {     //soft guard descriptor score 
+    SCORING_WEIGHTS.wildcard.adjacent * adjacentScore +
+    SCORING_WEIGHTS.wildcard.descriptor * descriptorMatch +
+    SCORING_WEIGHTS.wildcard.music * musicSignalMatch +
+    SCORING_WEIGHTS.wildcard.novelty * novelty;
+
+  if (descriptorMatch === 0) {
     total *= 0.2;
   }
+
   return {
     type: "wildcard",
     total,
     descriptor_match: descriptorMatch,
     adjacent_score: adjacentScore,
     music_signal_match: musicSignalMatch,
-    novelty, 
+    novelty,
   };
 }
 

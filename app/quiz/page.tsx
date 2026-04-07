@@ -36,13 +36,12 @@ const DEMO_QUESTIONS = [
       { value: "home_body", label: "At home, comfy in my skin", emoji: "🛋️", subtitle: "Cozy vibes" },
     ],
   },
-  // Q3: mood - multi, max 2 options
+  // Q3: mood - single select
   {
     id: "mood",
-    kind: "multi" as const,
+    kind: "single" as const,
     questionText: "What mood do you want your scent to project?",
     questionImageUrl: "/quiz-image/quiz3.jpg",
-    maxSelections: 2,
     options: [
       { value: "complicated_seductive_intellectual", label: "Seductive yet intellectual", emoji: "🍷", subtitle: "Deep and complex" },
       { value: "soft_romantic_nostalgic", label: "Romantic, a bit nostalgic", emoji: "🕊️", subtitle: "Soft and delicate" },
@@ -104,12 +103,12 @@ const DEMO_QUESTIONS = [
       { value: "solo_cafe", label: "Solo cafe, reading or doing side quests", imageUrl: "/quiz-image/quiz6/solo-cafe.jpg" },
     ],
   },
-  // Q7: style_icon - hybrid image grid, max 2 options
+  // Q7: style_icon - hybrid image grid, single select
   {
     id: "style_icon",
     kind: "hybrid" as const,
     questionText: "Who is your style icon?",
-    maxSelections: 2,
+    maxSelections: 1,
     options: [
       { value: "anya_taylor_joy", label: "Anya Taylor-Joy", subtitle: "Dark academia, poetic", imageUrl: "/quiz-image/quiz7/anya-dark.jpg", gender: "female", pairId: "dark_academia", imagePosition: "center 20%" },
       { value: "robert_pattinson", label: "Robert Pattinson", subtitle: "Dark academia, poetic", imageUrl: "/quiz-image/quiz7/robert-dark.jpg", gender: "male", pairId: "dark_academia", imagePosition: "center 15%" },
@@ -303,6 +302,11 @@ function QuizDemoPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Add auto-scroll effect: scroll to top when question changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentQuestionIndex]);
+
   // True when user was sent here from the review page to edit one question
   const fromReview = searchParams.get("from") === "review";
 
@@ -351,15 +355,16 @@ function QuizDemoPage() {
 
   // Auto-advance for single & pill; ALSO for hybrid single selects
   function handleSelectionComplete() {
-    const isWeekendVibeSingleSelect =
-      currentQuestion.id === "weekend_vibe" &&
+    const isSingleSelectionHybrid =
+      (currentQuestion.id === "weekend_vibe" || currentQuestion.id === "style_icon") &&
       (currentQuestion as { maxSelections?: number }).maxSelections === 1;
     if (
       currentQuestion.kind === "single" ||
       currentQuestion.kind === "pill" ||
-      isWeekendVibeSingleSelect
+      isSingleSelectionHybrid
     ) {
-      goToNext();
+      // Add a tiny delay for visual feedback before auto-advancing
+      setTimeout(() => goToNext(), 400);
     }
   }
 

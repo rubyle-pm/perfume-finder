@@ -6,19 +6,19 @@ export const SCORING_WEIGHTS = {
     descriptor: 0.4,
     use_case: 0.3,
     mbti: 0.2,
-    mood: 0.1,
   },
 
   aspirational: {
     descriptor: 0.3,
-    style_signal: 0.3,
+    style_signal: 0.2,
     premium: 0.3,
+    mood: 0.2,
   },
 
   wildcard: {
     adjacent: 0.4,
-    descriptor: 0.2,
-    music: 0.1,
+    descriptor: 0.1,
+    music: 0.2,
     novelty: 0.3,
   }
 
