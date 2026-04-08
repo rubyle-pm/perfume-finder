@@ -10,7 +10,7 @@
  */
 
 // ---------------------------------------------------------------------------
-// SIGNAL — 26 values
+// SIGNAL — 32 values
 // Identity, personality, and aesthetic dimensions.
 // Used in: perfume.style_tags, archetype.signals, quiz_option_mapping.signals,
 //          descriptor_signal_map.signals, user.signals

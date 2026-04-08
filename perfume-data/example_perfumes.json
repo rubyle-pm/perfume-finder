@@ -11,7 +11,7 @@
     "heart_notes": ["jasmine", "rose", "bamboo"],
     "base_notes": ["cedarwood", "amber", "musk"],
     "descriptors": ["citrus", "fresh", "floral"],
-    "use_cases": ["daily casual", "outdoor / sporty", "travel"],
+    "use_cases": ["daily_casual", "outdoor_sporty", "travel"],
     "style_tags": ["effortless", "easy-going", "modern"],
     "gender_tags": ["feminine"],
     "popularity_score": 0.93,

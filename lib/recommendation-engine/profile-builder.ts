@@ -93,9 +93,9 @@ const WEEKEND_VIBE_SIGNAL_MAP: Record<WeekendVibe, Signal[]> = {
 const CLOSET_SIGNAL_MAP: Record<ClosetAesthetic, Signal[]> = {
   cottage_core: ["romantic", "natural"],
   streetwear_hiphop: ["bold", "edgy"],
-  modern_parisian_chic: ["stylish", "effortless"],
-  y2k_trendy: ["playful", "modern"],
-  scandinavian_minimal: ["minimal", "cool"],
+  modern_parisian_chic: ["stylish" , "effortless"],
+  y2k_trendy: ["playful", "stylish"],
+  scandinavian_minimal: ["minimal", "modern"],
   old_money_european: ["elegant", "sophisticated"],
   clean_sporty: ["easy_going", "cool"],
   rusty: ["grounded", "natural"],
@@ -103,7 +103,7 @@ const CLOSET_SIGNAL_MAP: Record<ClosetAesthetic, Signal[]> = {
   sensual_glamour: ["sensual", "glamorous"],
   retro_chic: ["playful", "vintage"],
   urban_modern: ["modern", "stylish"],
-  smart_casual: ["structured", "modern"],
+  smart_casual: ["easy_going", "modern"],
   refined_office: ["structured", "sophisticated"],
 };
 

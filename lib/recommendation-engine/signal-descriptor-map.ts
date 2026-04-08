@@ -47,8 +47,6 @@ const SIGNAL_DESCRIPTOR_MAP: Record<Signal, readonly Descriptor[]> = {    // sig
   vintage:      ["iris", "powdery", "rose", "sandalwood"],   // retro elegance, soft nostalgia
   stylish:      ["iris", "powdery", "woody", "clean"],       // refined, put-together
   artsy:        ["resin", "smoky", "vetiver", "oud"],        // complex, unusual, layered
-
-  // New signals added for sporty / adventurous weekend vibes
   sporty:       ["fresh", "aquatic", "citrus", "clean"],     // active, clean energy
   adventurous:  ["fresh", "green", "citrus", "woody"],       // outdoorsy, exploration
 };
