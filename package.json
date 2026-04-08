@@ -10,6 +10,7 @@
     "test:reco": "ts-node --project tsconfig.json -r tsconfig-paths/register scripts/test-pipeline.ts"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "lucide-react": "^1.0.1",
     "next": "16.1.6",
     "puppeteer": "^24.40.0",
